@@ -653,11 +653,9 @@ function render() {
     card.className = 'card';
     card.style.animationDelay = `${Math.min(index * 45, 280)}ms`;
 
-    card.addEventListener('click', (e) => {
-      if (e.target.closest('button')) return;
-      safeCopy(item.content)
-        .then(() => showToast('Đã copy toàn bộ nội dung'))
-        .catch(() => showToast('Copy thất bại'));
+    // ❌ bỏ copy toàn card, chỉ copy theo từng khung riêng
+    // (tránh copy nhầm toàn bộ nội dung)
+
     });
 
     const top = document.createElement('div');
