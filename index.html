@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="vi">
+<html lang="vi" data-theme="light">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -9,8 +9,8 @@
     :root {
       --bg: #f4f6f8;
       --bg-soft: #ffffff;
-      --panel: rgba(255, 255, 255, 0.88);
-      --panel-2: rgba(255, 255, 255, 0.96);
+      --panel: rgba(255, 255, 255, 0.90);
+      --panel-2: rgba(255, 255, 255, 0.98);
       --text: #17202a;
       --muted: #667085;
       --border: #d9dee7;
@@ -20,15 +20,14 @@
       --accent-soft: rgba(180, 35, 24, 0.08);
       --shadow: 0 10px 28px rgba(16, 24, 40, 0.08);
       --shadow-strong: 0 14px 36px rgba(16, 24, 40, 0.12);
-      --radius: 18px;
       --maxw: 1140px;
     }
 
     [data-theme="dark"] {
       --bg: #0f1115;
       --bg-soft: #151922;
-      --panel: rgba(19, 22, 30, 0.88);
-      --panel-2: rgba(21, 25, 34, 0.96);
+      --panel: rgba(19, 22, 30, 0.90);
+      --panel-2: rgba(21, 25, 34, 0.98);
       --text: #e8ecf2;
       --muted: #aab2bf;
       --border: #2a3240;
@@ -126,7 +125,6 @@
       border-radius: 12px;
       cursor: pointer;
       transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease;
-      box-shadow: 0 1px 0 rgba(255,255,255,0.1);
     }
 
     .theme-toggle:hover,
@@ -149,8 +147,7 @@
       min-width: 220px;
     }
 
-    .field label,
-    .section-label {
+    .field label {
       display: block;
       margin-bottom: 8px;
       font-size: 13px;
@@ -474,7 +471,7 @@
 
     <div class="stats">
       <span class="badge" id="countBadge">0 mục</span>
-      <span class="badge">Click vào ô để copy</span>
+      <span class="badge">Click nút để copy</span>
       <span class="badge">Tự tách WD ABNORMAL</span>
     </div>
 
@@ -487,7 +484,7 @@
     </div>
 
     <div class="footer">
-      <div class="hint">Dữ liệu được nạp từ file data.json. Nếu file không tải được, hệ thống tự chuyển sang dữ liệu mặc định.</div>
+      <div class="hint">Dữ liệu được nạp từ file data.json nếu có. Nếu file không tải được, hệ thống tự chuyển sang dữ liệu mặc định để không bị trống.</div>
     </div>
   </div>
 
@@ -609,10 +606,7 @@ function populateGroupOptions() {
 function splitContent(text) {
   const match = text.match(/^(.*?)(?:\n+)?\*\s*WD ABNORMAL\s*(.*)$/is);
   if (!match) {
-    return {
-      main: text.trim(),
-      note: null,
-    };
+    return { main: text.trim(), note: null };
   }
 
   const main = (match[1] || '').trim();
@@ -652,11 +646,6 @@ function render() {
     const card = document.createElement('article');
     card.className = 'card';
     card.style.animationDelay = `${Math.min(index * 45, 280)}ms`;
-
-    // ❌ bỏ copy toàn card, chỉ copy theo từng khung riêng
-    // (tránh copy nhầm toàn bộ nội dung)
-
-    });
 
     const top = document.createElement('div');
     top.className = 'card-top';
@@ -785,7 +774,6 @@ themeToggle.addEventListener('click', () => {
   applyTheme(current === 'dark' ? 'light' : 'dark');
 });
 
-// Basic checks
 (function runBasicChecks() {
   console.assert(typeof safeCopy === 'function', 'safeCopy should be defined');
   console.assert(Array.isArray(DEFAULT_DATA) && DEFAULT_DATA.length > 0, 'DEFAULT_DATA should not be empty');
@@ -794,7 +782,10 @@ themeToggle.addEventListener('click', () => {
 initTheme();
 
 fetch('data.json')
-  .then(r => r.json())
+  .then(r => {
+    if (!r.ok) throw new Error('data.json not found');
+    return r.json();
+  })
   .then(arr => {
     data = Array.isArray(arr) ? arr : DEFAULT_DATA.slice();
     populateSystemOptions();
