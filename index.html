@@ -290,6 +290,34 @@
       color: var(--accent-2);
     }
 
+    .content-group {
+      display: grid;
+      gap: 10px;
+    }
+
+    .copy-block {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: rgba(127, 127, 127, 0.03);
+      padding: 12px;
+    }
+
+    .copy-block-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+
+    .copy-label {
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.2px;
+      text-transform: uppercase;
+    }
+
     .content {
       margin: 0;
       white-space: pre-line;
@@ -297,7 +325,7 @@
       color: var(--text);
       line-height: 1.55;
       font-size: 14px;
-      min-height: 60px;
+      min-height: 24px;
     }
 
     .card-actions {
@@ -422,7 +450,7 @@
     <div class="topbar">
       <div>
         <h1>Quản lý Rủi ro (Risk Manager) <span>- @Ren</span></h1>
-        <p class="lead">Chọn Nhóm Lỗi rồi xem kết quả theo từng ô riêng. Mỗi ô có nút copy để người khác lấy nội dung nhanh hơn, không cần bôi đen thủ công.</p>
+        <p class="lead">Chọn Nhóm Lỗi rồi xem kết quả theo từng ô riêng. Nếu nội dung có thêm ghi chú như <strong>* WD ABNORMAL</strong>, hệ thống sẽ tự tách thành 2 phần để copy riêng cho nhanh.</p>
       </div>
       <div class="controls-top">
         <button id="themeToggle" class="theme-toggle" type="button">Chuyển sang Dark</button>
@@ -447,7 +475,7 @@
     <div class="stats">
       <span class="badge" id="countBadge">0 mục</span>
       <span class="badge">Click vào ô để copy</span>
-      <span class="badge">Nút copy riêng từng mục</span>
+      <span class="badge">Tự tách WD ABNORMAL</span>
     </div>
 
     <div class="panel">
@@ -578,6 +606,20 @@ function populateGroupOptions() {
   }
 }
 
+function splitContent(text) {
+  const match = text.match(/^(.*?)(?:\n+)?\*\s*WD ABNORMAL\s*(.*)$/is);
+  if (!match) {
+    return {
+      main: text.trim(),
+      note: null,
+    };
+  }
+
+  const main = (match[1] || '').trim();
+  const note = ('* WD ABNORMAL ' + (match[2] || '').trim()).trim();
+  return { main, note };
+}
+
 function getFilteredData() {
   const system = systemSelect.value;
   const group = groupSelect.value;
@@ -614,7 +656,7 @@ function render() {
     card.addEventListener('click', (e) => {
       if (e.target.closest('button')) return;
       safeCopy(item.content)
-        .then(() => showToast('Đã copy nội dung'))
+        .then(() => showToast('Đã copy toàn bộ nội dung'))
         .catch(() => showToast('Copy thất bại'));
     });
 
@@ -639,9 +681,63 @@ function render() {
     top.appendChild(titleWrap);
     top.appendChild(tags);
 
-    const content = document.createElement('p');
-    content.className = 'content';
-    content.textContent = item.content;
+    const split = splitContent(item.content);
+    const contentGroup = document.createElement('div');
+    contentGroup.className = 'content-group';
+
+    const mainBlock = document.createElement('div');
+    mainBlock.className = 'copy-block';
+    const mainHead = document.createElement('div');
+    mainHead.className = 'copy-block-head';
+    const mainLabel = document.createElement('div');
+    mainLabel.className = 'copy-label';
+    mainLabel.textContent = 'Phần chính';
+    const mainCopyBtn = document.createElement('button');
+    mainCopyBtn.className = 'small ghost';
+    mainCopyBtn.type = 'button';
+    mainCopyBtn.textContent = 'Copy phần chính';
+    mainCopyBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      safeCopy(split.main)
+        .then(() => showToast('Đã copy phần chính'))
+        .catch(() => showToast('Copy thất bại'));
+    });
+    mainHead.appendChild(mainLabel);
+    mainHead.appendChild(mainCopyBtn);
+    const mainText = document.createElement('p');
+    mainText.className = 'content';
+    mainText.textContent = split.main;
+    mainBlock.appendChild(mainHead);
+    mainBlock.appendChild(mainText);
+    contentGroup.appendChild(mainBlock);
+
+    if (split.note) {
+      const noteBlock = document.createElement('div');
+      noteBlock.className = 'copy-block';
+      const noteHead = document.createElement('div');
+      noteHead.className = 'copy-block-head';
+      const noteLabel = document.createElement('div');
+      noteLabel.className = 'copy-label';
+      noteLabel.textContent = 'Ghi chú';
+      const noteCopyBtn = document.createElement('button');
+      noteCopyBtn.className = 'small ghost';
+      noteCopyBtn.type = 'button';
+      noteCopyBtn.textContent = 'Copy WD ABNORMAL';
+      noteCopyBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        safeCopy(split.note)
+          .then(() => showToast('Đã copy ghi chú'))
+          .catch(() => showToast('Copy thất bại'));
+      });
+      noteHead.appendChild(noteLabel);
+      noteHead.appendChild(noteCopyBtn);
+      const noteText = document.createElement('p');
+      noteText.className = 'content';
+      noteText.textContent = split.note;
+      noteBlock.appendChild(noteHead);
+      noteBlock.appendChild(noteText);
+      contentGroup.appendChild(noteBlock);
+    }
 
     const actions = document.createElement('div');
     actions.className = 'card-actions';
@@ -649,17 +745,17 @@ function render() {
     const copyBtn = document.createElement('button');
     copyBtn.className = 'small ghost';
     copyBtn.type = 'button';
-    copyBtn.textContent = 'Copy nội dung';
+    copyBtn.textContent = 'Copy toàn bộ';
     copyBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       safeCopy(item.content)
-        .then(() => showToast('Đã copy nội dung'))
+        .then(() => showToast('Đã copy toàn bộ'))
         .catch(() => showToast('Copy thất bại'));
     });
 
     actions.appendChild(copyBtn);
     card.appendChild(top);
-    card.appendChild(content);
+    card.appendChild(contentGroup);
     card.appendChild(actions);
     results.appendChild(card);
   });
