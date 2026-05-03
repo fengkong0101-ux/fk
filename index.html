@@ -23,7 +23,6 @@
       --shadow: 0 10px 28px rgba(16, 24, 40, 0.08);
       --shadow-strong: 0 14px 36px rgba(16, 24, 40, 0.12);
       --maxw: 1220px;
-      --sidebar-w: 320px;
     }
 
     [data-theme="dark"] {
@@ -212,22 +211,14 @@
       font-size: 13px;
     }
 
-    .layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) var(--sidebar-w);
-      gap: 16px;
-      align-items: start;
-      margin-top: 16px;
-    }
-
     .panel {
+      margin-top: 16px;
       background: var(--panel);
       border: 1px solid var(--border);
       border-radius: 18px;
       padding: 16px;
       box-shadow: var(--shadow);
       transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-      min-width: 0;
     }
 
     .results-head,
@@ -266,9 +257,7 @@
       transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease, background 0.25s ease;
     }
 
-    [data-theme="dark"] .card {
-      border-color: #303844;
-    }
+    [data-theme="dark"] .card { border-color: #303844; }
 
     .card:hover {
       transform: translateY(-2px);
@@ -282,6 +271,8 @@
       align-items: start;
       gap: 12px;
       margin-bottom: 10px;
+      cursor: pointer;
+      user-select: none;
     }
 
     .title {
@@ -289,13 +280,9 @@
       font-size: 18px;
       line-height: 1.35;
       color: var(--text);
-      cursor: pointer;
-      user-select: none;
     }
 
-    .title:hover {
-      color: var(--accent);
-    }
+    .title:hover { color: var(--accent); }
 
     .mini-tags {
       display: flex;
@@ -329,9 +316,7 @@
       transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease;
     }
 
-    [data-theme="dark"] .copy-block {
-      border-color: #333c49;
-    }
+    [data-theme="dark"] .copy-block { border-color: #333c49; }
 
     .copy-block:hover {
       border-color: var(--accent);
@@ -340,9 +325,7 @@
       background: rgba(255, 237, 213, 0.96);
     }
 
-    [data-theme="dark"] .copy-block:hover {
-      background: #252d3b;
-    }
+    [data-theme="dark"] .copy-block:hover { background: #252d3b; }
 
     .copy-block-head {
       display: flex;
@@ -468,9 +451,7 @@
       transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease;
     }
 
-    [data-theme="dark"] .sticky-item {
-      border-color: #333c49;
-    }
+    [data-theme="dark"] .sticky-item { border-color: #333c49; }
 
     .sticky-item:hover {
       transform: translateY(-1px);
@@ -493,25 +474,8 @@
       line-height: 1.5;
     }
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes cardIn {
-      from { opacity: 0; transform: translateY(10px) scale(0.988); }
-      to { opacity: 1; transform: translateY(0) scale(1); }
-    }
-
-    @media (max-width: 1080px) {
-      .layout {
-        grid-template-columns: 1fr;
-      }
-
-      :root {
-        --sidebar-w: auto;
-      }
-    }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes cardIn { from { opacity: 0; transform: translateY(10px) scale(0.988); } to { opacity: 1; transform: translateY(0) scale(1); } }
 
     @media (max-width: 760px) {
       body { padding: 14px; }
@@ -519,8 +483,7 @@
       .field { min-width: 100%; }
       .card-top { flex-direction: column; }
       .mini-tags { justify-content: flex-start; }
-      .results-head,
-      .sticky-head { align-items: flex-start; }
+      .results-head, .sticky-head { align-items: flex-start; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -550,30 +513,30 @@
       <button id="tabMine" class="tab-btn" type="button">NỘI DUNG CỦA TÔI</button>
     </div>
 
-    <div class="filters">
-      <div class="field">
-        <label for="systemSelect">Chọn Nhóm Lỗi</label>
-        <select id="systemSelect"></select>
+    <div id="mainArea">
+      <div class="filters">
+        <div class="field">
+          <label for="systemSelect">Chọn Nhóm Lỗi</label>
+          <select id="systemSelect"></select>
+        </div>
+        <div class="field">
+          <label for="groupSelect">Cách Xử Lý</label>
+          <select id="groupSelect"></select>
+        </div>
+        <div class="field">
+          <label for="searchBox">Tìm (tiêu đề / nội dung)</label>
+          <input id="searchBox" placeholder="Gõ từ khóa..." />
+        </div>
       </div>
-      <div class="field">
-        <label for="groupSelect">Cách Xử Lý</label>
-        <select id="groupSelect"></select>
-      </div>
-      <div class="field">
-        <label for="searchBox">Tìm (tiêu đề / nội dung)</label>
-        <input id="searchBox" placeholder="Gõ từ khóa..." />
-      </div>
-    </div>
 
-    <div class="stats">
-      <span class="badge" id="countBadge">0 mục</span>
-      <span class="badge" id="modeBadge">Chế độ rút gọn</span>
-      <span class="badge">Nhấn vào từng khung để copy</span>
-      <span class="badge">★ để lưu vào NỘI DUNG CỦA TÔI</span>
-    </div>
+      <div class="stats">
+        <span class="badge" id="countBadge">0 mục</span>
+        <span class="badge" id="modeBadge">Chế độ rút gọn</span>
+        <span class="badge">Nhấn vào từng khung để copy</span>
+        <span class="badge">★ để lưu vào NỘI DUNG CỦA TÔI</span>
+      </div>
 
-    <div class="layout">
-      <div class="panel">
+      <div class="panel" style="margin-top:16px;">
         <div class="results-head">
           <div class="results-title" id="resultsTitle">Kết quả sẽ hiển thị ở đây</div>
           <div style="display:flex; gap:8px; flex-wrap:wrap;">
@@ -583,8 +546,10 @@
         </div>
         <div id="results" class="grid"></div>
       </div>
+    </div>
 
-      <aside class="panel">
+    <div id="mineArea" style="display:none;">
+      <div class="panel" style="margin-top:16px;">
         <div class="sticky-head">
           <div>
             <div style="font-size:16px; font-weight:600; margin-bottom:4px; color: var(--text);">NỘI DUNG CỦA TÔI</div>
@@ -593,7 +558,7 @@
           <button id="clearStickyBtn" class="small ghost" type="button">Xóa tất cả</button>
         </div>
         <div id="stickyList" class="sticky-list"></div>
-      </aside>
+      </div>
     </div>
 
     <div class="footer">
@@ -611,7 +576,6 @@ const results = document.getElementById('results');
 const resultsTitle = document.getElementById('resultsTitle');
 const countBadge = document.getElementById('countBadge');
 const modeBadge = document.getElementById('modeBadge');
-const copyAllBtn = document.getElementById('copyAllBtn');
 const themeToggle = document.getElementById('themeToggle');
 const toast = document.getElementById('toast');
 const tabMain = document.getElementById('tabMain');
@@ -620,8 +584,10 @@ const toggleModeBtn = document.getElementById('toggleModeBtn');
 const clearFiltersBtn = document.getElementById('clearFiltersBtn');
 const stickyList = document.getElementById('stickyList');
 const clearStickyBtn = document.getElementById('clearStickyBtn');
+const mainArea = document.getElementById('mainArea');
+const mineArea = document.getElementById('mineArea');
 
-const THEME_KEY = 'risk_manager_theme_v3';
+const THEME_KEY = 'risk_manager_theme_v4';
 const STICKY_KEY = 'risk_manager_sticky_v1';
 const MODE_KEY = 'risk_manager_mode_v1';
 const TAB_KEY = 'risk_manager_tab_v1';
@@ -636,22 +602,17 @@ const DEFAULT_DATA = [
 let data = [];
 let stickyItems = [];
 let currentTab = localStorage.getItem(TAB_KEY) || 'main';
-let compactMode = localStorage.getItem(MODE_KEY) !== 'expanded'; // default compact
+let compactMode = localStorage.getItem(MODE_KEY) !== 'expanded';
 
 function safeCopy(text) {
-  if (navigator.clipboard && window.isSecureContext) {
-    return navigator.clipboard.writeText(text);
-  }
-
+  if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
   const textarea = document.createElement('textarea');
   textarea.value = text;
   textarea.style.position = 'fixed';
   textarea.style.left = '-9999px';
-  textarea.style.top = '0';
   document.body.appendChild(textarea);
   textarea.focus();
   textarea.select();
-
   try {
     const ok = document.execCommand('copy');
     document.body.removeChild(textarea);
@@ -669,9 +630,7 @@ function showToast(message) {
   showToast._timer = setTimeout(() => toast.classList.remove('show'), 1300);
 }
 
-function unique(values) {
-  return [...new Set(values)].sort();
-}
+function unique(values) { return [...new Set(values)].sort(); }
 
 function applyTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);
@@ -698,12 +657,7 @@ function saveSticky() {
 }
 
 function normalizeItem(item) {
-  return {
-    title: item.title,
-    content: item.content,
-    system: item.system,
-    group: item.group
-  };
+  return { title: item.title, content: item.content, system: item.system, group: item.group };
 }
 
 function isStickySaved(item) {
@@ -712,8 +666,7 @@ function isStickySaved(item) {
 }
 
 function addSticky(item) {
-  const exists = isStickySaved(item);
-  if (exists) {
+  if (isStickySaved(item)) {
     showToast('Đã có trong NỘI DUNG CỦA TÔI');
     return;
   }
@@ -743,54 +696,41 @@ function clearSticky() {
 function populateSystemOptions() {
   const current = systemSelect.value;
   const systems = unique(data.map(d => d.system));
-
   systemSelect.innerHTML = '';
   const optAll = document.createElement('option');
   optAll.value = '';
   optAll.textContent = 'Tất cả nhóm lỗi';
   systemSelect.appendChild(optAll);
-
   systems.forEach(system => {
     const opt = document.createElement('option');
     opt.value = system;
     opt.textContent = system;
     systemSelect.appendChild(opt);
   });
-
-  if (current && [...systemSelect.options].some(o => o.value === current)) {
-    systemSelect.value = current;
-  }
+  if (current && [...systemSelect.options].some(o => o.value === current)) systemSelect.value = current;
 }
 
 function populateGroupOptions() {
   const system = systemSelect.value;
   const current = groupSelect.value;
   const groups = system ? unique(data.filter(d => d.system === system).map(d => d.group)) : unique(data.map(d => d.group));
-
   groupSelect.innerHTML = '';
   const optAll = document.createElement('option');
   optAll.value = '';
   optAll.textContent = 'Tất cả cách xử lý';
   groupSelect.appendChild(optAll);
-
   groups.forEach(group => {
     const opt = document.createElement('option');
     opt.value = group;
     opt.textContent = group;
     groupSelect.appendChild(opt);
   });
-
-  if (current && [...groupSelect.options].some(o => o.value === current)) {
-    groupSelect.value = current;
-  }
+  if (current && [...groupSelect.options].some(o => o.value === current)) groupSelect.value = current;
 }
 
 function splitContent(text) {
   const match = text.match(/^(.*?)(?:\n+)?\*\s*WD ABNORMAL\s*(.*)$/is);
-  if (!match) {
-    return { main: text.trim(), note: null };
-  }
-
+  if (!match) return { main: text.trim(), note: null };
   const main = (match[1] || '').trim();
   const note = ('* WD ABNORMAL ' + (match[2] || '').trim()).trim();
   return { main, note };
@@ -800,7 +740,6 @@ function getFilteredData() {
   const system = systemSelect.value;
   const group = groupSelect.value;
   const q = searchBox.value.trim().toLowerCase();
-
   return data.filter(item => {
     if (system && item.system !== system) return false;
     if (group && item.group !== group) return false;
@@ -990,7 +929,6 @@ function render() {
 
     const saveRow = document.createElement('div');
     saveRow.className = 'card-actions';
-
     const saveBtn = document.createElement('button');
     saveBtn.className = 'small ghost';
     saveBtn.type = 'button';
@@ -999,7 +937,6 @@ function render() {
       e.stopPropagation();
       addSticky(item);
     });
-
     saveRow.appendChild(saveBtn);
 
     card.appendChild(top);
@@ -1010,46 +947,22 @@ function render() {
   });
 }
 
-function copyAllVisible() {
-  const filtered = getFilteredData();
-  if (!filtered.length) {
-    showToast('Không có nội dung để copy');
-    return;
-  }
-
-  const text = filtered.map(item => `Tiêu đề: ${item.title}\n${item.content}`).join('\n\n----------------\n\n');
-  safeCopy(text)
-    .then(() => showToast('Đã copy toàn bộ kết quả'))
-    .catch(() => showToast('Copy thất bại'));
-}
-
 function setTab(tab) {
   currentTab = tab;
   localStorage.setItem(TAB_KEY, tab);
   tabMain.classList.toggle('active', tab === 'main');
   tabMine.classList.toggle('active', tab === 'mine');
 
-  const filtersVisible = tab === 'main';
-  document.querySelector('.filters').style.display = filtersVisible ? 'flex' : 'none';
-  countBadge.style.display = filtersVisible ? 'inline-flex' : 'none';
-  modeBadge.style.display = filtersVisible ? 'inline-flex' : 'none';
-  document.getElementById('resultsTitle').style.display = filtersVisible ? 'block' : 'none';
-  copyAllBtn.style.display = filtersVisible ? 'inline-flex' : 'none';
-  toggleModeBtn.style.display = filtersVisible ? 'inline-flex' : 'none';
-  clearFiltersBtn.style.display = filtersVisible ? 'inline-flex' : 'none';
-  results.style.display = filtersVisible ? 'grid' : 'none';
-  stickyList.parentElement.style.display = tab === 'mine' ? 'block' : 'none';
+  const mainVisible = tab === 'main';
+  mainArea.style.display = mainVisible ? 'block' : 'none';
+  mineArea.style.display = mainVisible ? 'none' : 'block';
 
-  if (tab === 'mine') {
-    renderSticky();
-  } else {
-    render();
-  }
+  if (mainVisible) render(); else renderSticky();
 }
 
 tabMain.addEventListener('click', () => setTab('main'));
 tabMine.addEventListener('click', () => setTab('mine'));
-copyAllBtn.addEventListener('click', copyAllVisible);
+
 themeToggle.addEventListener('click', () => {
   const current = document.documentElement.getAttribute('data-theme') || 'light';
   applyTheme(current === 'dark' ? 'light' : 'dark');
@@ -1087,24 +1000,27 @@ searchBox.addEventListener('input', render);
 initTheme();
 loadSticky();
 
-fetch('data.json')
+// start with defaults so UI is never empty even if data.json fails
+function initializeWithData(arr) {
+  data = Array.isArray(arr) && arr.length ? arr : DEFAULT_DATA.slice();
+  populateSystemOptions();
+  populateGroupOptions();
+  renderSticky();
+  setTab(currentTab);
+}
+
+initializeWithData(DEFAULT_DATA);
+
+fetch('./data.json', { cache: 'no-store' })
   .then(r => {
     if (!r.ok) throw new Error('data.json not found');
     return r.json();
   })
   .then(arr => {
-    data = Array.isArray(arr) ? arr : DEFAULT_DATA.slice();
-    populateSystemOptions();
-    populateGroupOptions();
-    renderSticky();
-    setTab(currentTab);
+    initializeWithData(arr);
   })
   .catch(() => {
-    data = DEFAULT_DATA.slice();
-    populateSystemOptions();
-    populateGroupOptions();
-    renderSticky();
-    setTab(currentTab);
+    // keep DEFAULT_DATA
   });
 </script>
 </body>
