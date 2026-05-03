@@ -574,7 +574,7 @@ function unique(values) {
 
 function applyTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);
-  themeToggle.textContent = theme === 'dark' ? 'Chuyển sang Light Mode' : 'Chuyển sang Dark';
+  themeToggle.textContent = theme === 'dark' ? 'Chuyển sang Light Mode' : 'Chuyển sang Dark Mode';
   localStorage.setItem(THEME_KEY, theme);
 }
 
