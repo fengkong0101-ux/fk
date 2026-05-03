@@ -475,7 +475,7 @@
         <p class="lead">Chọn Nhóm Lỗi rồi xem kết quả theo từng ô riêng. Nhấn vào từng khung để copy đúng phần đó. Nếu nội dung có thêm ghi chú như <strong>* WD ABNORMAL</strong>, hệ thống sẽ tự tách thành 2 phần để copy riêng cho nhanh.</p>
       </div>
       <div class="controls-top">
-        <button id="themeToggle" class="theme-toggle" type="button">Chuyển sang Dark</button>
+        <button id="themeToggle" class="theme-toggle" type="button">Chuyển sang Dark Mode</button>
       </div>
     </div>
 
@@ -496,8 +496,8 @@
 
     <div class="stats">
       <span class="badge" id="countBadge">0 mục</span>
-      <span class="badge">Nhấn vào từng khung để copy</span>
-      <span class="badge">Tone cam rất nhạt</span>
+      <span class="badge">Không rõ nguồn tiền → không duyệt • Không chắc → hỏi cấp trên • Không suy đoán theo cảm tính • Mọi quyết định đều phải giải thích được</span>
+      <span class="badge">XỬ LÝ NHANH - CHÍNH XÁC - HẠN CHẾ SAI SÓT</span>
     </div>
 
     <div class="panel">
@@ -574,7 +574,7 @@ function unique(values) {
 
 function applyTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);
-  themeToggle.textContent = theme === 'dark' ? 'Chuyển sang Light' : 'Chuyển sang Dark';
+  themeToggle.textContent = theme === 'dark' ? 'Chuyển sang Light Mode' : 'Chuyển sang Dark';
   localStorage.setItem(THEME_KEY, theme);
 }
 
@@ -716,7 +716,7 @@ function render() {
     const mainCopyBtn = document.createElement('button');
     mainCopyBtn.className = 'small ghost';
     mainCopyBtn.type = 'button';
-    mainCopyBtn.textContent = 'Copy phần chính';
+    mainCopyBtn.textContent = 'Copy Nội Dung';
     mainHead.appendChild(mainLabel);
     mainHead.appendChild(mainCopyBtn);
     const mainText = document.createElement('p');
@@ -724,8 +724,8 @@ function render() {
     mainText.textContent = split.main;
     mainBlock.appendChild(mainHead);
     mainBlock.appendChild(mainText);
-    attachCopyOnClick(mainBlock, split.main, 'Đã copy phần chính');
-    attachCopyOnClick(mainCopyBtn, split.main, 'Đã copy phần chính');
+    attachCopyOnClick(mainBlock, split.main, 'Đã copy nội dung');
+    attachCopyOnClick(mainCopyBtn, split.main, 'Đã copy nội dung');
     contentGroup.appendChild(mainBlock);
 
     if (split.note) {
@@ -739,7 +739,7 @@ function render() {
       const noteCopyBtn = document.createElement('button');
       noteCopyBtn.className = 'small ghost';
       noteCopyBtn.type = 'button';
-      noteCopyBtn.textContent = 'Copy WD ABNORMAL';
+      noteCopyBtn.textContent = 'Copy Ghi Chú';
       noteHead.appendChild(noteLabel);
       noteHead.appendChild(noteCopyBtn);
       const noteText = document.createElement('p');
