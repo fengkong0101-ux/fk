@@ -297,6 +297,15 @@
       border-radius: 14px;
       background: rgba(127, 127, 127, 0.03);
       padding: 12px;
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+    }
+
+    .copy-block:hover {
+      border-color: var(--accent);
+      box-shadow: 0 10px 22px rgba(16, 24, 40, 0.06);
+      transform: translateY(-1px);
+      background: var(--accent-soft);
     }
 
     .copy-block-head {
@@ -447,7 +456,7 @@
     <div class="topbar">
       <div>
         <h1>Quản lý Rủi ro (Risk Manager) <span>- @Ren</span></h1>
-        <p class="lead">Chọn Nhóm Lỗi rồi xem kết quả theo từng ô riêng. Nếu nội dung có thêm ghi chú như <strong>* WD ABNORMAL</strong>, hệ thống sẽ tự tách thành 2 phần để copy riêng cho nhanh.</p>
+        <p class="lead">Chọn Nhóm Lỗi rồi xem kết quả theo từng ô riêng. Nhấn vào từng khung để copy đúng phần đó. Nếu nội dung có thêm ghi chú như <strong>* WD ABNORMAL</strong>, hệ thống sẽ tự tách thành 2 phần để copy riêng cho nhanh.</p>
       </div>
       <div class="controls-top">
         <button id="themeToggle" class="theme-toggle" type="button">Chuyển sang Dark</button>
@@ -471,7 +480,7 @@
 
     <div class="stats">
       <span class="badge" id="countBadge">0 mục</span>
-      <span class="badge">Click nút để copy</span>
+      <span class="badge">Nhấn vào từng khung để copy</span>
       <span class="badge">Tự tách WD ABNORMAL</span>
     </div>
 
@@ -484,7 +493,7 @@
     </div>
 
     <div class="footer">
-      <div class="hint">Dữ liệu được nạp từ file data.json nếu có. Nếu file không tải được, hệ thống tự chuyển sang dữ liệu mặc định để không bị trống.</div>
+      <div>Dữ liệu được nạp từ file data.json nếu có. Nếu file không tải được, hệ thống tự chuyển sang dữ liệu mặc định để không bị trống.</div>
     </div>
   </div>
 
@@ -628,6 +637,15 @@ function getFilteredData() {
   });
 }
 
+function attachCopyOnClick(element, text, toastMessage) {
+  element.addEventListener('click', (e) => {
+    e.stopPropagation();
+    safeCopy(text)
+      .then(() => showToast(toastMessage))
+      .catch(() => showToast('Copy thất bại'));
+  });
+}
+
 function render() {
   const filtered = getFilteredData();
   results.innerHTML = '';
@@ -683,12 +701,6 @@ function render() {
     mainCopyBtn.className = 'small ghost';
     mainCopyBtn.type = 'button';
     mainCopyBtn.textContent = 'Copy phần chính';
-    mainCopyBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      safeCopy(split.main)
-        .then(() => showToast('Đã copy phần chính'))
-        .catch(() => showToast('Copy thất bại'));
-    });
     mainHead.appendChild(mainLabel);
     mainHead.appendChild(mainCopyBtn);
     const mainText = document.createElement('p');
@@ -696,6 +708,8 @@ function render() {
     mainText.textContent = split.main;
     mainBlock.appendChild(mainHead);
     mainBlock.appendChild(mainText);
+    attachCopyOnClick(mainBlock, split.main, 'Đã copy phần chính');
+    attachCopyOnClick(mainCopyBtn, split.main, 'Đã copy phần chính');
     contentGroup.appendChild(mainBlock);
 
     if (split.note) {
@@ -710,12 +724,6 @@ function render() {
       noteCopyBtn.className = 'small ghost';
       noteCopyBtn.type = 'button';
       noteCopyBtn.textContent = 'Copy WD ABNORMAL';
-      noteCopyBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        safeCopy(split.note)
-          .then(() => showToast('Đã copy ghi chú'))
-          .catch(() => showToast('Copy thất bại'));
-      });
       noteHead.appendChild(noteLabel);
       noteHead.appendChild(noteCopyBtn);
       const noteText = document.createElement('p');
@@ -723,6 +731,8 @@ function render() {
       noteText.textContent = split.note;
       noteBlock.appendChild(noteHead);
       noteBlock.appendChild(noteText);
+      attachCopyOnClick(noteBlock, split.note, 'Đã copy ghi chú');
+      attachCopyOnClick(noteCopyBtn, split.note, 'Đã copy ghi chú');
       contentGroup.appendChild(noteBlock);
     }
 
