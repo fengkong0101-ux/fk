@@ -1026,12 +1026,14 @@ function render() {
     expandHint.style.color = 'var(--muted)';
     expandHint.textContent = isOpen ? 'Nhấn tiêu đề để thu gọn' : 'Nhấn tiêu đề để mở nội dung';
 
-    top.addEventListener('click', () => {
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('button')) return;
+      if (e.target.closest('.content-group')) return;
       const nowOpen = card.dataset.open !== '1';
       card.dataset.open = nowOpen ? '1' : '0';
       contentGroup.style.display = nowOpen ? 'grid' : 'none';
       chev.textContent = nowOpen ? '⌃' : '⌄';
-      expandHint.textContent = nowOpen ? 'Nhấn tiêu đề để thu gọn' : 'Nhấn tiêu đề để mở nội dung';
+      expandHint.textContent = nowOpen ? 'Nhấn vào card tiêu đề để thu gọn' : 'Nhấn vào card tiêu đề để mở nội dung';
     });
 
     const saveRow = document.createElement('div');
