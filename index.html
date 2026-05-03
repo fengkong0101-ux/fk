@@ -766,6 +766,8 @@ function renderSticky() {
   }
 
   stickyItems.forEach((item, index) => {
+    const split = splitContent(item.content);
+
     const box = document.createElement('div');
     box.className = 'sticky-item';
 
@@ -773,21 +775,79 @@ function renderSticky() {
     title.className = 'sticky-item-title';
     title.textContent = item.title;
 
-    const content = document.createElement('p');
-    content.className = 'sticky-item-content';
-    content.textContent = item.content;
+    const meta = document.createElement('div');
+    meta.style.display = 'flex';
+    meta.style.gap = '6px';
+    meta.style.flexWrap = 'wrap';
+    meta.style.marginBottom = '8px';
+
+    [item.system, item.group].forEach(tagText => {
+      const tag = document.createElement('span');
+      tag.className = 'tag';
+      tag.textContent = tagText;
+      meta.appendChild(tag);
+    });
+
+    const contentGroup = document.createElement('div');
+    contentGroup.className = 'content-group';
+
+    const mainBlock = document.createElement('div');
+    mainBlock.className = 'copy-block';
+    const mainHead = document.createElement('div');
+    mainHead.className = 'copy-block-head';
+    const mainLabel = document.createElement('div');
+    mainLabel.className = 'copy-label';
+    mainLabel.textContent = 'Phần chính';
+    const mainCopyBtn = document.createElement('button');
+    mainCopyBtn.className = 'small ghost';
+    mainCopyBtn.type = 'button';
+    mainCopyBtn.textContent = 'Copy phần chính';
+    mainHead.appendChild(mainLabel);
+    mainHead.appendChild(mainCopyBtn);
+    const mainText = document.createElement('p');
+    mainText.className = 'content';
+    mainText.textContent = split.main;
+    mainBlock.appendChild(mainHead);
+    mainBlock.appendChild(mainText);
+    attachCopyOnClick(mainBlock, split.main, 'Đã copy phần chính');
+    attachCopyOnClick(mainCopyBtn, split.main, 'Đã copy phần chính');
+    contentGroup.appendChild(mainBlock);
+
+    if (split.note) {
+      const noteBlock = document.createElement('div');
+      noteBlock.className = 'copy-block';
+      const noteHead = document.createElement('div');
+      noteHead.className = 'copy-block-head';
+      const noteLabel = document.createElement('div');
+      noteLabel.className = 'copy-label';
+      noteLabel.textContent = 'Ghi chú';
+      const noteCopyBtn = document.createElement('button');
+      noteCopyBtn.className = 'small ghost';
+      noteCopyBtn.type = 'button';
+      noteCopyBtn.textContent = 'Copy WD ABNORMAL';
+      noteHead.appendChild(noteLabel);
+      noteHead.appendChild(noteCopyBtn);
+      const noteText = document.createElement('p');
+      noteText.className = 'content';
+      noteText.textContent = split.note;
+      noteBlock.appendChild(noteHead);
+      noteBlock.appendChild(noteText);
+      attachCopyOnClick(noteBlock, split.note, 'Đã copy ghi chú');
+      attachCopyOnClick(noteCopyBtn, split.note, 'Đã copy ghi chú');
+      contentGroup.appendChild(noteBlock);
+    }
 
     const actions = document.createElement('div');
     actions.className = 'sticky-actions';
 
-    const copyBtn = document.createElement('button');
-    copyBtn.className = 'small ghost';
-    copyBtn.type = 'button';
-    copyBtn.textContent = 'Copy';
-    copyBtn.addEventListener('click', (e) => {
+    const copyAllBtn = document.createElement('button');
+    copyAllBtn.className = 'small ghost';
+    copyAllBtn.type = 'button';
+    copyAllBtn.textContent = 'Copy toàn bộ';
+    copyAllBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       safeCopy(item.content)
-        .then(() => showToast('Đã copy'))
+        .then(() => showToast('Đã copy toàn bộ'))
         .catch(() => showToast('Copy thất bại'));
     });
 
@@ -800,11 +860,12 @@ function renderSticky() {
       removeSticky(index);
     });
 
-    actions.appendChild(copyBtn);
+    actions.appendChild(copyAllBtn);
     actions.appendChild(removeBtn);
 
     box.appendChild(title);
-    box.appendChild(content);
+    box.appendChild(meta);
+    box.appendChild(contentGroup);
     box.appendChild(actions);
 
     box.addEventListener('click', (e) => {
