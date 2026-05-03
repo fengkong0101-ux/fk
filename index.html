@@ -602,7 +602,8 @@
       <div class="stats">
         <span class="badge" id="countBadge">0 mục</span>
         <span class="badge" id="modeBadge">Chế độ rút gọn</span>
-        <span class="badge">Nhấn tiêu đề để mở nội dung</span>
+        <span class="badge">Không rõ nguồn tiền → không duyệt • Không chắc → hỏi cấp trên • Không suy đoán theo cảm tính • Mọi quyết định đều phải giải thích được</span>
+        <span class="badge">XỬ LÝ NHANH - CHÍNH XÁC - HẠN CHẾ SAI SÓT</span>
         <span class="badge">★ để lưu vào NỘI DUNG CỦA TÔI</span>
       </div>
 
@@ -1073,7 +1074,7 @@ function render() {
     const mainCopyBtn = document.createElement('button');
     mainCopyBtn.className = 'small ghost';
     mainCopyBtn.type = 'button';
-    mainCopyBtn.textContent = 'Copy phần chính';
+    mainCopyBtn.textContent = 'Copy nội dung đăng nhóm';
     mainHead.appendChild(mainLabel);
     mainHead.appendChild(mainCopyBtn);
     const mainText = document.createElement('p');
@@ -1081,8 +1082,8 @@ function render() {
     mainText.textContent = split.main;
     mainBlock.appendChild(mainHead);
     mainBlock.appendChild(mainText);
-    attachCopyOnClick(mainBlock, split.main, 'Đã copy phần chính');
-    attachCopyOnClick(mainCopyBtn, split.main, 'Đã copy phần chính');
+    attachCopyOnClick(mainBlock, split.main, 'Đã Copy nội dung đăng nhóm');
+    attachCopyOnClick(mainCopyBtn, split.main, 'Đã Copy nội dung đăng nhóm');
     contentGroup.appendChild(mainBlock);
 
     if (split.note) {
@@ -1096,7 +1097,7 @@ function render() {
       const noteCopyBtn = document.createElement('button');
       noteCopyBtn.className = 'small ghost';
       noteCopyBtn.type = 'button';
-      noteCopyBtn.textContent = 'Copy WD ABNORMAL';
+      noteCopyBtn.textContent = 'Copy ghi chú';
       noteHead.appendChild(noteLabel);
       noteHead.appendChild(noteCopyBtn);
       const noteText = document.createElement('p');
