@@ -219,6 +219,7 @@
       padding: 16px;
       box-shadow: var(--shadow);
       transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      min-width: 0;
     }
 
     .results-head,
@@ -235,6 +236,14 @@
     .sticky-title {
       font-size: 14px;
       color: var(--muted);
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) var(--sidebar-w, 320px);
+      gap: 16px;
+      align-items: start;
+      margin-top: 16px;
     }
 
     .grid {
@@ -275,11 +284,35 @@
       user-select: none;
     }
 
+    .card-top .title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+      flex: 1;
+    }
+
+    .chev {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--accent-soft);
+      color: var(--accent);
+      flex: 0 0 auto;
+      transition: transform 0.2s ease;
+    }
+
+    .card[data-open="1"] .chev { transform: rotate(180deg); }
+
     .title {
       margin: 0;
       font-size: 18px;
       line-height: 1.35;
       color: var(--text);
+      word-break: break-word;
     }
 
     .title:hover { color: var(--accent); }
@@ -477,6 +510,11 @@
     @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes cardIn { from { opacity: 0; transform: translateY(10px) scale(0.988); } to { opacity: 1; transform: translateY(0) scale(1); } }
 
+    @media (max-width: 1080px) {
+      .layout { grid-template-columns: 1fr; }
+      :root { --sidebar-w: auto; }
+    }
+
     @media (max-width: 760px) {
       body { padding: 14px; }
       .wrap { padding: 16px; border-radius: 18px; }
@@ -501,7 +539,7 @@
     <div class="topbar">
       <div>
         <h1>Quản lý Rủi ro (Risk Manager) <span>- @Ren</span></h1>
-        <p class="lead">Chọn Nhóm Lỗi để xem nội dung. Nhấn vào từng khung để sao chép. Khi nội dung có thêm ghi chú như <strong>* WD ABNORMAL</strong>, hệ thống sẽ tự tách riêng để dùng nhanh hơn.</p>
+        <p class="lead">Chọn Nhóm Lỗi để xem nội dung. Nhấn vào tiêu đề để mở/thu gọn. Khi nội dung có thêm ghi chú như <strong>* WD ABNORMAL</strong>, hệ thống sẽ tự tách riêng để dùng nhanh hơn.</p>
       </div>
       <div class="controls-top">
         <button id="themeToggle" class="theme-toggle" type="button">Chuyển sang Dark</button>
@@ -532,7 +570,7 @@
       <div class="stats">
         <span class="badge" id="countBadge">0 mục</span>
         <span class="badge" id="modeBadge">Chế độ rút gọn</span>
-        <span class="badge">Nhấn vào từng khung để copy</span>
+        <span class="badge">Nhấn tiêu đề để mở nội dung</span>
         <span class="badge">★ để lưu vào NỘI DUNG CỦA TÔI</span>
       </div>
 
@@ -610,6 +648,7 @@ function safeCopy(text) {
   textarea.value = text;
   textarea.style.position = 'fixed';
   textarea.style.left = '-9999px';
+  textarea.style.top = '0';
   document.body.appendChild(textarea);
   textarea.focus();
   textarea.select();
@@ -767,7 +806,6 @@ function renderSticky() {
 
   stickyItems.forEach((item, index) => {
     const split = splitContent(item.content);
-
     const box = document.createElement('div');
     box.className = 'sticky-item';
 
@@ -780,7 +818,6 @@ function renderSticky() {
     meta.style.gap = '6px';
     meta.style.flexWrap = 'wrap';
     meta.style.marginBottom = '8px';
-
     [item.system, item.group].forEach(tagText => {
       const tag = document.createElement('span');
       tag.className = 'tag';
@@ -908,9 +945,17 @@ function render() {
     top.className = 'card-top';
 
     const titleWrap = document.createElement('div');
+    titleWrap.className = 'title-wrap';
+
+    const chev = document.createElement('div');
+    chev.className = 'chev';
+    chev.textContent = '⌄';
+
     const h4 = document.createElement('h4');
     h4.className = 'title';
     h4.textContent = item.title;
+
+    titleWrap.appendChild(chev);
     titleWrap.appendChild(h4);
 
     const tags = document.createElement('div');
@@ -985,6 +1030,7 @@ function render() {
       const nowOpen = card.dataset.open !== '1';
       card.dataset.open = nowOpen ? '1' : '0';
       contentGroup.style.display = nowOpen ? 'grid' : 'none';
+      chev.textContent = nowOpen ? '⌃' : '⌄';
       expandHint.textContent = nowOpen ? 'Nhấn tiêu đề để thu gọn' : 'Nhấn tiêu đề để mở nội dung';
     });
 
@@ -1013,12 +1059,17 @@ function setTab(tab) {
   localStorage.setItem(TAB_KEY, tab);
   tabMain.classList.toggle('active', tab === 'main');
   tabMine.classList.toggle('active', tab === 'mine');
+  mainArea.style.display = tab === 'main' ? 'block' : 'none';
+  mineArea.style.display = tab === 'mine' ? 'block' : 'none';
+  if (tab === 'main') render(); else renderSticky();
+}
 
-  const mainVisible = tab === 'main';
-  mainArea.style.display = mainVisible ? 'block' : 'none';
-  mineArea.style.display = mainVisible ? 'none' : 'block';
-
-  if (mainVisible) render(); else renderSticky();
+function initializeWithData(arr) {
+  data = Array.isArray(arr) && arr.length ? arr : DEFAULT_DATA.slice();
+  populateSystemOptions();
+  populateGroupOptions();
+  renderSticky();
+  setTab(currentTab);
 }
 
 tabMain.addEventListener('click', () => setTab('main'));
@@ -1060,16 +1111,6 @@ searchBox.addEventListener('input', render);
 
 initTheme();
 loadSticky();
-
-// start with defaults so UI is never empty even if data.json fails
-function initializeWithData(arr) {
-  data = Array.isArray(arr) && arr.length ? arr : DEFAULT_DATA.slice();
-  populateSystemOptions();
-  populateGroupOptions();
-  renderSticky();
-  setTab(currentTab);
-}
-
 initializeWithData(DEFAULT_DATA);
 
 fetch('./data.json', { cache: 'no-store' })
@@ -1077,12 +1118,8 @@ fetch('./data.json', { cache: 'no-store' })
     if (!r.ok) throw new Error('data.json not found');
     return r.json();
   })
-  .then(arr => {
-    initializeWithData(arr);
-  })
-  .catch(() => {
-    // keep DEFAULT_DATA
-  });
+  .then(arr => initializeWithData(arr))
+  .catch(() => {});
 </script>
 </body>
 </html>
