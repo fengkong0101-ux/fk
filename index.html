@@ -581,6 +581,9 @@
     <div class="tabs">
       <button id="tabMain" class="tab-btn active" type="button">Danh sách</button>
       <button id="tabMine" class="tab-btn" type="button">NỘI DUNG CỦA TÔI</button>
+
+      <button id="tabRules" class="tab-btn" type="button">QUY TẮC LÀM VIỆC</button>
+
     </div>
 
     <div id="mainArea">
@@ -633,6 +636,25 @@
       </div>
     </div>
 
+
+    <div id="rulesArea" style="display:none;">
+      <div class="panel" style="margin-top:16px;">
+        <div class="sticky-head">
+          <div>
+            <div style="font-size:16px; font-weight:600; margin-bottom:4px; color: var(--text);">
+              QUY TẮC LÀM VIỆC
+            </div>
+            <div class="sticky-title">
+              Nội dung được load từ file rules.js
+            </div>
+          </div>
+        </div>
+
+        <div id="rulesList" class="sticky-list"></div>
+      </div>
+    </div>
+
+
     <div class="footer">
       <div>Dữ liệu được nạp từ file data.json nếu có. Nếu file không tải được, hệ thống tự chuyển sang dữ liệu mặc định để không bị trống.</div>
     </div>
@@ -659,6 +681,47 @@ const stickyModeBtn = document.getElementById('stickyModeBtn');
 const clearStickyBtn = document.getElementById('clearStickyBtn');
 const mainArea = document.getElementById('mainArea');
 const mineArea = document.getElementById('mineArea');
+
+const tabRules = document.getElementById('tabRules');
+const rulesArea = document.getElementById('rulesArea');
+
+let rulesData = [];
+
+tabRules.addEventListener('click', () => setTab('rules'));
+
+function renderRules() {
+
+  const rulesList = document.getElementById('rulesList');
+
+  if (!rulesList) return;
+
+  rulesList.innerHTML = '';
+
+  if (!Array.isArray(rulesData) || !rulesData.length) {
+
+    rulesList.innerHTML = '<div class="empty">Không có dữ liệu rules.js</div>';
+
+    return;
+  }
+
+  rulesData.forEach((item) => {
+
+    const box = document.createElement('div');
+
+    box.className = 'sticky-item';
+
+    box.innerHTML = `
+      <div class="sticky-item-title">${item.title}</div>
+      <div class="sticky-item-content">${item.content}</div>
+    `;
+
+    rulesList.appendChild(box);
+
+  });
+
+}
+
+
 
 const THEME_KEY = 'risk_manager_theme_v4';
 const STICKY_KEY = 'risk_manager_sticky_v1';
@@ -1149,11 +1212,22 @@ function render() {
 function setTab(tab) {
   currentTab = tab;
   localStorage.setItem(TAB_KEY, tab);
+
   tabMain.classList.toggle('active', tab === 'main');
   tabMine.classList.toggle('active', tab === 'mine');
+  tabRules.classList.toggle('active', tab === 'rules');
+
   mainArea.style.display = tab === 'main' ? 'block' : 'none';
   mineArea.style.display = tab === 'mine' ? 'block' : 'none';
-  if (tab === 'main') render(); else renderSticky();
+  rulesArea.style.display = tab === 'rules' ? 'block' : 'none';
+
+  if (tab === 'main') {
+    render();
+  } else if (tab === 'mine') {
+    renderSticky();
+  } else if (tab === 'rules') {
+    renderRules();
+  }
 }
 
 function initializeWithData(arr) {
@@ -1211,6 +1285,12 @@ initTheme();
 loadSticky();
 initializeWithData(DEFAULT_DATA);
 
+if (typeof RULES_DATA !== 'undefined') {
+  rulesData = RULES_DATA;
+}
+
+
+
 fetch('./data.json', { cache: 'no-store' })
   .then(r => {
     if (!r.ok) throw new Error('data.json not found');
@@ -1219,5 +1299,6 @@ fetch('./data.json', { cache: 'no-store' })
   .then(arr => initializeWithData(arr))
   .catch(() => {});
 </script>
+<script src="./rules.js"></script>
 </body>
 </html>
