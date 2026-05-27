@@ -8,20 +8,20 @@
   {
     "system": "ĐẶT CƯỢC CỐ ĐỊNH SỐ TIỀN NHỎ",
     "group": "TỪ CHỐI",
-    "title": "CHƠI QUAY HỦ ĐẶT CƯỢC CỐ ĐỊNH  SỐ TIỀN NHỎ (Nạp dưới 500 cược cố định dưới 2 đồng và nạp từ 500 đến 2k cược dưới 3đ là vi phạm) - TỪ CHỐI NHÂN 3 VÒNG CƯỢC",
-    "content": "*会员ID : \n*拒绝原因l: *拒绝原因:单一金额低额重复投注，以自动投注为主，刷优惠套利.\n*会员风险评级: 中度怀疑\n*结论: 让会员继续投注，流水 ×3\n*  WD ABNORMAL FIXED LOW BET [NGÀY] "
+    "title": "CHƠI QUAY HỦ ĐẶT CƯỢC CỐ ĐỊNH  SỐ TIỀN NHỎ - TỪ CHỐI NHÂN 3 VÒNG CƯỢC",
+    "content": "*会员ID : \n*拒绝原因:单一金额低额重复投注，以自动投注为主，刷优惠套利.\n*会员风险评级: 中度怀疑\n*结论: 让会员继续投注，流水 ×3\n*  WD ABNORMAL FIXED LOW BET [NGÀY] "
   },
-  {
+   {
     "system": "ĐẶT CƯỢC CỐ ĐỊNH SỐ TIỀN NHỎ",
     "group": "KHẤU TRẢ NẠP",
-    "title": "CHƠI QUAY HỦ ĐẶT CƯỢC CỐ ĐỊNH  SỐ TIỀN NHỎ (Nạp dưới 500 cược cố định dưới 2 đồng và nạp từ 500 đến 2k cược dưới 3đ là vi phạm) - KHẤU TRẢ NẠP",
-    "content": "*会员ID : \n*拒绝原因l: *拒绝原因:单一金额低额重复投注，以自动投注为主，刷优惠套利.\n*会员风险评级: 有问题\n*结论: 扣除全部余额并退还押金\n*  WD ABNORMAL FIXED LOW BET [NGÀY] "
+    "title": "CHƠI QUAY HỦ ĐẶT CƯỢC CỐ ĐỊNH  SỐ TIỀN NHỎ - KHẤU TRẢ NẠP",
+    "content": "*会员ID : \n*拒绝原因:单一金额低额重复投注，以自动投注为主，刷优惠套利.\n*会员风险评级: 有问题\n*结论: 扣除全部余额并退还押金\n*  WD ABNORMAL FIXED LOW BET [NGÀY] "
   },
-  {
+   {
     "system": "ĐẶT CƯỢC CỐ ĐỊNH SỐ TIỀN NHỎ",
     "group": "KHÓA TÀI KHOẢN",
-    "title": "CHƠI QUAY HỦ ĐẶT CƯỢC CỐ ĐỊNH  SỐ TIỀN NHỎ (Nạp dưới 500 cược cố định dưới 2 đồng và nạp từ 500 đến 2k cược dưới 3đ là vi phạm) - KHÓA TÀI KHOẢN",
-    "content": "*会员ID : \n*拒绝原因l: *拒绝原因:单一金额低额重复投注，以自动投注为主，刷优惠套利.\n*会员风险评级: 有问题\n*结论: 冻结\n* ABNORMAL FIXED LOW BET - FREEZE ACCOUNT"
+    "title": "CHƠI QUAY HỦ ĐẶT CƯỢC CỐ ĐỊNH  SỐ TIỀN NHỎ - KHÓA TÀI KHOẢN",
+    "content": "*会员ID : \n*拒绝原因:单一金额低额重复投注，以自动投注为主，刷优惠套利.\n*会员风险评级: 有问题\n*结论: 冻结\n* WD ABNORMAL FIXED LOW BET - FREEZE ACCOUNT"
   },
   {
     "system": "BIỆN PHÁP XỬ LÝ HỆ THỐNG",
@@ -63,36 +63,36 @@
     "system": "NHẬN 500 VÒNG QUAY",
     "group": "TRÙNG IP",
     "title": "NHẬN 500 VÒNG QUAY TRÙNG IP (KHẤU TRỪ THƯỞNG)",
-    "content": "*会员ID : \n*拒绝原因 : 由于与下属IP地址和设备相同，无法领取邀请奖金\n*会员风险评级 : 有问题\n*结论 : 扣除全部余额并退还押金"
+    "content": "*会员ID : \n*拒绝原因 : 由于与下属IP地址和设备相同，无法领取邀请奖金\n*会员风险评级 : 有问题\n*结论 : 扣除全部余额并退还押金\n* WD ABNORMAL SELF-INVITE [NGÀY]"
   },
   {
     "system": "NHẬN 500 VÒNG QUAY",
     "group": "NHẬN THƯỞNG KHÔNG NẠP",
-    "title": "NHẬN 500 VÒNG QUAY KHÔNG NẠP (TỪ CHỐI  LẦN T3 TREO)",
-    "content": "**会员ID :\n*拒绝原因 : 本人未充值，下级代理也未充值。\n*时间: 1\n*会员风险评级 : 中嫌疑\n*结论 :  要求成员充值。"
+    "title": "NHẬN 500 VÒNG QUAY KHÔNG NẠP - TỪ CHỐI YÊU CẦU NẠP THÊM TIỀN",
+    "content": "**会员ID :\n*拒绝原因 : 本人未充值，下级代理也未充值。\n*时间: 1\n*会员风险评级 : 中嫌疑\n*结论 :  要求成员充值。\n* WD ABNORMAL Insufficient deposit [NGÀY]"
   },
   {
     "system": "NHẬN 500 VÒNG QUAY",
     "group": "NHẬN THƯỞNG CÓ NẠP",
-    "title": "NHẬN 500 VÒNG QUAY BẢN THÂN HOẶC CẤP DƯỚI CÓ NẠP (TỪ CHỐI  LẦN T3 TREO)",
-    "content": "会员ID : \n*拒绝原因 : 提现转盘奖金时未满足充值要求。\n*时间: 1\n*会员风险评级 : 中嫌疑\n*结论 :  要求成员充值。"
+    "title": "NHẬN 500 VÒNG QUAY BẢN THÂN HOẶC CẤP DƯỚI CÓ NẠP - TỪ CHỐI YÊU CẦU NẠP THÊM TIỀN",
+    "content": "会员ID : \n*拒绝原因 : 提现转盘奖金时未满足充值要求。\n*时间: 1\n*会员风险评级 : 中嫌疑\n*结论 :  要求成员充值。\n* WD ABNORMAL Insufficient deposit [NGÀY]"
   },
   {
     "system": "NHẬN 500 VÒNG QUAY",
     "group": "TỈ LỆ THẤP",
-    "title": "NHẬN 500 VÒNG QUAY VI PHẠM TỈ LỆ THẤP (KHẤU  TRỪ THƯỞNG)",
+    "title": "NHẬN 500 VÒNG QUAY VI PHẠM TỈ LỆ THẤP -KHẤU  TRỪ THƯỞNG",
     "content": "会员ID :\n*拒绝原因 :下注低赔率 搜哈\n*套利奖金 200\n*会员风险评级 : 大嫌疑\n*结论 : 扣除奖励"
   },
   {
     "system": "NHẬN 500 VÒNG QUAY",
     "group": "CHƯA HOÀN THÀNH VÒNG CƯỢC",
-    "title": "NHẬN 500 VÒNG QUAY CHƯA HOÀN THÀNH VÒNG CƯỢC (TỪ CHỐI CƯỢC LẠI)",
-    "content": "*会员代码：\n*拒绝原因：收到促销奖金但未完成下注\n*会员风险评级：中度怀疑\n*结论：让会员继续投注，流水 ×3"
+    "title": "NHẬN 500 VÒNG QUAY CHƯA HOÀN THÀNH VÒNG CƯỢC - TỪ CHỐI NHÂN 3 VÒNG CƯỢC",
+    "content": "*会员代码：\n*拒绝原因：收到促销奖金但未完成下注\n*会员风险评级：中度怀疑\n*结论：让会员继续投注，流水 ×3\n*  WD ABNORMAL INCOMPLETE TURNOVER [NGÀY]"
   },
   {
     "system": "NHẬN 500 VÒNG QUAY",
     "group": "TỪ CHỐI NHIỀU LẦN KHÔNG NẠP",
-    "title": "NHẬN 500 VÒNG QUAY TỪ CHỐI NHIỀU LẦN KHÔNG NẠP (KHẤU TRỪ THƯỞNG)",
+    "title": "NHẬN 500 VÒNG QUAY TỪ CHỐI NHIỀU LẦN KHÔNG NẠP - KHẤU TRỪ THƯỞNG",
     "content": "*会员ID :\n*拒绝原因 : 本人未充值，代理线也没有任何充值 \n*会员风险评级 : 大嫌疑\n**时间: 3\n*结论 : 扣除奖励"
   },
   {
@@ -135,33 +135,21 @@
     "system": "NHẬN THƯỞNG NHÓM",
     "group": "TRÙNG IP - KHẤU",
     "title": "NHẬN THƯỞNG NHÓM TRÙNG IP (KHẤU  TRỪ THƯỞNG)",
-    "content": "会员ID :\n*拒绝原因 : 自我邀请的代理线路具有相同的IP地址和设备。\n*会员风险评级 : 有问题\n*结论 : 扣除奖励"
+    "content": "会员ID :\n*拒绝原因 : 自我邀请的代理线路具有相同的IP地址和设备。\n*会员风险评级 : 有问题\n*结论 : 扣除奖励\n* WD ABNORMAL SELF-INVITE [NGÀY]"
   },
   {
     "system": "NHẬN THƯỞNG NHÓM",
     "group": "TRÙNG IP - KHẤU 2",
     "title": "NHẬN THƯỞNG NHÓM TRÙNG IP (KHẤU  TRỪ THƯỞNG) 2",
-    "content": "会员ID :\n*拒绝原因 : 成员的 IP 地址和设备与更低级别账号存在关联，彼此相互关联。\n*会员风险评级 : 有问题\n*结论 : 扣除奖励"
+    "content": "会员ID :\n*拒绝原因 : 成员的 IP 地址和设备与更低级别账号存在关联，彼此相互关联。\n*会员风险评级 : 有问题\n*结论 : 扣除奖励\n* WD ABNORMAL SELF-INVITE [NGÀY]"
   },
-  {
-    "system": "NHẬN THƯỞNG NHÓM",
-    "group": "TRÙNG IP - KHẤU TRẢ NẠP",
-    "title": "NHẬN THƯỞNG NHÓM TRÙNG IP (KHẤU THƯỞNG TRẢ NẠP)",
-    "content": "会员ID :\n*拒绝原因 : 自我邀请的代理线路具有相同的IP地址和设备。\n*会员风险评级 : 有问题\n*结论 : 扣除全部余额并退还押金"
-  },
-  {
-    "system": "NHẬN THƯỞNG NHÓM",
-    "group": "TRÙNG IP SOHA",
-    "title": "NHẬN THƯỞNG NHÓM TRÙNG IP SOHA",
-    "content": "*会员ID :\n*拒绝原因 : 搜哈\n*自我邀请的代理线路具有相同的IP地址和设备。\n*会员风险评级 : 有问题\n*结论 : 扣除奖励"
-  },
-  {
+ {
     "system": "CƯỢC BẤT THƯỜNG",
     "group": "CƯỢC TỈ LỆ THẤP",
     "title": "VI PHẠM TỈ LỆ THẤP (NHẸ - Nếu thành viên có đặt cược tỷ lệ thấp, nhưng không phải toàn bộ cược đều là tỷ lệ thấp, và không thuộc hành vi rõ ràng) - TỪ CHỐI BẮT CƯỢC LẠI",
     "content": "*会员ID : \n*拒绝原因 :下注低赔率\n*会员风险评级 : 中嫌疑\n*结论 :  警告\n*  WD ABNORMAL LOW ODD [NGÀY]"
   },
-  {
+{
     "system": "CƯỢC BẤT THƯỜNG",
     "group": "CƯỢC TỈ LỆ THẤP",
     "title": "VI PHẠM TỈ LỆ THẤP (Khách đã có nạp đi nạp lại nhiều lần, chơi tỷ lệ thấp) - TỪ CHỐI x3 VÒNG CƯỢC",
@@ -180,99 +168,117 @@
     "content": "*会员ID :   \n*拒绝原因 : 领取游戏促销奖金，通过小额投注完成流水后提现。\n*会员风险评级 : 有问题\n*结论 : 扣除奖励"
   },
   {
-    "system": "KHÔNG ĐỦ VÒNG CƯỢC",
-    "group": "KHÔNG ĐỦ VÒNG CƯỢC - TỪ CHỐI",
-    "title": "CHƠI VÒNG CƯỢC QUÁ ÍT - TỪ CHỐI",
-    "content": "*会员代码：\n*拒绝原因：会员流水未达到要求。\n*会员风险评级：中度怀疑\n*结论：让会员继续投注，流水 ×3\n*  WD ABNORMAL INCOMPLETE TURNOVER [NGÀY]"
+  "system": "KHÔNG ĐỦ VÒNG CƯỢC",
+  "group": "KHÔNG ĐỦ VÒNG CƯỢC - TỪ CHỐI",
+  "title": "CHƠI VÒNG CƯỢC QUÁ ÍT - TỪ CHỐI NHÂN 3 VÒNG CƯỢC",
+  "content": "*会员代码：\n*拒绝原因：会员流水未达到要求。\n*会员风险评级：中度怀疑\n*结论：让会员继续投注，流水 ×3\n*  WD ABNORMAL INCOMPLETE TURNOVER [NGÀY]"
   },
   {
-    "system": "KHÔNG ĐỦ VÒNG CƯỢC",
-    "group": "NHẬN KHUYẾN MÃI CHƠI KHÔNG ĐỦ VÒNG CƯỢC - TỪ CHỐI",
-    "title": "NHẬN KHUYẾN MÃI CHƠI VÒNG CƯỢC QUÁ ÍT - TỪ CHỐI",
-    "content": "*会员代码：\n*拒绝原因：收到促销奖金但未完成下注\n*会员风险评级：中度怀疑\n*结论：让会员继续投注，流水 ×3\n*  WD ABNORMAL INCOMPLETE TURNOVER [NGÀY]"
+  "system": "KHÔNG ĐỦ VÒNG CƯỢC",
+  "group": "NHẬN KHUYẾN MÃI CHƠI KHÔNG ĐỦ VÒNG CƯỢC - TỪ CHỐI NHÂN 3 VÒNG CƯỢC",
+  "title": "NHẬN KHUYẾN MÃI CHƠI VÒNG CƯỢC QUÁ ÍT - TỪ CHỐI NHÂN 3 VÒNG CƯỢC",
+  "content": "*会员代码：\n*拒绝原因：收到促销奖金但未完成下注\n*会员风险评级：中度怀疑\n*结论：让会员继续投注，流水 ×3\n*  WD ABNORMAL INCOMPLETE TURNOVER [NGÀY]"
   },
   {
-    "system": "KHÔNG ĐỦ VÒNG CƯỢC",
-    "group": "KHÔNG ĐỦ VÒNG CƯỢC - KHẤU TOÀN BỘ",
-    "title": "KHÔNG ĐỦ VÒNG CƯỢC - KHẤU",
-    "content": "*会员代码：\n*拒绝原因：由于会员流水不符合要求，已多次拒绝处理，但情况仍未改善。\n*会员风险评级：大嫌疑\n*时间 : 3\n*结论：扣除奖励\n*  WD ABNORMAL INCOMPLETE TURNOVER [NGÀY]"
-  },
+  "system": "KHÔNG ĐỦ VÒNG CƯỢC",
+  "group": "KHÔNG ĐỦ VÒNG CƯỢC - KHẤU TOÀN BỘ",
+  "title": "KHÔNG ĐỦ VÒNG CƯỢC - KHẤU",
+  "content": "*会员代码：\n*拒绝原因：由于会员流水不符合要求，已多次拒绝处理，但情况仍未改善。\n*会员风险评级：大嫌疑\n*时间 : 3\n*结论：扣除奖励\n*  WD ABNORMAL INCOMPLETE TURNOVER [NGÀY]"
+},
+{
+  "system": "KHÔNG ĐỦ VÒNG CƯỢC",
+  "group": "KHÔNG ĐỦ VÒNG CƯỢC - KHẤU TRẢ NẠP",
+  "title": "KHÔNG ĐỦ VÒNG CƯỢC - KHẤU TRẢ NẠP",
+  "content": "*会员代码：\n*拒绝原因：由于会员流水不符合要求，已多次拒绝处理，但情况仍未改善。\n*会员风险评级：大嫌疑\n*时间 : 3\n*结论：扣除全部余额并退还押金\n*  WD ABNORMAL INCOMPLETE TURNOVER [NGÀY]"
+},
+{
+  "system": "LẠM DỤNG THƯỞNG",
+  "group": "NHẬN THƯỞNG XONG CƯỢC NHỎ 1 ĐỒNG (5 ĐỒNG)",
+  "title": "NHẬN THƯỞNG XONG CƯỢC NHỎ 1 ĐỒNG (5 ĐỒNG) - KHẤU TRỪ THƯỞNG",
+  "content": "*会员ID : \n*拒绝原因 : 故意下注小额以快速完成流水要求并立即提现，从而套取平台奖励。\n*会员风险评级 : 中嫌疑\n*结论 : 扣除奖励"
+},
   {
-    "system": "KHÔNG ĐỦ VÒNG CƯỢC",
-    "group": "KHÔNG ĐỦ VÒNG CƯỢC - KHẤU TRẢ NẠP",
-    "title": "KHÔNG ĐỦ VÒNG CƯỢC - KHẤU TRẢ NẠP",
-    "content": "*会员代码：\n*拒绝原因：由于会员流水不符合要求，已多次拒绝处理，但情况仍未改善。\n*会员风险评级：大嫌疑\n*时间 : 3\n*结论：扣除全部余额并退还押金\n*  WD ABNORMAL INCOMPLETE TURNOVER [NGÀY]"
-  },
-  {
-    "system": "LẠM DỤNG THƯỞNG",
-    "group": "NHẬN THƯỞNG XONG CƯỢC NHỎ 1 ĐỒNG (5 ĐỒNG)",
-    "title": "NHẬN THƯỞNG XONG CƯỢC NHỎ 1 ĐỒNG (5 ĐỒNG) - KHẤU TRỪ THƯỞNG",
-    "content": "*会员ID : \n*拒绝原因 : 故意下注小额以快速完成流水要求并立即提现，从而套取平台奖励。\n*会员风险评级 : 中嫌疑\n*结论 : 扣除奖励"
-  },
-  {
-    "system": "NHẬN THƯỞNG NHÓM",
-    "group": "NHẬN THƯỞNG NHÓM MỨC NẠP KHÔNG ĐỦ",
-    "title": "NHẬN THƯỞNG NHÓM NHƯNG NẠP KHÔNG ĐỦ - TỪ CHỐI",
-    "content": "会员ID : \n*拒绝原因 : 领取群组奖金时未满足充值要求。\n*时间 : 1\n*会员风险评级 : 中嫌疑\n*结论 : 要求成员充值。"
-  },
-  {
-    "system": "NHẬN THƯỞNG NHÓM",
-    "group": "NHẬN THƯỞNG NHÓM MỨC NẠP KHÔNG ĐỦ",
-    "title": "NHẬN THƯỞNG NHÓM NHƯNG NẠP KHÔNG ĐỦ - KHẤU THƯỞNG",
-    "content": "*会员ID : \n*拒绝原因 : 本人未充值，代理线也没有任何充值\n*会员风险评级 : 大嫌疑\n*SỐ LẦN: 3\n*结论 : 扣除奖励"
-  },
-  {
-    "system": "CƯỢC BẤT THƯỜNG",
-    "group": "CƯỢC TẤT TAY",
-    "title": "VI PHẠM CƯỢC TẤT TAY - TỪ CHỐI BẮT CƯỢC LẠI",
-    "content": "*会员ID : \n*拒绝原因 : 梭哈\n*会员风险评级 : 中嫌疑\n*结论 : 警告\n*  WD ABNORMAL ALL-IN [NGÀY]"
-  },
-  {
-    "system": "CƯỢC BẤT THƯỜNG",
-    "group": "CƯỢC TẤT TAY",
-    "title": "VI PHẠM CƯỢC TẤT TAY - KHẤU TRẢ NẠP",
-    "content": "*会员ID : \n*拒绝原因 : 梭哈\n*会员风险评级 : 有问题\n*结论 : 扣除全部余额并退还押金\n*  WD ABNORMAL ALL-IN [NGÀY]"
-  },
-  {
+  "system": "NHẬN THƯỞNG NHÓM",
+  "group": "NHẬN THƯỞNG NHÓM MỨC NẠP KHÔNG ĐỦ",
+  "title": "NHẬN THƯỞNG NHÓM NHƯNG NẠP KHÔNG ĐỦ - TỪ CHỐI YÊU CẦU NẠP THÊM TIỀN",
+  "content": "会员ID : \n*拒绝原因 : 领取群组奖金时未满足充值要求。\n*时间 : 1\n*会员风险评级 : 中嫌疑\n*结论 : 要求成员充值。\n* WD ABNORMAL Insufficient deposit [NGÀY]"
+},
+{
+  "system": "NHẬN THƯỞNG NHÓM",
+  "group": "NHẬN THƯỞNG NHÓM MỨC NẠP KHÔNG ĐỦ",
+  "title": "NHẬN THƯỞNG NHÓM NHƯNG NẠP KHÔNG ĐỦ - TỪ CHỐI NHIỀU LẦN, KHẤU TRỪ THƯỞNG",
+  "content": "*会员ID : \n*拒绝原因 : 本人未充值，代理线也没有任何充值\n*会员风险评级 : 大嫌疑\n*时间: 3\n*结论 : 扣除奖励"
+},  
+{
+  "system": "CƯỢC BẤT THƯỜNG",
+  "group": "CƯỢC TẤT TAY",
+  "title": "VI PHẠM CƯỢC TẤT TAY - TỪ CHỐI x3 VÒNG CƯỢC",
+  "content": "*会员ID : \n*拒绝原因 : 梭哈\n*会员风险评级 : 中度怀疑\n*结论：让会员继续投注，流水 ×3\n*  WD ABNORMAL ALL-IN [NGÀY]"
+},
+{
+  "system": "CƯỢC BẤT THƯỜNG",
+  "group": "CƯỢC TẤT TAY",
+  "title": "VI PHẠM CƯỢC TẤT TAY - KHẤU TRẢ NẠP",
+  "content": "*会员ID : \n*拒绝原因 : 梭哈\n*会员风险评级 : 有问题\n*结论 : 扣除全部余额并退还押金\n*  WD ABNORMAL ALL-IN [NGÀY]"
+},
+{
     "system": "CƯỢC BẤT THƯỜNG",
     "group": "CƯỢC TẤT TAY",
     "title": "VI PHẠM CƯỢC TẤT TAY - KHÓA TÀI KHOẢN",
     "content": "*会员ID :\n*拒绝原因 : 梭哈  \n*会员风险评级 : 有问题\n*结论 : 冻结\n*  WD ABNORMAL ALL-IN [NGÀY]"
   },
-  {
-    "system": "CƯỢC BẤT THƯỜNG",
-    "group": "CƯỢC ĐỐI LẬP",
-    "title": "CƯỢC ĐỐI LẬP - ĐÓNG BĂNG TÀI KHOẢN",
-    "content": "*会员ID : \n*拒绝原因 : 对打投注，滥用优惠活动\n*会员风险评级 : 有问题\n*结论 : 冻结\n*  WD ABNORMAL HEAD TO HEAD BETTING [NGÀY]"
-  },
-  {
+{
+  "system": "CƯỢC BẤT THƯỜNG",
+  "group": "CƯỢC ĐỐI LẬP",
+  "title": "CƯỢC ĐỐI LẬP - ĐÓNG BĂNG TÀI KHOẢN",
+  "content": "*会员ID : \n*拒绝原因 : 对打投注，滥用优惠活动\n*会员风险评级 : 有问题\n*结论 : 冻结\n*  WD ABNORMAL HEAD TO HEAD BETTING [NGÀY]"
+},  
+{
     "system": "CHƠI TRÒ CHƠI BẤT HỢP PHÁP",
     "group": "CƯỢC BẤT THƯỜNG - LUCKY 777",
     "title": "CƯỢC BẤT THƯỜNG LUCKY 777 - KHÓA TK",
     "content": "盘口: \n会员ID : \n*拒绝原因 : 非法投注 LUCKY 777 \n*会员风险评级 : 有问题\n*结论 : 黑名单"
-  },
-  {
+  },  
+{
     "system": "CHƠI TRÒ CHƠI BẤT HỢP PHÁP",
     "group": "CƯỢC BẤT THƯỜNG - Teen Patti",
     "title": "CƯỢC BẤT THƯỜNG TEEN PATTI (ĐANG CƯỢC CÁC ĐƠN NHỎ CÓ 1 VÀI ĐƠN TO TIỀN BẤT THƯỜNG - KHÓA TK",
     "content": "盘口: \n会员ID : \n*拒绝原因 : 非法投注 Teen Patti \n*会员风险评级 : 有问题\n*结论 : 黑名单"
   },
-  {
+{
     "system": "CHƠI TRÒ CHƠI BẤT HỢP PHÁP",
     "group": "CƯỢC BẤT THƯỜNG - Teen Patti",
     "title": "CƯỢC BẤT THƯỜNG TEEN PATTI - TỪ CHỐI CẢNH  CÁO",
     "content": "盘口: \n会员ID : \n*拒绝原因 : 非法投注 Teen Patti \n*会员风险评级 : 中嫌疑\n*结论 :  警告"
   },
-  {
+{
     "system": "CHƠI TRÒ CHƠI BẤT HỢP PHÁP",
     "group": "CƯỢC BẤT THƯỜNG - 7 UP 7 DOWN",
     "title": "CƯỢC BẤT THƯỜNG  7 UP 7 DOWN (Cược dàn điểm, đối ứng, mục tiêu chính là chờ nổ nhân lớn (x50, x100, x500) rơi trúng vào một trong các ô đã đặt) - Cảnh cáo bắt cược lại.",
     "content": "盘口: \n会员ID : \n*拒绝原因 : 下注自己对刷  + 7 UP 7 DOWN\n*会员风险评级 : 中嫌疑\n*结论 : 警告"
   },
-  {
+{
     "system": "CHƠI TRÒ CHƠI BẤT HỢP PHÁP",
     "group": "CƯỢC BẤT THƯỜNG - 7 UP 7 DOWN",
     "title": "CƯỢC BẤT THƯỜNG  7 UP 7 DOWN - TỪ CHỐI X3 VÒNG CƯỢC",
     "content": "盘口: \n会员ID : \n*拒绝原因 : 下注自己对刷  + 7 UP 7 DOWN\n*会员风险评级 : 中度怀疑\n*结论 : 让会员继续投注，流水 ×3"
+  },
+{
+    "system": "CHƠI TRÒ CHƠI BẤT HỢP PHÁP",
+    "group": "CƯỢC BẤT THƯỜNG -  ROULETTE",
+    "title": "CƯỢC BẤT THƯỜNG ROULETTE- TỪ CHỐI X3 VÒNG CƯỢC",
+    "content": "盘口: \n会员ID : \n*拒绝原因 : 下注自己对刷  + ROULETTE\n*会员风险评级 : 中度怀疑\n*结论 : 让会员继续投注，流水 ×3"
+  },
+{
+    "system": "KHÔNG RÕ NGUỒN TIỀN",
+    "group": "KHÁCH ĐẶT CƯỢC TỪ NGUỒN TIỀN BẤT THƯỜNG",
+    "title": "KHÔNG RÕ NGUỒN TIỀN  - Không tìm thấy nguồn tiền của khách, nguồn tiền bất thường - TỪ CHỐI YÊU CẦU NẠP THÊM TIỀNN",
+    "content": "会员ID:  \n*拒绝原因: 会员资金来源异常，未查到资金来源。\n* 结论：该会员需进行充值。"
+  },
+{
+    "system": "KHÔNG RÕ NGUỒN TIỀN",
+    "group": "KHÁCH ĐẶT CƯỢC TỪ NGUỒN TIỀN BẤT THƯỜNG",
+    "title": "KHÔNG RÕ NGUỒN TIỀN  - Không tìm thấy nguồn tiền của khách, nguồn tiền bất thường - TỪ CHỐI YÊU CẦU NẠP THÊM TIỀNN",
+    "content": "会员ID:  \n*拒绝原因: 会员资金来源异常，未查到资金来源。\n*SỐ LẦN: 3\n* 结论：扣除奖励。"
   }
 ]
