@@ -1,4 +1,4 @@
-[
+window.RULES_DATA = [
   {
     "title": "QUY TẮC GHI CHÚ",
     "content": "3 lần rút đầu tiên phải ghi chú theo format: [1WD/2WD/3WD] + [NORMAL hoặc ABNORMAL] + [Lý do] + [DATE]. Lý do ABNORMAL gồm: LOW ODDS, ALL IN, FIXED LOW BET, INCOMPLETE TURNOVER, HEAD TO HEAD BETTING, SELF-INVITE, Insufficient deposit. Sau lần rút thứ 4 thì xóa remark. Chỉ áp dụng cho member mới, member cũ chỉ remark khi có bất thường."
@@ -34,6 +34,5 @@
   {
     "title": "QUY TẮC THƯỞNG TIN NHẮN NỘI BỘ",
     "content": "Áp dụng cho member thua lỗ trong ngày hoặc lâu ngày không đăng nhập. Nếu member chơi bình thường, nạp đều và đăng nhập thường xuyên thì có thể rút bình thường. Nếu không nạp trên 7 ngày nhưng cược bình thường và đang thua lỗ thì có thể cho rút dưới 200. Nếu rút trên 200 thì yêu cầu nạp lại."
-  },
-  {
-]
+  }
+];
