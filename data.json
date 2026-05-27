@@ -69,7 +69,7 @@
     "system": "NHẬN 500 VÒNG QUAY",
     "group": "NHẬN THƯỞNG KHÔNG NẠP",
     "title": "NHẬN 500 VÒNG QUAY KHÔNG NẠP - TỪ CHỐI YÊU CẦU NẠP THÊM TIỀN",
-    "content": "**会员ID :\n*拒绝原因 : 本人未充值，下级代理也未充值。\n*时间: 1\n*会员风险评级 : 中嫌疑\n*结论 :  要求成员充值。\n* WD ABNORMAL Insufficient deposit [NGÀY]"
+    "content": *会员ID :\n*拒绝原因 : 本人未充值，下级代理也未充值。\n*时间: 1\n*会员风险评级 : 中嫌疑\n*结论 :  要求成员充值。\n* WD ABNORMAL Insufficient deposit [NGÀY]"
   },
   {
     "system": "NHẬN 500 VÒNG QUAY",
@@ -237,7 +237,7 @@
     "system": "CHƠI TRÒ CHƠI BẤT HỢP PHÁP",
     "group": "CƯỢC BẤT THƯỜNG - Squid Game",
     "title": "CƯỢC BẤT THƯỜNG Squid Game - TỪ CHỐI X3 VÒNG CƯỢC",
-    "content": "盘口: \n会员ID : \n*拒绝原因 : 非法投注 Squid Game \n*会员风险评级 : 中度怀疑\n*结论 : 让会员继续投注，流水 ×3\n*  WD ABNORMAL Squid Game [NGÀY]
+    "content": "盘口: \n会员ID : \n*拒绝原因 : 非法投注 Squid Game \n*会员风险评级 : 中度怀疑\n*结论 : 让会员继续投注，流水 ×3\n*  WD ABNORMAL Squid Game [NGÀY]"
   },  
 {
     "system": "CHƠI TRÒ CHƠI BẤT HỢP PHÁP",
@@ -249,7 +249,7 @@
     "system": "CHƠI TRÒ CHƠI BẤT HỢP PHÁP",
     "group": "CƯỢC BẤT THƯỜNG - LUCKY 777",
     "title": "CƯỢC BẤT THƯỜNG LUCKY 777 - TỪ CHỐI X3 VÒNG CƯỢC",
-    "content": "盘口: \n会员ID : \n*拒绝原因 : 非法投注 LUCKY 777 \n*会员风险评级 : 中度怀疑\n*结论 : 让会员继续投注，流水 ×3\n*  WD ABNORMAL LUCKY 777 [NGÀY]
+    "content": "盘口: \n会员ID : \n*拒绝原因 : 非法投注 LUCKY 777 \n*会员风险评级 : 中度怀疑\n*结论 : 让会员继续投注，流水 ×3\n*  WD ABNORMAL LUCKY 777 [NGÀY]"
   },  
 {
     "system": "CHƠI TRÒ CHƠI BẤT HỢP PHÁP",
@@ -296,7 +296,7 @@
 {
     "system": "KHÔNG RÕ NGUỒN TIỀN",
     "group": "KHÁCH ĐẶT CƯỢC TỪ NGUỒN TIỀN BẤT THƯỜNG",
-    "title": "KHÔNG RÕ NGUỒN TIỀN  - Không tìm thấy nguồn tiền của khách, nguồn tiền bất thường - TỪ CHỐI YÊU CẦU NẠP THÊM TIỀNN",
+    "title": "KHÔNG RÕ NGUỒN TIỀN  - Không tìm thấy nguồn tiền của khách, nguồn tiền bất thường - TỪ CHỐI YÊU CẦU NẠP THÊM TIỀN",
     "content": "会员ID:  \n*拒绝原因: 会员资金来源异常，未查到资金来源。\n*SỐ LẦN: 3\n* 结论：扣除奖励。"
   }
 ]
