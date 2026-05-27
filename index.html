@@ -581,6 +581,7 @@
     <div class="tabs">
       <button id="tabMain" class="tab-btn active" type="button">Danh sách</button>
       <button id="tabMine" class="tab-btn" type="button">NỘI DUNG CỦA TÔI</button>
+      <button id="tabRules" class="tab-btn" type="button">QUY TẮC LÀM VIỆC</button>
     </div>
 
     <div id="mainArea">
@@ -633,6 +634,54 @@
       </div>
     </div>
 
+
+    <div id="rulesArea" style="display:none;">
+      <div class="panel" style="margin-top:16px;">
+        <div class="sticky-head">
+          <div>
+            <div style="font-size:16px; font-weight:600; margin-bottom:4px; color: var(--text);">QUY TẮC LÀM VIỆC</div>
+            <div class="sticky-title">Khu vực quản lý quy tắc. Admin có thể thêm, sửa, xóa nội dung ngay trên web.</div>
+          </div>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <button id="rulesAdminBtn" class="small ghost" type="button">Đăng nhập Admin</button>
+            <button id="rulesLogoutBtn" class="small ghost" type="button" style="display:none;">Đăng xuất</button>
+            <button id="rulesAddBtn" class="small ghost" type="button" style="display:none;">+ Thêm quy tắc</button>
+          </div>
+        </div>
+
+        <div id="rulesAdminPanel" style="display:none; margin-bottom:16px;">
+          <div class="panel" style="margin-top:0; padding:14px; background: var(--panel-2);">
+            <div class="field" style="margin-bottom:12px;">
+              <label for="rulesPassword">Mật khẩu Admin</label>
+              <input id="rulesPassword" type="password" placeholder="Nhập mật khẩu admin..." />
+            </div>
+
+            <div id="rulesForm" style="display:none; margin-top:14px;">
+              <div class="field" style="margin-bottom:12px;">
+                <label for="ruleTitle">Tiêu đề quy tắc</label>
+                <input id="ruleTitle" type="text" placeholder="Nhập tiêu đề..." />
+              </div>
+              <div class="field" style="margin-bottom:12px;">
+                <label for="ruleContent">Nội dung quy tắc</label>
+                <textarea id="ruleContent" rows="8" placeholder="Nhập nội dung..." style="width:100%; min-height:180px; padding:12px 14px; border-radius:12px; border:1px solid var(--border); background: var(--bg-soft); color: var(--text); outline:none; resize: vertical;"></textarea>
+              </div>
+              <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                <button id="saveRuleBtn" class="small" type="button">Lưu quy tắc</button>
+                <button id="cancelEditRuleBtn" class="small ghost" type="button" style="display:none;">Hủy chỉnh sửa</button>
+              </div>
+            </div>
+
+            <div id="rulesLoginRow" style="display:flex; gap:8px; flex-wrap:wrap; margin-top:12px;">
+              <button id="loginRulesBtn" class="small" type="button">Đăng nhập</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="sticky-title" style="margin-bottom:12px;">Danh sách quy tắc hiện có</div>
+        <div id="rulesList" class="sticky-list"></div>
+      </div>
+    </div>
+
     <div class="footer">
       <div>Dữ liệu được nạp từ file data.json nếu có. Nếu file không tải được, hệ thống tự chuyển sang dữ liệu mặc định để không bị trống.</div>
     </div>
@@ -659,11 +708,29 @@ const stickyModeBtn = document.getElementById('stickyModeBtn');
 const clearStickyBtn = document.getElementById('clearStickyBtn');
 const mainArea = document.getElementById('mainArea');
 const mineArea = document.getElementById('mineArea');
+const rulesArea = document.getElementById('rulesArea');
+const rulesList = document.getElementById('rulesList');
+const tabRules = document.getElementById('tabRules');
+const rulesAdminBtn = document.getElementById('rulesAdminBtn');
+const rulesLogoutBtn = document.getElementById('rulesLogoutBtn');
+const rulesAddBtn = document.getElementById('rulesAddBtn');
+const rulesAdminPanel = document.getElementById('rulesAdminPanel');
+const rulesPassword = document.getElementById('rulesPassword');
+const loginRulesBtn = document.getElementById('loginRulesBtn');
+const rulesLoginRow = document.getElementById('rulesLoginRow');
+const rulesForm = document.getElementById('rulesForm');
+const ruleTitle = document.getElementById('ruleTitle');
+const ruleContent = document.getElementById('ruleContent');
+const saveRuleBtn = document.getElementById('saveRuleBtn');
+const cancelEditRuleBtn = document.getElementById('cancelEditRuleBtn');
 
 const THEME_KEY = 'risk_manager_theme_v4';
 const STICKY_KEY = 'risk_manager_sticky_v1';
 const MODE_KEY = 'risk_manager_mode_v1';
 const TAB_KEY = 'risk_manager_tab_v1';
+const RULES_KEY = 'risk_manager_rules_v1';
+const RULES_AUTH_KEY = 'risk_manager_rules_auth_v1';
+const ADMIN_PASSWORD = 'ren123';
 
 const DEFAULT_DATA = [
   { system: 'RUMMY', group: 'TRÙNG IP', title: 'RUMMY TRÙNG IP', content: '會員ID :\n*拒絕原因 : 我本人沒有充值，上級有多個IP地址，不符合RUMMY MATCH的提現條件。\n*會員風險評級 : 有問題\n*結論 : 扣除獎勵' },
@@ -674,9 +741,13 @@ const DEFAULT_DATA = [
 
 let data = [];
 let stickyItems = [];
+let rulesData = [];
 let currentTab = localStorage.getItem(TAB_KEY) || 'main';
 let compactMode = localStorage.getItem(MODE_KEY) !== 'expanded';
 let stickyCompactMode = localStorage.getItem('risk_manager_sticky_mode_v1') !== 'expanded';
+let rulesCompactMode = true;
+let rulesIsAdmin = localStorage.getItem(RULES_AUTH_KEY) === '1';
+let editingRuleIndex = null;
 
 function safeCopy(text) {
   if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
@@ -729,6 +800,219 @@ function loadSticky() {
 
 function saveSticky() {
   localStorage.setItem(STICKY_KEY, JSON.stringify(stickyItems));
+}
+
+function loadRules() {
+  try {
+    rulesData = JSON.parse(localStorage.getItem(RULES_KEY) || '[]');
+    if (!Array.isArray(rulesData)) rulesData = [];
+  } catch {
+    rulesData = [];
+  }
+}
+
+function saveRules() {
+  localStorage.setItem(RULES_KEY, JSON.stringify(rulesData));
+}
+
+function setRulesAdmin(isAdmin) {
+  rulesIsAdmin = !!isAdmin;
+  localStorage.setItem(RULES_AUTH_KEY, rulesIsAdmin ? '1' : '0');
+  rulesAdminBtn.style.display = rulesIsAdmin ? 'none' : 'inline-flex';
+  loginRulesBtn.style.display = rulesIsAdmin ? 'none' : 'inline-flex';
+  rulesLogoutBtn.style.display = rulesIsAdmin ? 'inline-flex' : 'none';
+  rulesAddBtn.style.display = rulesIsAdmin ? 'inline-flex' : 'none';
+  rulesPassword.value = '';
+  rulesAdminPanel.style.display = rulesIsAdmin ? 'block' : 'none';
+  rulesForm.style.display = rulesIsAdmin && editingRuleIndex !== null ? 'block' : 'none';
+  if (!rulesIsAdmin) editingRuleIndex = null;
+  renderRules();
+}
+
+function openRulesAdminPanel() {
+  rulesAdminPanel.style.display = 'block';
+  rulesPassword.focus();
+}
+
+function closeRulesForm() {
+  editingRuleIndex = null;
+  ruleTitle.value = '';
+  ruleContent.value = '';
+  cancelEditRuleBtn.style.display = 'none';
+  rulesForm.style.display = rulesIsAdmin ? 'block' : 'none';
+}
+
+function startAddRule() {
+  if (!rulesIsAdmin) return;
+  editingRuleIndex = null;
+  ruleTitle.value = '';
+  ruleContent.value = '';
+  rulesForm.style.display = 'block';
+  cancelEditRuleBtn.style.display = 'none';
+  ruleTitle.focus();
+}
+
+function startEditRule(index) {
+  if (!rulesIsAdmin) return;
+  const rule = rulesData[index];
+  if (!rule) return;
+  editingRuleIndex = index;
+  ruleTitle.value = rule.title || '';
+  ruleContent.value = rule.content || '';
+  rulesForm.style.display = 'block';
+  cancelEditRuleBtn.style.display = 'inline-flex';
+  ruleTitle.focus();
+}
+
+function deleteRule(index) {
+  if (!rulesIsAdmin) return;
+  if (!confirm('Xóa quy tắc này?')) return;
+  rulesData.splice(index, 1);
+  saveRules();
+  closeRulesForm();
+  renderRules();
+  showToast('Đã xóa quy tắc');
+}
+
+function upsertRule() {
+  if (!rulesIsAdmin) return;
+
+  const title = ruleTitle.value.trim();
+  const content = ruleContent.value.trim();
+
+  if (!title || !content) {
+    showToast('Nhập đủ tiêu đề và nội dung');
+    return;
+  }
+
+  const payload = { title, content };
+
+  if (editingRuleIndex === null) {
+    rulesData.unshift(payload);
+    showToast('Đã thêm quy tắc');
+  } else {
+    rulesData[editingRuleIndex] = payload;
+    showToast('Đã cập nhật quy tắc');
+  }
+
+  saveRules();
+  closeRulesForm();
+  renderRules();
+}
+
+function renderRules() {
+  if (!rulesList) return;
+  rulesList.innerHTML = '';
+
+  if (!rulesData.length) {
+    rulesList.innerHTML = '<div class="empty">Chưa có quy tắc nào được tạo.</div>';
+    return;
+  }
+
+  rulesData.forEach((rule, index) => {
+    const box = document.createElement('div');
+    box.className = 'sticky-item';
+    box.dataset.open = rulesCompactMode ? '0' : '1';
+
+    const head = document.createElement('div');
+    head.className = 'sticky-item-head';
+
+    const titleWrap = document.createElement('div');
+    titleWrap.style.minWidth = '0';
+    titleWrap.style.flex = '1';
+
+    const title = document.createElement('h4');
+    title.className = 'sticky-item-title';
+    title.textContent = rule.title || '(Không có tiêu đề)';
+
+    titleWrap.appendChild(title);
+
+    const chev = document.createElement('div');
+    chev.className = 'sticky-chevron';
+    chev.textContent = rulesCompactMode ? '⌄' : '⌃';
+
+    head.appendChild(titleWrap);
+    head.appendChild(chev);
+
+    const body = document.createElement('div');
+    body.className = 'sticky-item-body';
+    body.style.display = rulesCompactMode ? 'none' : 'grid';
+
+    const contentBlock = document.createElement('div');
+    contentBlock.className = 'copy-block';
+    const contentHead = document.createElement('div');
+    contentHead.className = 'copy-block-head';
+    const contentLabel = document.createElement('div');
+    contentLabel.className = 'copy-label';
+    contentLabel.textContent = 'Nội dung';
+    const copyBtn = document.createElement('button');
+    copyBtn.className = 'small ghost';
+    copyBtn.type = 'button';
+    copyBtn.textContent = 'Copy';
+    contentHead.appendChild(contentLabel);
+    contentHead.appendChild(copyBtn);
+    const contentText = document.createElement('p');
+    contentText.className = 'content';
+    contentText.textContent = rule.content || '';
+    contentBlock.appendChild(contentHead);
+    contentBlock.appendChild(contentText);
+    attachCopyOnClick(contentBlock, rule.content || '', 'Đã copy nội dung quy tắc');
+    attachCopyOnClick(copyBtn, rule.content || '', 'Đã copy nội dung quy tắc');
+
+    body.appendChild(contentBlock);
+
+    if (rulesIsAdmin) {
+      const actions = document.createElement('div');
+      actions.className = 'sticky-actions';
+
+      const editBtn = document.createElement('button');
+      editBtn.className = 'small ghost';
+      editBtn.type = 'button';
+      editBtn.textContent = '✏ Sửa';
+      editBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        startEditRule(index);
+      });
+
+      const delBtn = document.createElement('button');
+      delBtn.className = 'small ghost';
+      delBtn.type = 'button';
+      delBtn.textContent = '🗑 Xóa';
+      delBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        deleteRule(index);
+      });
+
+      actions.appendChild(editBtn);
+      actions.appendChild(delBtn);
+      body.appendChild(actions);
+    }
+
+    const toggle = () => {
+      const nowOpen = box.dataset.open !== '1';
+      box.dataset.open = nowOpen ? '1' : '0';
+      body.style.display = nowOpen ? 'grid' : 'none';
+      chev.textContent = nowOpen ? '⌃' : '⌄';
+    };
+
+    head.addEventListener('click', (e) => {
+      if (e.target.closest('button')) return;
+      toggle();
+    });
+
+    box.addEventListener('click', (e) => {
+      if (e.target.closest('button')) return;
+      if (e.target.closest('.content-group')) return;
+      const nowOpen = box.dataset.open !== '1';
+      box.dataset.open = nowOpen ? '1' : '0';
+      body.style.display = nowOpen ? 'grid' : 'none';
+      chev.textContent = nowOpen ? '⌃' : '⌄';
+    });
+
+    box.appendChild(head);
+    box.appendChild(body);
+    rulesList.appendChild(box);
+  });
 }
 
 function normalizeItem(item) {
@@ -1151,21 +1435,29 @@ function setTab(tab) {
   localStorage.setItem(TAB_KEY, tab);
   tabMain.classList.toggle('active', tab === 'main');
   tabMine.classList.toggle('active', tab === 'mine');
+  tabRules.classList.toggle('active', tab === 'rules');
   mainArea.style.display = tab === 'main' ? 'block' : 'none';
   mineArea.style.display = tab === 'mine' ? 'block' : 'none';
-  if (tab === 'main') render(); else renderSticky();
+  rulesArea.style.display = tab === 'rules' ? 'block' : 'none';
+  if (tab === 'main') render();
+  else if (tab === 'mine') renderSticky();
+  else if (tab === 'rules') renderRules();
 }
 
 function initializeWithData(arr) {
   data = Array.isArray(arr) && arr.length ? arr : DEFAULT_DATA.slice();
   populateSystemOptions();
   populateGroupOptions();
+  loadRules();
+  setRulesAdmin(rulesIsAdmin);
   renderSticky();
+  renderRules();
   setTab(currentTab);
 }
 
 tabMain.addEventListener('click', () => setTab('main'));
 tabMine.addEventListener('click', () => setTab('mine'));
+tabRules.addEventListener('click', () => setTab('rules'));
 
 themeToggle.addEventListener('click', () => {
   const current = document.documentElement.getAttribute('data-theme') || 'light';
@@ -1193,6 +1485,20 @@ stickyModeBtn.addEventListener('click', () => {
 });
 
 clearStickyBtn.addEventListener('click', clearSticky);
+
+rulesAdminBtn.addEventListener('click', openRulesAdminPanel);
+rulesLogoutBtn.addEventListener('click', () => setRulesAdmin(false));
+rulesAddBtn.addEventListener('click', startAddRule);
+loginRulesBtn.addEventListener('click', () => {
+  if (rulesPassword.value === ADMIN_PASSWORD) {
+    setRulesAdmin(true);
+    showToast('Đăng nhập admin thành công');
+  } else {
+    showToast('Sai mật khẩu admin');
+  }
+});
+saveRuleBtn.addEventListener('click', upsertRule);
+cancelEditRuleBtn.addEventListener('click', closeRulesForm);
 
 systemSelect.addEventListener('change', () => {
   populateGroupOptions();
