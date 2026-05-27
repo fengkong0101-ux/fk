@@ -1,42 +1,57 @@
-[
+window.RULES_DATA = [
+
   {
     "title": "QUY TẮC GHI CHÚ",
-    "content": "Áp dụng cho 3 lần rút đầu tiên của khách sau khi duyệt.\n\nFormat:\n[1WD / 2WD / 3WD] + [NORMAL hoặc ABNORMAL] + [Lý do nếu ABNORMAL] + [DATE]\n\nVí dụ:\n- 1WD + NORMAL + DATE (11/20/2026)\n- 2WD + ABNORMAL + LOW ODDS + DATE (11/20/2026)\n- 3WD + ABNORMAL + INCOMPLETE TURNOVER + DATE (11/20/2026)\n\nNORMAL = Bình thường\nABNORMAL = Bất thường\n\nLý do ABNORMAL thường dùng:\n- LOW ODDS = Tỷ lệ thấp\n- ALL IN\n- FIXED LOW BET = Cược cố định số tiền thấp\n- INCOMPLETE TURNOVER = Chưa hoàn thành vòng cược\n- HEAD TO HEAD BETTING = Đánh đối\n- SELF-INVITE\n- Insufficient deposit\n\nLưu ý:\n- Nếu khách đã qua lần duyệt thứ 4 thì xóa ghi chú\n- Không áp dụng cho khách cũ, trừ trường hợp có dấu hiệu bất thường"
+
+    "content": "📌 3 LẦN RÚT TIỀN ĐẦU TIÊN\n\nSau khi duyệt cần ghi chú theo format bên dưới.\n\n━━━━━━━━━━━━━━\nFORMAT\n━━━━━━━━━━━━━━\n\n[1WD / 2WD / 3WD]\n+ [NORMAL hoặc ABNORMAL]\n+ [Lý do nếu ABNORMAL]\n+ [DATE]\n\n━━━━━━━━━━━━━━\nVÍ DỤ\n━━━━━━━━━━━━━━\n\n• 1WD + NORMAL + DATE (11/20/2026)\n\n• 2WD + ABNORMAL + LOW ODDS + DATE (11/20/2026)\n\n• 3WD + ABNORMAL + INCOMPLETE TURNOVER + DATE (11/20/2026)\n\n━━━━━━━━━━━━━━\nTRẠNG THÁI\n━━━━━━━━━━━━━━\n\nNORMAL\n= Bình thường\n\nABNORMAL\n= Bất thường\n\n━━━━━━━━━━━━━━\nLÝ DO BẤT THƯỜNG\n━━━━━━━━━━━━━━\n\n• LOW ODDS\n= Tỷ lệ thấp\n\n• ALL IN\n\n• FIXED LOW BET\n= Cược cố định số tiền thấp\n\n• INCOMPLETE TURNOVER\n= Chưa hoàn thành vòng cược\n\n• HEAD TO HEAD BETTING\n= Đánh đối\n\n• SELF-INVITE\n\n• Insufficient deposit\n\n━━━━━━━━━━━━━━\nLƯU Ý\n━━━━━━━━━━━━━━\n\n• Nếu khách đã qua lượt duyệt thứ 4\n→ Xóa remark\n\n• Chỉ áp dụng cho member mới\n\n• Member cũ chỉ remark khi có bất thường"
   },
+
   {
-    "title": "QUY TẮC GHI CHÚ (KHÁCH CŨ)",
-    "content": "Khách cũ chỉ ghi chú khi có vấn đề về cược hoặc số dư.\n\nKhông cần ghi chú cho trường hợp không hoàn thành vòng cược nếu khách là người chơi cũ."
+    "title": "QUY TẮC XỬ LÝ RÚT TIỀN",
+
+    "content": "━━━━━━━━━━━━━━\n1️⃣ CHƯA ĐỦ TURNOVER\n━━━━━━━━━━━━━━\n\n• Từ chối rút tiền tối đa 3 lần\n\n• Nếu vẫn tiếp tục vi phạm:\n→ Khấu trừ toàn bộ lợi nhuận và thưởng\n→ Hoàn trả tiền gốc bằng JCOIN\n\n━━━━━━━━━━━━━━\n2️⃣ CƯỢC ODDS THẤP\n━━━━━━━━━━━━━━\n\n📌 Trường hợp nhẹ:\n\n• Có cược odds thấp\n• Nhưng không phải toàn bộ vé cược\n• Chưa phải abuse rõ ràng\n\n➡️ Có thể từ chối 2–3 lần\n➡️ Yêu cầu tiếp tục cược bình thường\n\nNếu tiếp tục vi phạm:\n→ Khấu trừ toàn bộ lợi nhuận và thưởng\n→ Hoàn trả tiền gốc bằng JCOIN\n\n📌 Trường hợp toàn bộ vé cược đều odds thấp:\n\n→ Trực tiếp khấu trừ toàn bộ lợi nhuận và thưởng\n→ Hoàn trả tiền gốc bằng JCOIN\n\n━━━━━━━━━━━━━━\n3️⃣ ALL-IN / ĐỐI CƯỢC\n━━━━━━━━━━━━━━\n\n• Khấu trừ toàn bộ lợi nhuận\n• Chỉ hoàn trả tiền gốc\n• Tái phạm nhiều lần\n→ Blacklist"
   },
-  {
-    "title": "QUY TRÌNH XỬ LÝ RÚT TIỀN",
-    "content": "1) Chưa đủ turnover:\n- Từ chối rút tiền tối đa 3 lần\n- Nếu vẫn không thay đổi thì khấu trừ toàn bộ lợi nhuận và tiền thưởng\n- Chỉ hoàn trả tiền gốc bằng JCOIN\n\n2) Cược tỷ lệ thấp để chạy vòng cược:\n- Trường hợp chưa rõ ràng: có thể từ chối 2–3 lần, yêu cầu cược bình thường\n- Nếu tiếp tục vi phạm: khấu trừ toàn bộ lợi nhuận và tiền thưởng, hoàn trả tiền gốc bằng JCOIN\n- Trường hợp toàn bộ cược đều tỷ lệ thấp: xử lý khấu trừ trực tiếp\n\n3) All-in / Đối cược:\n- Khấu trừ toàn bộ lợi nhuận\n- Chỉ hoàn trả tiền gốc bằng JCOIN\n- Tái phạm nhiều lần thì blacklist"
-  },
+
   {
     "title": "MANUAL REVIEW 3 LẦN ĐẦU",
-    "content": "Ba lần rút đầu tiên bắt buộc kiểm tra thủ công.\n\nYêu cầu vòng cược:\n- Kênh quảng cáo: x5 turnover\n- Kênh thường: x8 turnover\n\nSau mỗi lần kiểm tra phải ghi remark.\nNếu thành viên gửi nhiều yêu cầu rút cùng lúc thì chỉ tính là 1 lần.\nSau khi kiểm tra xong lần rút thứ 3 và giao dịch bình thường thì xóa ghi chú."
+
+    "content": "📌 3 lần rút đầu bắt buộc Manual Review.\n\n━━━━━━━━━━━━━━\nYÊU CẦU TURNOVER\n━━━━━━━━━━━━━━\n\n• Kênh quảng cáo FB/GG\n→ x5 turnover\n\n• Kênh thường\n→ x8 turnover\n\n━━━━━━━━━━━━━━\nLƯU Ý\n━━━━━━━━━━━━━━\n\n• Sau mỗi lần kiểm tra phải ghi remark\n\n• Nhiều yêu cầu rút cùng lúc\n→ chỉ tính là 1 lần\n\n• Sau khi hoàn thành lần rút thứ 3 và giao dịch bình thường\n→ Xóa remark"
   },
-  {
-    "title": "QUY TẮC KIỂM TRA NHẬN THƯỞNG NHÓM",
-    "content": "Khi khách nhận thưởng nhóm, cần kiểm tra:\n- Có lạm dụng thưởng hay không\n- Có liên kết IP hoặc thiết bị với cấp dưới hay không\n- Ngẫu nhiên kiểm tra 1–2 cấp dưới xem có cược bất thường hay không\n\nNếu vi phạm 1 trong 3 điều trên thì khấu trừ thưởng và hạn chế tiền thưởng.\nNếu tất cả bình thường và tổng tiền nạp của người chơi cùng cấp dưới bằng tổng tiền rút thì có thể duyệt."
-  },
-  {
-    "title": "QUY TẮC NHẬN THƯỞNG TIN NHẮN NỘI BỘ",
-    "content": "Áp dụng cho thành viên thua lỗ trong ngày hoặc người chơi cũ không đăng nhập trong thời gian dài.\n\nNếu người chơi chơi bình thường, nạp đều và đăng nhập thường xuyên thì có thể rút bình thường, không giới hạn số tiền rút.\n\nNếu đã 7 ngày không nạp, nhưng đặt cược bình thường và đang thua lỗ, có thể rút dưới 200 khi hết số dư.\nNếu rút quá 200 thì yêu cầu nạp lại."
-  },
-  {
-    "title": "QUY TẮC VÒNG CƯỢC CHO NỀN TẢNG CŨ",
-    "content": "Áp dụng cho 3 lần rút đầu tiên: kiểm tra thủ công.\n\nYêu cầu vòng cược:\n- Kênh quảng cáo (投放 / FB): x5\n- Kênh không quảng cáo: x8\n\nQuy tắc theo hành vi:\n- Khách đã nạp rút nhiều lần, cược bình thường: x3 hoặc x5 tùy trường hợp\n- Nạp nhỏ nhiều lần trong ngày (100–300): x5 hoặc x8 tùy kênh\n- Nạp nhỏ 1 lần trong ngày (100–300): x5 hoặc x8 tùy kênh\n\nKết luận ngắn:\n- Khách bình thường: 3–5x\n- Khách nạp nhỏ nhiều lần: 5–8x\n- Khách mỗi ngày chỉ nạp nhỏ: 5–8x"
-  },
+
   {
     "title": "QUY TẮC VÒNG CƯỢC 777IN / 365IN",
-    "content": "Rút lần đầu:\n- Kênh quảng cáo FB/GG: cược đủ 3 vòng\n- Kênh thường: cược đủ 5 vòng\n\nRút các lần sau:\n- Kênh quảng cáo FB/GG: cược đủ 5 vòng\n- Kênh thường: cược đủ 6 vòng\n\nCông thức:\n(Tổng nạp + Khuyến mãi) × số vòng yêu cầu\n\nVí dụ:\n- Nạp 100 + KM 17 = 117\n- 117 × 3 = 351\n- 117 × 5 = 585\n\nNếu thiếu vài chục vòng cược thì có thể du di linh động."
+
+    "content": "━━━━━━━━━━━━━━\nRÚT LẦN ĐẦU\n━━━━━━━━━━━━━━\n\n• Kênh FB/GG\n→ x3 turnover\n\n• Kênh thường\n→ x5 turnover\n\n━━━━━━━━━━━━━━\nRÚT CÁC LẦN SAU\n━━━━━━━━━━━━━━\n\n• Kênh FB/GG\n→ x5 turnover\n\n• Kênh thường\n→ x6 turnover\n\n━━━━━━━━━━━━━━\nCÔNG THỨC\n━━━━━━━━━━━━━━\n\n(Tổng nạp + Khuyến mãi)\n× số vòng cược yêu cầu\n\n━━━━━━━━━━━━━━\nVÍ DỤ\n━━━━━━━━━━━━━━\n\nNạp 100 + KM 17\n= 117\n\n117 × 3 = 351\n\n117 × 5 = 585\n\n━━━━━━━━━━━━━━\nLƯU Ý\n━━━━━━━━━━━━━━\n\n• Nếu thiếu vài chục turnover\n→ Có thể linh động duyệt"
   },
+
   {
-    "title": "QUY TẮC NHẬN THƯỞNG VÒNG QUAY 500",
-    "content": "Áp dụng cho tất cả nền tảng, trừ MU777.\n\nLần nhận đầu:\n- Kênh quảng cáo FB: nếu bản thân hoặc cấp dưới có nạp gần đây không quá 3 ngày và hoàn thành vòng cược thì có thể rút\n- Công thức: (Tiền nạp + Tiền KM) × 5\n- Kênh tiếng Trung: nếu tổng nạp giữa cấp trên bằng số tiền muốn rút và nạp gần đây không quá 3 ngày thì có thể rút\n\nLần nhận thứ 2:\n- Nếu tổng nạp của cấp trên và cấp dưới gấp đôi số tiền muốn rút và nạp gần đây không quá 3 ngày thì có thể rút\n\nLưu ý:\n- Cần kiểm tra IP và phương thức đặt cược\n- Nếu trùng IP, trùng thiết bị với cấp dưới hoặc cược tỷ lệ thấp thì phải khấu trừ thưởng"
+    "title": "QUY TẮC VÒNG CƯỢC NỀN TẢNG CŨ",
+
+    "content": "📌 Áp dụng cho nền tảng cũ.\n\n━━━━━━━━━━━━━━\n3 LẦN RÚT ĐẦU\n━━━━━━━━━━━━━━\n\n• Kênh FB / 投放\n→ x5 turnover\n\n• Kênh thường\n→ x8 turnover\n\n━━━━━━━━━━━━━━\nTHEO HÀNH VI\n━━━━━━━━━━━━━━\n\n• Khách bình thường\n→ x3 ~ x5\n\n• Nạp nhỏ nhiều lần\n→ x5 ~ x8\n\n• Mỗi ngày chỉ nạp nhỏ\n→ x5 ~ x8"
   },
+
   {
-    "title": "QUY TẮC NHẬN THƯỞNG VÒNG QUAY 500 (777IN / 365IN)",
-    "content": "Nếu thành viên nhận thưởng bàn xoay:\n- Kênh đầu tư: yêu cầu hoàn thành đủ 5 vòng cược\n- Kênh không đầu tư: yêu cầu hoàn thành đủ 8 vòng cược\n\nCách hiểu công thức:\n- Số dư hiện tại + 500, rồi nhân theo số vòng cược yêu cầu"
+    "title": "QUY TẮC THƯỞNG VÒNG QUAY 500",
+
+    "content": "📌 Áp dụng tất cả nền tảng trừ MU777.\n\n━━━━━━━━━━━━━━\nLẦN NHẬN ĐẦU\n━━━━━━━━━━━━━━\n\n• Cần có nạp gần đây không quá 3 ngày\n\n• Hoàn thành turnover yêu cầu\n\n📌 Công thức:\n(Tiền nạp + KM)\n× 5\n\n━━━━━━━━━━━━━━\nLẦN NHẬN THỨ 2\n━━━━━━━━━━━━━━\n\n• Tổng nạp cấp trên + cấp dưới\nphải gấp đôi số tiền muốn rút\n\n• Có nạp trong 3 ngày gần nhất\n\n━━━━━━━━━━━━━━\nLƯU Ý\n━━━━━━━━━━━━━━\n\n• Bắt buộc kiểm tra IP\n• Kiểm tra thiết bị\n• Kiểm tra kiểu cược\n\nNếu bất thường:\n→ Khấu trừ thưởng"
+  },
+
+  {
+    "title": "THƯỞNG VÒNG QUAY 500 - 777IN / 365IN",
+
+    "content": "📌 Áp dụng cho thành viên nhận thưởng bàn xoay.\n\n━━━━━━━━━━━━━━\nKÊNH ĐẦU TƯ\n━━━━━━━━━━━━━━\n\n(Số dư hiện tại + 500)\n× 5 turnover\n\n━━━━━━━━━━━━━━\nKÊNH THƯỜNG\n━━━━━━━━━━━━━━\n\n(Số dư hiện tại + 500)\n× 8 turnover"
+  },
+
+  {
+    "title": "QUY TẮC THƯỞNG NHÓM",
+
+    "content": "━━━━━━━━━━━━━━\nNỘI DUNG KIỂM TRA\n━━━━━━━━━━━━━━\n\n• Kiểm tra abuse thưởng\n\n• Kiểm tra liên kết IP / thiết bị\nvới cấp dưới\n\n• Random kiểm tra cấp dưới\ncó cược bất thường không\n\n━━━━━━━━━━━━━━\nXỬ LÝ\n━━━━━━━━━━━━━━\n\nNếu vi phạm:\n→ Khấu trừ thưởng\n→ Hạn chế bonus\n\nNếu tất cả bình thường:\n→ Có thể duyệt"
+  },
+
+  {
+    "title": "QUY TẮC THƯỞNG TIN NHẮN NỘI BỘ",
+
+    "content": "📌 Áp dụng cho:\n\n• Member thua lỗ trong ngày\n\n• Member lâu ngày không đăng nhập\n\n━━━━━━━━━━━━━━\nQUY TẮC\n━━━━━━━━━━━━━━\n\n• Nếu member chơi bình thường\n→ Có thể rút bình thường\n\n• Nếu quá 7 ngày không nạp\nnhưng vẫn cược bình thường\nvà đang thua lỗ:\n→ Có thể cho rút dưới 200\n\n• Nếu rút trên 200\n→ Yêu cầu nạp lại"
   }
-]
+
+];
