@@ -291,6 +291,6 @@
     "system": "KHÔNG RÕ NGUỒN TIỀN",
     "group": "KHÁCH ĐẶT CƯỢC TỪ NGUỒN TIỀN BẤT THƯỜNG",
     "title": "KHÔNG RÕ NGUỒN TIỀN  - Không tìm thấy nguồn tiền của khách, nguồn tiền bất thường - TỪ CHỐI YÊU CẦU NẠP THÊM TIỀN",
-    "content": "会员ID:  \n*拒绝原因: 会员资金来源异常，未查到资金来源。\n*SỐ LẦN: 3\n* 结论：扣除奖励。"
+    "content": "会员ID:  \n*拒绝原因: 会员资金来源异常，未查到资金来源。\n*时间 : 3\n* 结论：扣除奖励。"
   }
 ]
