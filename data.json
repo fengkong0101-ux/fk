@@ -143,12 +143,6 @@
     "title": "NHẬN THƯỞNG NHÓM TRÙNG IP (KHẤU  TRỪ THƯỞNG) 2",
     "content": "会员ID :\n*拒绝原因 : 成员的 IP 地址和设备与更低级别账号存在关联，彼此相互关联。\n*会员风险评级 : 有问题\n*结论 : 扣除奖励\n* WD ABNORMAL SELF-INVITE [NGÀY]"
   },
- {
-    "system": "CƯỢC BẤT THƯỜNG",
-    "group": "CƯỢC TỈ LỆ THẤP",
-    "title": "VI PHẠM TỈ LỆ THẤP (NHẸ - Nếu thành viên có đặt cược tỷ lệ thấp, nhưng không phải toàn bộ cược đều là tỷ lệ thấp, và không thuộc hành vi rõ ràng) - TỪ CHỐI BẮT CƯỢC LẠI",
-    "content": "*会员ID : \n*拒绝原因 :下注低赔率\n*会员风险评级 : 中嫌疑\n*结论 :  警告\n*  WD ABNORMAL LOW ODD [NGÀY]"
-  },
 {
     "system": "CƯỢC BẤT THƯỜNG",
     "group": "CƯỢC TỈ LỆ THẤP",
