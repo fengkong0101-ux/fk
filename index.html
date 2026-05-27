@@ -662,6 +662,8 @@
 
   <div id="toast" class="toast"></div>
 
+<script src="./rules.js"></script>
+
 <script>
 const systemSelect = document.getElementById('systemSelect');
 const groupSelect = document.getElementById('groupSelect');
@@ -1285,11 +1287,8 @@ initTheme();
 loadSticky();
 initializeWithData(DEFAULT_DATA);
 
-if (typeof RULES_DATA !== 'undefined') {
-  rulesData = RULES_DATA;
-}
-
-
+rulesData = Array.isArray(window.RULES_DATA) ? window.RULES_DATA : [];
+renderRules();
 
 fetch('./data.json', { cache: 'no-store' })
   .then(r => {
@@ -1299,6 +1298,5 @@ fetch('./data.json', { cache: 'no-store' })
   .then(arr => initializeWithData(arr))
   .catch(() => {});
 </script>
-<script src="./rules.js"></script>
 </body>
 </html>
