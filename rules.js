@@ -3,7 +3,8 @@ window.RULES_DATA = [
   {
     "title": "QUY TẮC GHI CHÚ",
 
-    "content": "📌 3 LẦN RÚT TIỀN ĐẦU TIÊN\n\nSau khi duyệt cần ghi chú theo format bên dưới.\n\n━━━━━━━━━━━━━━\nFORMAT\n━━━━━━━━━━━━━━\n\n[1WD / 2WD / 3WD]\n+ [NORMAL hoặc ABNORMAL]\n+ [Lý do nếu ABNORMAL]\n+ [DATE]\n\n━━━━━━━━━━━━━━\nVÍ DỤ\n━━━━━━━━━━━━━━\n\n• 1WD + NORMAL + DATE (11/20/2026)\n\n• 2WD + ABNORMAL + LOW ODDS + DATE (11/20/2026)\n\n• 3WD + ABNORMAL + INCOMPLETE TURNOVER + DATE (11/20/2026)\n\n━━━━━━━━━━━━━━\nTRẠNG THÁI\n━━━━━━━━━━━━━━\n\nNORMAL\n= Bình thường\n\nABNORMAL\n= Bất thường\n\n━━━━━━━━━━━━━━\nLÝ DO BẤT THƯỜNG\n━━━━━━━━━━━━━━\n\n• LOW ODDS\n= Tỷ lệ thấp\n\n• ALL IN\n\n• FIXED LOW BET\n= Cược cố định số tiền thấp\n\n• INCOMPLETE TURNOVER\n= Chưa hoàn thành vòng cược\n\n• HEAD TO HEAD BETTING\n= Đánh đối\n\n• SELF-INVITE\n\n• Insufficient deposit\n\n━━━━━━━━━━━━━━\nLƯU Ý\n━━━━━━━━━━━━━━\n\n• Nếu khách đã qua lượt duyệt thứ 4\n→ Xóa remark\n\n• Chỉ áp dụng cho member mới\n\n• Member cũ chỉ remark khi có bất thường"
+    "content": "📌 3 LẦN RÚT TIỀN ĐẦU TIÊN
+      Sau khi duyệt cần ghi chú theo format bên dưới.\n\n━━━━━━━━━━━━━━\nFORMAT\n━━━━━━━━━━━━━━\n\n[1WD / 2WD / 3WD]\n+ [NORMAL hoặc ABNORMAL]\n+ [Lý do nếu ABNORMAL]\n+ [DATE]\n\n━━━━━━━━━━━━━━\nVÍ DỤ\n━━━━━━━━━━━━━━\n\n• 1WD + NORMAL + DATE (11/20/2026)\n\n• 2WD + ABNORMAL + LOW ODDS + DATE (11/20/2026)\n\n• 3WD + ABNORMAL + INCOMPLETE TURNOVER + DATE (11/20/2026)\n\n━━━━━━━━━━━━━━\nTRẠNG THÁI\n━━━━━━━━━━━━━━\n\nNORMAL\n= Bình thường\n\nABNORMAL\n= Bất thường\n\n━━━━━━━━━━━━━━\nLÝ DO BẤT THƯỜNG\n━━━━━━━━━━━━━━\n\n• LOW ODDS\n= Tỷ lệ thấp\n\n• ALL IN\n\n• FIXED LOW BET\n= Cược cố định số tiền thấp\n\n• INCOMPLETE TURNOVER\n= Chưa hoàn thành vòng cược\n\n• HEAD TO HEAD BETTING\n= Đánh đối\n\n• SELF-INVITE\n\n• Insufficient deposit\n\n━━━━━━━━━━━━━━\nLƯU Ý\n━━━━━━━━━━━━━━\n\n• Nếu khách đã qua lượt duyệt thứ 4\n→ Xóa remark\n\n• Chỉ áp dụng cho member mới\n\n• Member cũ chỉ remark khi có bất thường"
   },
 
   {
