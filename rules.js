@@ -3,56 +3,349 @@ window.RULES_DATA = [
   {
     "title": "QUY TẮC GHI CHÚ",
 
-    "content": "📌 3 LẦN RÚT TIỀN ĐẦU TIÊN
-      Sau khi duyệt cần ghi chú theo format bên dưới.\n\n━━━━━━━━━━━━━━\nFORMAT\n━━━━━━━━━━━━━━\n\n[1WD / 2WD / 3WD]\n+ [NORMAL hoặc ABNORMAL]\n+ [Lý do nếu ABNORMAL]\n+ [DATE]\n\n━━━━━━━━━━━━━━\nVÍ DỤ\n━━━━━━━━━━━━━━\n\n• 1WD + NORMAL + DATE (11/20/2026)\n\n• 2WD + ABNORMAL + LOW ODDS + DATE (11/20/2026)\n\n• 3WD + ABNORMAL + INCOMPLETE TURNOVER + DATE (11/20/2026)\n\n━━━━━━━━━━━━━━\nTRẠNG THÁI\n━━━━━━━━━━━━━━\n\nNORMAL\n= Bình thường\n\nABNORMAL\n= Bất thường\n\n━━━━━━━━━━━━━━\nLÝ DO BẤT THƯỜNG\n━━━━━━━━━━━━━━\n\n• LOW ODDS\n= Tỷ lệ thấp\n\n• ALL IN\n\n• FIXED LOW BET\n= Cược cố định số tiền thấp\n\n• INCOMPLETE TURNOVER\n= Chưa hoàn thành vòng cược\n\n• HEAD TO HEAD BETTING\n= Đánh đối\n\n• SELF-INVITE\n\n• Insufficient deposit\n\n━━━━━━━━━━━━━━\nLƯU Ý\n━━━━━━━━━━━━━━\n\n• Nếu khách đã qua lượt duyệt thứ 4\n→ Xóa remark\n\n• Chỉ áp dụng cho member mới\n\n• Member cũ chỉ remark khi có bất thường"
+    "content": `
+📌 3 LẦN RÚT TIỀN ĐẦU TIÊN
+      Sau khi duyệt cần ghi chú theo format bên dưới.
+
+━━━━━━━━━━━━━━
+FORMAT
+━━━━━━━━━━━━━━
+
+[1WD / 2WD / 3WD]
++ [NORMAL hoặc ABNORMAL]
++ [Lý do nếu ABNORMAL]
++ [DATE]
+
+━━━━━━━━━━━━━━
+VÍ DỤ
+━━━━━━━━━━━━━━
+
+• 1WD + NORMAL + DATE (11/20/2026)
+
+• 2WD + ABNORMAL + LOW ODDS + DATE (11/20/2026)
+
+• 3WD + ABNORMAL + INCOMPLETE TURNOVER + DATE (11/20/2026)
+
+━━━━━━━━━━━━━━
+TRẠNG THÁI
+━━━━━━━━━━━━━━
+
+NORMAL
+= Bình thường
+
+ABNORMAL
+= Bất thường
+
+━━━━━━━━━━━━━━
+LÝ DO BẤT THƯỜNG
+━━━━━━━━━━━━━━
+
+• LOW ODDS
+= Tỷ lệ thấp
+
+• ALL IN
+
+• FIXED LOW BET
+= Cược cố định số tiền thấp
+
+• INCOMPLETE TURNOVER
+= Chưa hoàn thành vòng cược
+
+• HEAD TO HEAD BETTING
+= Đánh đối
+
+• SELF-INVITE
+
+• Insufficient deposit
+
+━━━━━━━━━━━━━━
+LƯU Ý
+━━━━━━━━━━━━━━
+
+• Nếu khách đã qua lượt duyệt thứ 4
+→ Xóa remark
+
+• Chỉ áp dụng cho member mới
+
+• Member cũ chỉ remark khi có bất thường
+`
   },
 
   {
     "title": "QUY TẮC XỬ LÝ RÚT TIỀN",
 
-    "content": "━━━━━━━━━━━━━━\n1️⃣ CHƯA ĐỦ TURNOVER\n━━━━━━━━━━━━━━\n\n• Từ chối rút tiền tối đa 3 lần\n\n• Nếu vẫn tiếp tục vi phạm:\n→ Khấu trừ toàn bộ lợi nhuận và thưởng\n→ Hoàn trả tiền gốc bằng JCOIN\n\n━━━━━━━━━━━━━━\n2️⃣ CƯỢC ODDS THẤP\n━━━━━━━━━━━━━━\n\n📌 Trường hợp nhẹ:\n\n• Có cược odds thấp\n• Nhưng không phải toàn bộ vé cược\n• Chưa phải abuse rõ ràng\n\n➡️ Có thể từ chối 2–3 lần\n➡️ Yêu cầu tiếp tục cược bình thường\n\nNếu tiếp tục vi phạm:\n→ Khấu trừ toàn bộ lợi nhuận và thưởng\n→ Hoàn trả tiền gốc bằng JCOIN\n\n📌 Trường hợp toàn bộ vé cược đều odds thấp:\n\n→ Trực tiếp khấu trừ toàn bộ lợi nhuận và thưởng\n→ Hoàn trả tiền gốc bằng JCOIN\n\n━━━━━━━━━━━━━━\n3️⃣ ALL-IN / ĐỐI CƯỢC\n━━━━━━━━━━━━━━\n\n• Khấu trừ toàn bộ lợi nhuận\n• Chỉ hoàn trả tiền gốc\n• Tái phạm nhiều lần\n→ Blacklist"
+    "content": `
+━━━━━━━━━━━━━━
+1️⃣ CHƯA ĐỦ TURNOVER
+━━━━━━━━━━━━━━
+
+• Từ chối rút tiền tối đa 3 lần
+
+• Nếu vẫn tiếp tục vi phạm:
+→ Khấu trừ toàn bộ lợi nhuận và thưởng
+→ Hoàn trả tiền gốc bằng JCOIN
+
+━━━━━━━━━━━━━━
+2️⃣ CƯỢC ODDS THẤP
+━━━━━━━━━━━━━━
+
+📌 Trường hợp nhẹ:
+
+• Có cược odds thấp
+• Nhưng không phải toàn bộ vé cược
+• Chưa phải abuse rõ ràng
+
+➡️ Có thể từ chối 2–3 lần
+➡️ Yêu cầu tiếp tục cược bình thường
+
+Nếu tiếp tục vi phạm:
+→ Khấu trừ toàn bộ lợi nhuận và thưởng
+→ Hoàn trả tiền gốc bằng JCOIN
+
+📌 Trường hợp toàn bộ vé cược đều odds thấp:
+
+→ Trực tiếp khấu trừ toàn bộ lợi nhuận và thưởng
+→ Hoàn trả tiền gốc bằng JCOIN
+
+━━━━━━━━━━━━━━
+3️⃣ ALL-IN / ĐỐI CƯỢC
+━━━━━━━━━━━━━━
+
+• Khấu trừ toàn bộ lợi nhuận
+• Chỉ hoàn trả tiền gốc
+• Tái phạm nhiều lần
+→ Blacklist
+`
   },
 
   {
     "title": "MANUAL REVIEW 3 LẦN ĐẦU",
 
-    "content": "📌 3 lần rút đầu bắt buộc Manual Review.\n\n━━━━━━━━━━━━━━\nYÊU CẦU TURNOVER\n━━━━━━━━━━━━━━\n\n• Kênh quảng cáo FB/GG\n→ x5 turnover\n\n• Kênh thường\n→ x8 turnover\n\n━━━━━━━━━━━━━━\nLƯU Ý\n━━━━━━━━━━━━━━\n\n• Sau mỗi lần kiểm tra phải ghi remark\n\n• Nhiều yêu cầu rút cùng lúc\n→ chỉ tính là 1 lần\n\n• Sau khi hoàn thành lần rút thứ 3 và giao dịch bình thường\n→ Xóa remark"
+    "content": `
+📌 3 lần rút đầu bắt buộc Manual Review.
+
+━━━━━━━━━━━━━━
+YÊU CẦU TURNOVER
+━━━━━━━━━━━━━━
+
+• Kênh quảng cáo FB/GG
+→ x5 turnover
+
+• Kênh thường
+→ x8 turnover
+
+━━━━━━━━━━━━━━
+LƯU Ý
+━━━━━━━━━━━━━━
+
+• Sau mỗi lần kiểm tra phải ghi remark
+
+• Nhiều yêu cầu rút cùng lúc
+→ chỉ tính là 1 lần
+
+• Sau khi hoàn thành lần rút thứ 3 và giao dịch bình thường
+→ Xóa remark
+`
   },
 
   {
     "title": "QUY TẮC VÒNG CƯỢC 777IN / 365IN",
 
-    "content": "━━━━━━━━━━━━━━\nRÚT LẦN ĐẦU\n━━━━━━━━━━━━━━\n\n• Kênh FB/GG\n→ x3 turnover\n\n• Kênh thường\n→ x5 turnover\n\n━━━━━━━━━━━━━━\nRÚT CÁC LẦN SAU\n━━━━━━━━━━━━━━\n\n• Kênh FB/GG\n→ x5 turnover\n\n• Kênh thường\n→ x6 turnover\n\n━━━━━━━━━━━━━━\nCÔNG THỨC\n━━━━━━━━━━━━━━\n\n(Tổng nạp + Khuyến mãi)\n× số vòng cược yêu cầu\n\n━━━━━━━━━━━━━━\nVÍ DỤ\n━━━━━━━━━━━━━━\n\nNạp 100 + KM 17\n= 117\n\n117 × 3 = 351\n\n117 × 5 = 585\n\n━━━━━━━━━━━━━━\nLƯU Ý\n━━━━━━━━━━━━━━\n\n• Nếu thiếu vài chục turnover\n→ Có thể linh động duyệt"
+    "content": `
+━━━━━━━━━━━━━━
+RÚT LẦN ĐẦU
+━━━━━━━━━━━━━━
+
+• Kênh FB/GG
+→ x3 turnover
+
+• Kênh thường
+→ x5 turnover
+
+━━━━━━━━━━━━━━
+RÚT CÁC LẦN SAU
+━━━━━━━━━━━━━━
+
+• Kênh FB/GG
+→ x5 turnover
+
+• Kênh thường
+→ x6 turnover
+
+━━━━━━━━━━━━━━
+CÔNG THỨC
+━━━━━━━━━━━━━━
+
+(Tổng nạp + Khuyến mãi)
+× số vòng cược yêu cầu
+
+━━━━━━━━━━━━━━
+VÍ DỤ
+━━━━━━━━━━━━━━
+
+Nạp 100 + KM 17
+= 117
+
+117 × 3 = 351
+
+117 × 5 = 585
+
+━━━━━━━━━━━━━━
+LƯU Ý
+━━━━━━━━━━━━━━
+
+• Nếu thiếu vài chục turnover
+→ Có thể linh động duyệt
+`
   },
 
   {
     "title": "QUY TẮC VÒNG CƯỢC NỀN TẢNG CŨ",
 
-    "content": "📌 Áp dụng cho nền tảng cũ.\n\n━━━━━━━━━━━━━━\n3 LẦN RÚT ĐẦU\n━━━━━━━━━━━━━━\n\n• Kênh FB / 投放\n→ x5 turnover\n\n• Kênh thường\n→ x8 turnover\n\n━━━━━━━━━━━━━━\nTHEO HÀNH VI\n━━━━━━━━━━━━━━\n\n• Khách bình thường\n→ x3 ~ x5\n\n• Nạp nhỏ nhiều lần\n→ x5 ~ x8\n\n• Mỗi ngày chỉ nạp nhỏ\n→ x5 ~ x8"
+    "content": `
+📌 Áp dụng cho nền tảng cũ.
+
+━━━━━━━━━━━━━━
+3 LẦN RÚT ĐẦU
+━━━━━━━━━━━━━━
+
+• Kênh FB / 投放
+→ x5 turnover
+
+• Kênh thường
+→ x8 turnover
+
+━━━━━━━━━━━━━━
+THEO HÀNH VI
+━━━━━━━━━━━━━━
+
+• Khách bình thường
+→ x3 ~ x5
+
+• Nạp nhỏ nhiều lần
+→ x5 ~ x8
+
+• Mỗi ngày chỉ nạp nhỏ
+→ x5 ~ x8
+`
   },
 
   {
     "title": "QUY TẮC THƯỞNG VÒNG QUAY 500",
 
-    "content": "📌 Áp dụng tất cả nền tảng trừ MU777.\n\n━━━━━━━━━━━━━━\nLẦN NHẬN ĐẦU\n━━━━━━━━━━━━━━\n\n• Cần có nạp gần đây không quá 3 ngày\n\n• Hoàn thành turnover yêu cầu\n\n📌 Công thức:\n(Tiền nạp + KM)\n× 5\n\n━━━━━━━━━━━━━━\nLẦN NHẬN THỨ 2\n━━━━━━━━━━━━━━\n\n• Tổng nạp cấp trên + cấp dưới\nphải gấp đôi số tiền muốn rút\n\n• Có nạp trong 3 ngày gần nhất\n\n━━━━━━━━━━━━━━\nLƯU Ý\n━━━━━━━━━━━━━━\n\n• Bắt buộc kiểm tra IP\n• Kiểm tra thiết bị\n• Kiểm tra kiểu cược\n\nNếu bất thường:\n→ Khấu trừ thưởng"
+    "content": `
+📌 Áp dụng tất cả nền tảng trừ MU777.
+
+━━━━━━━━━━━━━━
+LẦN NHẬN ĐẦU
+━━━━━━━━━━━━━━
+
+• Cần có nạp gần đây không quá 3 ngày
+
+• Hoàn thành turnover yêu cầu
+
+📌 Công thức:
+(Tiền nạp + KM)
+× 5
+
+━━━━━━━━━━━━━━
+LẦN NHẬN THỨ 2
+━━━━━━━━━━━━━━
+
+• Tổng nạp cấp trên + cấp dưới
+phải gấp đôi số tiền muốn rút
+
+• Có nạp trong 3 ngày gần nhất
+
+━━━━━━━━━━━━━━
+LƯU Ý
+━━━━━━━━━━━━━━
+
+• Bắt buộc kiểm tra IP
+• Kiểm tra thiết bị
+• Kiểm tra kiểu cược
+
+Nếu bất thường:
+→ Khấu trừ thưởng
+`
   },
 
   {
     "title": "THƯỞNG VÒNG QUAY 500 - 777IN / 365IN",
 
-    "content": "📌 Áp dụng cho thành viên nhận thưởng bàn xoay.\n\n━━━━━━━━━━━━━━\nKÊNH ĐẦU TƯ\n━━━━━━━━━━━━━━\n\n(Số dư hiện tại + 500)\n× 5 turnover\n\n━━━━━━━━━━━━━━\nKÊNH THƯỜNG\n━━━━━━━━━━━━━━\n\n(Số dư hiện tại + 500)\n× 8 turnover"
+    "content": `
+📌 Áp dụng cho thành viên nhận thưởng bàn xoay.
+
+━━━━━━━━━━━━━━
+KÊNH ĐẦU TƯ
+━━━━━━━━━━━━━━
+
+(Số dư hiện tại + 500)
+× 5 turnover
+
+━━━━━━━━━━━━━━
+KÊNH THƯỜNG
+━━━━━━━━━━━━━━
+
+(Số dư hiện tại + 500)
+× 8 turnover
+`
   },
 
   {
     "title": "QUY TẮC THƯỞNG NHÓM",
 
-    "content": "━━━━━━━━━━━━━━\nNỘI DUNG KIỂM TRA\n━━━━━━━━━━━━━━\n\n• Kiểm tra abuse thưởng\n\n• Kiểm tra liên kết IP / thiết bị\nvới cấp dưới\n\n• Random kiểm tra cấp dưới\ncó cược bất thường không\n\n━━━━━━━━━━━━━━\nXỬ LÝ\n━━━━━━━━━━━━━━\n\nNếu vi phạm:\n→ Khấu trừ thưởng\n→ Hạn chế bonus\n\nNếu tất cả bình thường:\n→ Có thể duyệt"
+    "content": `
+━━━━━━━━━━━━━━
+NỘI DUNG KIỂM TRA
+━━━━━━━━━━━━━━
+
+• Kiểm tra abuse thưởng
+
+• Kiểm tra liên kết IP / thiết bị
+với cấp dưới
+
+• Random kiểm tra cấp dưới
+có cược bất thường không
+
+━━━━━━━━━━━━━━
+XỬ LÝ
+━━━━━━━━━━━━━━
+
+Nếu vi phạm:
+→ Khấu trừ thưởng
+→ Hạn chế bonus
+
+Nếu tất cả bình thường:
+→ Có thể duyệt
+`
   },
 
   {
     "title": "QUY TẮC THƯỞNG TIN NHẮN NỘI BỘ",
 
-    "content": "📌 Áp dụng cho:\n\n• Member thua lỗ trong ngày\n\n• Member lâu ngày không đăng nhập\n\n━━━━━━━━━━━━━━\nQUY TẮC\n━━━━━━━━━━━━━━\n\n• Nếu member chơi bình thường\n→ Có thể rút bình thường\n\n• Nếu quá 7 ngày không nạp\nnhưng vẫn cược bình thường\nvà đang thua lỗ:\n→ Có thể cho rút dưới 200\n\n• Nếu rút trên 200\n→ Yêu cầu nạp lại"
+    "content": `
+📌 Áp dụng cho:
+
+• Member thua lỗ trong ngày
+
+• Member lâu ngày không đăng nhập
+
+━━━━━━━━━━━━━━
+QUY TẮC
+━━━━━━━━━━━━━━
+
+• Nếu member chơi bình thường
+→ Có thể rút bình thường
+
+• Nếu quá 7 ngày không nạp
+nhưng vẫn cược bình thường
+và đang thua lỗ:
+→ Có thể cho rút dưới 200
+
+• Nếu rút trên 200
+→ Yêu cầu nạp lại
+`
   }
 
 ];
