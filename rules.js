@@ -32,7 +32,7 @@ window.RULES_DATA = [
 "content": "Đối với người chơi nhận thưởng vòng quay 500.\nTất cả nền tảng ngoại trừ MU777.\n\n1️⃣ . Đối với thành viên nhận thưởng lần đầu\n- Đối với kênh quảng cáo FB nếu bản thân hoặc cấp dưới có nạp tiền vào trò chơi gần đây không quá 7 ngày hoàn thành vòng cược theo yêu cầu thì có thể rút tiền.\n* TIỀN NẠP + TIỀN KM x 5\nVÍ DỤ 100 + 542.32 = 642.32 642.32 x 5 = 3211 TIỀN VÒNG CƯỢC\n- Đối với các kênh tiếng trung nếu người chơi có tổng nạp giữa cấp trên bằng với tổng số tiền người chơi muốn rút thưởng và thời gian nạp gần đây không quá 7 ngày thì có thể rút tiền.\n\n2️⃣ . Đối với thành viên nhận thưởng lần thứ 2\n- Đối với tất cả kênh nếu người chơi có tổng nạp giữa cấp trên và cấp dưới gấp đôi với số tiền người chơi muốn rút thưởng và thời gian nạp gần đây không quá 3 ngày thì có thể rút tiền.\n* LƯU Ý : Cần kiểm tra địa chỉ IP và phương thức đặt cược nếu người chơi có cùng liên kết ip thiết bị với cấp dưới hoặc đặt cược tỷ lệ thấp cần phải khấu trừ phần thưởng."
 },
 {
-"title": "QUY TẮC NHẬN THƯỞNG VÒNG QUAY 500 ÁP DỤNG CHO 777IN / 365IN",
+"title": "QUY TẮC NHẬN THƯỞNG VÒNG QUAY 500 ÁP DỤNG CHO 777IN / 365IN / GEM7",
 "content": "NẾU THÀNH VIÊN CÓ NHẬN KHUYẾN MÃI ( NHẬN THƯỞNG BÀN XOAY )\nYÊU CẦU VÒNG CƯỢC :\n📢KÊNH ĐẦU TƯ YÊU CẦU HOÀN THÀNH ĐỦ 5 VÒNG CƯỢC ( SỐ DƯ HIỆN TẠI + 500 * 5 )\n📢KÊNH KHÔNG ĐẦU TƯ YÊU CẦU HOÀN THÀNH ĐỦ 8 VÒNG CƯỢC ( SỐ DƯ HIỆN TẠI + 500 * 8 )"
 },
 {
