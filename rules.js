@@ -1,4 +1,8 @@
 window.RULES_DATA = [
+  {
+"title": "QUY TẮC KIỂM TRA VÒNG CƯỢC GEM7 UPDATE 21/06/2026",
+"content": "📅 Thời gian áp dụng: 21/06/2026\n\nGEM7\n\n1️⃣ Rút tiền lần đầu (thành viên có nạp tiền)\n• Kênh quảng bá (投放): 3 lần vòng cược\n• Kênh không quảng bá: 7 lần vòng cược\n\n2️⃣ Rút tiền lần đầu (thành viên chưa nạp tiền)\n(Tính theo giá trị tiền thưởng nhận được)\n• Kênh quảng bá (投放): 5 lần vòng cược\n• Kênh không quảng bá: 8 lần vòng cược\n\n3️⃣ Không phải rút tiền lần đầu\n(Xét theo tổng số tiền nạp và tổng doanh thu cược của thành viên)\n• Kênh quảng bá (投放): 5 lần vòng cược\n• Kênh không quảng bá: 8 lần vòng cược\n\n📌 Lưu ý:\n• Thành viên có nạp tiền: áp dụng theo quy tắc vòng cược tương ứng với lần rút tiền.\n• Thành viên không có nạp tiền: tính vòng cược dựa trên giá trị tiền thưởng nhận được.\n• Từ ngày 21/06/2026, toàn bộ quy trình xét duyệt và kiểm soát rủi ro của GEM7 áp dụng theo quy định mới này.\n\n@namok2009\n@ABCDQ89\nQC TRAM"
+},
 {
 "title": "QUY TẮC GHI CHÚ",
 "content": "3 LẦN RÚT TIỀN ĐẦU TIÊN của khách sau khi duyệt cần ghi chú theo format bên dưới:\n\nFormat:\n[1WD / 2WD / 3WD] + [NORMAL hoặc ABNORMAL] + [Lý do nếu ABNORMAL] + [DATE]\n\nVí dụ:\n\n- 1WD + NORMAL + DATE (11/20/2026)\n- 2WD + ABNORMAL + LOW ODDS + DATE (11/20/2026)\n- 3WD + ABNORMAL + INCOMPLETE TURNOVER + DATE (11/20/2026)\n\nCác trạng thái:\n\nNORMAL = Bình thường\nABNORMAL = Bất thường\nLý do bất thường gồm:\n• LOW ODDS = Tỷ lệ thấp\n• ALL IN\n• FIXED LOW BET = Cược cố định số tiền thấp\n• INCOMPLETE TURNOVER = Chưa hoàn thành vòng cược\n• HEAD TO HEAD BETTING = Đánh đối\n\nLưu ý:\n\nNếu khách đã qua lượt duyệt thứ 4 thì xóa ghi chú đi\nKHÔNG áp dụng cách ghi chú này cho khách cũ"
