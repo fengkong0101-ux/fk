@@ -4084,18 +4084,87 @@ document.addEventListener('keydown', (event) => {
 initTheme();
 loadSticky();
 loadRecent();
-initializeWithData(DEFAULT_DATA);
 
-rulesData = Array.isArray(window.RULES_DATA) ? window.RULES_DATA : [];
-renderRules();
+const DATA_URL = new URL('./data.json', document.baseURI).href;
+const RULES_URL = new URL('./rules.js', document.baseURI).href;
 
-fetch('./data.json', { cache: 'no-store' })
-  .then(r => {
-    if (!r.ok) throw new Error('data.json not found');
-    return r.json();
-  })
-  .then(arr => initializeWithData(arr))
-  .catch(() => {});
+async function fetchArrayFile(url, fileName) {
+  const response = await fetch(url, { cache: 'no-store' });
+  if (!response.ok) {
+    throw new Error(`${fileName} HTTP ${response.status}`);
+  }
+
+  const value = await response.json();
+  if (!Array.isArray(value)) {
+    throw new Error(`${fileName} phải chứa một JSON array`);
+  }
+
+  return value;
+}
+
+function parseRulesSource(source) {
+  const text = String(source || '').replace(/^\uFEFF/, '').trim();
+  const arrayStart = text.indexOf('[');
+  const arrayEnd = text.lastIndexOf(']');
+
+  if (arrayStart < 0 || arrayEnd <= arrayStart) {
+    throw new Error('rules.js không chứa dữ liệu dạng array');
+  }
+
+  const value = JSON.parse(text.slice(arrayStart, arrayEnd + 1));
+  if (!Array.isArray(value)) {
+    throw new Error('rules.js phải chứa một array');
+  }
+
+  return value;
+}
+
+async function loadRulesFile() {
+  if (Array.isArray(window.RULES_DATA) && window.RULES_DATA.length) {
+    return window.RULES_DATA;
+  }
+
+  const response = await fetch(RULES_URL, { cache: 'no-store' });
+  if (!response.ok) {
+    throw new Error(`rules.js HTTP ${response.status}`);
+  }
+
+  return parseRulesSource(await response.text());
+}
+
+async function initializeApplication() {
+  const [dataResult, rulesResult] = await Promise.allSettled([
+    fetchArrayFile(DATA_URL, 'data.json'),
+    loadRulesFile()
+  ]);
+
+  const loadedData = dataResult.status === 'fulfilled' && dataResult.value.length
+    ? dataResult.value
+    : DEFAULT_DATA.slice();
+
+  rulesData = rulesResult.status === 'fulfilled'
+    ? rulesResult.value
+    : [];
+
+  initializeWithData(loadedData);
+  renderRules();
+
+  const loadErrors = [];
+  if (dataResult.status === 'rejected') {
+    console.error('[Risk Manager] Không tải được data.json:', dataResult.reason);
+    loadErrors.push('data.json');
+  }
+  if (rulesResult.status === 'rejected') {
+    console.error('[Risk Manager] Không tải được rules.js:', rulesResult.reason);
+    loadErrors.push('rules.js');
+  }
+
+  if (loadErrors.length) {
+    showToast(`Không tải được ${loadErrors.join(' và ')}`);
+  }
+}
+
+initializeApplication();
 </script>
 
 <script>
