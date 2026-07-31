@@ -3400,24 +3400,23 @@
        Added inside the existing "Hướng dẫn nghiệp vụ" page.
        ========================================================= */
     .ip-guide-tabs {
-      display: inline-flex;
-      gap: 6px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
       margin: 0 0 18px;
-      padding: 6px;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      background: var(--bg-soft);
-      box-shadow: var(--shadow-xs, 0 4px 14px rgba(15, 23, 42, .05));
     }
 
     .ip-guide-tab {
-      border: 0;
-      padding: 10px 14px;
-      border-radius: 10px;
+      min-width: 230px;
+      border: 1px solid var(--border);
+      padding: 12px 16px;
+      border-radius: 13px;
       color: var(--muted);
-      background: transparent;
-      box-shadow: none;
-      font-weight: 700;
+      background: var(--bg-soft);
+      box-shadow: var(--shadow-xs, 0 4px 14px rgba(15, 23, 42, .05));
+      font-weight: 750;
     }
 
     .ip-guide-tab:hover {
@@ -3431,6 +3430,44 @@
       color: #fff;
       background: var(--accent);
       box-shadow: 0 7px 18px rgba(37, 99, 235, .20);
+    }
+
+    .ip-assistant-shell {
+      display: grid;
+      gap: 14px;
+    }
+
+    .ip-assistant-tabs {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      padding: 0 2px;
+    }
+
+    .ip-assistant-tab {
+      min-width: 180px;
+      padding: 11px 15px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      color: var(--muted);
+      background: var(--bg-soft);
+      box-shadow: none;
+      font-weight: 750;
+    }
+
+    .ip-assistant-tab:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+      background: var(--accent-soft);
+      box-shadow: none;
+      transform: none;
+    }
+
+    .ip-assistant-tab.active {
+      color: #fff;
+      border-color: var(--accent);
+      background: var(--accent);
+      box-shadow: 0 7px 18px rgba(37, 99, 235, .18);
     }
 
     .ip-wizard-panel {
@@ -3666,6 +3703,206 @@
     .ip-memory-item strong { display: block; font-size: 12px; }
     .ip-memory-item small { display: block; margin-top: 3px; color: var(--muted); font-size: 10px; line-height: 1.45; }
 
+    .ip-tree-panel {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: var(--bg-soft);
+      box-shadow: var(--shadow);
+    }
+
+    .ip-tree-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 18px;
+      padding: 20px 22px;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(135deg, var(--panel), rgba(34, 197, 94, .07));
+    }
+
+    .ip-tree-head h3 {
+      margin: 0;
+      color: var(--text);
+      font-size: 20px;
+      letter-spacing: -.02em;
+    }
+
+    .ip-tree-head p {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .ip-tree-legend {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 7px;
+      max-width: 360px;
+    }
+
+    .ip-tree-legend span {
+      padding: 6px 9px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--muted);
+      background: var(--bg-soft);
+      font-size: 10px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .ip-tree-body { padding: 22px; }
+
+    .ip-tree-root,
+    .ip-tree-question-node {
+      width: min(520px, 100%);
+      margin: 0 auto;
+      padding: 14px 18px;
+      border-radius: 15px;
+      text-align: center;
+      font-weight: 800;
+    }
+
+    .ip-tree-root {
+      color: #fff;
+      background: linear-gradient(135deg, var(--accent), #4f46e5);
+      box-shadow: 0 12px 26px rgba(37, 99, 235, .18);
+      font-size: 16px;
+      letter-spacing: .02em;
+    }
+
+    .ip-tree-question-node {
+      border: 1px solid var(--border);
+      color: var(--text);
+      background: var(--panel-2);
+      font-size: 14px;
+    }
+
+    .ip-tree-arrow {
+      height: 30px;
+      display: grid;
+      place-items: center;
+      color: var(--accent);
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    .ip-tree-branches {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .ip-tree-branch {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--panel-2);
+    }
+
+    .ip-tree-branch-head {
+      padding: 15px 17px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+      background: var(--bg-soft);
+    }
+
+    .ip-tree-branch-head strong {
+      display: block;
+      font-size: 15px;
+    }
+
+    .ip-tree-branch-head small {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.45;
+    }
+
+    .ip-tree-cases {
+      display: grid;
+      gap: 11px;
+      padding: 14px;
+    }
+
+    .ip-tree-case {
+      padding: 13px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--bg-soft);
+    }
+
+    .ip-tree-case-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 9px;
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .ip-tree-count {
+      min-width: 34px;
+      height: 28px;
+      display: inline-grid;
+      place-items: center;
+      padding: 0 8px;
+      border-radius: 9px;
+      color: var(--accent);
+      background: var(--accent-soft);
+      font-size: 11px;
+      font-weight: 850;
+    }
+
+    .ip-tree-rule {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 5px;
+      padding: 9px 10px;
+      border-radius: 11px;
+      color: var(--muted);
+      background: var(--panel-2);
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    .ip-tree-rule + .ip-tree-rule { margin-top: 7px; }
+
+    .ip-tree-condition {
+      color: var(--text);
+      font-weight: 650;
+    }
+
+    .ip-tree-outcome {
+      display: inline-flex;
+      align-items: flex-start;
+      gap: 6px;
+      font-weight: 800;
+    }
+
+    .ip-tree-outcome.success { color: #15803d; }
+    .ip-tree-outcome.warning { color: #b45309; }
+    .ip-tree-outcome.danger { color: #dc2626; }
+
+    .ip-tree-note {
+      margin-top: 14px;
+      padding: 11px 13px;
+      border: 1px dashed var(--border-2);
+      border-radius: 12px;
+      color: var(--muted);
+      background: var(--panel-2);
+      font-size: 11px;
+      line-height: 1.55;
+      text-align: center;
+    }
+
     .ip-rules-panel-note {
       margin-bottom: 14px;
       padding: 12px 14px;
@@ -3682,8 +3919,14 @@
     }
 
     @media (max-width: 650px) {
-      .ip-guide-tabs { display: grid; grid-template-columns: 1fr 1fr; width: 100%; }
-      .ip-wizard-head { align-items: flex-start; flex-direction: column; }
+      .ip-guide-tabs { display: grid; grid-template-columns: 1fr 1fr; width: 100%; gap: 8px; }
+      .ip-guide-tab { min-width: 0; }
+      .ip-assistant-tabs { display: grid; grid-template-columns: 1fr 1fr; }
+      .ip-assistant-tab { min-width: 0; }
+      .ip-wizard-head, .ip-tree-head { align-items: flex-start; flex-direction: column; }
+      .ip-tree-legend { justify-content: flex-start; max-width: none; }
+      .ip-tree-body { padding: 15px; }
+      .ip-tree-branches { grid-template-columns: 1fr; }
       .ip-progress-wrap { width: 100%; min-width: 0; }
       .ip-wizard-body { padding: 15px; }
       .ip-question-card { padding: 17px; }
@@ -3794,11 +4037,11 @@
         </div>
 
         <div id="rulesArea" style="display:none;">
-          <div class="page-heading"><div><div class="eyebrow">TÀI LIỆU NỘI BỘ</div><h2>Hướng dẫn nghiệp vụ</h2><p>Dùng trợ lý từng bước để chọn đúng hướng xử lý hoặc mở toàn bộ nội dung từ rules.js.</p></div></div>
+          <div class="page-heading"><div><div class="eyebrow">TÀI LIỆU NỘI BỘ</div><h2>Hướng dẫn nghiệp vụ</h2><p>Xem toàn bộ quy tắc hoặc dùng trợ lý để kiểm tra nhanh và theo dõi cây quyết định.</p></div></div>
 
           <div class="ip-guide-tabs" role="tablist" aria-label="Chế độ xem hướng dẫn nghiệp vụ">
-            <button id="ipRulesTab" class="ip-guide-tab active" type="button" role="tab" aria-selected="true">📚 Xem toàn bộ rules.js</button>
-            <button id="ipWizardTab" class="ip-guide-tab" type="button" role="tab" aria-selected="false">🧭 Trợ lý xử lý</button>
+            <button id="ipRulesTab" class="ip-guide-tab active" type="button" role="tab" aria-selected="true">📚 Xem toàn bộ QUY TẮC</button>
+            <button id="ipWizardTab" class="ip-guide-tab" type="button" role="tab" aria-selected="false">🧭 Trợ lý xử lý thưởng nhóm</button>
           </div>
 
           <div id="ipMemoryStrip" class="ip-memory-strip" aria-label="Nguyên tắc ghi nhớ nhanh" style="display:none;">
@@ -3808,28 +4051,140 @@
             <div class="ip-memory-item"><span>📈</span><div><strong>Càng nhiều tài khoản</strong><small>Mức xử lý càng nghiêm.</small></div></div>
           </div>
 
-          <section id="ipWizardPanel" class="ip-wizard-panel" style="display:none;" aria-labelledby="ipWizardTab">
-            <div class="ip-wizard-head">
-              <div>
-                <h3>Trợ lý xử lý trùng IP / Thiết bị</h3>
-                <p>Trả lời lần lượt các câu hỏi. Hệ thống sẽ trả kết quả, lý do và đường dẫn quyết định.</p>
-              </div>
-              <div class="ip-progress-wrap" aria-label="Tiến độ xử lý">
-                <div class="ip-progress-meta"><span id="ipProgressLabel">Bước 1</span><span id="ipProgressPercent">20%</span></div>
-                <div class="ip-progress"><div id="ipProgressBar"></div></div>
-              </div>
+          <section id="ipWizardPanel" class="ip-assistant-shell" style="display:none;" aria-labelledby="ipWizardTab">
+            <div class="ip-assistant-tabs" role="tablist" aria-label="Kiểu hiển thị trợ lý xử lý">
+              <button id="ipQuickTab" class="ip-assistant-tab active" type="button" role="tab" aria-selected="true">🔍 Kiểm Tra Nhanh</button>
+              <button id="ipTreeTab" class="ip-assistant-tab" type="button" role="tab" aria-selected="false">🌳 Cây Quyết Định</button>
             </div>
-            <div class="ip-wizard-body">
-              <div id="ipCrumbs" class="ip-crumbs" aria-label="Các lựa chọn đã thực hiện"></div>
-              <div id="ipWizardContent"></div>
-              <div class="ip-wizard-actions">
-                <button id="ipBackBtn" class="small ghost" type="button">← Quay lại</button>
-                <div class="ip-action-right">
-                  <button id="ipResetBtn" class="small ghost" type="button">Làm lại</button>
-                  <button id="ipOpenRulesBtn" class="small" type="button">Xem toàn bộ quy tắc</button>
+
+            <section id="ipQuickPanel" class="ip-wizard-panel" aria-labelledby="ipQuickTab">
+              <div class="ip-wizard-head">
+                <div>
+                  <h3>Kiểm tra nhanh trùng IP / Thiết bị</h3>
+                  <p>Trả lời lần lượt các câu hỏi. Hệ thống sẽ trả kết quả, lý do và đường dẫn quyết định.</p>
+                </div>
+                <div class="ip-progress-wrap" aria-label="Tiến độ xử lý">
+                  <div class="ip-progress-meta"><span id="ipProgressLabel">Bước 1</span><span id="ipProgressPercent">20%</span></div>
+                  <div class="ip-progress"><div id="ipProgressBar"></div></div>
                 </div>
               </div>
-            </div>
+              <div class="ip-wizard-body">
+                <div id="ipCrumbs" class="ip-crumbs" aria-label="Các lựa chọn đã thực hiện"></div>
+                <div id="ipWizardContent"></div>
+                <div class="ip-wizard-actions">
+                  <button id="ipBackBtn" class="small ghost" type="button">← Quay lại</button>
+                  <div class="ip-action-right">
+                    <button id="ipResetBtn" class="small ghost" type="button">Làm lại</button>
+                    <button id="ipOpenRulesBtn" class="small" type="button">Xem toàn bộ quy tắc</button>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section id="ipTreePanel" class="ip-tree-panel" style="display:none;" aria-labelledby="ipTreeTab">
+              <div class="ip-tree-head">
+                <div>
+                  <h3>Cây quyết định trùng IP / Thiết bị</h3>
+                  <p>Đọc từ trên xuống: xác định liên kết, số lượng tài khoản, sau đó đối chiếu lịch sử nạp và rút.</p>
+                </div>
+                <div class="ip-tree-legend" aria-label="Chú thích kết quả">
+                  <span>🔴 Khóa tài khoản</span>
+                  <span>🟠 Khấu trừ / hoàn trả</span>
+                  <span>🟡 Hạn chế thưởng / hoa hồng</span>
+                  <span>🟢 Cho rút bình thường</span>
+                </div>
+              </div>
+
+              <div class="ip-tree-body">
+                <div class="ip-tree-root">TRÙNG IP / THIẾT BỊ</div>
+                <div class="ip-tree-arrow">↓</div>
+                <div class="ip-tree-question-node">Có liên kết cấp trên – cấp dưới không?</div>
+
+                <div class="ip-tree-branches">
+                  <article class="ip-tree-branch">
+                    <div class="ip-tree-branch-head">
+                      <strong>👤 KHÔNG CÓ LIÊN KẾT</strong>
+                      <small>Đối chiếu theo số lượng tài khoản trong cùng đường dây.</small>
+                    </div>
+                    <div class="ip-tree-cases">
+                      <section class="ip-tree-case">
+                        <div class="ip-tree-case-title"><span class="ip-tree-count">2</span> Trùng 2 IP/Thiết bị</div>
+                        <div class="ip-tree-rule">
+                          <div class="ip-tree-condition">Cả 2 tài khoản nạp lần đầu và đăng ký gần thời điểm nhau</div>
+                          <div class="ip-tree-outcome warning">🟠 Khấu trừ tiền thưởng, hoàn trả tiền nạp gốc.</div>
+                        </div>
+                        <div class="ip-tree-rule">
+                          <div class="ip-tree-condition">Một tài khoản đã nạp đi nạp lại nhiều lần</div>
+                          <div class="ip-tree-outcome success">🟢 Cho phép thành viên rút tiền bình thường.</div>
+                        </div>
+                      </section>
+
+                      <section class="ip-tree-case">
+                        <div class="ip-tree-case-title"><span class="ip-tree-count">3</span> Trùng 3 IP/Thiết bị</div>
+                        <div class="ip-tree-rule">
+                          <div class="ip-tree-condition">Cả 3 nạp lần đầu và 2 tài khoản trước đã từng rút tiền</div>
+                          <div class="ip-tree-outcome danger">🔴 Khóa toàn bộ tài khoản trong cùng đường dây.</div>
+                        </div>
+                        <div class="ip-tree-rule">
+                          <div class="ip-tree-condition">Cả 3 tài khoản đều chưa từng rút tiền</div>
+                          <div class="ip-tree-outcome warning">🟡 Cho 01 tài khoản rút; hủy/hạn chế tiền thưởng các tài khoản còn lại.</div>
+                        </div>
+                        <div class="ip-tree-rule">
+                          <div class="ip-tree-condition">Hai tài khoản trước đã nạp đi nạp lại nhiều lần</div>
+                          <div class="ip-tree-outcome success">🟢 Cho phép thành viên rút tiền bình thường.</div>
+                        </div>
+                      </section>
+
+                      <section class="ip-tree-case">
+                        <div class="ip-tree-case-title"><span class="ip-tree-count">4+</span> Từ 4 IP/Thiết bị trở lên</div>
+                        <div class="ip-tree-rule">
+                          <div class="ip-tree-condition">Tất cả đều là tài khoản nạp lần đầu</div>
+                          <div class="ip-tree-outcome danger">🔴 Khóa toàn bộ tài khoản trong cùng đường dây.</div>
+                        </div>
+                        <div class="ip-tree-rule">
+                          <div class="ip-tree-condition">Các tài khoản trước đều đã nạp đi nạp lại nhiều lần</div>
+                          <div class="ip-tree-outcome success">🟢 Cho phép thành viên rút tiền bình thường.</div>
+                        </div>
+                      </section>
+                    </div>
+                  </article>
+
+                  <article class="ip-tree-branch">
+                    <div class="ip-tree-branch-head">
+                      <strong>👥 CÓ LIÊN KẾT CẤP TRÊN – CẤP DƯỚI</strong>
+                      <small>Ngoài tình trạng nạp, cần xem thêm tài khoản đại lý và hoa hồng cấp trên.</small>
+                    </div>
+                    <div class="ip-tree-cases">
+                      <section class="ip-tree-case">
+                        <div class="ip-tree-case-title"><span class="ip-tree-count">2</span> Trùng 2 IP/Thiết bị</div>
+                        <div class="ip-tree-rule">
+                          <div class="ip-tree-condition">Thành viên và cấp trên đều nạp lần đầu</div>
+                          <div class="ip-tree-outcome warning">🟠 Khấu trừ tiền thưởng, hoàn trả tiền nạp.</div>
+                        </div>
+                        <div class="ip-tree-rule">
+                          <div class="ip-tree-condition">Đại lý đã nạp đi nạp lại nhiều lần</div>
+                          <div class="ip-tree-outcome warning">🟡 Cho thành viên rút tiền, nhưng hạn chế hoa hồng cấp trên.</div>
+                        </div>
+                      </section>
+
+                      <section class="ip-tree-case">
+                        <div class="ip-tree-case-title"><span class="ip-tree-count">3+</span> Từ 3 IP/Thiết bị trở lên</div>
+                        <div class="ip-tree-rule">
+                          <div class="ip-tree-condition">Thành viên và cấp trên đều nạp lần đầu</div>
+                          <div class="ip-tree-outcome danger">🔴 Khóa tài khoản đại lý.</div>
+                        </div>
+                        <div class="ip-tree-rule">
+                          <div class="ip-tree-condition">Đại lý đã nạp đi nạp lại nhiều lần</div>
+                          <div class="ip-tree-outcome warning">🟡 Cho thành viên rút tiền, nhưng hạn chế hoa hồng cấp trên.</div>
+                        </div>
+                      </section>
+                    </div>
+                  </article>
+                </div>
+
+                <div class="ip-tree-note">Trường hợp không khớp hoàn toàn với các nhánh trên: chuyển kiểm tra thủ công, không tự suy diễn kết quả.</div>
+              </div>
+            </section>
           </section>
 
           <section id="ipRulesPanel" aria-labelledby="ipRulesTab">
@@ -3875,6 +4230,10 @@ const ipRulesTab = document.getElementById('ipRulesTab');
 const ipWizardPanel = document.getElementById('ipWizardPanel');
 const ipRulesPanel = document.getElementById('ipRulesPanel');
 const ipMemoryStrip = document.getElementById('ipMemoryStrip');
+const ipQuickTab = document.getElementById('ipQuickTab');
+const ipTreeTab = document.getElementById('ipTreeTab');
+const ipQuickPanel = document.getElementById('ipQuickPanel');
+const ipTreePanel = document.getElementById('ipTreePanel');
 const ipWizardContent = document.getElementById('ipWizardContent');
 const ipCrumbs = document.getElementById('ipCrumbs');
 const ipBackBtn = document.getElementById('ipBackBtn');
@@ -4046,16 +4405,34 @@ function ipEscapeHtml(value) {
     .replace(/'/g, '&#039;');
 }
 
+let ipAssistantMode = 'quick';
+
+function ipSetAssistantMode(mode) {
+  ipAssistantMode = mode === 'tree' ? 'tree' : 'quick';
+  const showQuick = ipAssistantMode === 'quick';
+
+  ipQuickTab.classList.toggle('active', showQuick);
+  ipTreeTab.classList.toggle('active', !showQuick);
+  ipQuickTab.setAttribute('aria-selected', String(showQuick));
+  ipTreeTab.setAttribute('aria-selected', String(!showQuick));
+  ipQuickPanel.style.display = showQuick ? 'block' : 'none';
+  ipTreePanel.style.display = showQuick ? 'none' : 'block';
+}
+
 function ipSetGuideMode(mode) {
   const showWizard = mode !== 'rules';
   ipWizardTab.classList.toggle('active', showWizard);
   ipRulesTab.classList.toggle('active', !showWizard);
   ipWizardTab.setAttribute('aria-selected', String(showWizard));
   ipRulesTab.setAttribute('aria-selected', String(!showWizard));
-  ipWizardPanel.style.display = showWizard ? 'block' : 'none';
+  ipWizardPanel.style.display = showWizard ? 'grid' : 'none';
   ipRulesPanel.style.display = showWizard ? 'none' : 'block';
   ipMemoryStrip.style.display = showWizard ? 'grid' : 'none';
-  if (!showWizard) renderRules();
+  if (showWizard) {
+    ipSetAssistantMode(ipAssistantMode);
+  } else {
+    renderRules();
+  }
 }
 
 function ipUpdateProgress(step, total = 5) {
@@ -4322,6 +4699,8 @@ function ipResetWizard() {
 
 ipWizardTab.addEventListener('click', () => ipSetGuideMode('wizard'));
 ipRulesTab.addEventListener('click', () => ipSetGuideMode('rules'));
+ipQuickTab.addEventListener('click', () => ipSetAssistantMode('quick'));
+ipTreeTab.addEventListener('click', () => ipSetAssistantMode('tree'));
 ipOpenRulesBtn.addEventListener('click', () => ipSetGuideMode('rules'));
 ipResetBtn.addEventListener('click', ipResetWizard);
 ipBackBtn.addEventListener('click', () => {
@@ -4331,6 +4710,7 @@ ipBackBtn.addEventListener('click', () => {
 });
 
 ipResetWizard();
+ipSetAssistantMode('quick');
 ipSetGuideMode('rules');
 
 const THEME_KEY = 'risk_manager_theme_v4';
