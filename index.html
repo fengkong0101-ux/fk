@@ -3112,6 +3112,589 @@
         transition-duration: .01ms !important;
       }
     }
+
+    /* =========================================================
+       CROSS-BROWSER RENDERING SAFETY
+       Prevent black/blank compositor layers on older GPUs,
+       forced browser dark mode and partial CSS feature support.
+       ========================================================= */
+    html[data-theme="light"] {
+      color-scheme: light;
+      background-color: var(--bg, #f8fafc);
+    }
+
+    html[data-theme="dark"] {
+      color-scheme: dark;
+      background-color: var(--bg, #0b1220);
+    }
+
+    body {
+      color: var(--text, #0f172a);
+      background-color: var(--bg, #f8fafc);
+      filter: none;
+      mix-blend-mode: normal;
+    }
+
+    body::before {
+      display: none;
+      filter: none;
+      mix-blend-mode: normal;
+    }
+
+    .app-header,
+    .sidebar,
+    .hero,
+    .filter-bar,
+    .page-heading,
+    .toast {
+      filter: none;
+      mix-blend-mode: normal;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
+
+    .hero::before,
+    .hero::after {
+      filter: none;
+      mix-blend-mode: normal;
+    }
+
+    .card,
+    .sticky-item {
+      color: var(--text, #0f172a);
+      background-color: var(--bg-soft, #ffffff);
+      background-image: none;
+      opacity: 1;
+      visibility: visible;
+      filter: none;
+      mix-blend-mode: normal;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      backface-visibility: visible;
+      will-change: auto;
+      animation: none;
+      transform: none;
+    }
+
+    html[data-theme="light"] .card,
+    html[data-theme="light"] .sticky-item {
+      color: var(--text, #0f172a);
+      background-color: var(--bg-soft, #ffffff);
+      border-color: var(--border, #e2e8f0);
+    }
+
+    html[data-theme="dark"] .card,
+    html[data-theme="dark"] .sticky-item {
+      color: var(--text, #f1f5f9);
+      background-color: var(--bg-soft, #111c2f);
+      border-color: var(--border, #263245);
+    }
+
+    .card:hover,
+    .sticky-item:hover {
+      background-color: var(--bg-soft, #ffffff);
+      background-image: none;
+      border-color: var(--border-2, #bfdbfe);
+      box-shadow:
+        0 18px 42px rgba(37, 99, 235, .12),
+        0 8px 20px rgba(15, 23, 42, .08);
+      filter: none;
+      transform: none;
+    }
+
+    html[data-theme="dark"] .card:hover,
+    html[data-theme="dark"] .sticky-item:hover {
+      background-color: var(--bg-soft, #111c2f);
+      border-color: var(--border-2, #3b82f6);
+      box-shadow:
+        0 18px 42px rgba(37, 99, 235, .18),
+        0 8px 20px rgba(0, 0, 0, .24);
+    }
+
+    .card::before,
+    .sticky-item::before {
+      background-color: var(--tone, var(--accent, #2563eb));
+      opacity: 1;
+      filter: none;
+      mix-blend-mode: normal;
+    }
+
+    .card[data-tone="red"],
+    .sticky-item[data-tone="red"] {
+      --tone: #f43f5e;
+      --tone-soft: rgba(244, 63, 94, .12);
+    }
+
+    .card[data-tone="orange"],
+    .sticky-item[data-tone="orange"] {
+      --tone: #f97316;
+      --tone-soft: rgba(249, 115, 22, .12);
+    }
+
+    .card[data-tone="purple"],
+    .sticky-item[data-tone="purple"] {
+      --tone: #8b5cf6;
+      --tone-soft: rgba(139, 92, 246, .12);
+    }
+
+    .card[data-tone="gray"],
+    .sticky-item[data-tone="gray"] {
+      --tone: #64748b;
+      --tone-soft: rgba(100, 116, 139, .12);
+    }
+
+    .card[data-tone="green"],
+    .sticky-item[data-tone="green"] {
+      --tone: #10b981;
+      --tone-soft: rgba(16, 185, 129, .12);
+    }
+
+    .card[data-tone="blue"],
+    .sticky-item[data-tone="blue"],
+    .card:not([data-tone]),
+    .sticky-item:not([data-tone]) {
+      --tone: #0ea5e9;
+      --tone-soft: rgba(14, 165, 233, .12);
+    }
+
+    .card .title,
+    .sticky-item-title {
+      color: var(--text, #0f172a);
+      -webkit-text-fill-color: currentColor;
+      opacity: 1;
+      visibility: visible;
+      filter: none;
+      mix-blend-mode: normal;
+    }
+
+    html[data-theme="dark"] .card .title,
+    html[data-theme="dark"] .sticky-item-title {
+      color: var(--text, #f1f5f9);
+      -webkit-text-fill-color: currentColor;
+    }
+
+    .card-preview,
+    .content,
+    .sticky-item-content,
+    .results-title {
+      color: var(--muted, #64748b);
+      -webkit-text-fill-color: currentColor;
+      visibility: visible;
+      filter: none;
+      mix-blend-mode: normal;
+    }
+
+    html[data-theme="dark"] .card-preview,
+    html[data-theme="dark"] .content,
+    html[data-theme="dark"] .sticky-item-content,
+    html[data-theme="dark"] .results-title {
+      color: var(--muted, #a3afc2);
+    }
+
+    .tag,
+    .chev,
+    .sticky-chevron,
+    .copy-label {
+      color: var(--tone, var(--accent, #2563eb));
+      -webkit-text-fill-color: currentColor;
+      filter: none;
+      mix-blend-mode: normal;
+    }
+
+    .tag,
+    .chev,
+    .sticky-chevron {
+      background-color: var(--tone-soft, var(--accent-soft, rgba(37, 99, 235, .10)));
+      background-image: none;
+    }
+
+    .copy-block {
+      color: var(--text, #0f172a);
+      background-color: var(--panel-2, #f8fafc);
+      background-image: none;
+      opacity: 1;
+      visibility: visible;
+      filter: none;
+      mix-blend-mode: normal;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      transform: none;
+    }
+
+    html[data-theme="dark"] .copy-block {
+      color: var(--text, #f1f5f9);
+      background-color: var(--panel-2, #172337);
+    }
+
+    .copy-block:hover {
+      background-color: var(--panel-2, #f8fafc);
+      background-image: none;
+      border-color: var(--border-2, #bfdbfe);
+      box-shadow:
+        0 10px 24px rgba(37, 99, 235, .10),
+        0 3px 10px rgba(15, 23, 42, .05);
+      filter: none;
+      transform: none;
+    }
+
+    html[data-theme="dark"] .copy-block:hover {
+      background-color: var(--panel-2, #172337);
+      border-color: var(--border-2, #3b82f6);
+    }
+
+    .ui-motion-content {
+      will-change: auto;
+      backface-visibility: visible;
+      filter: none;
+      mix-blend-mode: normal;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
+
+    .card[data-open="1"] > .ui-motion-content,
+    .sticky-item[data-open="1"] > .ui-motion-content {
+      display: grid !important;
+      max-height: none !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      filter: none !important;
+      transform: none !important;
+      will-change: auto !important;
+    }
+
+    @supports not (color: color-mix(in srgb, red, blue)) {
+      .card:hover,
+      .sticky-item:hover,
+      .copy-block:hover {
+        border-color: var(--border-2, #bfdbfe);
+      }
+
+      .tag {
+        border-color: var(--border, #dbeafe);
+      }
+    }
+
+    @media (forced-colors: active) {
+      .card,
+      .sticky-item,
+      .copy-block {
+        color: CanvasText;
+        background: Canvas;
+        border-color: CanvasText;
+        forced-color-adjust: auto;
+      }
+
+      .card .title,
+      .sticky-item-title,
+      .card-preview,
+      .content,
+      .sticky-item-content {
+        color: CanvasText;
+        -webkit-text-fill-color: CanvasText;
+      }
+    }
+  
+
+    /* =========================================================
+       IP / DEVICE DECISION ASSISTANT
+       Added inside the existing "Hướng dẫn nghiệp vụ" page.
+       ========================================================= */
+    .ip-guide-tabs {
+      display: inline-flex;
+      gap: 6px;
+      margin: 0 0 18px;
+      padding: 6px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--bg-soft);
+      box-shadow: var(--shadow-xs, 0 4px 14px rgba(15, 23, 42, .05));
+    }
+
+    .ip-guide-tab {
+      border: 0;
+      padding: 10px 14px;
+      border-radius: 10px;
+      color: var(--muted);
+      background: transparent;
+      box-shadow: none;
+      font-weight: 700;
+    }
+
+    .ip-guide-tab:hover {
+      color: var(--accent);
+      background: var(--accent-soft);
+      box-shadow: none;
+      transform: none;
+    }
+
+    .ip-guide-tab.active {
+      color: #fff;
+      background: var(--accent);
+      box-shadow: 0 7px 18px rgba(37, 99, 235, .20);
+    }
+
+    .ip-wizard-panel {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: var(--bg-soft);
+      box-shadow: var(--shadow);
+    }
+
+    .ip-wizard-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 22px;
+      padding: 20px 22px;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(135deg, var(--panel), var(--accent-soft));
+    }
+
+    .ip-wizard-head h3 {
+      margin: 0;
+      color: var(--text);
+      font-size: 20px;
+      letter-spacing: -.02em;
+    }
+
+    .ip-wizard-head p {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .ip-progress-wrap { width: min(240px, 34vw); min-width: 190px; }
+    .ip-progress-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 650;
+    }
+    .ip-progress {
+      height: 8px;
+      margin-top: 7px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: var(--border);
+    }
+    .ip-progress > div {
+      width: 20%;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--accent), #06b6d4);
+      transition: width .25s ease;
+    }
+
+    .ip-wizard-body { padding: 24px; }
+    .ip-crumbs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      min-height: 30px;
+      margin-bottom: 16px;
+    }
+    .ip-crumb {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 10px;
+      border-radius: 999px;
+      color: var(--accent);
+      background: var(--accent-soft);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .ip-question-card {
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--panel-2);
+    }
+    .ip-step-label {
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+    .ip-question {
+      margin: 8px 0 7px;
+      color: var(--text);
+      font-size: clamp(20px, 3vw, 28px);
+      line-height: 1.35;
+      letter-spacing: -.025em;
+    }
+    .ip-question-note {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .ip-choice-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .ip-choice {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 15px;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      color: var(--text);
+      background: var(--bg-soft);
+      box-shadow: none;
+      text-align: left;
+    }
+    .ip-choice:hover {
+      border-color: var(--accent);
+      background: var(--bg-soft);
+      box-shadow: 0 10px 24px rgba(37, 99, 235, .10);
+      transform: translateY(-2px);
+    }
+    .ip-choice-icon {
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 43px;
+      border-radius: 13px;
+      color: var(--accent);
+      background: var(--accent-soft);
+      font-size: 19px;
+      font-weight: 800;
+    }
+    .ip-choice strong { display: block; color: var(--text); font-size: 14px; }
+    .ip-choice small { display: block; margin-top: 4px; color: var(--muted); font-size: 11px; line-height: 1.45; }
+
+    .ip-wizard-actions {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .ip-wizard-actions .ip-action-right { display: flex; gap: 8px; }
+    .ip-wizard-actions button:disabled { cursor: not-allowed; opacity: .45; transform: none; }
+
+    .ip-result {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--bg-soft);
+    }
+    .ip-result-top {
+      display: grid;
+      grid-template-columns: 64px minmax(0, 1fr);
+      gap: 16px;
+      padding: 22px;
+      border-left: 6px solid var(--ip-result-color, var(--accent));
+      background: var(--ip-result-soft, var(--accent-soft));
+    }
+    .ip-result.success { --ip-result-color: #16a34a; --ip-result-soft: rgba(22, 163, 74, .09); }
+    .ip-result.warning { --ip-result-color: #d97706; --ip-result-soft: rgba(217, 119, 6, .10); }
+    .ip-result.danger { --ip-result-color: #dc2626; --ip-result-soft: rgba(220, 38, 38, .09); }
+    .ip-result.neutral { --ip-result-color: #64748b; --ip-result-soft: rgba(100, 116, 139, .09); }
+    .ip-result-icon {
+      width: 60px;
+      height: 60px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      color: var(--ip-result-color);
+      background: var(--bg-soft);
+      font-size: 28px;
+      box-shadow: var(--shadow-xs, 0 4px 12px rgba(15, 23, 42, .07));
+    }
+    .ip-result-kicker {
+      color: var(--ip-result-color);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .ip-result-title {
+      margin: 6px 0 7px;
+      color: var(--text);
+      font-size: clamp(20px, 3vw, 27px);
+      line-height: 1.3;
+    }
+    .ip-result-desc { margin: 0; color: var(--muted); line-height: 1.6; }
+    .ip-path-box { padding: 18px 22px; border-top: 1px solid var(--border); }
+    .ip-path-box > strong { display: block; margin-bottom: 10px; font-size: 12px; }
+    .ip-path-line { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; color: var(--muted); }
+    .ip-path-pill {
+      padding: 7px 9px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text);
+      background: var(--panel-2);
+      font-size: 11px;
+      line-height: 1.35;
+    }
+    .ip-result-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      padding: 16px 22px;
+      border-top: 1px solid var(--border);
+    }
+
+    .ip-memory-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .ip-memory-item {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 9px;
+      padding: 12px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--bg-soft);
+    }
+    .ip-memory-item > span { font-size: 20px; text-align: center; }
+    .ip-memory-item strong { display: block; font-size: 12px; }
+    .ip-memory-item small { display: block; margin-top: 3px; color: var(--muted); font-size: 10px; line-height: 1.45; }
+
+    .ip-rules-panel-note {
+      margin-bottom: 14px;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      color: var(--muted);
+      background: var(--panel-2);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    @media (max-width: 900px) {
+      .ip-memory-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 650px) {
+      .ip-guide-tabs { display: grid; grid-template-columns: 1fr 1fr; width: 100%; }
+      .ip-wizard-head { align-items: flex-start; flex-direction: column; }
+      .ip-progress-wrap { width: 100%; min-width: 0; }
+      .ip-wizard-body { padding: 15px; }
+      .ip-question-card { padding: 17px; }
+      .ip-choice-grid { grid-template-columns: 1fr; }
+      .ip-wizard-actions { align-items: stretch; flex-direction: column-reverse; }
+      .ip-wizard-actions .ip-action-right { display: grid; grid-template-columns: 1fr 1fr; }
+      .ip-result-top { grid-template-columns: 1fr; }
+      .ip-result-actions { display: grid; grid-template-columns: 1fr 1fr; }
+      .ip-memory-strip { grid-template-columns: 1fr; }
+    }
+
   </style>
 </head>
 <body>
@@ -3211,8 +3794,48 @@
         </div>
 
         <div id="rulesArea" style="display:none;">
-          <div class="page-heading"><div><div class="eyebrow">TÀI LIỆU NỘI BỘ</div><h2>Hướng dẫn nghiệp vụ</h2><p>Nhấn vào tiêu đề để mở hoặc thu gọn nội dung.</p></div></div>
-          <div id="rulesList" class="grid"></div>
+          <div class="page-heading"><div><div class="eyebrow">TÀI LIỆU NỘI BỘ</div><h2>Hướng dẫn nghiệp vụ</h2><p>Dùng trợ lý từng bước để chọn đúng hướng xử lý hoặc mở toàn bộ nội dung từ rules.js.</p></div></div>
+
+          <div class="ip-guide-tabs" role="tablist" aria-label="Chế độ xem hướng dẫn nghiệp vụ">
+            <button id="ipRulesTab" class="ip-guide-tab active" type="button" role="tab" aria-selected="true">📚 Xem toàn bộ rules.js</button>
+            <button id="ipWizardTab" class="ip-guide-tab" type="button" role="tab" aria-selected="false">🧭 Trợ lý xử lý</button>
+          </div>
+
+          <div id="ipMemoryStrip" class="ip-memory-strip" aria-label="Nguyên tắc ghi nhớ nhanh" style="display:none;">
+            <div class="ip-memory-item"><span>🔴</span><div><strong>Nạp lần đầu hàng loạt</strong><small>Ưu tiên siết chặt hoặc khóa.</small></div></div>
+            <div class="ip-memory-item"><span>🟢</span><div><strong>Đã nạp nhiều lần</strong><small>Có thể cho rút bình thường hơn.</small></div></div>
+            <div class="ip-memory-item"><span>👥</span><div><strong>Có liên kết đại lý</strong><small>Xem thêm hoa hồng và cấp trên.</small></div></div>
+            <div class="ip-memory-item"><span>📈</span><div><strong>Càng nhiều tài khoản</strong><small>Mức xử lý càng nghiêm.</small></div></div>
+          </div>
+
+          <section id="ipWizardPanel" class="ip-wizard-panel" style="display:none;" aria-labelledby="ipWizardTab">
+            <div class="ip-wizard-head">
+              <div>
+                <h3>Trợ lý xử lý trùng IP / Thiết bị</h3>
+                <p>Trả lời lần lượt các câu hỏi. Hệ thống sẽ trả kết quả, lý do và đường dẫn quyết định.</p>
+              </div>
+              <div class="ip-progress-wrap" aria-label="Tiến độ xử lý">
+                <div class="ip-progress-meta"><span id="ipProgressLabel">Bước 1</span><span id="ipProgressPercent">20%</span></div>
+                <div class="ip-progress"><div id="ipProgressBar"></div></div>
+              </div>
+            </div>
+            <div class="ip-wizard-body">
+              <div id="ipCrumbs" class="ip-crumbs" aria-label="Các lựa chọn đã thực hiện"></div>
+              <div id="ipWizardContent"></div>
+              <div class="ip-wizard-actions">
+                <button id="ipBackBtn" class="small ghost" type="button">← Quay lại</button>
+                <div class="ip-action-right">
+                  <button id="ipResetBtn" class="small ghost" type="button">Làm lại</button>
+                  <button id="ipOpenRulesBtn" class="small" type="button">Xem toàn bộ quy tắc</button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="ipRulesPanel" aria-labelledby="ipRulesTab">
+            <div class="ip-rules-panel-note">Nội dung bên dưới vẫn được tải từ <strong>rules.js</strong>. Nhấn vào từng tiêu đề để mở hoặc thu gọn.</div>
+            <div id="rulesList" class="grid"></div>
+          </section>
         </div>
       </main>
     </div>
@@ -3247,6 +3870,19 @@ const recentList = document.getElementById('recentList');
 const tabRules = document.getElementById('tabRules');
 const rulesArea = document.getElementById('rulesArea');
 const rulesList = document.getElementById('rulesList');
+const ipWizardTab = document.getElementById('ipWizardTab');
+const ipRulesTab = document.getElementById('ipRulesTab');
+const ipWizardPanel = document.getElementById('ipWizardPanel');
+const ipRulesPanel = document.getElementById('ipRulesPanel');
+const ipMemoryStrip = document.getElementById('ipMemoryStrip');
+const ipWizardContent = document.getElementById('ipWizardContent');
+const ipCrumbs = document.getElementById('ipCrumbs');
+const ipBackBtn = document.getElementById('ipBackBtn');
+const ipResetBtn = document.getElementById('ipResetBtn');
+const ipOpenRulesBtn = document.getElementById('ipOpenRulesBtn');
+const ipProgressBar = document.getElementById('ipProgressBar');
+const ipProgressLabel = document.getElementById('ipProgressLabel');
+const ipProgressPercent = document.getElementById('ipProgressPercent');
 const categoryList = document.getElementById('categoryList');
 const totalBadge = document.getElementById('totalBadge');
 const favoriteCount = document.getElementById('favoriteCount');
@@ -3347,6 +3983,355 @@ function renderRules() {
     rulesList.appendChild(card);
   });
 }
+
+
+/* =========================================================
+   DECISION ASSISTANT: TRÙNG IP / THIẾT BỊ
+   This is presentation/decision support only. The existing
+   rules.js renderer and data.json loader remain unchanged.
+   ========================================================= */
+const ipDecisionState = { linked: null, count: null };
+const ipDecisionHistory = [];
+let ipCurrentRenderer = ipRenderStart;
+
+const ipDecisionResults = {
+  normal: {
+    tone: 'success', icon: '✓',
+    title: 'Cho phép thành viên rút tiền bình thường',
+    desc: 'Các tài khoản trước đã có lịch sử nạp đi nạp lại nhiều lần theo điều kiện của quy tắc.'
+  },
+  deductOriginal: {
+    tone: 'warning', icon: '₫',
+    title: 'Khấu trừ tiền thưởng, hoàn trả tiền nạp gốc',
+    desc: 'Áp dụng khi cả 2 tài khoản đều nạp lần đầu và đăng ký gần thời điểm nhau.'
+  },
+  deductDeposit: {
+    tone: 'warning', icon: '₫',
+    title: 'Khấu trừ tiền thưởng, hoàn trả tiền nạp',
+    desc: 'Áp dụng khi thành viên và cấp trên đều là tài khoản nạp lần đầu.'
+  },
+  lockAll: {
+    tone: 'danger', icon: '🔒',
+    title: 'Khóa toàn bộ tài khoản trong cùng đường dây IP/thiết bị',
+    desc: 'Nhóm tài khoản nạp lần đầu hàng loạt thuộc trường hợp xử lý nghiêm theo quy tắc.'
+  },
+  allowOne: {
+    tone: 'warning', icon: '!',
+    title: 'Cho phép 01 tài khoản rút tiền; hủy/hạn chế tiền thưởng các tài khoản còn lại',
+    desc: 'Áp dụng khi cả 3 tài khoản đều chưa từng rút tiền.'
+  },
+  restrictCommission: {
+    tone: 'warning', icon: '⚠',
+    title: 'Cho thành viên rút tiền, nhưng hạn chế hoa hồng của cấp trên',
+    desc: 'Đại lý đã nạp đi nạp lại nhiều lần, nhưng hoa hồng cấp trên vẫn cần bị hạn chế.'
+  },
+  lockAgent: {
+    tone: 'danger', icon: '🔒',
+    title: 'Khóa tài khoản đại lý',
+    desc: 'Áp dụng khi trùng từ 3 IP/thiết bị trở lên và thành viên cùng cấp trên đều nạp lần đầu.'
+  },
+  manual: {
+    tone: 'neutral', icon: '?',
+    title: 'Chuyển kiểm tra thủ công',
+    desc: 'Tình huống không khớp đầy đủ với các nhánh đã được cung cấp. Không tự suy diễn kết quả.'
+  }
+};
+
+function ipEscapeHtml(value) {
+  return String(value ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
+function ipSetGuideMode(mode) {
+  const showWizard = mode !== 'rules';
+  ipWizardTab.classList.toggle('active', showWizard);
+  ipRulesTab.classList.toggle('active', !showWizard);
+  ipWizardTab.setAttribute('aria-selected', String(showWizard));
+  ipRulesTab.setAttribute('aria-selected', String(!showWizard));
+  ipWizardPanel.style.display = showWizard ? 'block' : 'none';
+  ipRulesPanel.style.display = showWizard ? 'none' : 'block';
+  ipMemoryStrip.style.display = showWizard ? 'grid' : 'none';
+  if (!showWizard) renderRules();
+}
+
+function ipUpdateProgress(step, total = 5) {
+  const percent = Math.max(20, Math.min(100, Math.round(step / total * 100)));
+  ipProgressBar.style.width = `${percent}%`;
+  ipProgressLabel.textContent = step >= total ? 'Hoàn tất' : `Bước ${step}`;
+  ipProgressPercent.textContent = `${percent}%`;
+}
+
+function ipRenderCrumbs() {
+  ipCrumbs.innerHTML = ipDecisionHistory
+    .map(item => `<span class="ip-crumb">${ipEscapeHtml(item.label)}</span>`)
+    .join('');
+}
+
+function ipChoiceMarkup(option) {
+  return `
+    <button class="ip-choice" type="button" data-value="${ipEscapeHtml(option.value)}">
+      <span class="ip-choice-icon">${ipEscapeHtml(option.icon || '→')}</span>
+      <span>
+        <strong>${ipEscapeHtml(option.label)}</strong>
+        ${option.note ? `<small>${ipEscapeHtml(option.note)}</small>` : ''}
+      </span>
+    </button>`;
+}
+
+function ipAsk({ step, title, note, options, onSelect }) {
+  ipUpdateProgress(step);
+  ipRenderCrumbs();
+  ipWizardContent.innerHTML = `
+    <div class="ip-question-card">
+      <div class="ip-step-label">Câu hỏi ${step}</div>
+      <h3 class="ip-question">${ipEscapeHtml(title)}</h3>
+      <p class="ip-question-note">${ipEscapeHtml(note || 'Chọn phương án đúng với hồ sơ đang kiểm tra.')}</p>
+      <div class="ip-choice-grid">${options.map(ipChoiceMarkup).join('')}</div>
+    </div>`;
+
+  ipWizardContent.querySelectorAll('.ip-choice').forEach(button => {
+    button.addEventListener('click', () => {
+      const option = options.find(item => item.value === button.dataset.value);
+      if (!option) return;
+      ipDecisionHistory.push({ label: option.label, renderer: ipCurrentRenderer });
+      onSelect(option.value);
+    });
+  });
+
+  ipBackBtn.disabled = ipDecisionHistory.length === 0;
+}
+
+function ipRun(renderer) {
+  ipCurrentRenderer = renderer;
+  renderer();
+  ipBackBtn.disabled = ipDecisionHistory.length === 0;
+}
+
+function ipYesNo(step, title, note, yesRenderer, noRenderer) {
+  ipAsk({
+    step, title, note,
+    options: [
+      { value: 'yes', icon: '✓', label: 'Đúng / Có' },
+      { value: 'no', icon: '✕', label: 'Sai / Không' }
+    ],
+    onSelect(value) {
+      ipRun(value === 'yes' ? yesRenderer : noRenderer);
+    }
+  });
+}
+
+function ipRenderStart() {
+  ipDecisionState.linked = null;
+  ipDecisionState.count = null;
+  ipAsk({
+    step: 1,
+    title: 'Có liên kết cấp trên – cấp dưới không?',
+    note: 'Kiểm tra quan hệ đại lý, tuyến trên hoặc tài khoản giới thiệu trong nhóm trùng IP/thiết bị.',
+    options: [
+      { value: 'no', icon: '👤', label: 'Không có liên kết', note: 'Các tài khoản không có quan hệ cấp trên – cấp dưới.' },
+      { value: 'yes', icon: '👥', label: 'Có liên kết', note: 'Có thành viên và tài khoản cấp trên/đại lý.' }
+    ],
+    onSelect(value) {
+      ipDecisionState.linked = value;
+      ipRun(value === 'yes' ? ipRenderLinkedCount : ipRenderUnlinkedCount);
+    }
+  });
+}
+
+function ipRenderUnlinkedCount() {
+  ipAsk({
+    step: 2,
+    title: 'Có bao nhiêu tài khoản trùng IP/thiết bị?',
+    note: 'Chọn theo tổng số tài khoản trong cùng đường dây đang được kiểm tra.',
+    options: [
+      { value: '2', icon: '2', label: 'Trùng 2 tài khoản' },
+      { value: '3', icon: '3', label: 'Trùng 3 tài khoản' },
+      { value: '4plus', icon: '4+', label: 'Từ 4 tài khoản trở lên' }
+    ],
+    onSelect(value) {
+      ipDecisionState.count = value;
+      if (value === '2') ipRun(ipUnlinkedTwoFirstDeposit);
+      if (value === '3') ipRun(ipUnlinkedThreeRepeat);
+      if (value === '4plus') ipRun(ipUnlinkedFourRepeat);
+    }
+  });
+}
+
+function ipRenderLinkedCount() {
+  ipAsk({
+    step: 2,
+    title: 'Có bao nhiêu tài khoản trùng IP/thiết bị?',
+    note: 'Đối với nhóm có liên kết cấp trên – cấp dưới, chọn 2 hoặc từ 3 tài khoản trở lên.',
+    options: [
+      { value: '2', icon: '2', label: 'Trùng 2 tài khoản' },
+      { value: '3plus', icon: '3+', label: 'Từ 3 tài khoản trở lên' }
+    ],
+    onSelect(value) {
+      ipDecisionState.count = value;
+      ipRun(ipLinkedAgentRepeat);
+    }
+  });
+}
+
+function ipUnlinkedTwoFirstDeposit() {
+  ipYesNo(3,
+    'Cả 2 tài khoản đều nạp lần đầu và đăng ký gần thời điểm nhau?',
+    'Nếu đúng, áp dụng khấu trừ tiền thưởng và hoàn trả tiền nạp gốc.',
+    () => ipShowResult('deductOriginal'),
+    ipUnlinkedTwoRepeat
+  );
+}
+
+function ipUnlinkedTwoRepeat() {
+  ipYesNo(4,
+    'Có một tài khoản đã nạp đi nạp lại nhiều lần?',
+    'Kiểm tra lịch sử nạp của ít nhất một tài khoản trong nhóm.',
+    () => ipShowResult('normal'),
+    () => ipShowResult('manual')
+  );
+}
+
+function ipUnlinkedThreeRepeat() {
+  ipYesNo(3,
+    'Hai tài khoản trước đã nạp đi nạp lại nhiều lần?',
+    'Nếu đúng, cho phép thành viên rút tiền bình thường.',
+    () => ipShowResult('normal'),
+    ipUnlinkedThreeAllFirst
+  );
+}
+
+function ipUnlinkedThreeAllFirst() {
+  ipYesNo(4,
+    'Cả 3 tài khoản đều là tài khoản nạp lần đầu?',
+    'Nếu không phải cả 3 tài khoản nạp lần đầu, quy tắc hiện tại chưa đủ để kết luận tự động.',
+    ipUnlinkedThreePriorWithdrawn,
+    () => ipShowResult('manual')
+  );
+}
+
+function ipUnlinkedThreePriorWithdrawn() {
+  ipYesNo(5,
+    'Hai tài khoản trước đã từng rút tiền?',
+    'Chọn Có khi cả hai tài khoản trước trong đường dây đã từng rút tiền.',
+    () => ipShowResult('lockAll'),
+    ipUnlinkedThreeNeverWithdrawn
+  );
+}
+
+function ipUnlinkedThreeNeverWithdrawn() {
+  ipYesNo(5,
+    'Cả 3 tài khoản đều chưa từng rút tiền?',
+    'Nếu hồ sơ không khớp hoàn toàn, chuyển kiểm tra thủ công.',
+    () => ipShowResult('allowOne'),
+    () => ipShowResult('manual')
+  );
+}
+
+function ipUnlinkedFourRepeat() {
+  ipYesNo(3,
+    'Các tài khoản trước đều đã nạp đi nạp lại nhiều lần?',
+    'Nếu đúng, cho phép thành viên rút tiền bình thường.',
+    () => ipShowResult('normal'),
+    ipUnlinkedFourAllFirst
+  );
+}
+
+function ipUnlinkedFourAllFirst() {
+  ipYesNo(4,
+    'Tất cả đều là tài khoản nạp lần đầu?',
+    'Từ 4 tài khoản nạp lần đầu trở lên thuộc trường hợp khóa toàn bộ đường dây.',
+    () => ipShowResult('lockAll'),
+    () => ipShowResult('manual')
+  );
+}
+
+function ipLinkedAgentRepeat() {
+  ipYesNo(3,
+    'Đại lý/cấp trên đã nạp đi nạp lại nhiều lần?',
+    'Kiểm tra lịch sử nạp của tài khoản cấp trên hoặc đại lý.',
+    () => ipShowResult('restrictCommission'),
+    ipLinkedBothFirst
+  );
+}
+
+function ipLinkedBothFirst() {
+  ipYesNo(4,
+    'Thành viên và cấp trên đều là tài khoản nạp lần đầu?',
+    'Nếu không khớp điều kiện này, chuyển kiểm tra thủ công.',
+    () => ipShowResult(ipDecisionState.count === '2' ? 'deductDeposit' : 'lockAgent'),
+    () => ipShowResult('manual')
+  );
+}
+
+function ipShowResult(key) {
+  ipCurrentRenderer = () => ipShowResult(key);
+  ipUpdateProgress(5);
+  ipRenderCrumbs();
+
+  const result = ipDecisionResults[key] || ipDecisionResults.manual;
+  const pathText = ipDecisionHistory.map(item => item.label).join(' → ');
+  const pathMarkup = ipDecisionHistory
+    .map((item, index) => `${index ? '<span>→</span>' : ''}<span class="ip-path-pill">${ipEscapeHtml(item.label)}</span>`)
+    .join('');
+
+  ipWizardContent.innerHTML = `
+    <div class="ip-result ${ipEscapeHtml(result.tone)}">
+      <div class="ip-result-top">
+        <div class="ip-result-icon">${ipEscapeHtml(result.icon)}</div>
+        <div>
+          <div class="ip-result-kicker">Kết quả xử lý</div>
+          <h3 class="ip-result-title">${ipEscapeHtml(result.title)}</h3>
+          <p class="ip-result-desc">${ipEscapeHtml(result.desc)}</p>
+        </div>
+      </div>
+      <div class="ip-path-box">
+        <strong>Đường dẫn quyết định</strong>
+        <div class="ip-path-line">
+          ${pathMarkup}
+          <span>→</span>
+          <span class="ip-path-pill"><b>${ipEscapeHtml(result.title)}</b></span>
+        </div>
+      </div>
+      <div class="ip-result-actions">
+        <button id="ipCopyResultBtn" class="small" type="button">Copy kết luận</button>
+        <button id="ipRestartResultBtn" class="small ghost" type="button">Làm lại</button>
+      </div>
+    </div>`;
+
+  document.getElementById('ipCopyResultBtn').addEventListener('click', () => {
+    const text = `KẾT QUẢ XỬ LÝ: ${result.title}\n\nLý do: ${result.desc}\n\nĐường dẫn: ${pathText} → ${result.title}`;
+    safeCopy(text)
+      .then(() => showToast('Đã copy kết luận'))
+      .catch(() => showToast('Copy thất bại'));
+  });
+
+  document.getElementById('ipRestartResultBtn').addEventListener('click', ipResetWizard);
+  ipBackBtn.disabled = false;
+}
+
+function ipResetWizard() {
+  ipDecisionHistory.length = 0;
+  ipDecisionState.linked = null;
+  ipDecisionState.count = null;
+  ipRun(ipRenderStart);
+}
+
+ipWizardTab.addEventListener('click', () => ipSetGuideMode('wizard'));
+ipRulesTab.addEventListener('click', () => ipSetGuideMode('rules'));
+ipOpenRulesBtn.addEventListener('click', () => ipSetGuideMode('rules'));
+ipResetBtn.addEventListener('click', ipResetWizard);
+ipBackBtn.addEventListener('click', () => {
+  if (!ipDecisionHistory.length) return;
+  const previous = ipDecisionHistory.pop();
+  ipRun(previous.renderer || ipRenderStart);
+});
+
+ipResetWizard();
+ipSetGuideMode('rules');
 
 const THEME_KEY = 'risk_manager_theme_v4';
 const STICKY_KEY = 'risk_manager_sticky_v1';
