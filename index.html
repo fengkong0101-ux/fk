@@ -3402,9 +3402,9 @@
     .ip-guide-tabs {
       width: 100%;
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start;
       align-items: center;
-      gap: 18px;
+      gap: 10px;
       margin: 0 0 18px;
     }
 
@@ -4041,7 +4041,7 @@
 
           <div class="ip-guide-tabs" role="tablist" aria-label="Chế độ xem hướng dẫn nghiệp vụ">
             <button id="ipRulesTab" class="ip-guide-tab active" type="button" role="tab" aria-selected="true">📚 Xem toàn bộ QUY TẮC</button>
-            <button id="ipWizardTab" class="ip-guide-tab" type="button" role="tab" aria-selected="false">🧭 Trợ lý xử lý thưởng nhóm</button>
+            <button id="ipWizardTab" class="ip-guide-tab" type="button" role="tab" aria-selected="false">🧭 Trợ lý xử lý</button>
           </div>
 
           <div id="ipMemoryStrip" class="ip-memory-strip" aria-label="Nguyên tắc ghi nhớ nhanh" style="display:none;">
@@ -4075,7 +4075,7 @@
                   <button id="ipBackBtn" class="small ghost" type="button">← Quay lại</button>
                   <div class="ip-action-right">
                     <button id="ipResetBtn" class="small ghost" type="button">Làm lại</button>
-                    <button id="ipOpenRulesBtn" class="small" type="button">Xem toàn bộ quy tắc</button>
+                    <button id="ipOpenRulesBtn" class="small" type="button">Xem toàn bộ QUY TẮC</button>
                   </div>
                 </div>
               </div>
@@ -4182,13 +4182,12 @@
                   </article>
                 </div>
 
-                <div class="ip-tree-note">Trường hợp không khớp hoàn toàn với các nhánh trên: chuyển kiểm tra thủ công, không tự suy diễn kết quả.</div>
               </div>
             </section>
           </section>
 
           <section id="ipRulesPanel" aria-labelledby="ipRulesTab">
-            <div class="ip-rules-panel-note">Nội dung bên dưới vẫn được tải từ <strong>rules.js</strong>. Nhấn vào từng tiêu đề để mở hoặc thu gọn.</div>
+            <div class="ip-rules-panel-note">Nội dung bên dưới là toàn bộ QUY TẮC nghiệp vụ. Nhấn vào từng tiêu đề để mở hoặc thu gọn.</div>
             <div id="rulesList" class="grid"></div>
           </section>
         </div>
@@ -4256,7 +4255,7 @@ function renderRules() {
   rulesList.innerHTML = '';
 
   if (!Array.isArray(rulesData) || !rulesData.length) {
-    rulesList.innerHTML = '<div class="empty">Không có dữ liệu rules.js</div>';
+    rulesList.innerHTML = '<div class="empty">Không có dữ liệu QUY TẮC</div>';
     return;
   }
 
@@ -4388,11 +4387,6 @@ const ipDecisionResults = {
     tone: 'danger', icon: '🔒',
     title: 'Khóa tài khoản đại lý',
     desc: 'Áp dụng khi trùng từ 3 IP/thiết bị trở lên và thành viên cùng cấp trên đều nạp lần đầu.'
-  },
-  manual: {
-    tone: 'neutral', icon: '?',
-    title: 'Chuyển kiểm tra thủ công',
-    desc: 'Tình huống không khớp đầy đủ với các nhánh đã được cung cấp. Không tự suy diễn kết quả.'
   }
 };
 
@@ -4531,9 +4525,9 @@ function ipRenderUnlinkedCount() {
     ],
     onSelect(value) {
       ipDecisionState.count = value;
-      if (value === '2') ipRun(ipUnlinkedTwoFirstDeposit);
-      if (value === '3') ipRun(ipUnlinkedThreeRepeat);
-      if (value === '4plus') ipRun(ipUnlinkedFourRepeat);
+      if (value === '2') ipRun(ipUnlinkedTwoSituation);
+      if (value === '3') ipRun(ipUnlinkedThreeSituation);
+      if (value === '4plus') ipRun(ipUnlinkedFourSituation);
     }
   });
 }
@@ -4549,99 +4543,147 @@ function ipRenderLinkedCount() {
     ],
     onSelect(value) {
       ipDecisionState.count = value;
-      ipRun(ipLinkedAgentRepeat);
+      ipRun(ipLinkedSituation);
     }
   });
 }
 
-function ipUnlinkedTwoFirstDeposit() {
-  ipYesNo(3,
-    'Cả 2 tài khoản đều nạp lần đầu và đăng ký gần thời điểm nhau?',
-    'Nếu đúng, áp dụng khấu trừ tiền thưởng và hoàn trả tiền nạp gốc.',
-    () => ipShowResult('deductOriginal'),
-    ipUnlinkedTwoRepeat
-  );
+function ipUnlinkedTwoSituation() {
+  ipAsk({
+    step: 3,
+    title: 'Hai tài khoản thuộc tình huống nào?',
+    note: 'Chọn đúng một trong hai trường hợp được quy định cho nhóm trùng 2 tài khoản.',
+    options: [
+      {
+        value: 'both-first',
+        icon: '①',
+        label: 'Cả 2 đều nạp lần đầu và đăng ký gần thời điểm nhau',
+        note: 'Khấu trừ tiền thưởng và hoàn trả tiền nạp gốc.'
+      },
+      {
+        value: 'one-repeat',
+        icon: '↻',
+        label: 'Có một tài khoản đã nạp đi nạp lại nhiều lần',
+        note: 'Cho phép thành viên rút tiền bình thường.'
+      }
+    ],
+    onSelect(value) {
+      ipShowResult(value === 'both-first' ? 'deductOriginal' : 'normal');
+    }
+  });
 }
 
-function ipUnlinkedTwoRepeat() {
-  ipYesNo(4,
-    'Có một tài khoản đã nạp đi nạp lại nhiều lần?',
-    'Kiểm tra lịch sử nạp của ít nhất một tài khoản trong nhóm.',
-    () => ipShowResult('normal'),
-    () => ipShowResult('manual')
-  );
+function ipUnlinkedThreeSituation() {
+  ipAsk({
+    step: 3,
+    title: 'Nhóm 3 tài khoản thuộc tình huống nào?',
+    note: 'Trước tiên xác định lịch sử của hai tài khoản xuất hiện trước trong đường dây.',
+    options: [
+      {
+        value: 'prior-repeat',
+        icon: '↻',
+        label: 'Hai tài khoản trước đã nạp đi nạp lại nhiều lần',
+        note: 'Cho phép thành viên rút tiền bình thường.'
+      },
+      {
+        value: 'all-first',
+        icon: '①',
+        label: 'Cả 3 đều là tài khoản nạp lần đầu',
+        note: 'Tiếp tục chọn lịch sử rút tiền để xác định kết quả.'
+      }
+    ],
+    onSelect(value) {
+      if (value === 'prior-repeat') {
+        ipShowResult('normal');
+        return;
+      }
+      ipRun(ipUnlinkedThreeFirstDepositSituation);
+    }
+  });
 }
 
-function ipUnlinkedThreeRepeat() {
-  ipYesNo(3,
-    'Hai tài khoản trước đã nạp đi nạp lại nhiều lần?',
-    'Nếu đúng, cho phép thành viên rút tiền bình thường.',
-    () => ipShowResult('normal'),
-    ipUnlinkedThreeAllFirst
-  );
+function ipUnlinkedThreeFirstDepositSituation() {
+  ipAsk({
+    step: 4,
+    title: 'Trường hợp nạp lần đầu thuộc tình huống nào?',
+    note: 'Chọn đúng tình trạng rút tiền của nhóm 3 tài khoản.',
+    options: [
+      {
+        value: 'prior-withdrawn',
+        icon: '⇧',
+        label: 'Hai tài khoản trước đã từng rút tiền',
+        note: 'Khóa toàn bộ tài khoản trong cùng đường dây IP/thiết bị.'
+      },
+      {
+        value: 'none-withdrawn',
+        icon: '0',
+        label: 'Cả 3 tài khoản đều chưa từng rút tiền',
+        note: 'Cho 01 tài khoản rút và hủy/hạn chế tiền thưởng các tài khoản còn lại.'
+      }
+    ],
+    onSelect(value) {
+      ipShowResult(value === 'prior-withdrawn' ? 'lockAll' : 'allowOne');
+    }
+  });
 }
 
-function ipUnlinkedThreeAllFirst() {
-  ipYesNo(4,
-    'Cả 3 tài khoản đều là tài khoản nạp lần đầu?',
-    'Nếu không phải cả 3 tài khoản nạp lần đầu, quy tắc hiện tại chưa đủ để kết luận tự động.',
-    ipUnlinkedThreePriorWithdrawn,
-    () => ipShowResult('manual')
-  );
+function ipUnlinkedFourSituation() {
+  ipAsk({
+    step: 3,
+    title: 'Nhóm từ 4 tài khoản trở lên thuộc tình huống nào?',
+    note: 'Chọn đúng một trong hai trường hợp được quy định.',
+    options: [
+      {
+        value: 'all-first',
+        icon: '①',
+        label: 'Tất cả đều là tài khoản nạp lần đầu',
+        note: 'Khóa toàn bộ tài khoản trong cùng đường dây IP/thiết bị.'
+      },
+      {
+        value: 'prior-repeat',
+        icon: '↻',
+        label: 'Các tài khoản trước đều đã nạp đi nạp lại nhiều lần',
+        note: 'Cho phép thành viên rút tiền bình thường.'
+      }
+    ],
+    onSelect(value) {
+      ipShowResult(value === 'all-first' ? 'lockAll' : 'normal');
+    }
+  });
 }
 
-function ipUnlinkedThreePriorWithdrawn() {
-  ipYesNo(5,
-    'Hai tài khoản trước đã từng rút tiền?',
-    'Chọn Có khi cả hai tài khoản trước trong đường dây đã từng rút tiền.',
-    () => ipShowResult('lockAll'),
-    ipUnlinkedThreeNeverWithdrawn
-  );
-}
-
-function ipUnlinkedThreeNeverWithdrawn() {
-  ipYesNo(5,
-    'Cả 3 tài khoản đều chưa từng rút tiền?',
-    'Nếu hồ sơ không khớp hoàn toàn, chuyển kiểm tra thủ công.',
-    () => ipShowResult('allowOne'),
-    () => ipShowResult('manual')
-  );
-}
-
-function ipUnlinkedFourRepeat() {
-  ipYesNo(3,
-    'Các tài khoản trước đều đã nạp đi nạp lại nhiều lần?',
-    'Nếu đúng, cho phép thành viên rút tiền bình thường.',
-    () => ipShowResult('normal'),
-    ipUnlinkedFourAllFirst
-  );
-}
-
-function ipUnlinkedFourAllFirst() {
-  ipYesNo(4,
-    'Tất cả đều là tài khoản nạp lần đầu?',
-    'Từ 4 tài khoản nạp lần đầu trở lên thuộc trường hợp khóa toàn bộ đường dây.',
-    () => ipShowResult('lockAll'),
-    () => ipShowResult('manual')
-  );
-}
-
-function ipLinkedAgentRepeat() {
-  ipYesNo(3,
-    'Đại lý/cấp trên đã nạp đi nạp lại nhiều lần?',
-    'Kiểm tra lịch sử nạp của tài khoản cấp trên hoặc đại lý.',
-    () => ipShowResult('restrictCommission'),
-    ipLinkedBothFirst
-  );
-}
-
-function ipLinkedBothFirst() {
-  ipYesNo(4,
-    'Thành viên và cấp trên đều là tài khoản nạp lần đầu?',
-    'Nếu không khớp điều kiện này, chuyển kiểm tra thủ công.',
-    () => ipShowResult(ipDecisionState.count === '2' ? 'deductDeposit' : 'lockAgent'),
-    () => ipShowResult('manual')
-  );
+function ipLinkedSituation() {
+  const isTwoAccounts = ipDecisionState.count === '2';
+  ipAsk({
+    step: 3,
+    title: isTwoAccounts
+      ? 'Nhóm có liên kết trùng 2 tài khoản thuộc tình huống nào?'
+      : 'Nhóm có liên kết từ 3 tài khoản trở lên thuộc tình huống nào?',
+    note: 'Chọn đúng tình trạng của thành viên và tài khoản cấp trên/đại lý.',
+    options: [
+      {
+        value: 'both-first',
+        icon: '①',
+        label: 'Thành viên và cấp trên đều là tài khoản nạp lần đầu',
+        note: isTwoAccounts
+          ? 'Khấu trừ tiền thưởng và hoàn trả tiền nạp.'
+          : 'Khóa tài khoản đại lý.'
+      },
+      {
+        value: 'agent-repeat',
+        icon: '↻',
+        label: 'Đại lý/cấp trên đã nạp đi nạp lại nhiều lần',
+        note: 'Cho thành viên rút tiền nhưng hạn chế hoa hồng của cấp trên.'
+      }
+    ],
+    onSelect(value) {
+      if (value === 'agent-repeat') {
+        ipShowResult('restrictCommission');
+        return;
+      }
+      ipShowResult(isTwoAccounts ? 'deductDeposit' : 'lockAgent');
+    }
+  });
 }
 
 function ipShowResult(key) {
@@ -4649,7 +4691,12 @@ function ipShowResult(key) {
   ipUpdateProgress(5);
   ipRenderCrumbs();
 
-  const result = ipDecisionResults[key] || ipDecisionResults.manual;
+  const result = ipDecisionResults[key];
+  if (!result) {
+    showToast('Không xác định được kết quả xử lý');
+    ipResetWizard();
+    return;
+  }
   const pathText = ipDecisionHistory.map(item => item.label).join(' → ');
   const pathMarkup = ipDecisionHistory
     .map((item, index) => `${index ? '<span>→</span>' : ''}<span class="ip-path-pill">${ipEscapeHtml(item.label)}</span>`)
