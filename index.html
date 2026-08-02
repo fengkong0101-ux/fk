@@ -3938,6 +3938,197 @@
       .ip-memory-strip { grid-template-columns: 1fr; }
     }
 
+  
+    /* =========================================================
+       CÂY QUYẾT ĐỊNH — FONT PHÂN CẤP + ACCORDION MỘT MỤC
+       ========================================================= */
+    .ip-tree-branch-head {
+      padding: 20px 20px 17px;
+    }
+
+    .ip-tree-branch-head strong {
+      font-size: clamp(21px, 1.8vw, 25px);
+      line-height: 1.25;
+      letter-spacing: -.02em;
+    }
+
+    .ip-tree-branch-head small {
+      margin-top: 7px;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .ip-tree-case {
+      padding: 14px;
+    }
+
+    .ip-tree-case-title {
+      margin-bottom: 10px;
+      font-size: 18px;
+      line-height: 1.35;
+    }
+
+    .ip-tree-count {
+      min-width: 38px;
+      height: 30px;
+      font-size: 13px;
+    }
+
+    .ip-tree-rule {
+      position: relative;
+      gap: 0;
+      padding: 0;
+      overflow: hidden;
+      border: 1px solid transparent;
+      font-size: 14px;
+      cursor: pointer;
+      transition:
+        border-color .22s ease,
+        background-color .22s ease,
+        box-shadow .22s ease;
+    }
+
+    .ip-tree-rule:hover {
+      border-color: var(--border-2);
+      background: var(--bg-soft);
+      box-shadow: 0 8px 20px rgba(15, 23, 42, .07);
+    }
+
+    .ip-tree-rule:focus-visible {
+      outline: 3px solid rgba(37, 99, 235, .22);
+      outline-offset: 2px;
+    }
+
+    .ip-tree-condition {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      min-height: 48px;
+      padding: 12px 42px 12px 13px;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .ip-tree-condition::after {
+      content: "⌄";
+      position: absolute;
+      top: 50%;
+      right: 13px;
+      width: 25px;
+      height: 25px;
+      display: grid;
+      place-items: center;
+      border-radius: 999px;
+      color: var(--muted);
+      background: var(--accent-soft);
+      transform: translateY(-50%);
+      transition: transform .22s ease, color .22s ease, background-color .22s ease;
+    }
+
+    .ip-tree-rule.is-open {
+      border-color: var(--border-2);
+      background: var(--bg-soft);
+      box-shadow: 0 9px 22px rgba(15, 23, 42, .08);
+    }
+
+    .ip-tree-rule.is-open .ip-tree-condition::after {
+      color: var(--accent);
+      background: var(--accent-soft);
+      transform: translateY(-50%) rotate(180deg);
+    }
+
+    .ip-tree-outcome {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 5px;
+      max-height: 0;
+      margin: 0 12px;
+      padding: 0 13px;
+      overflow: hidden;
+      opacity: 0;
+      border-left: 4px solid currentColor;
+      border-radius: 9px;
+      background: color-mix(in srgb, currentColor 7%, transparent);
+      font-size: 14px;
+      line-height: 1.55;
+      transform: translateY(-5px);
+      transition:
+        max-height .24s ease,
+        opacity .2s ease,
+        transform .24s ease,
+        padding .24s ease,
+        margin .24s ease;
+    }
+
+    .ip-tree-rule.is-open .ip-tree-outcome {
+      max-height: 180px;
+      margin: 0 12px 12px;
+      padding: 11px 13px;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .ip-tree-outcome.mixed {
+      color: var(--text);
+      border-left-color: #dc2626;
+      background: rgba(220, 38, 38, .06);
+    }
+
+    .ip-tree-result-danger {
+      color: #dc2626;
+      font-weight: 800;
+    }
+
+    .ip-tree-result-warning {
+      color: #d97706;
+      font-weight: 800;
+    }
+
+    .ip-result-action-lines {
+      display: grid;
+      gap: 7px;
+      margin-top: 13px;
+    }
+
+    .ip-result-action-line {
+      width: fit-content;
+      max-width: 100%;
+      padding: 8px 11px;
+      border-radius: 9px;
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1.45;
+    }
+
+    .ip-result-action-line.danger {
+      color: #dc2626;
+      background: rgba(220, 38, 38, .10);
+    }
+
+    .ip-result-action-line.warning {
+      color: #d97706;
+      background: rgba(217, 119, 6, .11);
+    }
+
+    @media (max-width: 650px) {
+      .ip-tree-branch-head strong {
+        font-size: 20px;
+      }
+
+      .ip-tree-case-title {
+        font-size: 17px;
+      }
+
+      .ip-tree-condition,
+      .ip-tree-outcome,
+      .ip-result-action-line {
+        font-size: 14px;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -4158,8 +4349,11 @@
                       <section class="ip-tree-case">
                         <div class="ip-tree-case-title"><span class="ip-tree-count">2</span> Trùng 2 IP/Thiết bị</div>
                         <div class="ip-tree-rule">
-                          <div class="ip-tree-condition">Thành viên và cấp trên đều nạp lần đầu</div>
-                          <div class="ip-tree-outcome warning">🟠 Khấu trừ tiền thưởng, hoàn trả tiền nạp.</div>
+                          <div class="ip-tree-condition">Thành viên và cấp trên đều là tài khoản nạp lần đầu</div>
+                          <div class="ip-tree-outcome mixed">
+                            <span class="ip-tree-result-danger">🔴 Khóa tài khoản đăng ký đến sau.</span>
+                            <span class="ip-tree-result-warning">🟡 Khóa hoa hồng tài khoản cấp trên.</span>
+                          </div>
                         </div>
                         <div class="ip-tree-rule">
                           <div class="ip-tree-condition">Đại lý đã nạp đi nạp lại nhiều lần</div>
@@ -4170,7 +4364,7 @@
                       <section class="ip-tree-case">
                         <div class="ip-tree-case-title"><span class="ip-tree-count">3+</span> Từ 3 IP/Thiết bị trở lên</div>
                         <div class="ip-tree-rule">
-                          <div class="ip-tree-condition">Thành viên và cấp trên đều nạp lần đầu</div>
+                          <div class="ip-tree-condition">Thành viên và cấp trên đều là tài khoản nạp lần đầu</div>
                           <div class="ip-tree-outcome danger">🔴 Khóa tài khoản đại lý.</div>
                         </div>
                         <div class="ip-tree-rule">
@@ -4363,10 +4557,14 @@ const ipDecisionResults = {
     title: 'Khấu trừ tiền thưởng, hoàn trả tiền nạp gốc',
     desc: 'Áp dụng khi cả 2 tài khoản đều nạp lần đầu và đăng ký gần thời điểm nhau.'
   },
-  deductDeposit: {
-    tone: 'warning', icon: '₫',
-    title: 'Khấu trừ tiền thưởng, hoàn trả tiền nạp',
-    desc: 'Áp dụng khi thành viên và cấp trên đều là tài khoản nạp lần đầu.'
+  lockLaterCommission: {
+    tone: 'danger', icon: '🔒',
+    title: 'Khóa tài khoản đăng ký đến sau và khóa hoa hồng tài khoản cấp trên',
+    desc: 'Áp dụng khi thành viên và cấp trên đều là tài khoản nạp lần đầu.',
+    actionLines: [
+      { tone: 'danger', text: 'Khóa tài khoản đăng ký đến sau.' },
+      { tone: 'warning', text: 'Khóa hoa hồng tài khoản cấp trên.' }
+    ]
   },
   lockAll: {
     tone: 'danger', icon: '🔒',
@@ -4666,7 +4864,7 @@ function ipLinkedSituation() {
         icon: '①',
         label: 'Thành viên và cấp trên đều là tài khoản nạp lần đầu',
         note: isTwoAccounts
-          ? 'Khấu trừ tiền thưởng và hoàn trả tiền nạp.'
+          ? 'Khóa tài khoản đăng ký đến sau và khóa hoa hồng tài khoản cấp trên.'
           : 'Khóa tài khoản đại lý.'
       },
       {
@@ -4681,7 +4879,7 @@ function ipLinkedSituation() {
         ipShowResult('restrictCommission');
         return;
       }
-      ipShowResult(isTwoAccounts ? 'deductDeposit' : 'lockAgent');
+      ipShowResult(isTwoAccounts ? 'lockLaterCommission' : 'lockAgent');
     }
   });
 }
@@ -4710,6 +4908,12 @@ function ipShowResult(key) {
           <div class="ip-result-kicker">Kết quả xử lý</div>
           <h3 class="ip-result-title">${ipEscapeHtml(result.title)}</h3>
           <p class="ip-result-desc">${ipEscapeHtml(result.desc)}</p>
+          ${Array.isArray(result.actionLines) ? `
+            <div class="ip-result-action-lines">
+              ${result.actionLines.map(line => `
+                <div class="ip-result-action-line ${ipEscapeHtml(line.tone)}">${ipEscapeHtml(line.text)}</div>
+              `).join('')}
+            </div>` : ''}
         </div>
       </div>
       <div class="ip-path-box">
@@ -4744,6 +4948,51 @@ function ipResetWizard() {
   ipRun(ipRenderStart);
 }
 
+
+function ipInitTreeAccordion() {
+  const treeRules = Array.from(document.querySelectorAll('#ipTreePanel .ip-tree-rule'));
+
+  const closeRule = (rule) => {
+    rule.classList.remove('is-open');
+    rule.setAttribute('aria-expanded', 'false');
+    const outcome = rule.querySelector('.ip-tree-outcome');
+    if (outcome) outcome.setAttribute('aria-hidden', 'true');
+  };
+
+  const toggleRule = (rule) => {
+    const shouldOpen = !rule.classList.contains('is-open');
+    treeRules.forEach(closeRule);
+
+    if (shouldOpen) {
+      rule.classList.add('is-open');
+      rule.setAttribute('aria-expanded', 'true');
+      const outcome = rule.querySelector('.ip-tree-outcome');
+      if (outcome) outcome.setAttribute('aria-hidden', 'false');
+    }
+  };
+
+  treeRules.forEach((rule, index) => {
+    rule.setAttribute('role', 'button');
+    rule.setAttribute('tabindex', '0');
+    rule.setAttribute('aria-expanded', 'false');
+
+    const outcome = rule.querySelector('.ip-tree-outcome');
+    if (outcome) {
+      const outcomeId = `ip-tree-outcome-${index + 1}`;
+      outcome.id = outcomeId;
+      outcome.setAttribute('aria-hidden', 'true');
+      rule.setAttribute('aria-controls', outcomeId);
+    }
+
+    rule.addEventListener('click', () => toggleRule(rule));
+    rule.addEventListener('keydown', (event) => {
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      event.preventDefault();
+      toggleRule(rule);
+    });
+  });
+}
+
 ipWizardTab.addEventListener('click', () => ipSetGuideMode('wizard'));
 ipRulesTab.addEventListener('click', () => ipSetGuideMode('rules'));
 ipQuickTab.addEventListener('click', () => ipSetAssistantMode('quick'));
@@ -4756,6 +5005,7 @@ ipBackBtn.addEventListener('click', () => {
   ipRun(previous.renderer || ipRenderStart);
 });
 
+ipInitTreeAccordion();
 ipResetWizard();
 ipSetAssistantMode('quick');
 ipSetGuideMode('rules');
