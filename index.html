@@ -4555,14 +4555,10 @@ const ipDecisionResults = {
     title: 'Cho phép thành viên rút tiền bình thường',
     desc: 'Các tài khoản trước đã có lịch sử nạp đi nạp lại nhiều lần theo điều kiện của quy tắc.'
   },
-  lockLaterCommission: {
-    tone: 'danger', icon: '🔒',
-    title: 'Khóa tài khoản đăng ký đến sau và khóa hoa hồng tài khoản cấp trên',
-    desc: 'Áp dụng khi thành viên và cấp trên đều là tài khoản nạp lần đầu.',
-    actionLines: [
-      { tone: 'danger', text: 'Khóa tài khoản đăng ký đến sau.' },
-      { tone: 'warning', text: 'Khóa hoa hồng tài khoản cấp trên.' }
-    ]
+   deductOriginal: {
+    tone: 'warning', icon: '₫',
+    title: 'Khấu trừ tiền thưởng, hoàn trả tiền nạp gốc',
+    desc: 'Áp dụng khi cả 2 tài khoản đều nạp lần đầu và đăng ký gần thời điểm nhau.'
   },
   lockAll: {
     tone: 'danger', icon: '🔒',
