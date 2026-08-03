@@ -4301,7 +4301,7 @@
                       <section class="ip-tree-case">
                         <div class="ip-tree-case-title"><span class="ip-tree-count">2</span> Trùng 2 IP/Thiết bị</div>
                         <div class="ip-tree-rule">
-                          <div class="ip-tree-condition">Thành viên và cấp trên đều là tài khoản nạp lần đầu.</div>
+                          <div class="ip-tree-condition">Cả 2 ID đều là tài khoản nạp lần đầu</div>
                           <div class="ip-tree-outcome warning">🟠 Khấu trừ tiền thưởng, hoàn trả tiền nạp gốc.</div>
                         </div>
                         <div class="ip-tree-rule">
@@ -4322,7 +4322,11 @@
                         </div>
                         <div class="ip-tree-rule">
                           <div class="ip-tree-condition">Hai tài khoản trước đã nạp đi nạp lại nhiều lần</div>
-                          <div class="ip-tree-outcome success">🟢 Cho phép thành viên rút tiền bình thường.</div>
+                          <div class="ip-tree-outcome mixed">
+                            <span class="ip-tree-result-warning">🟠 Tài khoản đang xét nạp đầu, có nhận KM: khấu trừ thưởng, hoàn trả tiền nạp.</span>
+                            <span class="ip-tree-result-warning">🟡 Nạp đầu không nhận KM hoặc đã nạp nhiều lần: cho rút, khóa khuyến mãi.</span>
+                            <span>⚠️ Không chắc chắn: tạm giữ lệnh rút, xin ý kiến cấp trên.</span>
+                          </div>
                         </div>
                       </section>
 
@@ -4334,7 +4338,11 @@
                         </div>
                         <div class="ip-tree-rule">
                           <div class="ip-tree-condition">Các tài khoản trước đều đã nạp đi nạp lại nhiều lần</div>
-                          <div class="ip-tree-outcome success">🟢 Cho phép thành viên rút tiền bình thường.</div>
+                          <div class="ip-tree-outcome mixed">
+                            <span class="ip-tree-result-warning">🟠 Tài khoản đang xét nạp đầu, có nhận KM: khấu trừ thưởng, hoàn trả tiền nạp.</span>
+                            <span class="ip-tree-result-warning">🟡 Nạp đầu không nhận KM hoặc đã nạp nhiều lần: cho rút, khóa khuyến mãi.</span>
+                            <span>⚠️ Không chắc chắn: tạm giữ lệnh rút, xin ý kiến cấp trên.</span>
+                          </div>
                         </div>
                       </section>
                     </div>
@@ -4343,7 +4351,7 @@
                   <article class="ip-tree-branch">
                     <div class="ip-tree-branch-head">
                       <strong>👥 CÓ LIÊN KẾT CẤP TRÊN – CẤP DƯỚI</strong>
-                      <small>Ngoài tình trạng nạp, cần xem thêm tài khoản đại lý và hoa hồng cấp trên.</small>
+                      <small>Ngoài tình trạng nạp, cần xem thêm trạng thái lời/lỗ và hoa hồng cấp trên.</small>
                     </div>
                     <div class="ip-tree-cases">
                       <section class="ip-tree-case">
@@ -4356,20 +4364,28 @@
                           </div>
                         </div>
                         <div class="ip-tree-rule">
-                          <div class="ip-tree-condition">Đại lý đã nạp đi nạp lại nhiều lần</div>
-                          <div class="ip-tree-outcome warning">🟡 Cho thành viên rút tiền, nhưng hạn chế hoa hồng cấp trên.</div>
+                          <div class="ip-tree-condition">Cấp trên đã nạp nhiều lần, cấp dưới nạp lần đầu</div>
+                          <div class="ip-tree-outcome mixed">
+                            <span class="ip-tree-result-warning">🟡 Cấp trên đang thua: cho cấp dưới rút, khóa hoa hồng cấp trên.</span>
+                            <span class="ip-tree-result-danger">🔴 Cấp trên đang có lãi hoặc tiếp tục tạo cấp dưới để hưởng lợi: khóa cấp dưới; khóa KM cấp dưới và KM/hoa hồng cấp trên.</span>
+                            <span>⚠️ Chưa xác định rõ: tạm giữ lệnh rút, xin ý kiến cấp trên.</span>
+                          </div>
                         </div>
                       </section>
 
                       <section class="ip-tree-case">
                         <div class="ip-tree-case-title"><span class="ip-tree-count">3+</span> Từ 3 IP/Thiết bị trở lên</div>
                         <div class="ip-tree-rule">
-                          <div class="ip-tree-condition">Thành viên và cấp trên đều là tài khoản nạp lần đầu</div>
-                          <div class="ip-tree-outcome danger">🔴 Khóa tài khoản đại lý.</div>
+                          <div class="ip-tree-condition">Cấp dưới là tài khoản nạp lần đầu</div>
+                          <div class="ip-tree-outcome danger">🔴 Khóa tài khoản cấp dưới phát sinh sau.</div>
                         </div>
                         <div class="ip-tree-rule">
-                          <div class="ip-tree-condition">Đại lý đã nạp đi nạp lại nhiều lần</div>
-                          <div class="ip-tree-outcome warning">🟡 Cho thành viên rút tiền, nhưng hạn chế hoa hồng cấp trên.</div>
+                          <div class="ip-tree-condition">Cấp dưới đã nạp đi nạp lại nhiều lần</div>
+                          <div class="ip-tree-outcome warning">🟠 Khấu trừ tiền thưởng, hoàn trả tiền nạp.</div>
+                        </div>
+                        <div class="ip-tree-rule">
+                          <div class="ip-tree-condition">Chưa xác định rõ tình trạng tài khoản</div>
+                          <div class="ip-tree-outcome warning">⚠️ Tạm giữ lệnh rút, xin ý kiến cấp trên.</div>
                         </div>
                       </section>
                     </div>
@@ -4550,12 +4566,32 @@ const ipDecisionResults = {
   normal: {
     tone: 'success', icon: '✓',
     title: 'Cho phép thành viên rút tiền bình thường',
-    desc: 'Các tài khoản trước đã có lịch sử nạp đi nạp lại nhiều lần theo điều kiện của quy tắc.'
+    desc: 'Có tài khoản trước đã nạp đi nạp lại nhiều lần và không thuộc trường hợp cần hạn chế thêm.'
   },
-  deductRefund: {
+  deductRefundPair: {
     tone: 'warning', icon: '💸',
     title: 'Khấu trừ tiền thưởng, hoàn trả tiền nạp gốc',
-    desc: 'Áp dụng khi thành viên và cấp trên đều là tài khoản nạp lần đầu.'
+    desc: 'Áp dụng khi cả 2 ID đều là tài khoản nạp lần đầu.'
+  },
+  deductRefundPromo: {
+    tone: 'warning', icon: '💸',
+    title: 'Khấu trừ tiền thưởng, hoàn trả tiền nạp',
+    desc: 'Tài khoản đang xét nạp lần đầu và có nhận khuyến mãi.'
+  },
+  deductRefundSubordinate: {
+    tone: 'warning', icon: '💸',
+    title: 'Khấu trừ tiền thưởng, hoàn trả tiền nạp',
+    desc: 'Cấp dưới đã nạp đi nạp lại nhiều lần; áp dụng mức xử lý mềm.'
+  },
+  allowLockPromotion: {
+    tone: 'warning', icon: '⚠',
+    title: 'Cho rút, khóa khuyến mãi tài khoản',
+    desc: 'Áp dụng khi tài khoản đang xét nạp lần đầu không nhận khuyến mãi hoặc đã nạp đi nạp lại nhiều lần.'
+  },
+  holdEscalate: {
+    tone: 'warning', icon: '⏸',
+    title: 'Tạm giữ lệnh rút, xin ý kiến cấp trên',
+    desc: 'Áp dụng khi chưa đủ căn cứ hoặc chưa xác định rõ tình trạng tài khoản.'
   },
   lockLaterCommission: {
     tone: 'danger', icon: '🔒',
@@ -4576,15 +4612,25 @@ const ipDecisionResults = {
     title: 'Cho phép 01 tài khoản rút tiền; hủy/hạn chế tiền thưởng các tài khoản còn lại',
     desc: 'Áp dụng khi cả 3 tài khoản đều chưa từng rút tiền.'
   },
-  restrictCommission: {
+  allowSubLockSuperiorCommission: {
     tone: 'warning', icon: '⚠',
-    title: 'Cho thành viên rút tiền, nhưng hạn chế hoa hồng của cấp trên',
-    desc: 'Đại lý đã nạp đi nạp lại nhiều lần, nhưng hoa hồng cấp trên vẫn cần bị hạn chế.'
+    title: 'Cho cấp dưới rút, khóa hoa hồng cấp trên',
+    desc: 'Cấp trên đã nạp nhiều lần và đang thua hoặc đã thua nhiều.'
   },
-  lockAgent: {
+  lockSubAndBenefits: {
     tone: 'danger', icon: '🔒',
-    title: 'Khóa tài khoản đại lý',
-    desc: 'Áp dụng khi trùng từ 3 IP/thiết bị trở lên và thành viên cùng cấp trên đều nạp lần đầu.'
+    title: 'Khóa tài khoản cấp dưới và toàn bộ ưu đãi liên quan',
+    desc: 'Cấp trên đang có lãi hoặc tiếp tục tạo cấp dưới để hưởng lợi.',
+    actionLines: [
+      { tone: 'danger', text: 'Khóa tài khoản cấp dưới.' },
+      { tone: 'warning', text: 'Khóa khuyến mãi cấp dưới.' },
+      { tone: 'warning', text: 'Khóa khuyến mãi và hoa hồng cấp trên.' }
+    ]
+  },
+  lockSubordinate: {
+    tone: 'danger', icon: '🔒',
+    title: 'Khóa tài khoản cấp dưới phát sinh sau',
+    desc: 'Áp dụng với nhóm có liên kết từ 3 IP/thiết bị trở lên khi cấp dưới là tài khoản nạp lần đầu.'
   }
 };
 
@@ -4755,7 +4801,7 @@ function ipUnlinkedTwoSituation() {
       {
         value: 'both-first',
         icon: '①',
-        label: 'Cả 2 tài khoản đều nạp lần đầu và đăng ký gần thời điểm nhau',
+        label: 'Cả 2 ID đều là tài khoản nạp lần đầu',
         note: 'Khấu trừ tiền thưởng, hoàn trả tiền nạp gốc.'
       },
       {
@@ -4766,7 +4812,7 @@ function ipUnlinkedTwoSituation() {
       }
     ],
     onSelect(value) {
-      ipShowResult(value === 'both-first' ? 'deductRefund' : 'normal');
+      ipShowResult(value === 'both-first' ? 'deductRefundPair' : 'normal');
     }
   });
 }
@@ -4781,7 +4827,7 @@ function ipUnlinkedThreeSituation() {
         value: 'prior-repeat',
         icon: '↻',
         label: 'Hai tài khoản trước đã nạp đi nạp lại nhiều lần',
-        note: 'Cho phép thành viên rút tiền bình thường.'
+        note: 'Tiếp tục kiểm tra tài khoản đang xét.'
       },
       {
         value: 'all-first',
@@ -4792,7 +4838,7 @@ function ipUnlinkedThreeSituation() {
     ],
     onSelect(value) {
       if (value === 'prior-repeat') {
-        ipShowResult('normal');
+        ipRun(ipAssessCurrentAccountAfterPriorRepeat);
         return;
       }
       ipRun(ipUnlinkedThreeFirstDepositSituation);
@@ -4841,45 +4887,175 @@ function ipUnlinkedFourSituation() {
         value: 'prior-repeat',
         icon: '↻',
         label: 'Các tài khoản trước đều đã nạp đi nạp lại nhiều lần',
-        note: 'Cho phép thành viên rút tiền bình thường.'
+        note: 'Tiếp tục kiểm tra tài khoản đang xét.'
       }
     ],
     onSelect(value) {
-      ipShowResult(value === 'all-first' ? 'lockAll' : 'normal');
+      if (value === 'all-first') {
+        ipShowResult('lockAll');
+        return;
+      }
+      ipRun(ipAssessCurrentAccountAfterPriorRepeat);
+    }
+  });
+}
+
+function ipAssessCurrentAccountAfterPriorRepeat() {
+  ipAsk({
+    step: 4,
+    title: 'Tài khoản đang xét thuộc trường hợp nào?',
+    note: 'Kiểm tra lần nạp và tình trạng nhận khuyến mãi của tài khoản đang rút.',
+    options: [
+      {
+        value: 'first-with-promo',
+        icon: '🎁',
+        label: 'Nạp lần đầu và có nhận khuyến mãi',
+        note: 'Khấu trừ tiền thưởng, hoàn trả tiền nạp.'
+      },
+      {
+        value: 'first-no-promo',
+        icon: '0',
+        label: 'Nạp lần đầu nhưng không nhận khuyến mãi',
+        note: 'Cho rút, khóa khuyến mãi tài khoản.'
+      },
+      {
+        value: 'repeat',
+        icon: '↻',
+        label: 'Đã nạp đi nạp lại nhiều lần',
+        note: 'Cho rút, khóa khuyến mãi tài khoản.'
+      },
+      {
+        value: 'unclear',
+        icon: '?',
+        label: 'Chưa xác định rõ',
+        note: 'Tạm giữ lệnh rút, xin ý kiến cấp trên.'
+      }
+    ],
+    onSelect(value) {
+      if (value === 'first-with-promo') {
+        ipShowResult('deductRefundPromo');
+        return;
+      }
+      if (value === 'unclear') {
+        ipShowResult('holdEscalate');
+        return;
+      }
+      ipShowResult('allowLockPromotion');
     }
   });
 }
 
 function ipLinkedSituation() {
-  const isTwoAccounts = ipDecisionState.count === '2';
+  if (ipDecisionState.count === '2') {
+    ipRun(ipLinkedTwoSituation);
+    return;
+  }
+  ipRun(ipLinkedThreePlusSituation);
+}
+
+function ipLinkedTwoSituation() {
   ipAsk({
     step: 3,
-    title: isTwoAccounts
-      ? 'Nhóm có liên kết trùng 2 tài khoản thuộc tình huống nào?'
-      : 'Nhóm có liên kết từ 3 tài khoản trở lên thuộc tình huống nào?',
-    note: 'Chọn đúng tình trạng của thành viên và tài khoản cấp trên/đại lý.',
+    title: 'Nhóm có liên kết trùng 2 tài khoản thuộc tình huống nào?',
+    note: 'Kiểm tra tình trạng nạp của thành viên và tài khoản cấp trên.',
     options: [
       {
         value: 'both-first',
         icon: '①',
         label: 'Thành viên và cấp trên đều là tài khoản nạp lần đầu',
-        note: isTwoAccounts
-          ? 'Khóa tài khoản đăng ký đến sau và khóa hoa hồng tài khoản cấp trên.'
-          : 'Khóa tài khoản đại lý.'
+        note: 'Khóa tài khoản đăng ký đến sau và khóa hoa hồng tài khoản cấp trên.'
       },
       {
-        value: 'agent-repeat',
+        value: 'superior-repeat',
         icon: '↻',
-        label: 'Đại lý/cấp trên đã nạp đi nạp lại nhiều lần',
-        note: 'Cho thành viên rút tiền nhưng hạn chế hoa hồng của cấp trên.'
+        label: 'Cấp trên đã nạp nhiều lần, cấp dưới nạp lần đầu',
+        note: 'Tiếp tục kiểm tra trạng thái lời/lỗ của cấp trên.'
       }
     ],
     onSelect(value) {
-      if (value === 'agent-repeat') {
-        ipShowResult('restrictCommission');
+      if (value === 'both-first') {
+        ipShowResult('lockLaterCommission');
         return;
       }
-      ipShowResult(isTwoAccounts ? 'lockLaterCommission' : 'lockAgent');
+      ipRun(ipLinkedTwoSuperiorStatus);
+    }
+  });
+}
+
+function ipLinkedTwoSuperiorStatus() {
+  ipAsk({
+    step: 4,
+    title: 'Trạng thái tài khoản cấp trên thế nào?',
+    note: 'Chọn theo tình trạng lời/lỗ và dấu hiệu tiếp tục tạo tài khoản để hưởng lợi.',
+    options: [
+      {
+        value: 'losing',
+        icon: '↓',
+        label: 'Cấp trên đang thua hoặc đã thua nhiều',
+        note: 'Cho cấp dưới rút, khóa hoa hồng cấp trên.'
+      },
+      {
+        value: 'profitable',
+        icon: '↑',
+        label: 'Cấp trên đang có lãi hoặc tiếp tục tạo cấp dưới để hưởng lợi',
+        note: 'Khóa cấp dưới; khóa KM cấp dưới và KM/hoa hồng cấp trên.'
+      },
+      {
+        value: 'unclear',
+        icon: '?',
+        label: 'Chưa xác định rõ',
+        note: 'Tạm giữ lệnh rút, xin ý kiến cấp trên.'
+      }
+    ],
+    onSelect(value) {
+      if (value === 'losing') {
+        ipShowResult('allowSubLockSuperiorCommission');
+        return;
+      }
+      if (value === 'profitable') {
+        ipShowResult('lockSubAndBenefits');
+        return;
+      }
+      ipShowResult('holdEscalate');
+    }
+  });
+}
+
+function ipLinkedThreePlusSituation() {
+  ipAsk({
+    step: 3,
+    title: 'Tài khoản cấp dưới thuộc tình huống nào?',
+    note: 'Áp dụng cho nhóm có liên kết từ 3 IP/thiết bị trở lên.',
+    options: [
+      {
+        value: 'first',
+        icon: '①',
+        label: 'Cấp dưới là tài khoản nạp lần đầu',
+        note: 'Khóa tài khoản cấp dưới phát sinh sau.'
+      },
+      {
+        value: 'repeat',
+        icon: '↻',
+        label: 'Cấp dưới đã nạp đi nạp lại nhiều lần',
+        note: 'Khấu trừ tiền thưởng, hoàn trả tiền nạp.'
+      },
+      {
+        value: 'unclear',
+        icon: '?',
+        label: 'Chưa xác định rõ',
+        note: 'Tạm giữ lệnh rút, xin ý kiến cấp trên.'
+      }
+    ],
+    onSelect(value) {
+      if (value === 'first') {
+        ipShowResult('lockSubordinate');
+        return;
+      }
+      if (value === 'repeat') {
+        ipShowResult('deductRefundSubordinate');
+        return;
+      }
+      ipShowResult('holdEscalate');
     }
   });
 }
@@ -4931,7 +5107,10 @@ function ipShowResult(key) {
     </div>`;
 
   document.getElementById('ipCopyResultBtn').addEventListener('click', () => {
-    const text = `KẾT QUẢ XỬ LÝ: ${result.title}\n\nLý do: ${result.desc}\n\nĐường dẫn: ${pathText} → ${result.title}`;
+    const actionText = Array.isArray(result.actionLines) && result.actionLines.length
+      ? `\n\nChi tiết:\n${result.actionLines.map(line => `- ${line.text}`).join('\n')}`
+      : '';
+    const text = `KẾT QUẢ XỬ LÝ: ${result.title}\n\nLý do: ${result.desc}${actionText}\n\nĐường dẫn: ${pathText} → ${result.title}`;
     safeCopy(text)
       .then(() => showToast('Đã copy kết luận'))
       .catch(() => showToast('Copy thất bại'));
