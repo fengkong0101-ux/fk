@@ -3437,6 +3437,19 @@
       gap: 14px;
     }
 
+    .ip-flex-note {
+      margin: 0;
+      padding: 11px 14px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+      background: rgba(245, 158, 11, .08);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    .ip-flex-note strong { color: #d97706; }
+
     .ip-assistant-tabs {
       display: flex;
       justify-content: flex-end;
@@ -4096,6 +4109,7 @@
       line-height: 1.5;
     }
 
+    .ip-tree-mini-card.green { color: #16a34a; }
     .ip-tree-mini-card.orange { color: #ea580c; }
     .ip-tree-mini-card.yellow { color: #ca8a04; }
     .ip-tree-mini-card.hold { color: var(--text); }
@@ -4288,6 +4302,7 @@
                   <div class="ip-progress"><div id="ipProgressBar"></div></div>
                 </div>
               </div>
+              <div class="ip-flex-note"><strong>⚠️ Đánh giá linh hoạt:</strong> Không áp dụng máy móc. Cần đối chiếu lịch sử nạp, rút, lời/lỗ, khuyến mãi và dấu hiệu lạm dụng; chưa chắc chắn thì tạm giữ lệnh rút và xin ý kiến cấp trên.</div>
               <div class="ip-wizard-body">
                 <div id="ipCrumbs" class="ip-crumbs" aria-label="Các lựa chọn đã thực hiện"></div>
                 <div id="ipWizardContent"></div>
@@ -4314,6 +4329,7 @@
                   <span>🟢 Cho rút bình thường</span>
                 </div>
               </div>
+              <div class="ip-flex-note"><strong>⚠️ Đánh giá linh hoạt:</strong> Cây quyết định là căn cứ tham khảo, không thay thế việc xem lịch sử nạp, rút, lời/lỗ, khuyến mãi và dấu hiệu lạm dụng. Chưa đủ căn cứ thì tạm giữ lệnh rút và xin ý kiến cấp trên.</div>
 
               <div class="ip-tree-body">
                 <div class="ip-tree-root">TRÙNG IP / THIẾT BỊ</div>
@@ -4331,11 +4347,16 @@
                         <div class="ip-tree-case-title"><span class="ip-tree-count">2</span> Trùng 2 IP/Thiết bị</div>
                         <div class="ip-tree-rule">
                           <div class="ip-tree-condition">Cả 2 ID đều là tài khoản nạp lần đầu</div>
-                          <div class="ip-tree-outcome warning">🟠 Khấu trừ tiền thưởng, hoàn trả tiền nạp gốc.</div>
+                          <div class="ip-tree-outcome ip-tree-outcome-cards">
+                            <div class="ip-tree-mini-card green">🟢 Tài khoản trước đang thua hoặc chưa từng rút qua: cho tài khoản đang xét rút bình thường.</div>
+                            <div class="ip-tree-mini-card green">🟢 Tài khoản trước đã rút qua, tài khoản đang xét không nhận KM: cho rút bình thường.</div>
+                            <div class="ip-tree-mini-card orange">🟠 Tài khoản trước đã rút qua, tài khoản đang xét có nhận KM: khấu trừ thưởng, hoàn trả tiền nạp gốc.</div>
+                            <div class="ip-tree-mini-card hold">⚠️ Chưa đủ căn cứ: tạm giữ lệnh rút, xin ý kiến cấp trên.</div>
+                          </div>
                         </div>
                         <div class="ip-tree-rule">
                           <div class="ip-tree-condition">Một tài khoản đã nạp đi nạp lại nhiều lần</div>
-                          <div class="ip-tree-outcome success">🟢 Cho phép thành viên rút tiền bình thường.</div>
+                          <div class="ip-tree-outcome warning">🟡 Cho rút, khóa khuyến mãi tài khoản.</div>
                         </div>
                       </section>
 
@@ -4598,12 +4619,12 @@ const ipDecisionResults = {
   normal: {
     tone: 'success', icon: '✓',
     title: 'Cho phép thành viên rút tiền bình thường',
-    desc: 'Có tài khoản trước đã nạp đi nạp lại nhiều lần và không thuộc trường hợp cần hạn chế thêm.'
+    desc: 'Áp dụng khi tài khoản trước đang thua hoặc chưa từng rút qua; hoặc tài khoản đang xét không nhận khuyến mãi.'
   },
   deductRefundPair: {
     tone: 'warning', icon: '💸',
     title: 'Khấu trừ tiền thưởng, hoàn trả tiền nạp gốc',
-    desc: 'Áp dụng khi cả 2 ID đều là tài khoản nạp lần đầu.'
+    desc: 'Áp dụng khi tài khoản trước đã từng rút qua và tài khoản đang xét có nhận khuyến mãi.'
   },
   deductRefundPromo: {
     tone: 'warning', icon: '💸',
@@ -4832,23 +4853,105 @@ function ipUnlinkedTwoSituation() {
   ipAsk({
     step: 3,
     title: 'Hai tài khoản thuộc tình huống nào?',
-    note: 'Chọn đúng một trong hai trường hợp được quy định cho nhóm trùng 2 tài khoản.',
+    note: 'Chọn tình trạng nạp của hai ID, sau đó tiếp tục đối chiếu lịch sử rút và khuyến mãi khi cần.',
     options: [
       {
         value: 'both-first',
         icon: '①',
         label: 'Cả 2 ID đều là tài khoản nạp lần đầu',
-        note: 'Khấu trừ tiền thưởng, hoàn trả tiền nạp gốc.'
+        note: 'Tiếp tục kiểm tra tài khoản trước đã từng rút qua hay chưa.'
       },
       {
         value: 'one-repeat',
         icon: '↻',
         label: 'Có một tài khoản đã nạp đi nạp lại nhiều lần',
-        note: 'Cho phép thành viên rút tiền bình thường.'
+        note: 'Cho rút, khóa khuyến mãi tài khoản.'
       }
     ],
     onSelect(value) {
-      ipShowResult(value === 'both-first' ? 'deductRefundPair' : 'normal');
+      if (value === 'both-first') {
+        ipRun(ipUnlinkedTwoPreviousStatus);
+        return;
+      }
+      ipShowResult('allowLockPromotion');
+    }
+  });
+}
+
+function ipUnlinkedTwoPreviousStatus() {
+  ipAsk({
+    step: 4,
+    title: 'Tài khoản xuất hiện trước thuộc tình huống nào?',
+    note: 'Không mặc định khấu trừ. Cần xem tài khoản trước đang thua hay đã từng rút qua.',
+    options: [
+      {
+        value: 'losing-or-not-withdrawn',
+        icon: '↓',
+        label: 'Đang thua hoặc chưa từng rút qua',
+        note: 'Cho tài khoản đang xét rút bình thường.'
+      },
+      {
+        value: 'withdrawn',
+        icon: '⇧',
+        label: 'Đã từng rút qua',
+        note: 'Tiếp tục kiểm tra tài khoản đang xét có nhận khuyến mãi hay không.'
+      },
+      {
+        value: 'unclear',
+        icon: '?',
+        label: 'Chưa xác định rõ',
+        note: 'Tạm giữ lệnh rút, xin ý kiến cấp trên.'
+      }
+    ],
+    onSelect(value) {
+      if (value === 'losing-or-not-withdrawn') {
+        ipShowResult('normal');
+        return;
+      }
+      if (value === 'withdrawn') {
+        ipRun(ipUnlinkedTwoPromotionStatus);
+        return;
+      }
+      ipShowResult('holdEscalate');
+    }
+  });
+}
+
+function ipUnlinkedTwoPromotionStatus() {
+  ipAsk({
+    step: 5,
+    title: 'Tài khoản đang xét có nhận khuyến mãi không?',
+    note: 'Chỉ khấu trừ và hoàn trả tiền nạp khi tài khoản đang xét có nhận khuyến mãi.',
+    options: [
+      {
+        value: 'with-promo',
+        icon: '🎁',
+        label: 'Có nhận khuyến mãi',
+        note: 'Khấu trừ tiền thưởng, hoàn trả tiền nạp gốc.'
+      },
+      {
+        value: 'without-promo',
+        icon: '0',
+        label: 'Không nhận khuyến mãi',
+        note: 'Cho phép thành viên rút tiền bình thường.'
+      },
+      {
+        value: 'unclear',
+        icon: '?',
+        label: 'Chưa xác định rõ',
+        note: 'Tạm giữ lệnh rút, xin ý kiến cấp trên.'
+      }
+    ],
+    onSelect(value) {
+      if (value === 'with-promo') {
+        ipShowResult('deductRefundPair');
+        return;
+      }
+      if (value === 'without-promo') {
+        ipShowResult('normal');
+        return;
+      }
+      ipShowResult('holdEscalate');
     }
   });
 }
