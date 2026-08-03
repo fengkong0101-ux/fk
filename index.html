@@ -4077,6 +4077,35 @@
       background: rgba(220, 38, 38, .06);
     }
 
+    /* Các kết quả con được tách thành card nhỏ để dễ đọc và đối chiếu. */
+    .ip-tree-outcome.ip-tree-outcome-cards {
+      gap: 8px;
+      border-left: 0;
+      background: transparent;
+    }
+
+    .ip-tree-mini-card {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-left: 4px solid currentColor;
+      border-radius: 9px;
+      background: color-mix(in srgb, currentColor 7%, var(--panel-2));
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1.5;
+    }
+
+    .ip-tree-mini-card.orange { color: #ea580c; }
+    .ip-tree-mini-card.yellow { color: #ca8a04; }
+    .ip-tree-mini-card.hold { color: var(--text); }
+
+    .ip-tree-rule.is-open .ip-tree-outcome.ip-tree-outcome-cards {
+      max-height: 360px;
+      padding: 8px 0 2px;
+      background: transparent;
+    }
+
     .ip-tree-result-danger {
       color: #dc2626;
       font-weight: 800;
@@ -4322,10 +4351,10 @@
                         </div>
                         <div class="ip-tree-rule">
                           <div class="ip-tree-condition">Hai tài khoản trước đã nạp đi nạp lại nhiều lần</div>
-                          <div class="ip-tree-outcome mixed">
-                            <span class="ip-tree-result-warning">🟠 Tài khoản đang xét nạp đầu, có nhận KM: khấu trừ thưởng, hoàn trả tiền nạp.</span>
-                            <span class="ip-tree-result-warning">🟡 Nạp đầu không nhận KM hoặc đã nạp nhiều lần: cho rút, khóa khuyến mãi.</span>
-                            <span>⚠️ Không chắc chắn: tạm giữ lệnh rút, xin ý kiến cấp trên.</span>
+                          <div class="ip-tree-outcome ip-tree-outcome-cards">
+                            <div class="ip-tree-mini-card orange">🟠 Nạp đầu, có nhận KM: khấu trừ thưởng, hoàn trả tiền nạp.</div>
+                            <div class="ip-tree-mini-card yellow">🟡 Nạp đầu không nhận KM hoặc đã nạp nhiều lần: cho rút, khóa khuyến mãi.</div>
+                            <div class="ip-tree-mini-card hold">⚠️ Không chắc chắn: tạm giữ lệnh rút, xin ý kiến cấp trên.</div>
                           </div>
                         </div>
                       </section>
@@ -4338,10 +4367,10 @@
                         </div>
                         <div class="ip-tree-rule">
                           <div class="ip-tree-condition">Các tài khoản trước đều đã nạp đi nạp lại nhiều lần</div>
-                          <div class="ip-tree-outcome mixed">
-                            <span class="ip-tree-result-warning">🟠 Tài khoản đang xét nạp đầu, có nhận KM: khấu trừ thưởng, hoàn trả tiền nạp.</span>
-                            <span class="ip-tree-result-warning">🟡 Nạp đầu không nhận KM hoặc đã nạp nhiều lần: cho rút, khóa khuyến mãi.</span>
-                            <span>⚠️ Không chắc chắn: tạm giữ lệnh rút, xin ý kiến cấp trên.</span>
+                          <div class="ip-tree-outcome ip-tree-outcome-cards">
+                            <div class="ip-tree-mini-card orange">🟠 Nạp đầu, có nhận KM: khấu trừ thưởng, hoàn trả tiền nạp.</div>
+                            <div class="ip-tree-mini-card yellow">🟡 Nạp đầu không nhận KM hoặc đã nạp nhiều lần: cho rút, khóa khuyến mãi.</div>
+                            <div class="ip-tree-mini-card hold">⚠️ Không chắc chắn: tạm giữ lệnh rút, xin ý kiến cấp trên.</div>
                           </div>
                         </div>
                       </section>
@@ -4377,7 +4406,10 @@
                         <div class="ip-tree-case-title"><span class="ip-tree-count">3+</span> Từ 3 IP/Thiết bị trở lên</div>
                         <div class="ip-tree-rule">
                           <div class="ip-tree-condition">Cấp dưới là tài khoản nạp lần đầu</div>
-                          <div class="ip-tree-outcome danger">🔴 Khóa tài khoản cấp dưới phát sinh sau.</div>
+                          <div class="ip-tree-outcome mixed">
+                            <span class="ip-tree-result-danger">🔴 Khóa tài khoản cấp dưới phát sinh sau.</span>
+                            <span class="ip-tree-result-warning">🟡 Khóa hoa hồng tài khoản cấp trên.</span>
+                          </div>
                         </div>
                         <div class="ip-tree-rule">
                           <div class="ip-tree-condition">Cấp dưới đã nạp đi nạp lại nhiều lần</div>
@@ -4629,8 +4661,12 @@ const ipDecisionResults = {
   },
   lockSubordinate: {
     tone: 'danger', icon: '🔒',
-    title: 'Khóa tài khoản cấp dưới phát sinh sau',
-    desc: 'Áp dụng với nhóm có liên kết từ 3 IP/thiết bị trở lên khi cấp dưới là tài khoản nạp lần đầu.'
+    title: 'Khóa tài khoản cấp dưới phát sinh sau và khóa hoa hồng tài khoản cấp trên',
+    desc: 'Áp dụng với nhóm có liên kết từ 3 IP/thiết bị trở lên khi cấp dưới là tài khoản nạp lần đầu.',
+    actionLines: [
+      { tone: 'danger', text: 'Khóa tài khoản cấp dưới phát sinh sau.' },
+      { tone: 'warning', text: 'Khóa hoa hồng tài khoản cấp trên.' }
+    ]
   }
 };
 
@@ -4913,15 +4949,9 @@ function ipAssessCurrentAccountAfterPriorRepeat() {
         note: 'Khấu trừ tiền thưởng, hoàn trả tiền nạp.'
       },
       {
-        value: 'first-no-promo',
-        icon: '0',
-        label: 'Nạp lần đầu nhưng không nhận khuyến mãi',
-        note: 'Cho rút, khóa khuyến mãi tài khoản.'
-      },
-      {
-        value: 'repeat',
+        value: 'no-promo-or-repeat',
         icon: '↻',
-        label: 'Đã nạp đi nạp lại nhiều lần',
+        label: 'Nạp đầu không nhận KM hoặc đã nạp nhiều lần',
         note: 'Cho rút, khóa khuyến mãi tài khoản.'
       },
       {
@@ -5031,7 +5061,7 @@ function ipLinkedThreePlusSituation() {
         value: 'first',
         icon: '①',
         label: 'Cấp dưới là tài khoản nạp lần đầu',
-        note: 'Khóa tài khoản cấp dưới phát sinh sau.'
+        note: 'Khóa tài khoản cấp dưới phát sinh sau và khóa hoa hồng tài khoản cấp trên.'
       },
       {
         value: 'repeat',
