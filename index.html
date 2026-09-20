@@ -4212,16 +4212,52 @@
       box-shadow: none;
     }
 
+    /* Wide network card: keep the measured value fully visible beside the button. */
+    #networkStatCard {
+      width: 460px;
+      min-width: 460px;
+      max-width: 460px;
+      flex: 0 0 460px;
+      gap: 12px;
+      justify-content: flex-start;
+    }
+
+    #networkStatCard #ipNetworkInfo {
+      max-width: none;
+      min-width: 0;
+      overflow: visible;
+      text-overflow: clip;
+      white-space: nowrap;
+      flex: 1 1 auto;
+    }
+
+    #networkStatCard #runSpeedTestBtn {
+      margin-left: 4px !important;
+      flex: 0 0 auto;
+    }
+
+    @media (max-width: 1160px) {
+      .header-stats #networkStatCard {
+        width: 460px;
+        min-width: 460px;
+        max-width: min(460px, calc(100vw - 90px));
+        flex: 0 1 460px;
+      }
+    }
+
     @media (max-width: 760px) {
       #networkStatCard {
         width: 100%;
+        min-width: 0;
         max-width: none;
+        flex: 1 1 100%;
         gap: 8px;
         flex-wrap: wrap;
       }
 
       #networkStatCard #ipNetworkInfo {
-        max-width: calc(100vw - 150px);
+        max-width: none;
+        flex: 1 1 auto;
       }
     }
 
