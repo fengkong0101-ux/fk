@@ -2983,9 +2983,16 @@
       box-shadow: var(--ui-shadow-xs);
     }
 
-    @media (max-width: 1160px) {
+@media (max-width: 1160px) {
       :root { --sidebar-width: 220px; }
       .header-stats .stat-card { display: none; }
+      
+      /* Hiện IP trên Mobile */
+      .header-stats #networkStatCard {
+        display: flex !important;
+        margin-right: auto;
+      }
+      
       .hero {
         grid-template-columns: 1fr;
         gap: 24px;
@@ -4193,9 +4200,14 @@
         <div class="stat-card"><span>Tổng Cẩm Nang 🎯</span><strong id="totalBadge">0</strong></div>
         <div class="stat-card"><span>Bộ Sưu Tập ❤️</span><strong id="favoriteCount">0</strong></div>
         <div class="stat-card"><span>Mục Gần Đây 🔖</span><strong id="recentCount">0</strong></div>
+        <div class="stat-card" id="networkStatCard" style="cursor: pointer;" title="Nhấn để Copy IP">
+          <span>IP & Mạng 🌐</span>
+          <strong id="ipNetworkInfo">Đang tải...</strong>
+        </div>
+
         <button id="themeToggle" class="theme-toggle icon-button" type="button" aria-label="Đổi giao diện">◐</button>
       </div>
-    </header>
+</header>
 
     <div class="workspace">
       <aside class="sidebar">
@@ -4364,7 +4376,7 @@
                         <div class="ip-tree-case-title"><span class="ip-tree-count">3</span> Trùng 3 IP/Thiết bị</div>
                         <div class="ip-tree-rule">
                           <div class="ip-tree-condition">Cả 3 nạp lần đầu và 2 tài khoản trước đã từng rút tiền</div>
-                          <div class="ip-tree-outcome danger">🔴 Khóa toàn bộ tài khoản trong cùng đường dây.</div>
+                          <div class="ip-tree-outcome danger">🔴 Khóa tài khoản phát sinh đến sau có dấu hiệu lạm dụng.</div>
                         </div>
                         <div class="ip-tree-rule">
                           <div class="ip-tree-condition">Cả 3 tài khoản đều chưa từng rút tiền</div>
@@ -4384,7 +4396,7 @@
                         <div class="ip-tree-case-title"><span class="ip-tree-count">4+</span> Từ 4 IP/Thiết bị trở lên</div>
                         <div class="ip-tree-rule">
                           <div class="ip-tree-condition">Tất cả đều là tài khoản nạp lần đầu</div>
-                          <div class="ip-tree-outcome danger">🔴 Khóa toàn bộ tài khoản trong cùng đường dây.</div>
+                         <div class="ip-tree-outcome danger">🔴 Khóa tài khoản phát sinh đến sau có dấu hiệu lạm dụng.</div>
                         </div>
                         <div class="ip-tree-rule">
                           <div class="ip-tree-condition">Các tài khoản trước đều đã nạp đi nạp lại nhiều lần</div>
@@ -4657,7 +4669,7 @@ const ipDecisionResults = {
   },
   lockAll: {
     tone: 'danger', icon: '🔒',
-    title: 'Khóa toàn bộ tài khoản trong cùng đường dây IP/thiết bị',
+    title: 'Khóa tài khoản phát sinh đến sau có dấu hiệu lạm dụng',
     desc: 'Nhóm tài khoản nạp lần đầu hàng loạt thuộc trường hợp xử lý nghiêm theo quy tắc.'
   },
   allowOne: {
@@ -6262,6 +6274,61 @@ initializeApplication();
 
   scanCards();
 })();
+</script>
+  <script>
+// =========================================================
+// TÍCH HỢP ĐỌC IP VÀ TỐC ĐỘ MẠNG
+// =========================================================
+async function initNetworkStats() {
+  const infoEl = document.getElementById('ipNetworkInfo');
+  const cardEl = document.getElementById('networkStatCard');
+  if (!infoEl) return;
+
+  let ipAddress = 'Đang tải...';
+  let speedText = '';
+  let typeText = '';
+
+  if (navigator.connection) {
+    const downlink = navigator.connection.downlink;
+    const effectiveType = navigator.connection.effectiveType;
+    if (downlink) speedText = `${downlink} Mbps`;
+    if (effectiveType) typeText = `(${effectiveType.toUpperCase()})`;
+  }
+
+  infoEl.textContent = `Đang quét... ${speedText} ${typeText}`.trim();
+
+  try {
+    const response = await fetch('https://api.ipify.org?format=json');
+    if (response.ok) {
+      const data = await response.json();
+      ipAddress = data.ip;
+    } else {
+      ipAddress = 'Không rõ IP';
+    }
+  } catch (error) {
+    ipAddress = 'Lỗi mạng';
+  }
+
+  infoEl.textContent = `${ipAddress} ${speedText ? ` | ${speedText}` : ''} ${typeText}`.trim();
+
+  cardEl.onclick = () => {
+    if (ipAddress && ipAddress !== 'Lỗi mạng' && ipAddress !== 'Không rõ IP') {
+      safeCopy(ipAddress)
+        .then(() => showToast(`Đã copy IP: ${ipAddress}`))
+        .catch(() => showToast('Copy IP thất bại'));
+    }
+  };
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initNetworkStats);
+} else {
+  initNetworkStats();
+}
+
+if (navigator.connection) {
+  navigator.connection.addEventListener('change', initNetworkStats);
+}
 </script>
 </body>
 </html>
