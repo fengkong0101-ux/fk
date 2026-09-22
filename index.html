@@ -666,6 +666,30 @@
     }
     .stat-card span { color: var(--muted); font-size: 11px; }
     .stat-card strong { color: var(--text); font-size: 16px; }
+
+    .training-launch-card {
+      appearance: none;
+      -webkit-appearance: none;
+      font: inherit;
+      cursor: pointer;
+      color: var(--text);
+      text-align: center;
+      justify-content: center;
+      white-space: nowrap;
+    }
+    .training-launch-card:hover,
+    .training-launch-card.active {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+      color: var(--accent);
+      box-shadow: var(--shadow-strong);
+    }
+    .training-launch-card span {
+      color: inherit;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
     .icon-button { width: 42px; height: 42px; padding: 0; font-size: 20px; }
 
     .workspace { display: grid; grid-template-columns: var(--sidebar-width) minmax(0, 1fr); }
@@ -2986,6 +3010,10 @@
 @media (max-width: 1160px) {
       :root { --sidebar-width: 220px; }
       .header-stats .stat-card { display: none; }
+      .header-stats .training-launch-card {
+        display: flex !important;
+        min-width: 132px;
+      }
 
       /* Bắt buộc hiển thị khối IP & Mạng trên màn hình nhỏ. */
       .header-stats #networkStatCard {
@@ -4790,6 +4818,9 @@
         <div class="stat-card"><span>Tổng Cẩm Nang 🎯</span><strong id="totalBadge">0</strong></div>
         <div class="stat-card"><span>Bộ Sưu Tập ❤️</span><strong id="favoriteCount">0</strong></div>
         <div class="stat-card"><span>Mục Gần Đây 🔖</span><strong id="recentCount">0</strong></div>
+        <button id="tabTraining" class="stat-card training-launch-card" type="button" aria-label="Mở Training Studio">
+          <span>🎓 TRAINING STUDIO</span>
+        </button>
         <div class="stat-card" id="networkStatCard">
           <span>IP & Mạng 🌐</span>
           <strong id="ipNetworkInfo" style="cursor: pointer;" title="Nhấn để Copy IP">Đang quét...</strong>
@@ -4807,7 +4838,6 @@
           <button id="tabMine" class="tab-btn" type="button"><span>★</span>Bộ Sưu Tập ❤️</button>
           <button id="tabRecent" class="tab-btn" type="button"><span>◷</span>Mục Gần Đây 🔖</button>
           <button id="tabRules" class="tab-btn" type="button"><span>✓</span>Hướng dẫn nghiệp vụ 🌟</button>
-          <button id="tabTraining" class="side-tab" type="button"><span>🎓</span>ĐÀO TẠO NGƯỜI MỚI</button>
         </nav>
         <div class="sidebar-label">Category</div>
         <div id="categoryList" class="category-list"></div>
@@ -5147,14 +5177,11 @@
   <div class="training-doc-step">
   <div>
   <h2>Bước 1 — Mở danh sách đơn chờ xử lý</h2>
-  <div class="training-doc-meta">Vào <strong>Operation Management → Withdrawal Management → Withdrawal Orders</strong> để xem các đơn <em>Pending Review</em>. Chỉ thao tác với dòng không có biểu tượng khóa.</div>
-  <div class="controls">
-  <span class="training-badge">Tip</span>
-  <small class="note" style="margin-left:8px">Tại cột Time, nhấn vào button ▲ để sắp xếp đơn theo thứ tự từ cũ đến mới (đảm bảo các đơn cũ được xử lý trước).</small>
-  </div>
+  <div class="training-doc-meta">Menu <strong>Withdrawal Orders</strong> sẽ chứa tổng hợp đơn đã xử lý. Khu vực <strong>Withdrawal Lock</strong> là những đơn mới, nhân viên <strong>CẦN PHẢI BẤM VÀO nút LOCK</strong> bên phải đơn đó về "tay" mình xử lý. Đơn sẽ tự động nhảy sang <strong>Third-party Payout</strong>, sau đó mình cần bấm vào <strong>ID</strong> để kiểm tra và hoàn tất việc xuất đơn.</div>
   <div class="training-doc-checklist">
-  <label><input type="checkbox"/> Đảm bảo đang ở tab <strong>Withdrawal Orders</strong></label>
-  <label><input type="checkbox"/> Lọc trạng thái = <em>Pending Review</em></label>
+  <label><input type="checkbox"/> Bấm <strong>LOCK</strong> ở bên phải đơn cần xử lý</label>
+  <label><input type="checkbox"/> Xác nhận đơn đã chuyển sang <strong>Third-party Payout</strong></label>
+  <label><input type="checkbox"/> Bấm vào <strong>ID</strong> để kiểm tra và hoàn tất xuất đơn</label>
   </div>
   </div>
   <div>
@@ -5215,12 +5242,11 @@
   <div class="training-doc-step">
   <div>
   <h2>Bước 2 — Kiểm tra tổng quan thông tin người dùng (rút gọn)</h2>
-  <div class="training-doc-meta">Chỉ quan tâm 4 mục chính: <strong>Total Withdrawal Amount, Total Recharge Amount, Current Cash Balance, Recharge &amp; Withdrawal Difference</strong>.</div>
+  <div class="training-doc-meta">Tập trung kiểm tra các hoạt động trong ngày của user: <strong>Tổng nạp, Tổng rút, Tiền khuyến mãi</strong>. Cần hiểu rõ ý nghĩa các thông số trong bảng <strong>Account Summary Data</strong>. Đồng thời, xem lướt qua thẻ <strong>Deposit/Withdraw Info</strong> để nắm sơ bộ chu kỳ nạp/rút gần nhất của khách hàng.</div>
   <div class="training-doc-checklist">
-  <label><input type="checkbox"/> Total Withdrawal Amount (đã rút / đang rút)</label>
-  <label><input type="checkbox"/> Total Recharge Amount (tổng nạp)</label>
-  <label><input type="checkbox"/> Current Cash Balance (số dư hiện tại)</label>
-  <label><input type="checkbox"/> Recharge &amp; Withdrawal Difference (thắng / thua)</label>
+  <label><input type="checkbox"/> Kiểm tra <strong>Tổng nạp</strong>, <strong>Tổng rút</strong> và <strong>Tiền khuyến mãi</strong></label>
+  <label><input type="checkbox"/> Đọc và hiểu các thông số trong <strong>Account Summary Data</strong></label>
+  <label><input type="checkbox"/> Xem lướt <strong>Deposit/Withdraw Info</strong> để nắm chu kỳ nạp/rút gần nhất</label>
   </div>
   </div>
   <div>
@@ -5411,14 +5437,11 @@
   <div class="training-doc-step">
   <div>
   <h2>Bước 1 — Mở danh sách đơn chờ xử lý</h2>
-  <div class="training-doc-meta">Vào <strong>首页 → 提现管理 → 提现订单 </strong> để xem các đơn <em>待审核</em>. Chỉ thao tác với dòng không có biểu tượng khóa.</div>
-  <div class="controls">
-  <span class="training-badge">Tip</span>
-  <small class="note" style="margin-left:8px">Tại cột Time, nhấn vào button ▲ để sắp xếp đơn theo thứ tự từ cũ đến mới (đảm bảo các đơn cũ được xử lý trước).</small>
-  </div>
+  <div class="training-doc-meta"><strong>Withdrawal Orders</strong> 页面会汇总已经处理的订单。<strong>Withdrawal Lock</strong> 区域显示新订单，员工<strong>必须点击订单右侧的 LOCK 按钮</strong>，将该订单锁定到自己名下处理。订单会自动进入 <strong>Third-party Payout</strong>，然后点击<strong>ID</strong>进行检查并完成出款。</div>
   <div class="training-doc-checklist">
-  <label><input type="checkbox"/> Đảm bảo đang ở tab <strong>提现订单</strong></label>
-  <label><input type="checkbox"/> Lọc trạng thái = <em>待审核</em></label>
+  <label><input type="checkbox"/> 点击需要处理订单右侧的 <strong>LOCK</strong></label>
+  <label><input type="checkbox"/> 确认订单已进入 <strong>Third-party Payout</strong></label>
+  <label><input type="checkbox"/> 点击<strong>ID</strong>检查并完成出款</label>
   </div>
   </div>
   <div>
@@ -5478,13 +5501,12 @@
   <div class="training-doc-card" data-training-section="aa-cn-step-2" id="aa-cn-step-2">
   <div class="training-doc-step">
   <div>
-  <h2>Bước 2 — Kiểm tra tổng quan thông tin người dùng (rút gọn)</h2>
-  <div class="training-doc-meta">Chỉ quan tâm 4 mục chính: <strong>总提现金额, 总充值金额, 当前Cash余额,  充提差</strong>.</div>
+  <h2>Bước 2 — 检查用户基本信息</h2>
+  <div class="training-doc-meta">重点检查用户<strong>当天的活动</strong>：<strong>总充值、总提现、优惠金额</strong>。需要理解 <strong>Account Summary Data</strong> 表格中各项参数的含义。同时快速查看 <strong>Deposit/Withdraw Info</strong>，了解客户最近一次充值/提现的大致周期。</div>
   <div class="training-doc-checklist">
-  <label><input type="checkbox"/> 总提现金额：(đã rút / đang rút)</label>
-  <label><input type="checkbox"/> 总充值金额： (tổng nạp)</label>
-  <label><input type="checkbox"/> 当前Cash余额： (số dư hiện tại)</label>
-  <label><input type="checkbox"/> 充提差：(thắng / thua)</label>
+  <label><input type="checkbox"/> 检查<strong>总充值、总提现、优惠金额</strong></label>
+  <label><input type="checkbox"/> 理解 <strong>Account Summary Data</strong> 中各项参数</label>
+  <label><input type="checkbox"/> 快速查看 <strong>Deposit/Withdraw Info</strong>，确认最近充值/提现周期</label>
   </div>
   </div>
   <div>
@@ -5772,15 +5794,11 @@
   <div class="training-step-layout">
     <div class="training-step-copy">
       <h2>4. Trang chủ Đơn Rút (Withdrawal Orders)</h2>
-<p>Khu vực làm việc chính nằm tại menu: <strong>Financial Management → Withdrawal Orders</strong>.</p>
+<p>Menu <strong>Withdrawal Orders</strong> sẽ chứa tổng hợp đơn đã xử lý. Khu vực <strong>Withdrawal Lock</strong> là những đơn mới, nhân viên <strong>CẦN PHẢI BẤM VÀO nút LOCK</strong> bên phải đơn đó về "tay" mình xử lý. Đơn sẽ tự động nhảy sang <strong>Third-party Payout</strong>, sau đó mình cần bấm vào <strong>ID</strong> để kiểm tra và hoàn tất việc xuất đơn.</p>
 <div class="training-img-box">
 <img alt="Trang chủ Đơn rút" src="https://i.ibb.co/JM1TwG5/Screenshot-1.jpg"/>
 <div class="training-img-caption">Hình 1: Giao diện tổng quan danh sách đơn rút tiền đang chờ xử lý.</div>
 </div>
-<ul>
-<li><strong>Withdrawal Orders:</strong> Nơi hiển thị tất cả các đơn mới. Để bắt đầu kiểm tra, bạn click trực tiếp vào số ID màu xanh ở cột <code>Member ID</code>.</li>
-<li><strong>Withdrawal Lock:</strong> Khi bạn bấm vào ID, đơn đó sẽ bị "khóa" lại và chuyển sang tab này. Mục đích là để báo cho các nhân viên khác biết <em>"Đơn này tôi đang xử lý rồi, đừng ai đụng vào nữa"</em> tránh tình trạng duyệt trùng, xuất tiền 2 lần.</li>
-</ul>
 
     </div>
     <div class="training-step-media">
@@ -5796,7 +5814,7 @@
   <div class="training-step-layout">
     <div class="training-step-copy">
       <h2>5. Bảng Audit &amp; Basic Info</h2>
-<p>Khi click vào ID, hệ thống sẽ popup lên bảng <strong>Audit Order Details</strong>. Đây là "Hồ sơ bệnh án" của khách hàng.</p>
+<p>Tập trung kiểm tra các hoạt động trong ngày của user: <strong>Tổng nạp, Tổng rút, Tiền khuyến mãi</strong>. Cần hiểu rõ ý nghĩa các thông số trong bảng <strong>Account Summary Data</strong>. Đồng thời, xem lướt qua thẻ <strong>Deposit/Withdraw Info</strong> để nắm sơ bộ chu kỳ nạp/rút gần nhất của khách hàng.</p>
 <div class="training-img-box">
 <img alt="Bảng Audit - Basic Info" src="https://i.ibb.co/mCG7hz66/Screenshot-2.jpg"/>
 <div class="training-img-caption">Hình 2: Tab Member Detail -&gt; Basic / Risk Information.</div>
@@ -7596,7 +7614,7 @@ function setTab(tab) {
   localStorage.setItem(TAB_KEY, tab);
 
   if (isMain) {
-    refreshMain();
+    render();
     loadRecent();
   } else if (isMine) {
     renderMine();
