@@ -4263,7 +4263,6 @@
 
 
 
-
     /* =========================================================
        TRAINING STUDIO — FULLSCREEN ISOLATED UI
        ========================================================= */
@@ -4821,8 +4820,254 @@
       <main id="riskManagerMain" class="main-content">
         
 
-  
-  <main id="trainingStudio" class="training-studio" aria-hidden="true">
+    
+
+    <div id="mainArea">
+          <section class="hero">
+            <div>
+              <div class="eyebrow">THƯ VIỆN XỬ LÝ RỦI RO</div>
+              <h1>Tìm đúng mẫu. Xử lý nhanh hơn.</h1>
+              <p class="lead">Tìm theo tiêu đề, nội dung, nhóm lỗi hoặc cách xử lý.</p>
+            </div>
+            <div class="search-wrap">
+              <span class="search-icon" aria-hidden="true">⌕</span>
+              <input id="searchBox" autocomplete="off" placeholder="Tìm template..." aria-label="Tìm template" />
+              <kbd>Ctrl K</kbd>
+            </div>
+          </section>
+
+          <section class="filter-bar">
+            <div class="field">
+              <label for="systemSelect">Nhóm lỗi</label>
+              <select id="systemSelect"></select>
+            </div>
+            <div class="field">
+              <label for="groupSelect">Cách xử lý</label>
+              <select id="groupSelect"></select>
+            </div>
+            <button id="clearFiltersBtn" class="small ghost" type="button">Xóa bộ lọc</button>
+          </section>
+
+          <div class="results-head">
+            <div>
+              <div class="section-title">Templates <span id="countBadge">0 mục</span></div>
+              <div class="results-title" id="resultsTitle">Kết quả sẽ hiển thị ở đây</div>
+            </div>
+            <div class="view-actions">
+              <span class="badge" id="modeBadge">Chế độ rút gọn</span>
+              <button id="toggleModeBtn" class="small ghost" type="button">Mở rộng tất cả</button>
+            </div>
+          </div>
+          <div id="results" class="grid"></div>
+        </div>
+
+        <div id="mineArea" style="display:none;">
+          <div class="page-heading"><div><div class="eyebrow">BỘ SƯU TẬP</div><h2>Favorite</h2><p>Nội dung bạn đã lưu để truy cập nhanh.</p></div></div>
+          <div class="results-head">
+            <div class="results-title">Danh sách bộ sưu tập</div>
+            <div class="view-actions">
+              <button id="stickyModeBtn" class="small ghost" type="button">Mở rộng tất cả</button>
+              <button id="clearStickyBtn" class="small ghost danger" type="button">Xóa tất cả</button>
+            </div>
+          </div>
+          <div id="stickyList" class="sticky-list"></div>
+        </div>
+
+        <div id="recentArea" style="display:none;">
+          <div class="page-heading"><div><div class="eyebrow">LỊCH SỬ THAO TÁC</div><h2>Recent</h2><p>10 template được copy gần nhất.</p></div></div>
+          <div id="recentList" class="sticky-list"></div>
+        </div>
+
+        <div id="rulesArea" style="display:none;">
+          <div class="page-heading"><div><div class="eyebrow">TÀI LIỆU NỘI BỘ</div><h2>Hướng dẫn nghiệp vụ</h2><p>Xem toàn bộ quy tắc hoặc dùng trợ lý để kiểm tra nhanh và theo dõi cây quyết định.</p></div></div>
+
+          <div class="ip-guide-tabs" role="tablist" aria-label="Chế độ xem hướng dẫn nghiệp vụ">
+            <button id="ipRulesTab" class="ip-guide-tab active" type="button" role="tab" aria-selected="true">📚 Xem toàn bộ QUY TẮC</button>
+            <button id="ipWizardTab" class="ip-guide-tab" type="button" role="tab" aria-selected="false">🧭 Trợ lý xử lý</button>
+          </div>
+
+          <div id="ipMemoryStrip" class="ip-memory-strip" aria-label="Nguyên tắc ghi nhớ nhanh" style="display:none;">
+            <div class="ip-memory-item"><span>🔴</span><div><strong>Nạp lần đầu hàng loạt</strong><small>Ưu tiên siết chặt hoặc khóa.</small></div></div>
+            <div class="ip-memory-item"><span>🟢</span><div><strong>Đã nạp nhiều lần</strong><small>Có thể cho rút bình thường hơn.</small></div></div>
+            <div class="ip-memory-item"><span>👥</span><div><strong>Có liên kết đại lý</strong><small>Xem thêm hoa hồng và cấp trên.</small></div></div>
+            <div class="ip-memory-item"><span>📈</span><div><strong>Càng nhiều tài khoản</strong><small>Mức xử lý càng nghiêm.</small></div></div>
+          </div>
+
+          <section id="ipWizardPanel" class="ip-assistant-shell" style="display:none;" aria-labelledby="ipWizardTab">
+            <div class="ip-assistant-tabs" role="tablist" aria-label="Kiểu hiển thị trợ lý xử lý">
+              <button id="ipQuickTab" class="ip-assistant-tab active" type="button" role="tab" aria-selected="true">🔍 Kiểm Tra Nhanh</button>
+              <button id="ipTreeTab" class="ip-assistant-tab" type="button" role="tab" aria-selected="false">🌳 Cây Quyết Định</button>
+            </div>
+
+            <section id="ipQuickPanel" class="ip-wizard-panel" aria-labelledby="ipQuickTab">
+              <div class="ip-wizard-head">
+                <div>
+                  <h3>Kiểm tra nhanh trùng IP / Thiết bị</h3>
+                  <p>Trả lời lần lượt các câu hỏi. Hệ thống sẽ trả kết quả, lý do và đường dẫn quyết định.</p>
+                </div>
+                <div class="ip-progress-wrap" aria-label="Tiến độ xử lý">
+                  <div class="ip-progress-meta"><span id="ipProgressLabel">Bước 1</span><span id="ipProgressPercent">20%</span></div>
+                  <div class="ip-progress"><div id="ipProgressBar"></div></div>
+                </div>
+              </div>
+              <div class="ip-flex-note"><strong>⚠️ Đánh giá linh hoạt:</strong> Không áp dụng máy móc. Cần đối chiếu lịch sử nạp, rút, lời/lỗ, khuyến mãi và dấu hiệu lạm dụng; chưa chắc chắn thì tạm giữ lệnh rút và xin ý kiến cấp trên.</div>
+              <div class="ip-wizard-body">
+                <div id="ipCrumbs" class="ip-crumbs" aria-label="Các lựa chọn đã thực hiện"></div>
+                <div id="ipWizardContent"></div>
+                <div class="ip-wizard-actions">
+                  <button id="ipBackBtn" class="small ghost" type="button">← Quay lại</button>
+                  <div class="ip-action-right">
+                    <button id="ipResetBtn" class="small ghost" type="button">Làm lại</button>
+                    <button id="ipOpenRulesBtn" class="small" type="button">Xem toàn bộ QUY TẮC</button>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section id="ipTreePanel" class="ip-tree-panel" style="display:none;" aria-labelledby="ipTreeTab">
+              <div class="ip-tree-head">
+                <div>
+                  <h3>Cây quyết định trùng IP / Thiết bị</h3>
+                  <p>Đọc từ trên xuống: xác định liên kết, số lượng tài khoản, sau đó đối chiếu lịch sử nạp và rút.</p>
+                </div>
+                <div class="ip-tree-legend" aria-label="Chú thích kết quả">
+                  <span>🔴 Khóa tài khoản</span>
+                  <span>🟠 Khấu trừ / hoàn trả</span>
+                  <span>🟡 Hạn chế thưởng / hoa hồng</span>
+                  <span>🟢 Cho rút bình thường</span>
+                </div>
+              </div>
+              <div class="ip-flex-note"><strong>⚠️ Đánh giá linh hoạt:</strong> Cây quyết định là căn cứ tham khảo, không thay thế việc xem lịch sử nạp, rút, lời/lỗ, khuyến mãi và dấu hiệu lạm dụng. Chưa đủ căn cứ thì tạm giữ lệnh rút và xin ý kiến cấp trên.</div>
+
+              <div class="ip-tree-body">
+                <div class="ip-tree-root">TRÙNG IP / THIẾT BỊ</div>
+                <div class="ip-tree-arrow">↓</div>
+                <div class="ip-tree-question-node">Có liên kết cấp trên – cấp dưới không?</div>
+
+                <div class="ip-tree-branches">
+                  <article class="ip-tree-branch">
+                    <div class="ip-tree-branch-head">
+                      <strong>👤 KHÔNG CÓ LIÊN KẾT</strong>
+                      <small>Đối chiếu theo số lượng tài khoản trong cùng đường dây.</small>
+                    </div>
+                    <div class="ip-tree-cases">
+                      <section class="ip-tree-case">
+                        <div class="ip-tree-case-title"><span class="ip-tree-count">2</span> Trùng 2 IP/Thiết bị</div>
+                        <div class="ip-tree-rule">
+                          <div class="ip-tree-condition">Cả 2 ID đều là tài khoản nạp lần đầu</div>
+                          <div class="ip-tree-outcome ip-tree-outcome-cards">
+                            <div class="ip-tree-mini-card green">🟢 Tài khoản trước đang thua hoặc chưa từng rút qua: cho tài khoản đang xét rút bình thường.</div>
+                            <div class="ip-tree-mini-card green">🟢 Tài khoản trước đã rút qua, tài khoản đang xét không nhận KM: cho rút bình thường.</div>
+                            <div class="ip-tree-mini-card orange">🟠 Tài khoản trước đã rút qua, tài khoản đang xét có nhận KM: khấu trừ thưởng, hoàn trả tiền nạp gốc.</div>
+                            <div class="ip-tree-mini-card hold">⚠️ Chưa đủ căn cứ: tạm giữ lệnh rút, xin ý kiến cấp trên.</div>
+                          </div>
+                        </div>
+                        <div class="ip-tree-rule">
+                          <div class="ip-tree-condition">Một tài khoản đã nạp đi nạp lại nhiều lần</div>
+                          <div class="ip-tree-outcome warning">🟡 Cho rút, khóa khuyến mãi tài khoản.</div>
+                        </div>
+                      </section>
+
+                      <section class="ip-tree-case">
+                        <div class="ip-tree-case-title"><span class="ip-tree-count">3</span> Trùng 3 IP/Thiết bị</div>
+                        <div class="ip-tree-rule">
+                          <div class="ip-tree-condition">Cả 3 nạp lần đầu và 2 tài khoản trước đã từng rút tiền</div>
+                          <div class="ip-tree-outcome danger">🔴 Khóa tài khoản phát sinh đến sau có dấu hiệu lạm dụng.</div>
+                        </div>
+                        <div class="ip-tree-rule">
+                          <div class="ip-tree-condition">Cả 3 tài khoản đều chưa từng rút tiền</div>
+                          <div class="ip-tree-outcome warning">🟡 Cho 01 tài khoản rút; hủy/hạn chế tiền thưởng các tài khoản còn lại.</div>
+                        </div>
+                        <div class="ip-tree-rule">
+                          <div class="ip-tree-condition">Hai tài khoản trước đã nạp đi nạp lại nhiều lần</div>
+                          <div class="ip-tree-outcome ip-tree-outcome-cards">
+                            <div class="ip-tree-mini-card orange">🟠 Nạp đầu, có nhận KM: khấu trừ thưởng, hoàn trả tiền nạp.</div>
+                            <div class="ip-tree-mini-card yellow">🟡 Nạp đầu không nhận KM hoặc đã nạp nhiều lần: cho rút, khóa khuyến mãi.</div>
+                            <div class="ip-tree-mini-card hold">⚠️ Không chắc chắn: tạm giữ lệnh rút, xin ý kiến cấp trên.</div>
+                          </div>
+                        </div>
+                      </section>
+
+                      <section class="ip-tree-case">
+                        <div class="ip-tree-case-title"><span class="ip-tree-count">4+</span> Từ 4 IP/Thiết bị trở lên</div>
+                        <div class="ip-tree-rule">
+                          <div class="ip-tree-condition">Tất cả đều là tài khoản nạp lần đầu</div>
+                         <div class="ip-tree-outcome danger">🔴 Khóa tài khoản phát sinh đến sau có dấu hiệu lạm dụng.</div>
+                        </div>
+                        <div class="ip-tree-rule">
+                          <div class="ip-tree-condition">Các tài khoản trước đều đã nạp đi nạp lại nhiều lần</div>
+                          <div class="ip-tree-outcome ip-tree-outcome-cards">
+                            <div class="ip-tree-mini-card orange">🟠 Nạp đầu, có nhận KM: khấu trừ thưởng, hoàn trả tiền nạp.</div>
+                            <div class="ip-tree-mini-card yellow">🟡 Nạp đầu không nhận KM hoặc đã nạp nhiều lần: cho rút, khóa khuyến mãi.</div>
+                            <div class="ip-tree-mini-card hold">⚠️ Không chắc chắn: tạm giữ lệnh rút, xin ý kiến cấp trên.</div>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </article>
+
+                  <article class="ip-tree-branch">
+                    <div class="ip-tree-branch-head">
+                      <strong>👥 CÓ LIÊN KẾT CẤP TRÊN – CẤP DƯỚI</strong>
+                      <small>Ngoài tình trạng nạp, cần xem thêm trạng thái lời/lỗ và hoa hồng cấp trên.</small>
+                    </div>
+                    <div class="ip-tree-cases">
+                      <section class="ip-tree-case">
+                        <div class="ip-tree-case-title"><span class="ip-tree-count">2</span> Trùng 2 IP/Thiết bị</div>
+                        <div class="ip-tree-rule">
+                          <div class="ip-tree-condition">Thành viên và cấp trên đều là tài khoản nạp lần đầu</div>
+                          <div class="ip-tree-outcome mixed">
+                            <span class="ip-tree-result-danger">🔴 Khóa tài khoản đăng ký đến sau.</span>
+                            <span class="ip-tree-result-warning">🟡 Khóa hoa hồng tài khoản cấp trên.</span>
+                          </div>
+                        </div>
+                        <div class="ip-tree-rule">
+                          <div class="ip-tree-condition">Cấp trên đã nạp nhiều lần, cấp dưới nạp lần đầu</div>
+                          <div class="ip-tree-outcome mixed">
+                            <span class="ip-tree-result-warning">🟡 Cấp trên đang thua: cho cấp dưới rút, khóa hoa hồng cấp trên.</span>
+                            <span class="ip-tree-result-danger">🔴 Cấp trên đang có lãi hoặc tiếp tục tạo cấp dưới để hưởng lợi: khóa cấp dưới; khóa KM cấp dưới và KM/hoa hồng cấp trên.</span>
+                            <span>⚠️ Chưa xác định rõ: tạm giữ lệnh rút, xin ý kiến cấp trên.</span>
+                          </div>
+                        </div>
+                      </section>
+
+                      <section class="ip-tree-case">
+                        <div class="ip-tree-case-title"><span class="ip-tree-count">3+</span> Từ 3 IP/Thiết bị trở lên</div>
+                        <div class="ip-tree-rule">
+                          <div class="ip-tree-condition">Cấp dưới là tài khoản nạp lần đầu</div>
+                          <div class="ip-tree-outcome mixed">
+                            <span class="ip-tree-result-danger">🔴 Khóa tài khoản cấp dưới phát sinh sau.</span>
+                            <span class="ip-tree-result-warning">🟡 Khóa hoa hồng tài khoản cấp trên.</span>
+                          </div>
+                        </div>
+                        <div class="ip-tree-rule">
+                          <div class="ip-tree-condition">Cấp dưới đã nạp đi nạp lại nhiều lần</div>
+                          <div class="ip-tree-outcome warning">🟠 Khấu trừ tiền thưởng, hoàn trả tiền nạp.</div>
+                        </div>
+                        <div class="ip-tree-rule">
+                          <div class="ip-tree-condition">Chưa xác định rõ tình trạng tài khoản</div>
+                          <div class="ip-tree-outcome warning">⚠️ Tạm giữ lệnh rút, xin ý kiến cấp trên.</div>
+                        </div>
+                      </section>
+                    </div>
+                  </article>
+                </div>
+
+              </div>
+            </section>
+          </section>
+
+          <section id="ipRulesPanel" aria-labelledby="ipRulesTab">
+            <div class="ip-rules-panel-note">Nội dung bên dưới là toàn bộ QUY TẮC nghiệp vụ. Nhấn vào từng tiêu đề để mở hoặc thu gọn.</div>
+            <div id="rulesList" class="grid"></div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </div>
+
+
+<main id="trainingStudio" class="training-studio" aria-hidden="true">
     <aside class="training-sidebar" aria-label="Training Menu">
       <div class="training-side-top">
         <button id="trainingBackBtn" class="training-back-btn" type="button">← Quay lại Dashboard</button>
@@ -5533,8 +5778,8 @@
 <div class="training-img-caption">Hình 1: Giao diện tổng quan danh sách đơn rút tiền đang chờ xử lý.</div>
 </div>
 <ul>
-<li><strong>Withdrawal Orders:</strong> Nơi hiển thị tất cả các đơn cũ, các đơn đã được xử lý xong.</li>
-<li><strong>Withdrawal Lock:</strong>Nơi hiển thị tất cả các đơn mới. Để bắt đầu kiểm tra, bạn click vào mục <b>LOCK</b> được nằm ở bên phải giao diện. Mục đích là để báo cho các nhân viên khác biết <em>"Đơn này đã được tôi khóa đi rồi"</em> </li>
+<li><strong>Withdrawal Orders:</strong> Nơi hiển thị tất cả các đơn mới. Để bắt đầu kiểm tra, bạn click trực tiếp vào số ID màu xanh ở cột <code>Member ID</code>.</li>
+<li><strong>Withdrawal Lock:</strong> Khi bạn bấm vào ID, đơn đó sẽ bị "khóa" lại và chuyển sang tab này. Mục đích là để báo cho các nhân viên khác biết <em>"Đơn này tôi đang xử lý rồi, đừng ai đụng vào nữa"</em> tránh tình trạng duyệt trùng, xuất tiền 2 lần.</li>
 </ul>
 
     </div>
@@ -5559,9 +5804,8 @@
 <p><strong>Cách đọc bảng này:</strong></p>
 <ol>
 <li>Nhìn thẻ <span class="training-highlight">Order Details</span> ở trên cùng: Xác định xem khách rút bao nhiêu tiền, và đây có phải rút lần đầu không (First Withdrawal: Yes/No).</li>
-<li>Tại tab <strong>Basic Information</strong>: Tại khung Registration and Login Information
- hãy chú ý đến dòng <code>Channel Source</code> (Nguồn kênh). Nếu bắt đầu bằng chữ FB hoặc GG (như FBOY-02, GGBOOT) thì đó là khách <b>Quảng cáo</b>.</li>
-<li>Nhìn vào Today's Activity Information: mục này rất quan trọng, nó giúp bạn xem nhanh được hôm nay khách có hoạt động nào trên nền tảng như nạp tiền, nhận khuyến mãi hay rút tiên qua không. Và mục bên cạnh là Account Summary Data nó giúp bạn đánh giá tổng quan thông tin từ trước đến giờ của khách hàng.</li>
+<li>Tại tab <strong>Basic Information</strong>: Chú ý dòng <code>Channel Source</code> (Nguồn kênh). Nếu bắt đầu bằng chữ FB hoặc GG (như FBOY-02, GGBOOT) thì đó là khách Quảng cáo.</li>
+<li>Nhìn vào các nhãn Tag: Ví dụ <span class="training-tag training-tag-blue">惊喜礼包会员</span> (Thành viên nhận quà). Nó giúp bạn dự đoán khách có đang bào khuyến mãi hay không.</li>
 <li>Chuyển qua tab <strong>Risk Information</strong>: Nhìn ngay dòng <code>Associated Account Count</code>. Nếu hiện số 1 là an toàn. Nếu &gt; 1, lập tức đề cao cảnh giác.</li>
 </ol>
 
@@ -5808,7 +6052,6 @@
       </div>
     </section>
   </main>
-  
 
   <div id="trainingModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Xem hình đào tạo">
     <div class="training-modal-frame">
@@ -5845,7 +6088,6 @@ const recentArea = document.getElementById('recentArea');
 const recentList = document.getElementById('recentList');
 const tabRules = document.getElementById('tabRules');
 const tabTraining = document.getElementById('tabTraining');
-const trainingStudio = document.getElementById('trainingStudio');
 const rulesArea = document.getElementById('rulesArea');
 const rulesList = document.getElementById('rulesList');
 const ipWizardTab = document.getElementById('ipWizardTab');
@@ -6700,7 +6942,7 @@ const DEFAULT_DATA = [
 let data = [];
 let stickyItems = [];
 let recentItems = [];
-let currentTab = localStorage.getItem(TAB_KEY) || 'main';
+let currentTab = 'main';
 let compactMode = localStorage.getItem(MODE_KEY) !== 'expanded';
 let stickyCompactMode = localStorage.getItem('risk_manager_sticky_mode_v1') !== 'expanded';
 
@@ -7344,11 +7586,14 @@ function setTab(tab) {
   mineArea.style.display = isMine ? 'block' : 'none';
   recentArea.style.display = isRecent ? 'block' : 'none';
   rulesArea.style.display = isRules ? 'block' : 'none';
-  trainingStudio.style.display = isTraining ? 'grid' : 'none';
+  if (typeof trainingStudio !== 'undefined' && trainingStudio) {
+    trainingStudio.style.display = isTraining ? 'grid' : 'none';
+  }
   document.body.classList.toggle('training-mode', isTraining);
   if (trainingStudio) trainingStudio.setAttribute('aria-hidden', String(!isTraining));
 
   currentTab = tab;
+  localStorage.setItem(TAB_KEY, tab);
 
   if (isMain) {
     refreshMain();
@@ -7435,6 +7680,8 @@ document.addEventListener('keydown', (event) => {
 initTheme();
 loadSticky();
 loadRecent();
+// Always open the dashboard on startup; Training is opt-in.
+document.body.classList.remove('training-mode');
 
 window.RULES_DATA = [
   {
@@ -7702,6 +7949,8 @@ if (document.readyState === 'loading') {
 </script>
 
 
+
+
 <script>
 /* =========================================================
    TRAINING STUDIO CONTROLLER
@@ -7919,7 +8168,6 @@ if (document.readyState === 'loading') {
   window.refreshTrainingSpy = scheduleSpy;
 })();
 </script>
-
 
 </body>
 </html>
