@@ -7680,10 +7680,34 @@ window.RULES_DATA = [
   }
 ];
 
-function initializeApplication() {
+const DATA_URL = new URL('./data.json', document.baseURI).href;
+
+async function fetchArrayFile(url, fileName) {
+  const response = await fetch(url, { cache: 'no-store' });
+  if (!response.ok) {
+    throw new Error(`${fileName} HTTP ${response.status}`);
+  }
+  const value = await response.json();
+  if (!Array.isArray(value)) {
+    throw new Error(`${fileName} phải chứa một JSON array`);
+  }
+  return value;
+}
+
+async function initializeApplication() {
+  // Lấy rules từ thẻ script (đã được load trên head hoặc body)
   rulesData = Array.isArray(window.RULES_DATA) ? window.RULES_DATA.slice() : [];
-  initializeWithData(DEFAULT_DATA.slice());
   renderRules();
+
+  // Fetch data.json
+  try {
+    const loadedData = await fetchArrayFile(DATA_URL, 'data.json');
+    initializeWithData(loadedData.length ? loadedData : DEFAULT_DATA.slice());
+  } catch (error) {
+    console.error('[Risk Manager] Không tải được data.json:', error);
+    showToast('Lỗi: Không tải được data.json, đang dùng dữ liệu mặc định.');
+    initializeWithData(DEFAULT_DATA.slice());
+  }
 }
 
 initializeApplication();
