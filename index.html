@@ -1,11 +1,12 @@
-<!doctype html>
-<html lang="vi" data-theme="light">
+<!DOCTYPE html>
+
+<html data-theme="light" lang="vi">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Quản lý Rủi ro — Risk Manager + Đào tạo</title>
-  <link href="https://fonts.googleapis.com/css?family=Inter:400,500,600,700&display=swap" rel="stylesheet">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Quản lý Rủi ro — Risk Manager + Đào tạo</title>
+<link href="https://fonts.googleapis.com/css?family=Inter:400,500,600,700&amp;display=swap" rel="stylesheet"/>
+<style>
     :root {
       --bg: #f4f6f8;
       --bg-soft: #ffffff;
@@ -4800,913 +4801,874 @@
   </style>
 </head>
 <body>
-  <div id="riskManagerShell" class="app-shell">
-    <header class="app-header">
-      <div class="brand">
-        <div class="brand-logo" aria-hidden="true">
-          <img src="data:image/png;base64,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" alt="" width="128" height="128" />
-        </div>
-        <div class="brand-copy">
-          <div class="brand-title">Risk Manager</div>
-          <div class="brand-meta">
-            <span class="brand-subtitle">Internal Risk Control Platform</span>
-            <span class="brand-release">Version 3.0</span>
-          </div>
-        </div>
-      </div>
-      <div class="header-stats" aria-label="Thống kê nhanh">
-        <div class="stat-card"><span>Tổng Cẩm Nang 🎯</span><strong id="totalBadge">0</strong></div>
-        <div class="stat-card"><span>Bộ Sưu Tập ❤️</span><strong id="favoriteCount">0</strong></div>
-        <div class="stat-card"><span>Mục Gần Đây 🔖</span><strong id="recentCount">0</strong></div>
-        <button id="tabTraining" class="stat-card training-launch-card" type="button" aria-label="Mở Training Studio">
-          <span>🎓 TRAINING STUDIO</span>
-        </button>
-        <div class="stat-card" id="networkStatCard">
-          <span>IP & Mạng 🌐</span>
-          <strong id="ipNetworkInfo" style="cursor: pointer;" title="Nhấn để Copy IP">Đang quét...</strong>
-          <button id="runSpeedTestBtn" class="small ghost" type="button" style="margin-left: 8px; padding: 4px 8px; min-height: 28px; font-size: 11px;">Đo Tốc Độ</button>
-        </div>
-
-        <button id="themeToggle" class="theme-toggle icon-button" type="button" aria-label="Đổi giao diện">◐</button>
-      </div>
+<div class="app-shell" id="riskManagerShell">
+<header class="app-header">
+<div class="brand">
+<div aria-hidden="true" class="brand-logo">
+<img alt="" height="128" src="data:image/png;base64,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" width="128"/>
+</div>
+<div class="brand-copy">
+<div class="brand-title">Risk Manager</div>
+<div class="brand-meta">
+<span class="brand-subtitle">Internal Risk Control Platform</span>
+<span class="brand-release">Version 3.0</span>
+</div>
+</div>
+</div>
+<div aria-label="Thống kê nhanh" class="header-stats"><button aria-label="Mở Training Studio" class="stat-card" id="tabTraining" style="cursor: pointer; background: var(--accent-soft); border: 1px solid var(--accent); color: var(--accent); font-weight: 800; min-width: max-content;" type="button"><span>🎓 TRAINING STUDIO</span></button>
+<div class="stat-card"><span>Tổng Cẩm Nang 🎯</span><strong id="totalBadge">0</strong></div>
+<div class="stat-card"><span>Bộ Sưu Tập ❤️</span><strong id="favoriteCount">0</strong></div>
+<div class="stat-card"><span>Mục Gần Đây 🔖</span><strong id="recentCount">0</strong></div>
+<div class="stat-card" id="networkStatCard">
+<span>IP &amp; Mạng 🌐</span>
+<strong id="ipNetworkInfo" style="cursor: pointer;" title="Nhấn để Copy IP">Đang quét...</strong>
+<button class="small ghost" id="runSpeedTestBtn" style="margin-left: 8px; padding: 4px 8px; min-height: 28px; font-size: 11px;" type="button">Đo Tốc Độ</button>
+</div>
+<button aria-label="Đổi giao diện" class="theme-toggle icon-button" id="themeToggle" type="button">◐</button>
+</div>
 </header>
-
-    <div class="workspace">
-      <aside class="sidebar">
-        <nav class="side-nav" aria-label="Điều hướng">
-          <button id="tabMain" class="tab-btn active" type="button"><span>⌂</span>Cẩm Nang Xử Lý 🎯</button>
-          <button id="tabMine" class="tab-btn" type="button"><span>★</span>Bộ Sưu Tập ❤️</button>
-          <button id="tabRecent" class="tab-btn" type="button"><span>◷</span>Mục Gần Đây 🔖</button>
-          <button id="tabRules" class="tab-btn" type="button"><span>✓</span>Hướng dẫn nghiệp vụ 🌟</button>
-        </nav>
-        <div class="sidebar-label">Category</div>
-        <div id="categoryList" class="category-list"></div>
-        <div class="sidebar-tip">
-          <span>⌘</span>
-          <div><strong>Phím tắt</strong><small>Ctrl + K để tìm kiếm</small></div>
-        </div>
-      </aside>
-
-      <main id="riskManagerMain" class="main-content">
-        
-
-    
-
-    <div id="mainArea">
-          <section class="hero">
-            <div>
-              <div class="eyebrow">THƯ VIỆN XỬ LÝ RỦI RO</div>
-              <h1>Tìm đúng mẫu. Xử lý nhanh hơn.</h1>
-              <p class="lead">Tìm theo tiêu đề, nội dung, nhóm lỗi hoặc cách xử lý.</p>
-            </div>
-            <div class="search-wrap">
-              <span class="search-icon" aria-hidden="true">⌕</span>
-              <input id="searchBox" autocomplete="off" placeholder="Tìm template..." aria-label="Tìm template" />
-              <kbd>Ctrl K</kbd>
-            </div>
-          </section>
-
-          <section class="filter-bar">
-            <div class="field">
-              <label for="systemSelect">Nhóm lỗi</label>
-              <select id="systemSelect"></select>
-            </div>
-            <div class="field">
-              <label for="groupSelect">Cách xử lý</label>
-              <select id="groupSelect"></select>
-            </div>
-            <button id="clearFiltersBtn" class="small ghost" type="button">Xóa bộ lọc</button>
-          </section>
-
-          <div class="results-head">
-            <div>
-              <div class="section-title">Templates <span id="countBadge">0 mục</span></div>
-              <div class="results-title" id="resultsTitle">Kết quả sẽ hiển thị ở đây</div>
-            </div>
-            <div class="view-actions">
-              <span class="badge" id="modeBadge">Chế độ rút gọn</span>
-              <button id="toggleModeBtn" class="small ghost" type="button">Mở rộng tất cả</button>
-            </div>
-          </div>
-          <div id="results" class="grid"></div>
-        </div>
-
-        <div id="mineArea" style="display:none;">
-          <div class="page-heading"><div><div class="eyebrow">BỘ SƯU TẬP</div><h2>Favorite</h2><p>Nội dung bạn đã lưu để truy cập nhanh.</p></div></div>
-          <div class="results-head">
-            <div class="results-title">Danh sách bộ sưu tập</div>
-            <div class="view-actions">
-              <button id="stickyModeBtn" class="small ghost" type="button">Mở rộng tất cả</button>
-              <button id="clearStickyBtn" class="small ghost danger" type="button">Xóa tất cả</button>
-            </div>
-          </div>
-          <div id="stickyList" class="sticky-list"></div>
-        </div>
-
-        <div id="recentArea" style="display:none;">
-          <div class="page-heading"><div><div class="eyebrow">LỊCH SỬ THAO TÁC</div><h2>Recent</h2><p>10 template được copy gần nhất.</p></div></div>
-          <div id="recentList" class="sticky-list"></div>
-        </div>
-
-        <div id="rulesArea" style="display:none;">
-          <div class="page-heading"><div><div class="eyebrow">TÀI LIỆU NỘI BỘ</div><h2>Hướng dẫn nghiệp vụ</h2><p>Xem toàn bộ quy tắc hoặc dùng trợ lý để kiểm tra nhanh và theo dõi cây quyết định.</p></div></div>
-
-          <div class="ip-guide-tabs" role="tablist" aria-label="Chế độ xem hướng dẫn nghiệp vụ">
-            <button id="ipRulesTab" class="ip-guide-tab active" type="button" role="tab" aria-selected="true">📚 Xem toàn bộ QUY TẮC</button>
-            <button id="ipWizardTab" class="ip-guide-tab" type="button" role="tab" aria-selected="false">🧭 Trợ lý xử lý</button>
-          </div>
-
-          <div id="ipMemoryStrip" class="ip-memory-strip" aria-label="Nguyên tắc ghi nhớ nhanh" style="display:none;">
-            <div class="ip-memory-item"><span>🔴</span><div><strong>Nạp lần đầu hàng loạt</strong><small>Ưu tiên siết chặt hoặc khóa.</small></div></div>
-            <div class="ip-memory-item"><span>🟢</span><div><strong>Đã nạp nhiều lần</strong><small>Có thể cho rút bình thường hơn.</small></div></div>
-            <div class="ip-memory-item"><span>👥</span><div><strong>Có liên kết đại lý</strong><small>Xem thêm hoa hồng và cấp trên.</small></div></div>
-            <div class="ip-memory-item"><span>📈</span><div><strong>Càng nhiều tài khoản</strong><small>Mức xử lý càng nghiêm.</small></div></div>
-          </div>
-
-          <section id="ipWizardPanel" class="ip-assistant-shell" style="display:none;" aria-labelledby="ipWizardTab">
-            <div class="ip-assistant-tabs" role="tablist" aria-label="Kiểu hiển thị trợ lý xử lý">
-              <button id="ipQuickTab" class="ip-assistant-tab active" type="button" role="tab" aria-selected="true">🔍 Kiểm Tra Nhanh</button>
-              <button id="ipTreeTab" class="ip-assistant-tab" type="button" role="tab" aria-selected="false">🌳 Cây Quyết Định</button>
-            </div>
-
-            <section id="ipQuickPanel" class="ip-wizard-panel" aria-labelledby="ipQuickTab">
-              <div class="ip-wizard-head">
-                <div>
-                  <h3>Kiểm tra nhanh trùng IP / Thiết bị</h3>
-                  <p>Trả lời lần lượt các câu hỏi. Hệ thống sẽ trả kết quả, lý do và đường dẫn quyết định.</p>
-                </div>
-                <div class="ip-progress-wrap" aria-label="Tiến độ xử lý">
-                  <div class="ip-progress-meta"><span id="ipProgressLabel">Bước 1</span><span id="ipProgressPercent">20%</span></div>
-                  <div class="ip-progress"><div id="ipProgressBar"></div></div>
-                </div>
-              </div>
-              <div class="ip-flex-note"><strong>⚠️ Đánh giá linh hoạt:</strong> Không áp dụng máy móc. Cần đối chiếu lịch sử nạp, rút, lời/lỗ, khuyến mãi và dấu hiệu lạm dụng; chưa chắc chắn thì tạm giữ lệnh rút và xin ý kiến cấp trên.</div>
-              <div class="ip-wizard-body">
-                <div id="ipCrumbs" class="ip-crumbs" aria-label="Các lựa chọn đã thực hiện"></div>
-                <div id="ipWizardContent"></div>
-                <div class="ip-wizard-actions">
-                  <button id="ipBackBtn" class="small ghost" type="button">← Quay lại</button>
-                  <div class="ip-action-right">
-                    <button id="ipResetBtn" class="small ghost" type="button">Làm lại</button>
-                    <button id="ipOpenRulesBtn" class="small" type="button">Xem toàn bộ QUY TẮC</button>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            <section id="ipTreePanel" class="ip-tree-panel" style="display:none;" aria-labelledby="ipTreeTab">
-              <div class="ip-tree-head">
-                <div>
-                  <h3>Cây quyết định trùng IP / Thiết bị</h3>
-                  <p>Đọc từ trên xuống: xác định liên kết, số lượng tài khoản, sau đó đối chiếu lịch sử nạp và rút.</p>
-                </div>
-                <div class="ip-tree-legend" aria-label="Chú thích kết quả">
-                  <span>🔴 Khóa tài khoản</span>
-                  <span>🟠 Khấu trừ / hoàn trả</span>
-                  <span>🟡 Hạn chế thưởng / hoa hồng</span>
-                  <span>🟢 Cho rút bình thường</span>
-                </div>
-              </div>
-              <div class="ip-flex-note"><strong>⚠️ Đánh giá linh hoạt:</strong> Cây quyết định là căn cứ tham khảo, không thay thế việc xem lịch sử nạp, rút, lời/lỗ, khuyến mãi và dấu hiệu lạm dụng. Chưa đủ căn cứ thì tạm giữ lệnh rút và xin ý kiến cấp trên.</div>
-
-              <div class="ip-tree-body">
-                <div class="ip-tree-root">TRÙNG IP / THIẾT BỊ</div>
-                <div class="ip-tree-arrow">↓</div>
-                <div class="ip-tree-question-node">Có liên kết cấp trên – cấp dưới không?</div>
-
-                <div class="ip-tree-branches">
-                  <article class="ip-tree-branch">
-                    <div class="ip-tree-branch-head">
-                      <strong>👤 KHÔNG CÓ LIÊN KẾT</strong>
-                      <small>Đối chiếu theo số lượng tài khoản trong cùng đường dây.</small>
-                    </div>
-                    <div class="ip-tree-cases">
-                      <section class="ip-tree-case">
-                        <div class="ip-tree-case-title"><span class="ip-tree-count">2</span> Trùng 2 IP/Thiết bị</div>
-                        <div class="ip-tree-rule">
-                          <div class="ip-tree-condition">Cả 2 ID đều là tài khoản nạp lần đầu</div>
-                          <div class="ip-tree-outcome ip-tree-outcome-cards">
-                            <div class="ip-tree-mini-card green">🟢 Tài khoản trước đang thua hoặc chưa từng rút qua: cho tài khoản đang xét rút bình thường.</div>
-                            <div class="ip-tree-mini-card green">🟢 Tài khoản trước đã rút qua, tài khoản đang xét không nhận KM: cho rút bình thường.</div>
-                            <div class="ip-tree-mini-card orange">🟠 Tài khoản trước đã rút qua, tài khoản đang xét có nhận KM: khấu trừ thưởng, hoàn trả tiền nạp gốc.</div>
-                            <div class="ip-tree-mini-card hold">⚠️ Chưa đủ căn cứ: tạm giữ lệnh rút, xin ý kiến cấp trên.</div>
-                          </div>
-                        </div>
-                        <div class="ip-tree-rule">
-                          <div class="ip-tree-condition">Một tài khoản đã nạp đi nạp lại nhiều lần</div>
-                          <div class="ip-tree-outcome warning">🟡 Cho rút, khóa khuyến mãi tài khoản.</div>
-                        </div>
-                      </section>
-
-                      <section class="ip-tree-case">
-                        <div class="ip-tree-case-title"><span class="ip-tree-count">3</span> Trùng 3 IP/Thiết bị</div>
-                        <div class="ip-tree-rule">
-                          <div class="ip-tree-condition">Cả 3 nạp lần đầu và 2 tài khoản trước đã từng rút tiền</div>
-                          <div class="ip-tree-outcome danger">🔴 Khóa tài khoản phát sinh đến sau có dấu hiệu lạm dụng.</div>
-                        </div>
-                        <div class="ip-tree-rule">
-                          <div class="ip-tree-condition">Cả 3 tài khoản đều chưa từng rút tiền</div>
-                          <div class="ip-tree-outcome warning">🟡 Cho 01 tài khoản rút; hủy/hạn chế tiền thưởng các tài khoản còn lại.</div>
-                        </div>
-                        <div class="ip-tree-rule">
-                          <div class="ip-tree-condition">Hai tài khoản trước đã nạp đi nạp lại nhiều lần</div>
-                          <div class="ip-tree-outcome ip-tree-outcome-cards">
-                            <div class="ip-tree-mini-card orange">🟠 Nạp đầu, có nhận KM: khấu trừ thưởng, hoàn trả tiền nạp.</div>
-                            <div class="ip-tree-mini-card yellow">🟡 Nạp đầu không nhận KM hoặc đã nạp nhiều lần: cho rút, khóa khuyến mãi.</div>
-                            <div class="ip-tree-mini-card hold">⚠️ Không chắc chắn: tạm giữ lệnh rút, xin ý kiến cấp trên.</div>
-                          </div>
-                        </div>
-                      </section>
-
-                      <section class="ip-tree-case">
-                        <div class="ip-tree-case-title"><span class="ip-tree-count">4+</span> Từ 4 IP/Thiết bị trở lên</div>
-                        <div class="ip-tree-rule">
-                          <div class="ip-tree-condition">Tất cả đều là tài khoản nạp lần đầu</div>
-                         <div class="ip-tree-outcome danger">🔴 Khóa tài khoản phát sinh đến sau có dấu hiệu lạm dụng.</div>
-                        </div>
-                        <div class="ip-tree-rule">
-                          <div class="ip-tree-condition">Các tài khoản trước đều đã nạp đi nạp lại nhiều lần</div>
-                          <div class="ip-tree-outcome ip-tree-outcome-cards">
-                            <div class="ip-tree-mini-card orange">🟠 Nạp đầu, có nhận KM: khấu trừ thưởng, hoàn trả tiền nạp.</div>
-                            <div class="ip-tree-mini-card yellow">🟡 Nạp đầu không nhận KM hoặc đã nạp nhiều lần: cho rút, khóa khuyến mãi.</div>
-                            <div class="ip-tree-mini-card hold">⚠️ Không chắc chắn: tạm giữ lệnh rút, xin ý kiến cấp trên.</div>
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </article>
-
-                  <article class="ip-tree-branch">
-                    <div class="ip-tree-branch-head">
-                      <strong>👥 CÓ LIÊN KẾT CẤP TRÊN – CẤP DƯỚI</strong>
-                      <small>Ngoài tình trạng nạp, cần xem thêm trạng thái lời/lỗ và hoa hồng cấp trên.</small>
-                    </div>
-                    <div class="ip-tree-cases">
-                      <section class="ip-tree-case">
-                        <div class="ip-tree-case-title"><span class="ip-tree-count">2</span> Trùng 2 IP/Thiết bị</div>
-                        <div class="ip-tree-rule">
-                          <div class="ip-tree-condition">Thành viên và cấp trên đều là tài khoản nạp lần đầu</div>
-                          <div class="ip-tree-outcome mixed">
-                            <span class="ip-tree-result-danger">🔴 Khóa tài khoản đăng ký đến sau.</span>
-                            <span class="ip-tree-result-warning">🟡 Khóa hoa hồng tài khoản cấp trên.</span>
-                          </div>
-                        </div>
-                        <div class="ip-tree-rule">
-                          <div class="ip-tree-condition">Cấp trên đã nạp nhiều lần, cấp dưới nạp lần đầu</div>
-                          <div class="ip-tree-outcome mixed">
-                            <span class="ip-tree-result-warning">🟡 Cấp trên đang thua: cho cấp dưới rút, khóa hoa hồng cấp trên.</span>
-                            <span class="ip-tree-result-danger">🔴 Cấp trên đang có lãi hoặc tiếp tục tạo cấp dưới để hưởng lợi: khóa cấp dưới; khóa KM cấp dưới và KM/hoa hồng cấp trên.</span>
-                            <span>⚠️ Chưa xác định rõ: tạm giữ lệnh rút, xin ý kiến cấp trên.</span>
-                          </div>
-                        </div>
-                      </section>
-
-                      <section class="ip-tree-case">
-                        <div class="ip-tree-case-title"><span class="ip-tree-count">3+</span> Từ 3 IP/Thiết bị trở lên</div>
-                        <div class="ip-tree-rule">
-                          <div class="ip-tree-condition">Cấp dưới là tài khoản nạp lần đầu</div>
-                          <div class="ip-tree-outcome mixed">
-                            <span class="ip-tree-result-danger">🔴 Khóa tài khoản cấp dưới phát sinh sau.</span>
-                            <span class="ip-tree-result-warning">🟡 Khóa hoa hồng tài khoản cấp trên.</span>
-                          </div>
-                        </div>
-                        <div class="ip-tree-rule">
-                          <div class="ip-tree-condition">Cấp dưới đã nạp đi nạp lại nhiều lần</div>
-                          <div class="ip-tree-outcome warning">🟠 Khấu trừ tiền thưởng, hoàn trả tiền nạp.</div>
-                        </div>
-                        <div class="ip-tree-rule">
-                          <div class="ip-tree-condition">Chưa xác định rõ tình trạng tài khoản</div>
-                          <div class="ip-tree-outcome warning">⚠️ Tạm giữ lệnh rút, xin ý kiến cấp trên.</div>
-                        </div>
-                      </section>
-                    </div>
-                  </article>
-                </div>
-
-              </div>
-            </section>
-          </section>
-
-          <section id="ipRulesPanel" aria-labelledby="ipRulesTab">
-            <div class="ip-rules-panel-note">Nội dung bên dưới là toàn bộ QUY TẮC nghiệp vụ. Nhấn vào từng tiêu đề để mở hoặc thu gọn.</div>
-            <div id="rulesList" class="grid"></div>
-          </section>
-        </div>
-      </main>
-    </div>
-  </div>
-
-
-<main id="trainingStudio" class="training-studio" aria-hidden="true">
-    <aside class="training-sidebar" aria-label="Training Menu">
-      <div class="training-side-top">
-        <button id="trainingBackBtn" class="training-back-btn" type="button">← Quay lại Dashboard</button>
-        <div class="training-brand">
-          <div class="training-brand-mark">🎓</div>
-          <div>
-            <div class="training-brand-kicker">RISK MANAGER</div>
-            <div class="training-brand-title">TRAINING STUDIO</div>
-          </div>
-        </div>
-      </div>
-  
-      <div id="trainingMenuRA9" class="training-menu" data-platform-menu="ra9">
-        <div class="training-menu-section-title">Phần 1: Kiến thức Cốt lõi</div>
-  <a class="training-menu-item" href="#ra9-core-terms">1. Thuật ngữ &amp; Khái niệm</a>
-  <a class="training-menu-item" href="#ra9-core-turnover">2. Bản chất Vòng cược (Turnover)</a>
-  <a class="training-menu-item" href="#ra9-core-redflags">3. Dấu hiệu Gian lận (Red Flags)</a>
-  
-  <div class="training-menu-section-title">Phần 2: Đọc hiểu Giao diện · 7 bước</div>
-  <a class="training-menu-item" href="#ra9-step-1">Bước 1 — Withdrawal Orders</a>
-  <a class="training-menu-item" href="#ra9-step-2">Bước 2 — Audit &amp; Basic Info</a>
-  <a class="training-menu-item" href="#ra9-step-3">Bước 3 — Risk Control</a>
-  <a class="training-menu-item" href="#ra9-step-4">Bước 4 — Account Changes</a>
-  <a class="training-menu-item" href="#ra9-step-5">Bước 5 — Betting Info</a>
-  <a class="training-menu-item" href="#ra9-step-6">Bước 6 — Order Data</a>
-  <a class="training-menu-item" href="#ra9-step-7">Bước 7 — Quyết Định</a>
-  
-  <div class="training-menu-section-title">Phần 3: Kịch bản Từ chối</div>
-  <a class="training-menu-item" href="#ra9-reject">Kịch bản Reject · Quick Phrases &amp; Remark</a>
-      </div>
-  
-      <div id="trainingMenuAA" class="training-menu" data-platform-menu="aa" hidden>
-        <div class="training-menu-section-title">Phần 1: Kiến thức Đọc hiểu Giao diện</div>
-        <a class="training-menu-item" href="#aa-en-step-1" data-aa-step="1">1. Withdrawal Orders</a><a class="training-menu-item" href="#aa-en-step-2" data-aa-step="2">2. Audit & Basic Info</a><a class="training-menu-item" href="#aa-en-step-3" data-aa-step="3">3. Risk Control / IP & Thiết bị</a><a class="training-menu-item" href="#aa-en-step-4" data-aa-step="4">4. Account Changes / Nguồn tiền</a><a class="training-menu-item" href="#aa-en-step-5" data-aa-step="5">5. Bet Record / Vòng cược</a><a class="training-menu-item" href="#aa-en-step-6" data-aa-step="6">6. Order Data / Chi tiết cược</a><a class="training-menu-item" href="#aa-en-step-7" data-aa-step="7">7. Quyết định / Approve / Reject</a>
-        <div class="training-menu-section-title">Phần 2: Quy trình 7 bước</div>
-        <a class="training-menu-item" href="#aa-en-step-1" data-aa-process="1">Bước 1 — Mở danh sách đơn</a><a class="training-menu-item" href="#aa-en-step-2" data-aa-process="2">Bước 2 — Thông tin người dùng</a><a class="training-menu-item" href="#aa-en-step-3" data-aa-process="3">Bước 3 — Risk Control</a><a class="training-menu-item" href="#aa-en-step-4" data-aa-process="4">Bước 4 — Truy xuất nguồn tiền</a><a class="training-menu-item" href="#aa-en-step-5" data-aa-process="5">Bước 5 — Bet Record</a><a class="training-menu-item" href="#aa-en-step-6" data-aa-process="6">Bước 6 — Order Data</a><a class="training-menu-item" href="#aa-en-step-7" data-aa-process="7">Bước 7 — Ra quyết định</a>
-      </div>
-  
-      <div class="training-sidebar-footer">Click hình ảnh để phóng to · Kéo sidebar để xem toàn bộ mục</div>
-    </aside>
-  
-    <section class="training-main" aria-label="Training content">
-      <header class="training-topbar">
-        <div>
-          <div id="trainingPlatformKicker" class="training-platform-kicker">RA9 · ONBOARDING</div>
-          <h1 id="trainingStudioTitle" class="training-studio-title">Đào tạo Hậu Đài RA9</h1>
-          <p id="trainingStudioSubtitle" class="training-studio-subtitle">Quy trình, kiến thức cốt lõi và thao tác thực chiến.</p>
-        </div>
-        <div class="training-top-controls">
-          <div class="training-platform-toggle" role="tablist" aria-label="Chọn giáo trình">
-            <button id="trainingTabAA" class="training-platform-btn" type="button" role="tab" aria-selected="false">HẬU ĐÀI AA</button>
-            <button id="trainingTabRA9" class="training-platform-btn active" type="button" role="tab" aria-selected="true">HẬU ĐÀI RA9</button>
-          </div>
-        </div>
-      </header>
-  
-      <div id="trainingScroll" class="training-scroll">
-        <section id="trainingDocAA" class="training-document" data-platform="aa" hidden>
-          <div class="training-doc-heading">
-            <div>
-              <div class="training-section-kicker">AA · ĐÀO TẠO NGƯỜI MỚI</div>
-              <h2>Quy trình duyệt đơn rút tiền — Hướng dẫn cho người mới</h2>
-              <p>Toàn bộ nội dung AA giữ theo giáo trình nguồn; giao diện được đưa vào Training Studio và toàn bộ hình ảnh có thể click để zoom.</p>
-            </div>
-            <div class="training-language-toggle" role="tablist" aria-label="Ngôn ngữ AA">
-              <button id="aaLangENBtn" type="button" class="active">ENG</button>
-              <button id="aaLangCNBtn" type="button">CHN</button>
-            </div>
-          </div>
-          <div class="lang-en training-aa-lang" data-lang="en">
-  <div class="training-doc-card" data-training-section="aa-en-overview" id="aa-en-overview">
-  <h1>Quy trình duyệt đơn rút tiền — Hướng dẫn cho người mới</h1>
-  <div class="training-doc-meta">Mục tiêu: hướng dẫn tuần tự (Bước 1 → Bước 7). Mỗi bước kèm hình minh họa. Click vào ảnh để phóng to.</div>
-  </div>
+<div class="workspace">
+<aside class="sidebar">
+<nav aria-label="Điều hướng" class="side-nav">
+<button class="tab-btn active" id="tabMain" type="button"><span>⌂</span>Cẩm Nang Xử Lý 🎯</button>
+<button class="tab-btn" id="tabMine" type="button"><span>★</span>Bộ Sưu Tập ❤️</button>
+<button class="tab-btn" id="tabRecent" type="button"><span>◷</span>Mục Gần Đây 🔖</button>
+<button class="tab-btn" id="tabRules" type="button"><span>✓</span>Hướng dẫn nghiệp vụ 🌟</button>
+</nav>
+<div class="sidebar-label">Category</div>
+<div class="category-list" id="categoryList"></div>
+<div class="sidebar-tip">
+<span>⌘</span>
+<div><strong>Phím tắt</strong><small>Ctrl + K để tìm kiếm</small></div>
+</div>
+</aside>
+<main class="main-content" id="riskManagerMain">
+<div id="mainArea">
+<section class="hero">
+<div>
+<div class="eyebrow">THƯ VIỆN XỬ LÝ RỦI RO</div>
+<h1>Tìm đúng mẫu. Xử lý nhanh hơn.</h1>
+<p class="lead">Tìm theo tiêu đề, nội dung, nhóm lỗi hoặc cách xử lý.</p>
+</div>
+<div class="search-wrap">
+<span aria-hidden="true" class="search-icon">⌕</span>
+<input aria-label="Tìm template" autocomplete="off" id="searchBox" placeholder="Tìm template..."/>
+<kbd>Ctrl K</kbd>
+</div>
+</section>
+<section class="filter-bar">
+<div class="field">
+<label for="systemSelect">Nhóm lỗi</label>
+<select id="systemSelect"></select>
+</div>
+<div class="field">
+<label for="groupSelect">Cách xử lý</label>
+<select id="groupSelect"></select>
+</div>
+<button class="small ghost" id="clearFiltersBtn" type="button">Xóa bộ lọc</button>
+</section>
+<div class="results-head">
+<div>
+<div class="section-title">Templates <span id="countBadge">0 mục</span></div>
+<div class="results-title" id="resultsTitle">Kết quả sẽ hiển thị ở đây</div>
+</div>
+<div class="view-actions">
+<span class="badge" id="modeBadge">Chế độ rút gọn</span>
+<button class="small ghost" id="toggleModeBtn" type="button">Mở rộng tất cả</button>
+</div>
+</div>
+<div class="grid" id="results"></div>
+</div>
+<div id="mineArea" style="display:none;">
+<div class="page-heading"><div><div class="eyebrow">BỘ SƯU TẬP</div><h2>Favorite</h2><p>Nội dung bạn đã lưu để truy cập nhanh.</p></div></div>
+<div class="results-head">
+<div class="results-title">Danh sách bộ sưu tập</div>
+<div class="view-actions">
+<button class="small ghost" id="stickyModeBtn" type="button">Mở rộng tất cả</button>
+<button class="small ghost danger" id="clearStickyBtn" type="button">Xóa tất cả</button>
+</div>
+</div>
+<div class="sticky-list" id="stickyList"></div>
+</div>
+<div id="recentArea" style="display:none;">
+<div class="page-heading"><div><div class="eyebrow">LỊCH SỬ THAO TÁC</div><h2>Recent</h2><p>10 template được copy gần nhất.</p></div></div>
+<div class="sticky-list" id="recentList"></div>
+</div>
+<div id="rulesArea" style="display:none;">
+<div class="page-heading"><div><div class="eyebrow">TÀI LIỆU NỘI BỘ</div><h2>Hướng dẫn nghiệp vụ</h2><p>Xem toàn bộ quy tắc hoặc dùng trợ lý để kiểm tra nhanh và theo dõi cây quyết định.</p></div></div>
+<div aria-label="Chế độ xem hướng dẫn nghiệp vụ" class="ip-guide-tabs" role="tablist">
+<button aria-selected="true" class="ip-guide-tab active" id="ipRulesTab" role="tab" type="button">📚 Xem toàn bộ QUY TẮC</button>
+<button aria-selected="false" class="ip-guide-tab" id="ipWizardTab" role="tab" type="button">🧭 Trợ lý xử lý</button>
+</div>
+<div aria-label="Nguyên tắc ghi nhớ nhanh" class="ip-memory-strip" id="ipMemoryStrip" style="display:none;">
+<div class="ip-memory-item"><span>🔴</span><div><strong>Nạp lần đầu hàng loạt</strong><small>Ưu tiên siết chặt hoặc khóa.</small></div></div>
+<div class="ip-memory-item"><span>🟢</span><div><strong>Đã nạp nhiều lần</strong><small>Có thể cho rút bình thường hơn.</small></div></div>
+<div class="ip-memory-item"><span>👥</span><div><strong>Có liên kết đại lý</strong><small>Xem thêm hoa hồng và cấp trên.</small></div></div>
+<div class="ip-memory-item"><span>📈</span><div><strong>Càng nhiều tài khoản</strong><small>Mức xử lý càng nghiêm.</small></div></div>
+</div>
+<section aria-labelledby="ipWizardTab" class="ip-assistant-shell" id="ipWizardPanel" style="display:none;">
+<div aria-label="Kiểu hiển thị trợ lý xử lý" class="ip-assistant-tabs" role="tablist">
+<button aria-selected="true" class="ip-assistant-tab active" id="ipQuickTab" role="tab" type="button">🔍 Kiểm Tra Nhanh</button>
+<button aria-selected="false" class="ip-assistant-tab" id="ipTreeTab" role="tab" type="button">🌳 Cây Quyết Định</button>
+</div>
+<section aria-labelledby="ipQuickTab" class="ip-wizard-panel" id="ipQuickPanel">
+<div class="ip-wizard-head">
+<div>
+<h3>Kiểm tra nhanh trùng IP / Thiết bị</h3>
+<p>Trả lời lần lượt các câu hỏi. Hệ thống sẽ trả kết quả, lý do và đường dẫn quyết định.</p>
+</div>
+<div aria-label="Tiến độ xử lý" class="ip-progress-wrap">
+<div class="ip-progress-meta"><span id="ipProgressLabel">Bước 1</span><span id="ipProgressPercent">20%</span></div>
+<div class="ip-progress"><div id="ipProgressBar"></div></div>
+</div>
+</div>
+<div class="ip-flex-note"><strong>⚠️ Đánh giá linh hoạt:</strong> Không áp dụng máy móc. Cần đối chiếu lịch sử nạp, rút, lời/lỗ, khuyến mãi và dấu hiệu lạm dụng; chưa chắc chắn thì tạm giữ lệnh rút và xin ý kiến cấp trên.</div>
+<div class="ip-wizard-body">
+<div aria-label="Các lựa chọn đã thực hiện" class="ip-crumbs" id="ipCrumbs"></div>
+<div id="ipWizardContent"></div>
+<div class="ip-wizard-actions">
+<button class="small ghost" id="ipBackBtn" type="button">← Quay lại</button>
+<div class="ip-action-right">
+<button class="small ghost" id="ipResetBtn" type="button">Làm lại</button>
+<button class="small" id="ipOpenRulesBtn" type="button">Xem toàn bộ QUY TẮC</button>
+</div>
+</div>
+</div>
+</section>
+<section aria-labelledby="ipTreeTab" class="ip-tree-panel" id="ipTreePanel" style="display:none;">
+<div class="ip-tree-head">
+<div>
+<h3>Cây quyết định trùng IP / Thiết bị</h3>
+<p>Đọc từ trên xuống: xác định liên kết, số lượng tài khoản, sau đó đối chiếu lịch sử nạp và rút.</p>
+</div>
+<div aria-label="Chú thích kết quả" class="ip-tree-legend">
+<span>🔴 Khóa tài khoản</span>
+<span>🟠 Khấu trừ / hoàn trả</span>
+<span>🟡 Hạn chế thưởng / hoa hồng</span>
+<span>🟢 Cho rút bình thường</span>
+</div>
+</div>
+<div class="ip-flex-note"><strong>⚠️ Đánh giá linh hoạt:</strong> Cây quyết định là căn cứ tham khảo, không thay thế việc xem lịch sử nạp, rút, lời/lỗ, khuyến mãi và dấu hiệu lạm dụng. Chưa đủ căn cứ thì tạm giữ lệnh rút và xin ý kiến cấp trên.</div>
+<div class="ip-tree-body">
+<div class="ip-tree-root">TRÙNG IP / THIẾT BỊ</div>
+<div class="ip-tree-arrow">↓</div>
+<div class="ip-tree-question-node">Có liên kết cấp trên – cấp dưới không?</div>
+<div class="ip-tree-branches">
+<article class="ip-tree-branch">
+<div class="ip-tree-branch-head">
+<strong>👤 KHÔNG CÓ LIÊN KẾT</strong>
+<small>Đối chiếu theo số lượng tài khoản trong cùng đường dây.</small>
+</div>
+<div class="ip-tree-cases">
+<section class="ip-tree-case">
+<div class="ip-tree-case-title"><span class="ip-tree-count">2</span> Trùng 2 IP/Thiết bị</div>
+<div class="ip-tree-rule">
+<div class="ip-tree-condition">Cả 2 ID đều là tài khoản nạp lần đầu</div>
+<div class="ip-tree-outcome ip-tree-outcome-cards">
+<div class="ip-tree-mini-card green">🟢 Tài khoản trước đang thua hoặc chưa từng rút qua: cho tài khoản đang xét rút bình thường.</div>
+<div class="ip-tree-mini-card green">🟢 Tài khoản trước đã rút qua, tài khoản đang xét không nhận KM: cho rút bình thường.</div>
+<div class="ip-tree-mini-card orange">🟠 Tài khoản trước đã rút qua, tài khoản đang xét có nhận KM: khấu trừ thưởng, hoàn trả tiền nạp gốc.</div>
+<div class="ip-tree-mini-card hold">⚠️ Chưa đủ căn cứ: tạm giữ lệnh rút, xin ý kiến cấp trên.</div>
+</div>
+</div>
+<div class="ip-tree-rule">
+<div class="ip-tree-condition">Một tài khoản đã nạp đi nạp lại nhiều lần</div>
+<div class="ip-tree-outcome warning">🟡 Cho rút, khóa khuyến mãi tài khoản.</div>
+</div>
+</section>
+<section class="ip-tree-case">
+<div class="ip-tree-case-title"><span class="ip-tree-count">3</span> Trùng 3 IP/Thiết bị</div>
+<div class="ip-tree-rule">
+<div class="ip-tree-condition">Cả 3 nạp lần đầu và 2 tài khoản trước đã từng rút tiền</div>
+<div class="ip-tree-outcome danger">🔴 Khóa tài khoản phát sinh đến sau có dấu hiệu lạm dụng.</div>
+</div>
+<div class="ip-tree-rule">
+<div class="ip-tree-condition">Cả 3 tài khoản đều chưa từng rút tiền</div>
+<div class="ip-tree-outcome warning">🟡 Cho 01 tài khoản rút; hủy/hạn chế tiền thưởng các tài khoản còn lại.</div>
+</div>
+<div class="ip-tree-rule">
+<div class="ip-tree-condition">Hai tài khoản trước đã nạp đi nạp lại nhiều lần</div>
+<div class="ip-tree-outcome ip-tree-outcome-cards">
+<div class="ip-tree-mini-card orange">🟠 Nạp đầu, có nhận KM: khấu trừ thưởng, hoàn trả tiền nạp.</div>
+<div class="ip-tree-mini-card yellow">🟡 Nạp đầu không nhận KM hoặc đã nạp nhiều lần: cho rút, khóa khuyến mãi.</div>
+<div class="ip-tree-mini-card hold">⚠️ Không chắc chắn: tạm giữ lệnh rút, xin ý kiến cấp trên.</div>
+</div>
+</div>
+</section>
+<section class="ip-tree-case">
+<div class="ip-tree-case-title"><span class="ip-tree-count">4+</span> Từ 4 IP/Thiết bị trở lên</div>
+<div class="ip-tree-rule">
+<div class="ip-tree-condition">Tất cả đều là tài khoản nạp lần đầu</div>
+<div class="ip-tree-outcome danger">🔴 Khóa tài khoản phát sinh đến sau có dấu hiệu lạm dụng.</div>
+</div>
+<div class="ip-tree-rule">
+<div class="ip-tree-condition">Các tài khoản trước đều đã nạp đi nạp lại nhiều lần</div>
+<div class="ip-tree-outcome ip-tree-outcome-cards">
+<div class="ip-tree-mini-card orange">🟠 Nạp đầu, có nhận KM: khấu trừ thưởng, hoàn trả tiền nạp.</div>
+<div class="ip-tree-mini-card yellow">🟡 Nạp đầu không nhận KM hoặc đã nạp nhiều lần: cho rút, khóa khuyến mãi.</div>
+<div class="ip-tree-mini-card hold">⚠️ Không chắc chắn: tạm giữ lệnh rút, xin ý kiến cấp trên.</div>
+</div>
+</div>
+</section>
+</div>
+</article>
+<article class="ip-tree-branch">
+<div class="ip-tree-branch-head">
+<strong>👥 CÓ LIÊN KẾT CẤP TRÊN – CẤP DƯỚI</strong>
+<small>Ngoài tình trạng nạp, cần xem thêm trạng thái lời/lỗ và hoa hồng cấp trên.</small>
+</div>
+<div class="ip-tree-cases">
+<section class="ip-tree-case">
+<div class="ip-tree-case-title"><span class="ip-tree-count">2</span> Trùng 2 IP/Thiết bị</div>
+<div class="ip-tree-rule">
+<div class="ip-tree-condition">Thành viên và cấp trên đều là tài khoản nạp lần đầu</div>
+<div class="ip-tree-outcome mixed">
+<span class="ip-tree-result-danger">🔴 Khóa tài khoản đăng ký đến sau.</span>
+<span class="ip-tree-result-warning">🟡 Khóa hoa hồng tài khoản cấp trên.</span>
+</div>
+</div>
+<div class="ip-tree-rule">
+<div class="ip-tree-condition">Cấp trên đã nạp nhiều lần, cấp dưới nạp lần đầu</div>
+<div class="ip-tree-outcome mixed">
+<span class="ip-tree-result-warning">🟡 Cấp trên đang thua: cho cấp dưới rút, khóa hoa hồng cấp trên.</span>
+<span class="ip-tree-result-danger">🔴 Cấp trên đang có lãi hoặc tiếp tục tạo cấp dưới để hưởng lợi: khóa cấp dưới; khóa KM cấp dưới và KM/hoa hồng cấp trên.</span>
+<span>⚠️ Chưa xác định rõ: tạm giữ lệnh rút, xin ý kiến cấp trên.</span>
+</div>
+</div>
+</section>
+<section class="ip-tree-case">
+<div class="ip-tree-case-title"><span class="ip-tree-count">3+</span> Từ 3 IP/Thiết bị trở lên</div>
+<div class="ip-tree-rule">
+<div class="ip-tree-condition">Cấp dưới là tài khoản nạp lần đầu</div>
+<div class="ip-tree-outcome mixed">
+<span class="ip-tree-result-danger">🔴 Khóa tài khoản cấp dưới phát sinh sau.</span>
+<span class="ip-tree-result-warning">🟡 Khóa hoa hồng tài khoản cấp trên.</span>
+</div>
+</div>
+<div class="ip-tree-rule">
+<div class="ip-tree-condition">Cấp dưới đã nạp đi nạp lại nhiều lần</div>
+<div class="ip-tree-outcome warning">🟠 Khấu trừ tiền thưởng, hoàn trả tiền nạp.</div>
+</div>
+<div class="ip-tree-rule">
+<div class="ip-tree-condition">Chưa xác định rõ tình trạng tài khoản</div>
+<div class="ip-tree-outcome warning">⚠️ Tạm giữ lệnh rút, xin ý kiến cấp trên.</div>
+</div>
+</section>
+</div>
+</article>
+</div>
+</div>
+</section>
+</section>
+<section aria-labelledby="ipRulesTab" id="ipRulesPanel">
+<div class="ip-rules-panel-note">Nội dung bên dưới là toàn bộ QUY TẮC nghiệp vụ. Nhấn vào từng tiêu đề để mở hoặc thu gọn.</div>
+<div class="grid" id="rulesList"></div>
+</section>
+</div>
+</main>
+</div>
+</div>
+<main aria-hidden="true" class="training-studio" id="trainingStudio">
+<aside aria-label="Training Menu" class="training-sidebar">
+<div class="training-side-top">
+<button class="training-back-btn" id="trainingBackBtn" type="button">← Quay lại Dashboard</button>
+<div class="training-brand">
+<div class="training-brand-mark">🎓</div>
+<div>
+<div class="training-brand-kicker">RISK MANAGER</div>
+<div class="training-brand-title">TRAINING STUDIO</div>
+</div>
+</div>
+</div>
+<div class="training-menu" data-platform-menu="ra9" id="trainingMenuRA9">
+<div class="training-menu-section-title">Phần 1: Kiến thức Cốt lõi</div>
+<a class="training-menu-item" href="#ra9-core-terms">1. Thuật ngữ &amp; Khái niệm</a>
+<a class="training-menu-item" href="#ra9-core-turnover">2. Bản chất Vòng cược (Turnover)</a>
+<a class="training-menu-item" href="#ra9-core-redflags">3. Dấu hiệu Gian lận (Red Flags)</a>
+<div class="training-menu-section-title">Phần 2: Đọc hiểu Giao diện · 7 bước</div>
+<a class="training-menu-item" href="#ra9-step-1">Bước 1 — Withdrawal Orders</a>
+<a class="training-menu-item" href="#ra9-step-2">Bước 2 — Audit &amp; Basic Info</a>
+<a class="training-menu-item" href="#ra9-step-3">Bước 3 — Risk Control</a>
+<a class="training-menu-item" href="#ra9-step-4">Bước 4 — Account Changes</a>
+<a class="training-menu-item" href="#ra9-step-5">Bước 5 — Betting Info</a>
+<a class="training-menu-item" href="#ra9-step-6">Bước 6 — Order Data</a>
+<a class="training-menu-item" href="#ra9-step-7">Bước 7 — Quyết Định</a>
+<div class="training-menu-section-title">Phần 3: Kịch bản Từ chối</div>
+<a class="training-menu-item" href="#ra9-reject">Kịch bản Reject · Quick Phrases &amp; Remark</a>
+</div>
+<div class="training-menu" data-platform-menu="aa" hidden="" id="trainingMenuAA">
+<div class="training-menu-section-title">Phần 1: Kiến thức Đọc hiểu Giao diện</div>
+<a class="training-menu-item" data-aa-step="1" href="#aa-en-step-1">1. Withdrawal Orders</a><a class="training-menu-item" data-aa-step="2" href="#aa-en-step-2">2. Audit &amp; Basic Info</a><a class="training-menu-item" data-aa-step="3" href="#aa-en-step-3">3. Risk Control / IP &amp; Thiết bị</a><a class="training-menu-item" data-aa-step="4" href="#aa-en-step-4">4. Account Changes / Nguồn tiền</a><a class="training-menu-item" data-aa-step="5" href="#aa-en-step-5">5. Bet Record / Vòng cược</a><a class="training-menu-item" data-aa-step="6" href="#aa-en-step-6">6. Order Data / Chi tiết cược</a><a class="training-menu-item" data-aa-step="7" href="#aa-en-step-7">7. Quyết định / Approve / Reject</a>
+<div class="training-menu-section-title">Phần 2: Quy trình 7 bước</div>
+<a class="training-menu-item" data-aa-process="1" href="#aa-en-step-1">Bước 1 — Mở danh sách đơn</a><a class="training-menu-item" data-aa-process="2" href="#aa-en-step-2">Bước 2 — Thông tin người dùng</a><a class="training-menu-item" data-aa-process="3" href="#aa-en-step-3">Bước 3 — Risk Control</a><a class="training-menu-item" data-aa-process="4" href="#aa-en-step-4">Bước 4 — Truy xuất nguồn tiền</a><a class="training-menu-item" data-aa-process="5" href="#aa-en-step-5">Bước 5 — Bet Record</a><a class="training-menu-item" data-aa-process="6" href="#aa-en-step-6">Bước 6 — Order Data</a><a class="training-menu-item" data-aa-process="7" href="#aa-en-step-7">Bước 7 — Ra quyết định</a>
+</div>
+<div class="training-sidebar-footer">Click hình ảnh để phóng to · Kéo sidebar để xem toàn bộ mục</div>
+</aside>
+<section aria-label="Training content" class="training-main">
+<header class="training-topbar">
+<div>
+<div class="training-platform-kicker" id="trainingPlatformKicker">RA9 · ONBOARDING</div>
+<h1 class="training-studio-title" id="trainingStudioTitle">Đào tạo Hậu Đài RA9</h1>
+<p class="training-studio-subtitle" id="trainingStudioSubtitle">Quy trình, kiến thức cốt lõi và thao tác thực chiến.</p>
+</div>
+<div class="training-top-controls">
+<div aria-label="Chọn giáo trình" class="training-platform-toggle" role="tablist">
+<button aria-selected="false" class="training-platform-btn" id="trainingTabAA" role="tab" type="button">HẬU ĐÀI AA</button>
+<button aria-selected="true" class="training-platform-btn active" id="trainingTabRA9" role="tab" type="button">HẬU ĐÀI RA9</button>
+</div>
+</div>
+</header>
+<div class="training-scroll" id="trainingScroll">
+<section class="training-document" data-platform="aa" hidden="" id="trainingDocAA">
+<div class="training-doc-heading">
+<div>
+<div class="training-section-kicker">AA · ĐÀO TẠO NGƯỜI MỚI</div>
+<h2>Quy trình duyệt đơn rút tiền — Hướng dẫn cho người mới</h2>
+<p>Toàn bộ nội dung AA giữ theo giáo trình nguồn; giao diện được đưa vào Training Studio và toàn bộ hình ảnh có thể click để zoom.</p>
+</div>
+<div aria-label="Ngôn ngữ AA" class="training-language-toggle" role="tablist">
+<button class="active" id="aaLangENBtn" type="button">ENG</button>
+<button id="aaLangCNBtn" type="button">CHN</button>
+</div>
+</div>
+<div class="lang-en training-aa-lang" data-lang="en">
+<div class="training-doc-card" data-training-section="aa-en-overview" id="aa-en-overview">
+<h1>Quy trình duyệt đơn rút tiền — Hướng dẫn cho người mới</h1>
+<div class="training-doc-meta">Mục tiêu: hướng dẫn tuần tự (Bước 1 → Bước 7). Mỗi bước kèm hình minh họa. Click vào ảnh để phóng to.</div>
+</div>
    STEP 1 
   <div class="training-doc-card" data-training-section="aa-en-step-1" id="aa-en-step-1">
-  <div class="training-doc-step">
-  <div>
-  <h2>Bước 1 — Mở danh sách đơn chờ xử lý</h2>
-  <div class="training-doc-meta">Menu <strong>Withdrawal Orders</strong> sẽ chứa tổng hợp đơn đã xử lý. Khu vực <strong>Withdrawal Lock</strong> là những đơn mới, nhân viên <strong>CẦN PHẢI BẤM VÀO nút LOCK</strong> bên phải đơn đó về "tay" mình xử lý. Đơn sẽ tự động nhảy sang <strong>Third-party Payout</strong>, sau đó mình cần bấm vào <strong>ID</strong> để kiểm tra và hoàn tất việc xuất đơn.</div>
-  <div class="training-doc-checklist">
-  <label><input type="checkbox"/> Bấm <strong>LOCK</strong> ở bên phải đơn cần xử lý</label>
-  <label><input type="checkbox"/> Xác nhận đơn đã chuyển sang <strong>Third-party Payout</strong></label>
-  <label><input type="checkbox"/> Bấm vào <strong>ID</strong> để kiểm tra và hoàn tất xuất đơn</label>
-  </div>
-  </div>
-  <div>
-  <div class="training-img-box"><img alt="Bước 1 - Withdrawal Orders" onclick="openTrainingModal(event,this)" src="https://i.ibb.co/27vgD7r3/B-c-1.png"/></div>
-  <div class="training-caption">Hình: danh sách Withdrawal Orders.</div>
-  </div>
-  </div>
-  </div>
+<div class="training-doc-step">
+<div>
+<h2>Bước 1 — Mở danh sách đơn (Withdrawal Orders)</h2>
+<div class="training-doc-meta">Menu <strong>Withdrawal Orders</strong> sẽ chứa những đơn đã xử lý. Khu vực <strong>Withdrawal Lock</strong> là những đơn mới chưa được xử lý, nhân viên <strong>CẦN PHẢI BẤM VÀO ID</strong> để LOCK đơn đó về "tay" của mình xử lý. Sau khi LOCK và xử lý xong, <strong>Third-party Payout</strong> sẽ là nơi tiếp thu những đơn đó và sẽ được xử lý triệt để ở đây.</div>
+<div class="training-doc-checklist">
+<label><input type="checkbox"/> Bấm <strong>LOCK</strong> ở bên phải đơn cần xử lý</label>
+<label><input type="checkbox"/> Xác nhận đơn đã chuyển sang <strong>Third-party Payout</strong></label>
+<label><input type="checkbox"/> Bấm vào <strong>ID</strong> để kiểm tra và hoàn tất xuất đơn</label>
+</div>
+</div>
+<div>
+<div class="training-img-box"><img alt="Bước 1 - Withdrawal Orders" src="https://i.ibb.co/27vgD7r3/B-c-1.png"/></div>
+<div class="training-caption">Hình: danh sách Withdrawal Orders.</div>
+</div>
+</div>
+</div>
    STEP 1.1 
   <div class="training-doc-card" data-training-section="aa-en-step-1-detail" id="aa-en-step-1-detail">
-  <div class="training-doc-step">
-  <div>
-  <h2>Bước 1.1 — Kiểm tra dòng đơn</h2>
-  <div class="training-doc-meta">Chỉ chọn các đơn chưa bị khoá; tránh thao tác lên dòng có icon khóa.</div>
-  <div class="training-doc-checklist">
-  <label><input type="checkbox"/> Kiểm tra biểu tượng khoá</label>
-  <label><input type="checkbox"/> Chỉ chọn đơn không khóa</label>
-  <label><input type="checkbox"/> Nhấn <strong>Query</strong> để xem chi tiết</label>
-  <span class="training-badge training-warn" style="display:inline-block;margin-top:8px;padding:8px 12px"><h2>👉 Mục tiêu BƯỚC 1: Tìm đơn rút tiền cần được xét duyệt để mở xem chi tiết.</h2></span>
-  </div>
-  </div>
-  <div>
-  <div class="training-img-box"><img alt="Bước 1.1" onclick="openTrainingModal(event,this)" src="https://i.ibb.co/SwyyYyjj/B-c-1-1.png"/></div>
-  <div class="training-caption">Hình: nhận diện đơn chưa khóa, nút <b>Query</b> mở chi tiết đơn.</div>
-  </div>
-  </div>
-  </div>
+<div class="training-doc-step">
+<div>
+<h2>Bước 1.1 — Kiểm tra dòng đơn</h2>
+<div class="training-doc-meta">Chỉ chọn các đơn chưa bị khoá; tránh thao tác lên dòng có icon khóa.</div>
+<div class="training-doc-checklist">
+<label><input type="checkbox"/> Kiểm tra biểu tượng khoá</label>
+<label><input type="checkbox"/> Chỉ chọn đơn không khóa</label>
+<label><input type="checkbox"/> Nhấn <strong>Query</strong> để xem chi tiết</label>
+<span class="training-badge training-warn" style="display:inline-block;margin-top:8px;padding:8px 12px"><h2>👉 Mục tiêu BƯỚC 1: Tìm đơn rút tiền cần được xét duyệt để mở xem chi tiết.</h2></span>
+</div>
+</div>
+<div>
+<div class="training-img-box"><img alt="Bước 1.1" src="https://i.ibb.co/SwyyYyjj/B-c-1-1.png"/></div>
+<div class="training-caption">Hình: nhận diện đơn chưa khóa, nút <b>Query</b> mở chi tiết đơn.</div>
+</div>
+</div>
+</div>
    STEP 1.2 
   <div class="training-doc-card" data-training-section="aa-en-user-overview" id="aa-en-user-overview">
-  <div class="training-doc-step">
-  <div>
-  <h2>Giới thiệu sơ bộ tổng quan về thành viên.</h2>
-  <div class="training-doc-meta"><strong>Mục đích:</strong> Nhìn nhanh tình trạng tài khoản, không dùng để quyết định duyệt.</div>
-  <div class="training-doc-checklist">
-  <b>Các mục cần hiểu:</b>
-  <ul>
-  <li><b>User UID:</b> Mã người dùng.</li>
-  <li><b>Total Flow Amount:</b> Tổng tiền đã cược.</li>
-  <li><b>Total Withdrawal Amount:</b> Tổng tiền đã rút. <i>(Ví dụ ảnh bên: Tổng rút: 48.760 (Đã rút 46.260, Đang rút 500). Trường hợp thành viên lần đầu rút tiền thì mục <b>Withdrawn = 0 → rút lần đầu.</b>)</i></li>
-  <li><b>Registration Time:</b> Thời gian đăng ký.</li>
-  <li><b>Login Time:</b> Lần đăng nhập gần nhất.</li>
-  <li><b>input.withdrawalRemark:</b> Ghi chú rút tiền của thành viên.</li>
-  <li><b>Total Recharge Amount:</b> Tổng tiền đã nạp.</li>
-  <li><b>Channel Source:</b> Kênh đăng ký.</li>
-  <li><b>Current Cash Balance:</b> Số dư hiện tại.</li>
-  <li><b>Recharge &amp; Withdrawal Difference:</b> Số tiền thắng/thua từ nền tảng (<b>Số âm màu đỏ → Thành viên đang lãi</b>, <i>ví dụ ảnh bên -6,060 → lãi 6,060).</i></li>
-  </ul>
-  </div>
-  </div>
-  <div>
-  <div class="training-img-box"><img alt="Bước 1.2 - Query" onclick="openTrainingModal(event,this)" src="https://i.ibb.co/PzMDrsfK/B-c-1-2.png"/></div>
-  <div class="training-caption">Hình: Thông tin cơ bản tổng quan về thành viên.</div>
-  </div>
-  </div>
-  </div>
+<div class="training-doc-step">
+<div>
+<h2>Giới thiệu sơ bộ tổng quan về thành viên.</h2>
+<div class="training-doc-meta"><strong>Mục đích:</strong> Nhìn nhanh tình trạng tài khoản, không dùng để quyết định duyệt.</div>
+<div class="training-doc-checklist">
+<b>Các mục cần hiểu:</b>
+<ul>
+<li><b>User UID:</b> Mã người dùng.</li>
+<li><b>Total Flow Amount:</b> Tổng tiền đã cược.</li>
+<li><b>Total Withdrawal Amount:</b> Tổng tiền đã rút. <i>(Ví dụ ảnh bên: Tổng rút: 48.760 (Đã rút 46.260, Đang rút 500). Trường hợp thành viên lần đầu rút tiền thì mục <b>Withdrawn = 0 → rút lần đầu.</b>)</i></li>
+<li><b>Registration Time:</b> Thời gian đăng ký.</li>
+<li><b>Login Time:</b> Lần đăng nhập gần nhất.</li>
+<li><b>input.withdrawalRemark:</b> Ghi chú rút tiền của thành viên.</li>
+<li><b>Total Recharge Amount:</b> Tổng tiền đã nạp.</li>
+<li><b>Channel Source:</b> Kênh đăng ký.</li>
+<li><b>Current Cash Balance:</b> Số dư hiện tại.</li>
+<li><b>Recharge &amp; Withdrawal Difference:</b> Số tiền thắng/thua từ nền tảng (<b>Số âm màu đỏ → Thành viên đang lãi</b>, <i>ví dụ ảnh bên -6,060 → lãi 6,060).</i></li>
+</ul>
+</div>
+</div>
+<div>
+<div class="training-img-box"><img alt="Bước 1.2 - Query" src="https://i.ibb.co/PzMDrsfK/B-c-1-2.png"/></div>
+<div class="training-caption">Hình: Thông tin cơ bản tổng quan về thành viên.</div>
+</div>
+</div>
+</div>
    STEP 2 
   <div class="training-doc-card" data-training-section="aa-en-step-2" id="aa-en-step-2">
-  <div class="training-doc-step">
-  <div>
-  <h2>Bước 2 — Kiểm tra tổng quan thông tin người dùng (rút gọn)</h2>
-  <div class="training-doc-meta">Tập trung kiểm tra các hoạt động trong ngày của user: <strong>Tổng nạp, Tổng rút, Tiền khuyến mãi</strong>. Cần hiểu rõ ý nghĩa các thông số trong bảng <strong>Account Summary Data</strong>. Đồng thời, xem lướt qua thẻ <strong>Deposit/Withdraw Info</strong> để nắm sơ bộ chu kỳ nạp/rút gần nhất của khách hàng.</div>
-  <div class="training-doc-checklist">
-  <label><input type="checkbox"/> Kiểm tra <strong>Tổng nạp</strong>, <strong>Tổng rút</strong> và <strong>Tiền khuyến mãi</strong></label>
-  <label><input type="checkbox"/> Đọc và hiểu các thông số trong <strong>Account Summary Data</strong></label>
-  <label><input type="checkbox"/> Xem lướt <strong>Deposit/Withdraw Info</strong> để nắm chu kỳ nạp/rút gần nhất</label>
-  </div>
-  </div>
-  <div>
-  <div class="training-img-box"><img alt="Bước 1.2 - Query" onclick="openTrainingModal(event,this)" src="https://i.ibb.co/PzMDrsfK/B-c-1-2.png"/></div>
-  <div class="training-caption">Hình: thông tin tổng quan user.</div>
-  </div>
-  </div>
-  </div>
+<div class="training-doc-step">
+<div>
+<h2>Bước 2 — Bảng Audit &amp; Basic Info (Tổng quan người dùng)</h2>
+<div class="training-doc-meta">Tại bảng này, người mới cần tập trung vào các hoạt động diễn ra trong ngày của thành viên như: <strong>Nạp, Rút, Tiền khuyến mãi</strong>. <br/><br/> Đồng thời, cần hiểu rõ các thông số trong bảng <strong>Account Summary Data</strong> (Dữ liệu tổng quan). Vui lòng xem lướt qua thẻ <strong>Deposit/Withdraw Info</strong> để nắm sơ bộ lịch sử và chu kỳ giao dịch gần nhất của khách hàng trước khi quyết định.</div>
+<div class="training-doc-checklist">
+<label><input type="checkbox"/> Kiểm tra <strong>Tổng nạp</strong>, <strong>Tổng rút</strong> và <strong>Tiền khuyến mãi</strong></label>
+<label><input type="checkbox"/> Đọc và hiểu các thông số trong <strong>Account Summary Data</strong></label>
+<label><input type="checkbox"/> Xem lướt <strong>Deposit/Withdraw Info</strong> để nắm chu kỳ nạp/rút gần nhất</label>
+</div>
+</div>
+<div>
+<div class="training-img-box"><img alt="Bước 1.2 - Query" src="https://i.ibb.co/PzMDrsfK/B-c-1-2.png"/></div>
+<div class="training-caption">Hình: thông tin tổng quan user.</div>
+</div>
+</div>
+</div>
    STEP 3 
   <div class="training-doc-card" data-training-section="aa-en-step-3" id="aa-en-step-3">
-  <div class="training-doc-step">
-  <div>
-  <h2>Bước 3 — Risk control: kiểm tra IP / thiết bị</h2>
-  <div class="training-doc-meta">Tab <strong>Risk control data</strong>. Mục đích: Xác định xem thành viên có tạo nhiều tài khoản để trục lợi lạm dụng khuyến mãi hay không. Ví dụ: Thành viên chỉ có 1 IP, 1 thiết bị → có thể tiếp tục. Nhưng nếu thành viên có nhiều hơn 2 IP hoặc Thiết bị cần kiểm tra các IP/ thiết bị trùng có vấn đề không.</div>
-  <div class="training-doc-checklist">
-  <label><input type="checkbox"/> Kiểm tra Binding Device (số thiết bị)</label>
-  <label><input type="checkbox"/> Kiểm tra Login IP (số IP)</label>
-  <label><input type="checkbox"/> Đánh giá số tài khoản liên quan cùng IP</label>
-  <span class="training-badge training-warn"><h2>👉 Mục tiêu BƯỚC 3: Xác định thông tin IP/ thiết bị để đánh giá tổng quan trước về tài khoản thành viên.</h2></span>
-  </div>
-  </div>
-  <div>
-  <div class="training-img-box"><img alt="Bước 3 - Risk control" onclick="openTrainingModal(event,this)" src="https://i.ibb.co/60kBX9hh/B-c-3.png"/></div>
-  <div class="training-caption">Hình: Risk control data.</div>
-  </div>
-  </div>
-  </div>
+<div class="training-doc-step">
+<div>
+<h2>Bước 3 — Risk control: kiểm tra IP / thiết bị</h2>
+<div class="training-doc-meta">Tab <strong>Risk control data</strong>. Mục đích: Xác định xem thành viên có tạo nhiều tài khoản để trục lợi lạm dụng khuyến mãi hay không. Ví dụ: Thành viên chỉ có 1 IP, 1 thiết bị → có thể tiếp tục. Nhưng nếu thành viên có nhiều hơn 2 IP hoặc Thiết bị cần kiểm tra các IP/ thiết bị trùng có vấn đề không.</div>
+<div class="training-doc-checklist">
+<label><input type="checkbox"/> Kiểm tra Binding Device (số thiết bị)</label>
+<label><input type="checkbox"/> Kiểm tra Login IP (số IP)</label>
+<label><input type="checkbox"/> Đánh giá số tài khoản liên quan cùng IP</label>
+<span class="training-badge training-warn"><h2>👉 Mục tiêu BƯỚC 3: Xác định thông tin IP/ thiết bị để đánh giá tổng quan trước về tài khoản thành viên.</h2></span>
+</div>
+</div>
+<div>
+<div class="training-img-box"><img alt="Bước 3 - Risk control" src="https://i.ibb.co/60kBX9hh/B-c-3.png"/></div>
+<div class="training-caption">Hình: Risk control data.</div>
+</div>
+</div>
+</div>
    STEP 4 
   <div class="training-doc-card" data-training-section="aa-en-step-4" id="aa-en-step-4">
-  <div class="training-doc-step training-doc-step">
-  <div class="training-doc-content">
-  <h2>Bước 4 — Truy xuất nguồn tiền (Asset Changes)</h2>
-  <div class="training-doc-meta">
-  <b>Bước quan trọng nhất:</b> xác định tiền là
+<div class="training-doc-step training-doc-step">
+<div class="training-doc-content">
+<h2>Bước 4 — Truy xuất nguồn tiền (Asset Changes)</h2>
+<div class="training-doc-meta">
+<b>Bước quan trọng nhất:</b> xác định tiền là
                 <strong>nạp thực</strong> hay <strong>nhận thưởng</strong>.
                 Nếu không có nạp → kiểm tra <b>Asset Changes</b> mục <b>Change Reason</b>.
                 Với tiền thưởng nhỏ (1,3,5,7) trùng IP → có thể khấu tiền.
               </div>
-  <div class="training-doc-checklist">
-  <label>
-  <input type="checkbox"/>
+<div class="training-doc-checklist">
+<label>
+<input type="checkbox"/>
                   Mở tab Recharge Record → kiểm tra trạng thái <em>Received</em>
-  </label>
-  <div class="indent-block">
-  <ul class="indent-list">
-  <li>Nếu có nạp tiền hợp lệ → ghi nhận → có thể sang bước 5.</li>
-  <li>Nếu không có nạp tiền → bắt buộc sang Asset Changes.</li>
-  </ul>
-  </div>
-  <label>
-  <input type="checkbox"/>
+</label>
+<div class="indent-block">
+<ul class="indent-list">
+<li>Nếu có nạp tiền hợp lệ → ghi nhận → có thể sang bước 5.</li>
+<li>Nếu không có nạp tiền → bắt buộc sang Asset Changes.</li>
+</ul>
+</div>
+<label>
+<input type="checkbox"/>
                   Nếu không có nạp → mở <b>Asset Changes</b> và filter <b>Change Reason</b>
-  </label>
-  <div class="indent-block">
-  <p class="indent-text">Tại Change Reason, chọn và kiểm tra các nguồn sau (đặc biệt với thành viên mới):</p>
-  <ul class="indent-list">
-  <li>Recharge</li>
-  <li>Withdrawal</li>
-  <li>Daily Leaderboard</li>
-  <li>Weekly Leaderboard</li>
-  <li>Invitation Withdrawal Reward</li>
-  <li>Team Reward</li>
-  <li>Inbox Message Reward</li>
-  <li>Sharing Bonus</li>
-  <li>Video Reward</li>
-  <li>Special Invite Bonus</li>
-  <li>Free Returnee Bonus</li>
-  <li>Hoặc các mục được tô màu tiếng Trung trong hệ thống</li>
-  </ul>
-  </div>
-  <label>
-  <input type="checkbox"/>
+</label>
+<div class="indent-block">
+<p class="indent-text">Tại Change Reason, chọn và kiểm tra các nguồn sau (đặc biệt với thành viên mới):</p>
+<ul class="indent-list">
+<li>Recharge</li>
+<li>Withdrawal</li>
+<li>Daily Leaderboard</li>
+<li>Weekly Leaderboard</li>
+<li>Invitation Withdrawal Reward</li>
+<li>Team Reward</li>
+<li>Inbox Message Reward</li>
+<li>Sharing Bonus</li>
+<li>Video Reward</li>
+<li>Special Invite Bonus</li>
+<li>Free Returnee Bonus</li>
+<li>Hoặc các mục được tô màu tiếng Trung trong hệ thống</li>
+</ul>
+</div>
+<label>
+<input type="checkbox"/>
                   Đánh dấu nguồn thưởng đáng ngờ như 1, 3, 5, 7 đồng (cần có điều kiện cụ thể để rút số tiền cược thắng từ các loại tiền thưởng này).
                 </label>
-  <div class="training-badge training-warn">
-  <h2>👉 Mục tiêu BƯỚC 4: Xác định chính xác nguồn gốc tiền rút của thành viên.</h2>
-  </div>
-  </div>
-  </div>
-  <div class="training-doc-media">
-  <div class="training-img-box"><img onclick="openTrainingModal(event,this)" src="https://i.ibb.co/pjHY85Sj/B-c-4-1.png"/></div>
-  <div class="training-caption">4.1: Recharge Record (kiểm tra nạp).</div>
-  <div class="training-img-box"><img onclick="openTrainingModal(event,this)" src="https://i.ibb.co/YBcbP72N/B-c-4-2.png"/></div>
-  <div class="training-caption">4.2: Danh sách Change Reason.</div>
-  <div class="training-img-box"><img onclick="openTrainingModal(event,this)" src="https://i.ibb.co/j9H4gwN9/B-c-4-3.png"/></div>
-  <div class="training-caption">4.3: Ví dụ về các mục được tô màu bằng tiếng Trung.</div>
-  <div class="training-img-box"><img onclick="openTrainingModal(event,this)" src="https://i.ibb.co/PZ1THJKD/B-c-4-3-1.png"/></div>
-  <div class="training-caption">4.3.1: Ví dụ thêm.</div>
-  </div>
-  </div>
-  </div>
+<div class="training-badge training-warn">
+<h2>👉 Mục tiêu BƯỚC 4: Xác định chính xác nguồn gốc tiền rút của thành viên.</h2>
+</div>
+</div>
+</div>
+<div class="training-doc-media">
+<div class="training-img-box"><img src="https://i.ibb.co/pjHY85Sj/B-c-4-1.png"/></div>
+<div class="training-caption">4.1: Recharge Record (kiểm tra nạp).</div>
+<div class="training-img-box"><img src="https://i.ibb.co/YBcbP72N/B-c-4-2.png"/></div>
+<div class="training-caption">4.2: Danh sách Change Reason.</div>
+<div class="training-img-box"><img src="https://i.ibb.co/j9H4gwN9/B-c-4-3.png"/></div>
+<div class="training-caption">4.3: Ví dụ về các mục được tô màu bằng tiếng Trung.</div>
+<div class="training-img-box"><img src="https://i.ibb.co/PZ1THJKD/B-c-4-3-1.png"/></div>
+<div class="training-caption">4.3.1: Ví dụ thêm.</div>
+</div>
+</div>
+</div>
    STEP 5 
   <div class="training-doc-card" data-training-section="aa-en-step-5" id="aa-en-step-5">
-  <div class="training-doc-step">
-  <div>
-  <h2>Bước 5 — Bet Record: xác nhận hành vi chơi</h2>
-  <div class="training-doc-meta">Tab <strong>Bet Record</strong> — kiểm tra trò chơi, tổng cược, member win/loss.</div>
-  <div class="training-doc-checklist">
-  <label><input type="checkbox"/> Xác định thời điểm mà thành viên nạp/ nhận thưởng đến lúc rút tiền</label>
-  <label><input type="checkbox"/> Kiểm tra Total Bet Amount và Member Win/Loss để xem họ chơi những game nào, lãi lỗ ra sao</label>
-  <span class="training-badge training-warn"><h2>👉 Mục tiêu BƯỚC 5: Xác nhận thành viên chơi game gì và kết quả chơi có lãi hợp lý.</h2></span>
-  </div>
-  </div>
-  <div>
-  <div class="training-img-box"><img alt="Bước 5 - Bet Record" onclick="openTrainingModal(event,this)" src="https://i.ibb.co/wFmZNpQQ/B-c-5.png"/></div>
-  <div class="training-caption">Hình: Bet Record.</div>
-  </div>
-  </div>
-  </div>
+<div class="training-doc-step">
+<div>
+<h2>Bước 5 — Bet Record: xác nhận hành vi chơi</h2>
+<div class="training-doc-meta">Tab <strong>Bet Record</strong> — kiểm tra trò chơi, tổng cược, member win/loss.</div>
+<div class="training-doc-checklist">
+<label><input type="checkbox"/> Xác định thời điểm mà thành viên nạp/ nhận thưởng đến lúc rút tiền</label>
+<label><input type="checkbox"/> Kiểm tra Total Bet Amount và Member Win/Loss để xem họ chơi những game nào, lãi lỗ ra sao</label>
+<span class="training-badge training-warn"><h2>👉 Mục tiêu BƯỚC 5: Xác nhận thành viên chơi game gì và kết quả chơi có lãi hợp lý.</h2></span>
+</div>
+</div>
+<div>
+<div class="training-img-box"><img alt="Bước 5 - Bet Record" src="https://i.ibb.co/wFmZNpQQ/B-c-5.png"/></div>
+<div class="training-caption">Hình: Bet Record.</div>
+</div>
+</div>
+</div>
    STEP 6 
   <div class="training-doc-card" data-training-section="aa-en-step-6" id="aa-en-step-6">
-  <div class="training-doc-step">
-  <div>
-  <h2>Bước 6 — Order Data: kiểm tra chi tiết các cược</h2>
-  <div class="training-doc-meta">Tab <strong>Order Data</strong>. Kiểm tra các trường hợp bị xem là vi phạm ❌.</div>
-  <div class="indent-block">
-  <p class="indent-text">🔴 Đối với những thành viên <b>NẠP ĐẦU</b> chơi Quay hủ.</p>
-  <ul class="indent-list">
-  <li><b>Kiểm tra xem thành viên có cược auto hay không (chỉ cược 1 mức cược nhỏ cố định và chỉ vừa đủ vòng cược là thực hiện rút tiền</b></li>
-  </ul>
-  <p class="indent-text">🔴 Vi phạm tỷ lệ cược:</p>
-  <ul class="indent-list">
-  <li>Các trò chơi <b>CÓ TÔ MÀU</b>,... Tỉ lệ cược thấp dưới <b>1.50</b> liên tục từ 4 kỳ.</li>
-  <li>Các trò chơi <b>CÓ TÔ MÀU</b> cược ALLIN (đơn cược đầu tiên 90% số tiền cược)</li>
-  </ul>
-  </div>
-  <div class="training-doc-checklist">
-  <label><input type="checkbox"/> Lọc theo ngày đặt cược từ lúc nạp/ nhận thưởng đến hiện tại</label>
-  <label><input type="checkbox"/> Xác định các lần cược bất thường</label>
-  <label><input type="checkbox"/> Nếu có vi phạm: không duyệt</label>
-  </div>
-  <span class="training-badge training-warn"><h2>👉 Mục tiêu BƯỚC 6: Xác định cách đặt cược có hợp lệ hay không, tránh trường hợp đánh đối phó để rút tiền lạm dụng khuyến mãi.</h2></span>
-  </div>
-  <div>
-  <div class="training-img-box"><img alt="Bước 6 - Order Data" onclick="openTrainingModal(event,this)" src="https://i.ibb.co/LDPVqVxY/B-c-6.png"/></div>
-  <div class="training-caption">Hình: Order Data.</div>
-  </div>
-  </div>
-  </div>
+<div class="training-doc-step">
+<div>
+<h2>Bước 6 — Order Data: kiểm tra chi tiết các cược</h2>
+<div class="training-doc-meta">Tab <strong>Order Data</strong>. Kiểm tra các trường hợp bị xem là vi phạm ❌.</div>
+<div class="indent-block">
+<p class="indent-text">🔴 Đối với những thành viên <b>NẠP ĐẦU</b> chơi Quay hủ.</p>
+<ul class="indent-list">
+<li><b>Kiểm tra xem thành viên có cược auto hay không (chỉ cược 1 mức cược nhỏ cố định và chỉ vừa đủ vòng cược là thực hiện rút tiền</b></li>
+</ul>
+<p class="indent-text">🔴 Vi phạm tỷ lệ cược:</p>
+<ul class="indent-list">
+<li>Các trò chơi <b>CÓ TÔ MÀU</b>,... Tỉ lệ cược thấp dưới <b>1.50</b> liên tục từ 4 kỳ.</li>
+<li>Các trò chơi <b>CÓ TÔ MÀU</b> cược ALLIN (đơn cược đầu tiên 90% số tiền cược)</li>
+</ul>
+</div>
+<div class="training-doc-checklist">
+<label><input type="checkbox"/> Lọc theo ngày đặt cược từ lúc nạp/ nhận thưởng đến hiện tại</label>
+<label><input type="checkbox"/> Xác định các lần cược bất thường</label>
+<label><input type="checkbox"/> Nếu có vi phạm: không duyệt</label>
+</div>
+<span class="training-badge training-warn"><h2>👉 Mục tiêu BƯỚC 6: Xác định cách đặt cược có hợp lệ hay không, tránh trường hợp đánh đối phó để rút tiền lạm dụng khuyến mãi.</h2></span>
+</div>
+<div>
+<div class="training-img-box"><img alt="Bước 6 - Order Data" src="https://i.ibb.co/LDPVqVxY/B-c-6.png"/></div>
+<div class="training-caption">Hình: Order Data.</div>
+</div>
+</div>
+</div>
    STEP 7 
   <div class="training-doc-card" data-training-section="aa-en-step-7" id="aa-en-step-7">
-  <div class="training-doc-step">
-  <div>
-  <h2>Bước 7 — Quyết định cuối cùng: Phê duyệt / Từ chối / Treo</h2>
-  <div class="training-doc-meta">Dùng các nút trong cột Operate:</div>
-  <ul>
-  <li><strong>Review Approved (xanh)</strong> — phê duyệt lệnh rút (nếu mọi thứ hợp lệ)</li>
-  <li><strong>Review Rejected (đỏ)</strong> — chối lệnh rút tiền nếu có bất thường</li>
-  <li><strong>To be submitted</strong> — treo cho ngân hàng/người xử lý bên thứ 3 (giao dịch chưa thành công)</li>
-  <li><strong>Submit for Review (vàng)</strong> — chuyển lên Risk cao hơn (lớn tiền / nghi vấn khó xử lý)</li>
-  </ul>
-  <div class="training-doc-checklist">
-  <label><input type="checkbox"/> Đã hoàn tất Bước 3–6 và không có rủi ro → nhấn <strong>Review Approved</strong></label>
-  <label><input type="checkbox"/> Phát hiện nhẹ → nhấn <strong>Review Rejected</strong> (chỉ từ chối lệnh)</label>
-  <label><input type="checkbox"/> Giao dịch lỗi/ngân hàng → nhấn <strong>To be submitted</strong></label>
-  <label><input type="checkbox"/> Đơn tiền lớn/ khó xử lý → nhấn <strong>Submit for Review</strong></label>
-  <span class="training-badge training-warn"><h2>👉 Mục tiêu BƯỚC 7: Ra quyết định cuối cùng sau khi đã kiểm tra đầy đủ các bước trước.</h2></span>
-  </div>
-  </div>
-  <div>
-  <div class="training-img-box"><img alt="Bước 7 - Approve buttons" onclick="openTrainingModal(event,this)" src="https://i.ibb.co/CpRCGPGS/B-c-7.png"/></div>
-  <div class="training-caption">Hình: các nút quyết định.</div>
-  </div>
-  </div>
-  </div>
-  <div class="training-doc-card" data-training-section="aa-en-summary" id="aa-en-summary">
-  <h3>Phiên bản nhanh (checklist in 1 line)</h3>
-  <div class="training-doc-meta">1) Mở danh sách → 2) Mở chi tiết → 3) Kiểm tra IP/ Thiết bị → 4) Truy xuất nguồn tiền → 5) Kiểm tra game đã chơi → 6) Kiểm tra đơn cược → 7) Quyết định
+<div class="training-doc-step">
+<div>
+<h2>Bước 7 — Quyết định cuối cùng: Phê duyệt / Từ chối / Treo</h2>
+<div class="training-doc-meta">Dùng các nút trong cột Operate:</div>
+<ul>
+<li><strong>Review Approved (xanh)</strong> — phê duyệt lệnh rút (nếu mọi thứ hợp lệ)</li>
+<li><strong>Review Rejected (đỏ)</strong> — chối lệnh rút tiền nếu có bất thường</li>
+<li><strong>To be submitted</strong> — treo cho ngân hàng/người xử lý bên thứ 3 (giao dịch chưa thành công)</li>
+<li><strong>Submit for Review (vàng)</strong> — chuyển lên Risk cao hơn (lớn tiền / nghi vấn khó xử lý)</li>
+</ul>
+<div class="training-doc-checklist">
+<label><input type="checkbox"/> Đã hoàn tất Bước 3–6 và không có rủi ro → nhấn <strong>Review Approved</strong></label>
+<label><input type="checkbox"/> Phát hiện nhẹ → nhấn <strong>Review Rejected</strong> (chỉ từ chối lệnh)</label>
+<label><input type="checkbox"/> Giao dịch lỗi/ngân hàng → nhấn <strong>To be submitted</strong></label>
+<label><input type="checkbox"/> Đơn tiền lớn/ khó xử lý → nhấn <strong>Submit for Review</strong></label>
+<span class="training-badge training-warn"><h2>👉 Mục tiêu BƯỚC 7: Ra quyết định cuối cùng sau khi đã kiểm tra đầy đủ các bước trước.</h2></span>
+</div>
+</div>
+<div>
+<div class="training-img-box"><img alt="Bước 7 - Approve buttons" src="https://i.ibb.co/CpRCGPGS/B-c-7.png"/></div>
+<div class="training-caption">Hình: các nút quyết định.</div>
+</div>
+</div>
+</div>
+<div class="training-doc-card" data-training-section="aa-en-summary" id="aa-en-summary">
+<h3>Phiên bản nhanh (checklist in 1 line)</h3>
+<div class="training-doc-meta">1) Mở danh sách → 2) Mở chi tiết → 3) Kiểm tra IP/ Thiết bị → 4) Truy xuất nguồn tiền → 5) Kiểm tra game đã chơi → 6) Kiểm tra đơn cược → 7) Quyết định
       <strong> Nguyên tắc duyệt đơn:
       <ul class="indent-list">
-  <li>Không rõ nguồn tiền → không duyệt</li>
-  <li>Không chắc → hỏi cấp trên</li>
-  <li>Không suy đoán theo cảm tính</li>
-  <li>Mọi quyết định đều phải giải thích được</li>
-  </ul> </strong>
-  </div>
-  <div class="footer"></div>
-  </div>
-  </div>
-          <div class="lang-cn training-aa-lang" data-lang="cn" hidden>
+<li>Không rõ nguồn tiền → không duyệt</li>
+<li>Không chắc → hỏi cấp trên</li>
+<li>Không suy đoán theo cảm tính</li>
+<li>Mọi quyết định đều phải giải thích được</li>
+</ul> </strong>
+</div>
+<div class="footer"></div>
+</div>
+</div>
+<div class="lang-cn training-aa-lang" data-lang="cn" hidden="">
    copy EXACT content above (English) — user will replace text/images later 
   <div class="training-doc-card" data-training-section="aa-cn-overview" id="aa-cn-overview">
-  <h1>Quy trình duyệt đơn rút tiền — Hướng dẫn cho người mới</h1>
-  <div class="training-doc-meta">Mục tiêu: hướng dẫn tuần tự (Bước 1 → Bước 7). Mỗi bước kèm hình minh họa. Click vào ảnh để phóng to.</div>
-  </div>
+<h1>Quy trình duyệt đơn rút tiền — Hướng dẫn cho người mới</h1>
+<div class="training-doc-meta">Mục tiêu: hướng dẫn tuần tự (Bước 1 → Bước 7). Mỗi bước kèm hình minh họa. Click vào ảnh để phóng to.</div>
+</div>
    STEP 1 
   <div class="training-doc-card" data-training-section="aa-cn-step-1" id="aa-cn-step-1">
-  <div class="training-doc-step">
-  <div>
-  <h2>Bước 1 — Mở danh sách đơn chờ xử lý</h2>
-  <div class="training-doc-meta"><strong>Withdrawal Orders</strong> 页面会汇总已经处理的订单。<strong>Withdrawal Lock</strong> 区域显示新订单，员工<strong>必须点击订单右侧的 LOCK 按钮</strong>，将该订单锁定到自己名下处理。订单会自动进入 <strong>Third-party Payout</strong>，然后点击<strong>ID</strong>进行检查并完成出款。</div>
-  <div class="training-doc-checklist">
-  <label><input type="checkbox"/> 点击需要处理订单右侧的 <strong>LOCK</strong></label>
-  <label><input type="checkbox"/> 确认订单已进入 <strong>Third-party Payout</strong></label>
-  <label><input type="checkbox"/> 点击<strong>ID</strong>检查并完成出款</label>
-  </div>
-  </div>
-  <div>
-  <div class="training-img-box"><img alt="Bước 1 - Withdrawal Orders" onclick="openTrainingModal(event,this)" src="https://i.ibb.co/4RWnRbbX/B-c-1.png"/></div>
-  <div class="training-caption">Hình: danh sách các đơn hàng cần được xử lý.</div>
-  </div>
-  </div>
-  </div>
+<div class="training-doc-step">
+<div>
+<h2>Bước 1 — Mở danh sách đơn (Withdrawal Orders)</h2>
+<div class="training-doc-meta">Menu <strong>Withdrawal Orders</strong> sẽ chứa những đơn đã xử lý. Khu vực <strong>Withdrawal Lock</strong> là những đơn mới chưa được xử lý, nhân viên <strong>CẦN PHẢI BẤM VÀO ID</strong> để LOCK đơn đó về "tay" của mình xử lý. Sau khi LOCK và xử lý xong, <strong>Third-party Payout</strong> sẽ là nơi tiếp thu những đơn đó và sẽ được xử lý triệt để ở đây.</div>
+<div class="training-doc-checklist">
+<label><input type="checkbox"/> 点击需要处理订单右侧的 <strong>LOCK</strong></label>
+<label><input type="checkbox"/> 确认订单已进入 <strong>Third-party Payout</strong></label>
+<label><input type="checkbox"/> 点击<strong>ID</strong>检查并完成出款</label>
+</div>
+</div>
+<div>
+<div class="training-img-box"><img alt="Bước 1 - Withdrawal Orders" src="https://i.ibb.co/4RWnRbbX/B-c-1.png"/></div>
+<div class="training-caption">Hình: danh sách các đơn hàng cần được xử lý.</div>
+</div>
+</div>
+</div>
    STEP 1.1 
   <div class="training-doc-card" data-training-section="aa-cn-step-1-detail" id="aa-cn-step-1-detail">
-  <div class="training-doc-step">
-  <div>
-  <h2>Bước 1.1 — Kiểm tra dòng đơn</h2>
-  <div class="training-doc-meta">Chỉ chọn các đơn chưa bị khoá; tránh thao tác lên dòng có icon khóa.</div>
-  <div class="training-doc-checklist">
-  <label><input type="checkbox"/> Kiểm tra biểu tượng khoá</label>
-  <label><input type="checkbox"/> Chỉ chọn đơn không khóa</label>
-  <label><input type="checkbox"/> Nhấn <strong>查询</strong> để xem chi tiết</label>
-  <span class="training-badge training-warn" style="display:inline-block;margin-top:8px;padding:8px 12px"><h2>👉 Mục tiêu BƯỚC 1: Tìm đơn rút tiền cần được xét duyệt để mở xem chi tiết.</h2></span>
-  </div>
-  </div>
-  <div>
-  <div class="training-img-box"><img alt="Bước 1.1" onclick="openTrainingModal(event,this)" src="https://i.ibb.co/4cXyQvL/B-1-1.png"/></div>
-  <div class="training-caption">Hình: nhận diện đơn chưa khóa, nút <b>Query</b> mở chi tiết đơn.</div>
-  </div>
-  </div>
-  </div>
+<div class="training-doc-step">
+<div>
+<h2>Bước 1.1 — Kiểm tra dòng đơn</h2>
+<div class="training-doc-meta">Chỉ chọn các đơn chưa bị khoá; tránh thao tác lên dòng có icon khóa.</div>
+<div class="training-doc-checklist">
+<label><input type="checkbox"/> Kiểm tra biểu tượng khoá</label>
+<label><input type="checkbox"/> Chỉ chọn đơn không khóa</label>
+<label><input type="checkbox"/> Nhấn <strong>查询</strong> để xem chi tiết</label>
+<span class="training-badge training-warn" style="display:inline-block;margin-top:8px;padding:8px 12px"><h2>👉 Mục tiêu BƯỚC 1: Tìm đơn rút tiền cần được xét duyệt để mở xem chi tiết.</h2></span>
+</div>
+</div>
+<div>
+<div class="training-img-box"><img alt="Bước 1.1" src="https://i.ibb.co/4cXyQvL/B-1-1.png"/></div>
+<div class="training-caption">Hình: nhận diện đơn chưa khóa, nút <b>Query</b> mở chi tiết đơn.</div>
+</div>
+</div>
+</div>
    STEP 1.2 
   <div class="training-doc-card" data-training-section="aa-cn-user-overview" id="aa-cn-user-overview">
-  <div class="training-doc-step">
-  <div>
-  <h2>Giới thiệu sơ bộ tổng quan về thành viên.</h2>
-  <div class="training-doc-meta"><strong>Mục đích:</strong> Nhìn nhanh tình trạng tài khoản, không dùng để quyết định duyệt.</div>
-  <div class="training-doc-checklist">
-  <b>Các mục cần hiểu:</b>
-  <ul>
-  <li><b>用户UID:</b> Mã người dùng.</li>
-  <li><b>总流水金额：</b> Tổng tiền đã cược.</li>
-  <li><b>总提现金额：</b> Tổng tiền đã rút. <i>(Ví dụ ảnh bên: Tổng rút: 75210 (Đã rút 75210 , Đang rút 0). Trường hợp thành viên lần đầu rút tiền thì mục <b>已提现 = 0 → rút lần đầu.</b>)</i></li>
-  <li><b>注册时间：</b> Thời gian đăng ký.</li>
-  <li><b>登录时间：</b> Lần đăng nhập gần nhất.</li>
-  <li><b>提款备注：</b> Ghi chú rút tiền của thành viên.</li>
-  <li><b>总充值金额：</b> Tổng tiền đã nạp.</li>
-  <li><b>渠道来源：</b> Kênh đăng ký.</li>
-  <li><b>当前Cash余额：</b> Số dư hiện tại.</li>
-  <li><b>充提差：</b> Số tiền thắng/thua từ nền tảng (<b>Số âm màu đỏ → Thành viên đang lãi</b>, <i>ví dụ ảnh bên -21310.36 → lãi 21310.36).</i></li>
-  </ul>
-  </div>
-  </div>
-  <div>
-  <div class="training-img-box"><img alt="Bước 1.2 - Query" onclick="openTrainingModal(event,this)" src="https://i.ibb.co/0VhYZCLx/B-c-2.png"/></div>
-  <div class="training-caption">Hình: Thông tin cơ bản tổng quan về thành viên.</div>
-  </div>
-  </div>
-  </div>
+<div class="training-doc-step">
+<div>
+<h2>Giới thiệu sơ bộ tổng quan về thành viên.</h2>
+<div class="training-doc-meta"><strong>Mục đích:</strong> Nhìn nhanh tình trạng tài khoản, không dùng để quyết định duyệt.</div>
+<div class="training-doc-checklist">
+<b>Các mục cần hiểu:</b>
+<ul>
+<li><b>用户UID:</b> Mã người dùng.</li>
+<li><b>总流水金额：</b> Tổng tiền đã cược.</li>
+<li><b>总提现金额：</b> Tổng tiền đã rút. <i>(Ví dụ ảnh bên: Tổng rút: 75210 (Đã rút 75210 , Đang rút 0). Trường hợp thành viên lần đầu rút tiền thì mục <b>已提现 = 0 → rút lần đầu.</b>)</i></li>
+<li><b>注册时间：</b> Thời gian đăng ký.</li>
+<li><b>登录时间：</b> Lần đăng nhập gần nhất.</li>
+<li><b>提款备注：</b> Ghi chú rút tiền của thành viên.</li>
+<li><b>总充值金额：</b> Tổng tiền đã nạp.</li>
+<li><b>渠道来源：</b> Kênh đăng ký.</li>
+<li><b>当前Cash余额：</b> Số dư hiện tại.</li>
+<li><b>充提差：</b> Số tiền thắng/thua từ nền tảng (<b>Số âm màu đỏ → Thành viên đang lãi</b>, <i>ví dụ ảnh bên -21310.36 → lãi 21310.36).</i></li>
+</ul>
+</div>
+</div>
+<div>
+<div class="training-img-box"><img alt="Bước 1.2 - Query" src="https://i.ibb.co/0VhYZCLx/B-c-2.png"/></div>
+<div class="training-caption">Hình: Thông tin cơ bản tổng quan về thành viên.</div>
+</div>
+</div>
+</div>
    STEP 2 
   <div class="training-doc-card" data-training-section="aa-cn-step-2" id="aa-cn-step-2">
-  <div class="training-doc-step">
-  <div>
-  <h2>Bước 2 — 检查用户基本信息</h2>
-  <div class="training-doc-meta">重点检查用户<strong>当天的活动</strong>：<strong>总充值、总提现、优惠金额</strong>。需要理解 <strong>Account Summary Data</strong> 表格中各项参数的含义。同时快速查看 <strong>Deposit/Withdraw Info</strong>，了解客户最近一次充值/提现的大致周期。</div>
-  <div class="training-doc-checklist">
-  <label><input type="checkbox"/> 检查<strong>总充值、总提现、优惠金额</strong></label>
-  <label><input type="checkbox"/> 理解 <strong>Account Summary Data</strong> 中各项参数</label>
-  <label><input type="checkbox"/> 快速查看 <strong>Deposit/Withdraw Info</strong>，确认最近充值/提现周期</label>
-  </div>
-  </div>
-  <div>
-  <div class="training-img-box"><img alt="Bước 1.2 - Query" onclick="openTrainingModal(event,this)" src="https://i.ibb.co/0VhYZCLx/B-c-2.png"/></div>
-  <div class="training-caption">Hình: thông tin tổng quan user.</div>
-  </div>
-  </div>
-  </div>
+<div class="training-doc-step">
+<div>
+<h2>Bước 2 — Bảng Audit &amp; Basic Info (Tổng quan người dùng)</h2>
+<div class="training-doc-meta">Tại bảng này, người mới cần tập trung vào các hoạt động diễn ra trong ngày của thành viên như: <strong>Nạp, Rút, Tiền khuyến mãi</strong>. <br/><br/> Đồng thời, cần hiểu rõ các thông số trong bảng <strong>Account Summary Data</strong> (Dữ liệu tổng quan). Vui lòng xem lướt qua thẻ <strong>Deposit/Withdraw Info</strong> để nắm sơ bộ lịch sử và chu kỳ giao dịch gần nhất của khách hàng trước khi quyết định.</div>
+<div class="training-doc-checklist">
+<label><input type="checkbox"/> 检查<strong>总充值、总提现、优惠金额</strong></label>
+<label><input type="checkbox"/> 理解 <strong>Account Summary Data</strong> 中各项参数</label>
+<label><input type="checkbox"/> 快速查看 <strong>Deposit/Withdraw Info</strong>，确认最近充值/提现周期</label>
+</div>
+</div>
+<div>
+<div class="training-img-box"><img alt="Bước 1.2 - Query" src="https://i.ibb.co/0VhYZCLx/B-c-2.png"/></div>
+<div class="training-caption">Hình: thông tin tổng quan user.</div>
+</div>
+</div>
+</div>
    STEP 3 
   <div class="training-doc-card" data-training-section="aa-cn-step-3" id="aa-cn-step-3">
-  <div class="training-doc-step">
-  <div>
-  <h2>Bước 3 — 风控数据: kiểm tra IP / thiết bị</h2>
-  <div class="training-doc-meta">Tab <strong>风控数据</strong>. Mục đích: Xác định xem thành viên có tạo nhiều tài khoản để trục lợi lạm dụng khuyến mãi hay không. Ví dụ: Thành viên chỉ có 1 IP, 1 thiết bị → có thể tiếp tục. Nhưng nếu thành viên có nhiều hơn 2 IP hoặc Thiết bị cần kiểm tra các IP/ thiết bị trùng có vấn đề không.</div>
-  <div class="training-doc-checklist">
-  <label><input type="checkbox"/> Kiểm tra Binding Device (số thiết bị)</label>
-  <label><input type="checkbox"/> Kiểm tra Login IP (số IP)</label>
-  <label><input type="checkbox"/> Đánh giá số tài khoản liên quan cùng IP</label>
-  <span class="training-badge training-warn"><h2>👉 Mục tiêu BƯỚC 3: Xác định thông tin IP/ thiết bị để đánh giá tổng quan trước về tài khoản thành viên.</h2></span>
-  </div>
-  </div>
-  <div>
-  <div class="training-img-box"><img alt="Bước 3 - Risk control" onclick="openTrainingModal(event,this)" src="https://i.ibb.co/xWjZqnq/B-c-3.png"/></div>
-  <div class="training-caption">Hình: 风控数据.</div>
-  </div>
-  </div>
-  </div>
+<div class="training-doc-step">
+<div>
+<h2>Bước 3 — 风控数据: kiểm tra IP / thiết bị</h2>
+<div class="training-doc-meta">Tab <strong>风控数据</strong>. Mục đích: Xác định xem thành viên có tạo nhiều tài khoản để trục lợi lạm dụng khuyến mãi hay không. Ví dụ: Thành viên chỉ có 1 IP, 1 thiết bị → có thể tiếp tục. Nhưng nếu thành viên có nhiều hơn 2 IP hoặc Thiết bị cần kiểm tra các IP/ thiết bị trùng có vấn đề không.</div>
+<div class="training-doc-checklist">
+<label><input type="checkbox"/> Kiểm tra Binding Device (số thiết bị)</label>
+<label><input type="checkbox"/> Kiểm tra Login IP (số IP)</label>
+<label><input type="checkbox"/> Đánh giá số tài khoản liên quan cùng IP</label>
+<span class="training-badge training-warn"><h2>👉 Mục tiêu BƯỚC 3: Xác định thông tin IP/ thiết bị để đánh giá tổng quan trước về tài khoản thành viên.</h2></span>
+</div>
+</div>
+<div>
+<div class="training-img-box"><img alt="Bước 3 - Risk control" src="https://i.ibb.co/xWjZqnq/B-c-3.png"/></div>
+<div class="training-caption">Hình: 风控数据.</div>
+</div>
+</div>
+</div>
    STEP 4 
   <div class="training-doc-card" data-training-section="aa-cn-step-4" id="aa-cn-step-4">
-  <div class="training-doc-step training-doc-step">
-  <div class="training-doc-content">
-  <h2>Bước 4 — Truy xuất nguồn tiền (充值记录 &amp; 资产变动)</h2>
-  <div class="training-doc-meta">
-  <b>Bước quan trọng nhất:</b> xác định tiền là
+<div class="training-doc-step training-doc-step">
+<div class="training-doc-content">
+<h2>Bước 4 — Truy xuất nguồn tiền (充值记录 &amp; 资产变动)</h2>
+<div class="training-doc-meta">
+<b>Bước quan trọng nhất:</b> xác định tiền là
                 <strong>nạp thực</strong> hay <strong>nhận thưởng</strong>.
                 Nếu không có nạp → kiểm tra <b>资产变动</b> mục <b>变动原因：</b>.
                 Với tiền thưởng nhỏ (1,3,5,7) trùng IP → có thể khấu tiền.
               </div>
-  <div class="training-doc-checklist">
-  <label>
-  <input type="checkbox"/>
+<div class="training-doc-checklist">
+<label>
+<input type="checkbox"/>
                   Mở tab 充值记录 → kiểm tra trạng thái <em>到账</em>
-  </label>
-  <div class="indent-block">
-  <ul class="indent-list">
-  <li>Nếu có nạp tiền hợp lệ → ghi nhận → có thể sang bước 5.</li>
-  <li>Nếu không có nạp tiền → bắt buộc sang 资产变动.</li>
-  </ul>
-  </div>
-  <label>
-  <input type="checkbox"/>
+</label>
+<div class="indent-block">
+<ul class="indent-list">
+<li>Nếu có nạp tiền hợp lệ → ghi nhận → có thể sang bước 5.</li>
+<li>Nếu không có nạp tiền → bắt buộc sang 资产变动.</li>
+</ul>
+</div>
+<label>
+<input type="checkbox"/>
                   Nếu không có nạp → mở <b>资产变动</b> và filter <b>变动原因</b>
-  </label>
-  <div class="indent-block">
-  <p class="indent-text">Tại 变动原因, chọn và kiểm tra các nguồn sau (đặc biệt với thành viên mới):</p>
-  <ul class="indent-list">
-  <li>充值</li>
-  <li>提现</li>
-  <li>排行榜日榜</li>
-  <li>排行榜周榜</li>
-  <li>邀请转盘</li>
-  <li>团队奖励</li>
-  <li>站内信奖励</li>
-  <li>排行榜月榜</li>
-  <li>兑换码奖励</li>
-  <li>分享赠金</li>
-  <li>视频奖励</li>
-  <li>VIP每周奖励</li>
-  <li>回归福利奖励</li>
-  <li>Hoặc các mục được tô màu tiếng Trung trong hệ thống</li>
-  </ul>
-  </div>
-  <label>
-  <input type="checkbox"/>
+</label>
+<div class="indent-block">
+<p class="indent-text">Tại 变动原因, chọn và kiểm tra các nguồn sau (đặc biệt với thành viên mới):</p>
+<ul class="indent-list">
+<li>充值</li>
+<li>提现</li>
+<li>排行榜日榜</li>
+<li>排行榜周榜</li>
+<li>邀请转盘</li>
+<li>团队奖励</li>
+<li>站内信奖励</li>
+<li>排行榜月榜</li>
+<li>兑换码奖励</li>
+<li>分享赠金</li>
+<li>视频奖励</li>
+<li>VIP每周奖励</li>
+<li>回归福利奖励</li>
+<li>Hoặc các mục được tô màu tiếng Trung trong hệ thống</li>
+</ul>
+</div>
+<label>
+<input type="checkbox"/>
                   Đánh dấu nguồn thưởng đáng ngờ như 1, 3, 5, 7 đồng (cần có điều kiện cụ thể để rút số tiền cược thắng từ các loại tiền thưởng này).
                 </label>
-  <div class="training-badge training-warn">
-  <h2>👉 Mục tiêu BƯỚC 4: Xác định chính xác nguồn gốc tiền rút của thành viên.</h2>
-  </div>
-  </div>
-  </div>
-  <div class="training-doc-media">
-  <div class="training-img-box"><img onclick="openTrainingModal(event,this)" src="https://i.ibb.co/Lz6yYfzH/b-c-4.png"/></div>
-  <div class="training-caption">4.1: 充值记录 (kiểm tra nạp).</div>
-  <div class="training-img-box"><img onclick="openTrainingModal(event,this)" src="https://i.ibb.co/0ynnVMNp/b-c-4-1.png"/></div>
-  <div class="training-caption">4.2: Danh sách 订单状态：.</div>
-  <div class="training-img-box"><img onclick="openTrainingModal(event,this)" src="https://i.ibb.co/TBJbmDth/B-c-4-2.png"/></div>
-  <div class="training-caption">4.3: Ví dụ về các mục được tô màu bằng tiếng Trung.</div>
-  <div class="training-img-box"><img onclick="openTrainingModal(event,this)" src="https://i.ibb.co/B5vkS9ZX/B-c-4-3.png"/></div>
-  <div class="training-caption">4.3.1: Ví dụ thêm.</div>
-  </div>
-  </div>
-  </div>
+<div class="training-badge training-warn">
+<h2>👉 Mục tiêu BƯỚC 4: Xác định chính xác nguồn gốc tiền rút của thành viên.</h2>
+</div>
+</div>
+</div>
+<div class="training-doc-media">
+<div class="training-img-box"><img src="https://i.ibb.co/Lz6yYfzH/b-c-4.png"/></div>
+<div class="training-caption">4.1: 充值记录 (kiểm tra nạp).</div>
+<div class="training-img-box"><img src="https://i.ibb.co/0ynnVMNp/b-c-4-1.png"/></div>
+<div class="training-caption">4.2: Danh sách 订单状态：.</div>
+<div class="training-img-box"><img src="https://i.ibb.co/TBJbmDth/B-c-4-2.png"/></div>
+<div class="training-caption">4.3: Ví dụ về các mục được tô màu bằng tiếng Trung.</div>
+<div class="training-img-box"><img src="https://i.ibb.co/B5vkS9ZX/B-c-4-3.png"/></div>
+<div class="training-caption">4.3.1: Ví dụ thêm.</div>
+</div>
+</div>
+</div>
    STEP 5 
   <div class="training-doc-card" data-training-section="aa-cn-step-5" id="aa-cn-step-5">
-  <div class="training-doc-step">
-  <div>
-  <h2>Bước 5 — 投注纪录: xác nhận hành vi chơi</h2>
-  <div class="training-doc-meta">Tab <strong>投注纪录</strong> — kiểm tra trò chơi, tổng cược, member win/loss.</div>
-  <div class="training-doc-checklist">
-  <label><input type="checkbox"/> Xác định thời điểm mà thành viên nạp/ nhận thưởng đến lúc rút tiền</label>
-  <label><input type="checkbox"/> Kiểm tra 返奖金额 và 会员输赢 để xem họ chơi những game nào, lãi lỗ ra sao</label>
-  <span class="training-badge training-warn"><h2>👉 Mục tiêu BƯỚC 5: Xác nhận thành viên chơi game gì và kết quả chơi có lãi hợp lý.</h2></span>
-  </div>
-  </div>
-  <div>
-  <div class="training-img-box"><img alt="Bước 5 - Bet Record" onclick="openTrainingModal(event,this)" src="https://i.ibb.co/1tfnd7Q2/B-c-5.png"/></div>
-  <div class="training-caption">Hình: 投注纪录.</div>
-  </div>
-  </div>
-  </div>
+<div class="training-doc-step">
+<div>
+<h2>Bước 5 — 投注纪录: xác nhận hành vi chơi</h2>
+<div class="training-doc-meta">Tab <strong>投注纪录</strong> — kiểm tra trò chơi, tổng cược, member win/loss.</div>
+<div class="training-doc-checklist">
+<label><input type="checkbox"/> Xác định thời điểm mà thành viên nạp/ nhận thưởng đến lúc rút tiền</label>
+<label><input type="checkbox"/> Kiểm tra 返奖金额 và 会员输赢 để xem họ chơi những game nào, lãi lỗ ra sao</label>
+<span class="training-badge training-warn"><h2>👉 Mục tiêu BƯỚC 5: Xác nhận thành viên chơi game gì và kết quả chơi có lãi hợp lý.</h2></span>
+</div>
+</div>
+<div>
+<div class="training-img-box"><img alt="Bước 5 - Bet Record" src="https://i.ibb.co/1tfnd7Q2/B-c-5.png"/></div>
+<div class="training-caption">Hình: 投注纪录.</div>
+</div>
+</div>
+</div>
    STEP 6 
   <div class="training-doc-card" data-training-section="aa-cn-step-6" id="aa-cn-step-6">
-  <div class="training-doc-step">
-  <div>
-  <h2>Bước 6 — 订单数据: kiểm tra chi tiết các cược</h2>
-  <div class="training-doc-meta">Tab <strong>订单数据</strong>. Kiểm tra các trường hợp bị xem là vi phạm ❌.</div>
-  <div class="indent-block">
-  <p class="indent-text">🔴 Vi phạm mức cược tối thiểu cho các thành viên <b>nạp lần đầu.</b></p>
-  <ul class="indent-list">
-  <li><b>Quay hũ JILI/PG</b>: cược <b>dưới 2</b></li>
-  <li>Sảnh TB (Mines, Vortex, …): cược <b>dưới 5</b></li>
-  </ul>
-  <p class="indent-text">🔴 Vi phạm tỷ lệ cược</p>
-  <ul class="indent-list">
-  <li>Các game như:<b> Aviator</b> hay <b>Chicken Road</b>,... Tỉ lệ cược thấp dưới <b>1.25</b> liên tục từ 4 kỳ.</li>
-  </ul>
-  </div>
-  <div class="training-doc-checklist">
-  <label><input type="checkbox"/> Lọc theo ngày đặt cược từ lúc nạp/ nhận thưởng đến hiện tại</label>
-  <label><input type="checkbox"/> Xác định các lần cược nhỏ bất thường</label>
-  <label><input type="checkbox"/> Nếu có vi phạm: không duyệt</label>
-  </div>
-  <span class="training-badge training-warn"><h2>👉 Mục tiêu BƯỚC 6: Xác định cách đặt cược có hợp lệ hay không, tránh trường hợp đánh đối phó để rút tiền lạm dụng khuyến mãi.</h2></span>
-  </div>
-  <div>
-  <div class="training-img-box"><img alt="Bước 6 - Order Data" onclick="openTrainingModal(event,this)" src="https://i.ibb.co/TM6rTKBN/B-c-6.png"/></div>
-  <div class="training-caption">Hình: 订单数据.</div>
-  </div>
-  </div>
-  </div>
+<div class="training-doc-step">
+<div>
+<h2>Bước 6 — 订单数据: kiểm tra chi tiết các cược</h2>
+<div class="training-doc-meta">Tab <strong>订单数据</strong>. Kiểm tra các trường hợp bị xem là vi phạm ❌.</div>
+<div class="indent-block">
+<p class="indent-text">🔴 Vi phạm mức cược tối thiểu cho các thành viên <b>nạp lần đầu.</b></p>
+<ul class="indent-list">
+<li><b>Quay hũ JILI/PG</b>: cược <b>dưới 2</b></li>
+<li>Sảnh TB (Mines, Vortex, …): cược <b>dưới 5</b></li>
+</ul>
+<p class="indent-text">🔴 Vi phạm tỷ lệ cược</p>
+<ul class="indent-list">
+<li>Các game như:<b> Aviator</b> hay <b>Chicken Road</b>,... Tỉ lệ cược thấp dưới <b>1.25</b> liên tục từ 4 kỳ.</li>
+</ul>
+</div>
+<div class="training-doc-checklist">
+<label><input type="checkbox"/> Lọc theo ngày đặt cược từ lúc nạp/ nhận thưởng đến hiện tại</label>
+<label><input type="checkbox"/> Xác định các lần cược nhỏ bất thường</label>
+<label><input type="checkbox"/> Nếu có vi phạm: không duyệt</label>
+</div>
+<span class="training-badge training-warn"><h2>👉 Mục tiêu BƯỚC 6: Xác định cách đặt cược có hợp lệ hay không, tránh trường hợp đánh đối phó để rút tiền lạm dụng khuyến mãi.</h2></span>
+</div>
+<div>
+<div class="training-img-box"><img alt="Bước 6 - Order Data" src="https://i.ibb.co/TM6rTKBN/B-c-6.png"/></div>
+<div class="training-caption">Hình: 订单数据.</div>
+</div>
+</div>
+</div>
    STEP 7 
   <div class="training-doc-card" data-training-section="aa-cn-step-7" id="aa-cn-step-7">
-  <div class="training-doc-step">
-  <div>
-  <h2>Bước 7 — Quyết định cuối cùng: Phê duyệt / Từ chối / Treo</h2>
-  <div class="training-doc-meta">Dùng các nút trong cột 操作:</div>
-  <ul>
-  <li><strong>审核通过 (xanh)</strong> — phê duyệt lệnh rút (nếu mọi thứ hợp lệ)</li>
-  <li><strong>审核拒绝 (đỏ)</strong> — chối lệnh rút tiền nếu có bất thường</li>
-  <li><strong>待提交</strong> — treo cho ngân hàng/người xử lý bên thứ 3 (giao dịch chưa thành công)</li>
-  <li><strong>提交审查 (vàng)</strong> — chuyển lên Risk cao hơn (lớn tiền / nghi vấn khó xử lý)</li>
-  </ul>
-  <div class="training-doc-checklist">
-  <label><input type="checkbox"/> Đã hoàn tất Bước 3–6 và không có rủi ro → nhấn <strong>审核通过</strong></label>
-  <label><input type="checkbox"/> Phát hiện nhẹ → nhấn <strong>审核拒绝</strong> (chỉ từ chối lệnh)</label>
-  <label><input type="checkbox"/> Giao dịch lỗi/ngân hàng → nhấn <strong>待提交</strong></label>
-  <label><input type="checkbox"/> Đơn tiền lớn/ khó xử lý → nhấn <strong>提交审查</strong></label>
-  <span class="training-badge training-warn"><h2>👉 Mục tiêu BƯỚC 7: Ra quyết định cuối cùng sau khi đã kiểm tra đầy đủ các bước trước.</h2></span>
-  </div>
-  </div>
-  <div>
-  <div class="training-img-box"><img alt="Bước 7 - Approve buttons" onclick="openTrainingModal(event,this)" src="https://i.ibb.co/ksgzmQJY/B-c-7.png"/></div>
-  <div class="training-caption">Hình: các nút quyết định.</div>
-  </div>
-  </div>
-  </div>
-  <div class="training-doc-card" data-training-section="aa-cn-summary" id="aa-cn-summary">
-  <h3>Phiên bản nhanh (checklist in 1 line)</h3>
-  <div class="training-doc-meta">1) Mở danh sách → 2) Mở chi tiết → 3) Kiểm tra IP/ Thiết bị → 4) Truy xuất nguồn tiền → 5) Kiểm tra game đã chơi → 6) Kiểm tra đơn cược → 7) Quyết định
+<div class="training-doc-step">
+<div>
+<h2>Bước 7 — Quyết định cuối cùng: Phê duyệt / Từ chối / Treo</h2>
+<div class="training-doc-meta">Dùng các nút trong cột 操作:</div>
+<ul>
+<li><strong>审核通过 (xanh)</strong> — phê duyệt lệnh rút (nếu mọi thứ hợp lệ)</li>
+<li><strong>审核拒绝 (đỏ)</strong> — chối lệnh rút tiền nếu có bất thường</li>
+<li><strong>待提交</strong> — treo cho ngân hàng/người xử lý bên thứ 3 (giao dịch chưa thành công)</li>
+<li><strong>提交审查 (vàng)</strong> — chuyển lên Risk cao hơn (lớn tiền / nghi vấn khó xử lý)</li>
+</ul>
+<div class="training-doc-checklist">
+<label><input type="checkbox"/> Đã hoàn tất Bước 3–6 và không có rủi ro → nhấn <strong>审核通过</strong></label>
+<label><input type="checkbox"/> Phát hiện nhẹ → nhấn <strong>审核拒绝</strong> (chỉ từ chối lệnh)</label>
+<label><input type="checkbox"/> Giao dịch lỗi/ngân hàng → nhấn <strong>待提交</strong></label>
+<label><input type="checkbox"/> Đơn tiền lớn/ khó xử lý → nhấn <strong>提交审查</strong></label>
+<span class="training-badge training-warn"><h2>👉 Mục tiêu BƯỚC 7: Ra quyết định cuối cùng sau khi đã kiểm tra đầy đủ các bước trước.</h2></span>
+</div>
+</div>
+<div>
+<div class="training-img-box"><img alt="Bước 7 - Approve buttons" src="https://i.ibb.co/ksgzmQJY/B-c-7.png"/></div>
+<div class="training-caption">Hình: các nút quyết định.</div>
+</div>
+</div>
+</div>
+<div class="training-doc-card" data-training-section="aa-cn-summary" id="aa-cn-summary">
+<h3>Phiên bản nhanh (checklist in 1 line)</h3>
+<div class="training-doc-meta">1) Mở danh sách → 2) Mở chi tiết → 3) Kiểm tra IP/ Thiết bị → 4) Truy xuất nguồn tiền → 5) Kiểm tra game đã chơi → 6) Kiểm tra đơn cược → 7) Quyết định
       <strong> Nguyên tắc duyệt đơn:
       <ul class="indent-list">
-  <li>Không rõ nguồn tiền → không duyệt</li>
-  <li>Không chắc → hỏi cấp trên</li>
-  <li>Không suy đoán theo cảm tính</li>
-  <li>Mọi quyết định đều phải giải thích được</li>
-  </ul> </strong>
-  </div>
-  <div class="footer"></div>
-  </div>
-  </div>
-        </section>
-  
-        <section id="trainingDocRA9" class="training-document" data-platform="ra9">
-  <div class="training-doc-heading">
-    <div>
-      <div class="training-section-kicker">RA9 · ĐÀO TẠO NGƯỜI MỚI</div>
-      <h2>CẨM NANG NGHIỆP VỤ PHONG KHỐNG (RA9)</h2>
-      
+<li>Không rõ nguồn tiền → không duyệt</li>
+<li>Không chắc → hỏi cấp trên</li>
+<li>Không suy đoán theo cảm tính</li>
+<li>Mọi quyết định đều phải giải thích được</li>
+</ul> </strong>
+</div>
+<div class="footer"></div>
+</div>
+</div>
+</section>
+<section class="training-document" data-platform="ra9" id="trainingDocRA9">
+<div class="training-doc-heading">
+<div>
+<div class="training-section-kicker">RA9 · ĐÀO TẠO NGƯỜI MỚI</div>
+<h2>CẨM NANG NGHIỆP VỤ PHONG KHỐNG (RA9)</h2>
 <h1>CẨM NANG NGHIỆP VỤ PHONG KHỐNG (RA9)</h1>
 <p>Tài liệu này được biên soạn dành riêng cho nhân viên mới. Hãy đọc kỹ từng mục, đối chiếu với hình ảnh thực tế để nắm vững bản chất của việc kiểm duyệt (Audit) tài khoản trước khi cho phép khách hàng rút tiền.</p>
  PHẦN 1: KIẾN THỨC NỀN TẢNG 
 
       <p>Giáo trình được trình bày lại theo 3 phần: kiến thức cốt lõi → 7 bước giao diện → kịch bản Reject.</p>
-    </div>
-    <div class="training-source-badge">SOURCE · RA9</div>
-  </div>
-  <section id="ra9-core-terms" class="training-section training-section-core" data-training-section="ra9-core-terms">
-  <div class="training-section-kicker">PHẦN 1 · KIẾN THỨC CỐT LÕI</div>
-  <h2>1. Giải nghĩa Thuật ngữ chuyên ngành</h2>
+</div>
+<div class="training-source-badge">SOURCE · RA9</div>
+</div>
+<section class="training-section training-section-core" data-training-section="ra9-core-terms" id="ra9-core-terms">
+<div class="training-section-kicker">PHẦN 1 · KIẾN THỨC CỐT LÕI</div>
+<h2>1. Giải nghĩa Thuật ngữ chuyên ngành</h2>
 <p>Để vận hành trơn tru, bạn cần thuộc nằm lòng các định nghĩa sau:</p>
 <div class="training-term-box">
 <div class="training-term-title">Turnover (Vòng cược / Coding Amount)</div>
@@ -5724,11 +5686,9 @@
 <div class="training-term-title">Sanfang / Third-party Payout</div>
 <p>Kênh thanh toán của bên thứ 3 (như UPI, Bank Transfer). Đây là cánh cổng cuối cùng để tiền từ hệ thống công ty chạy vào thẻ ngân hàng của khách.</p>
 </div>
-
 </section>
-
-<section id="ra9-core-turnover" class="training-section training-section-core" data-training-section="ra9-core-turnover">
-  <h2>2. Bản chất tính Vòng cược (Turnover Requirement)</h2>
+<section class="training-section training-section-core" data-training-section="ra9-core-turnover" id="ra9-core-turnover">
+<h2>2. Bản chất tính Vòng cược (Turnover Requirement)</h2>
 <p>Khách hàng không thể nạp tiền vào rồi rút ra ngay lập tức (để phòng chống rửa tiền). Khách bắt buộc phải cược đạt một ngưỡng do công ty quy định thì nút Rút tiền mới hợp lệ.</p>
 <div class="training-alert">
 <strong>CÔNG THỨC CHUẨN:</strong><br/>
@@ -5766,11 +5726,9 @@
 </li>
 </ul>
 <p><em>* (Ghi chú: Nếu là rút từ lần 2 trở đi, Tiền Gốc luôn bằng Tiền Nạp).</em></p>
-
 </section>
-
-<section id="ra9-core-redflags" class="training-section training-section-core" data-training-section="ra9-core-redflags">
-  <h2>3. Nhận diện Gian lận (Cờ Đỏ - Red Flags)</h2>
+<section class="training-section training-section-core" data-training-section="ra9-core-redflags" id="ra9-core-redflags">
+<h2>3. Nhận diện Gian lận (Cờ Đỏ - Red Flags)</h2>
 <p>Nhiệm vụ cốt lõi của Phong Khống (Risk Control) là bảo vệ tiền của công ty. Phải từ chối đơn ngay nếu thấy các cờ đỏ sau:</p>
 <div class="training-alert training-danger">
 <strong>🚩 Lạm dụng Khuyến Mãi (Trùng IP/Thiết bị)</strong><br/>
@@ -5786,35 +5744,32 @@
  PHẦN 2: ĐỌC HIỂU GIAO DIỆN 
 
 </section>
-
-<section id="ra9-step-1" class="training-section training-section-step" data-training-section="ra9-step-1">
-  <div class="training-section-kicker">PHẦN 2 · ĐỌC HIỂU GIAO DIỆN</div>
-  <div class="training-step-title">BƯỚC 1</div>
-  <h2>Mở danh sách đơn — Withdrawal Orders</h2>
-  <div class="training-step-layout">
-    <div class="training-step-copy">
-      <h2>4. Trang chủ Đơn Rút (Withdrawal Orders)</h2>
-<p>Menu <strong>Withdrawal Orders</strong> sẽ chứa tổng hợp đơn đã xử lý. Khu vực <strong>Withdrawal Lock</strong> là những đơn mới, nhân viên <strong>CẦN PHẢI BẤM VÀO nút LOCK</strong> bên phải đơn đó về "tay" mình xử lý. Đơn sẽ tự động nhảy sang <strong>Third-party Payout</strong>, sau đó mình cần bấm vào <strong>ID</strong> để kiểm tra và hoàn tất việc xuất đơn.</p>
+<section class="training-section training-section-step" data-training-section="ra9-step-1" id="ra9-step-1">
+<div class="training-section-kicker">PHẦN 2 · ĐỌC HIỂU GIAO DIỆN</div>
+<div class="training-step-title">BƯỚC 1</div>
+<h2>Mở danh sách đơn — Withdrawal Orders</h2>
+<div class="training-step-layout">
+<div class="training-step-copy">
+<h2>Bước 1 — Mở danh sách đơn (Withdrawal Orders)</h2>
+<div class="training-doc-meta">Menu <strong>Withdrawal Orders</strong> sẽ chứa những đơn đã xử lý. Khu vực <strong>Withdrawal Lock</strong> là những đơn mới chưa được xử lý, nhân viên <strong>CẦN PHẢI BẤM VÀO ID</strong> để LOCK đơn đó về "tay" của mình xử lý. Sau khi LOCK và xử lý xong, <strong>Third-party Payout</strong> sẽ là nơi tiếp thu những đơn đó và sẽ được xử lý triệt để ở đây.</div>
 <div class="training-img-box">
 <img alt="Trang chủ Đơn rút" src="https://i.ibb.co/JM1TwG5/Screenshot-1.jpg"/>
 <div class="training-img-caption">Hình 1: Giao diện tổng quan danh sách đơn rút tiền đang chờ xử lý.</div>
 </div>
-
-    </div>
-    <div class="training-step-media">
-      <div class="training-img-note">Hình minh họa từ tài liệu RA9</div>
-      <div class="training-img-box"><img src="https://i.ibb.co/JM1TwG5/Screenshot-1.jpg" alt="RA9 - Withdrawal Orders"></div>
-    </div>
-  </div>
+</div>
+<div class="training-step-media">
+<div class="training-img-note">Hình minh họa từ tài liệu RA9</div>
+<div class="training-img-box"><img alt="RA9 - Withdrawal Orders" src="https://i.ibb.co/JM1TwG5/Screenshot-1.jpg"/></div>
+</div>
+</div>
 </section>
-
-<section id="ra9-step-2" class="training-section training-section-step" data-training-section="ra9-step-2">
-  <div class="training-step-title">BƯỚC 2</div>
-  <h2>Tổng quan thông tin người dùng — Detail / Basic Info</h2>
-  <div class="training-step-layout">
-    <div class="training-step-copy">
-      <h2>5. Bảng Audit &amp; Basic Info</h2>
-<p>Tập trung kiểm tra các hoạt động trong ngày của user: <strong>Tổng nạp, Tổng rút, Tiền khuyến mãi</strong>. Cần hiểu rõ ý nghĩa các thông số trong bảng <strong>Account Summary Data</strong>. Đồng thời, xem lướt qua thẻ <strong>Deposit/Withdraw Info</strong> để nắm sơ bộ chu kỳ nạp/rút gần nhất của khách hàng.</p>
+<section class="training-section training-section-step" data-training-section="ra9-step-2" id="ra9-step-2">
+<div class="training-step-title">BƯỚC 2</div>
+<h2>Tổng quan thông tin người dùng — Detail / Basic Info</h2>
+<div class="training-step-layout">
+<div class="training-step-copy">
+<h2>Bước 2 — Bảng Audit &amp; Basic Info (Tổng quan người dùng)</h2>
+<div class="training-doc-meta">Tại bảng này, người mới cần tập trung vào các hoạt động diễn ra trong ngày của thành viên như: <strong>Nạp, Rút, Tiền khuyến mãi</strong>. <br/><br/> Đồng thời, cần hiểu rõ các thông số trong bảng <strong>Account Summary Data</strong> (Dữ liệu tổng quan). Vui lòng xem lướt qua thẻ <strong>Deposit/Withdraw Info</strong> để nắm sơ bộ lịch sử và chu kỳ giao dịch gần nhất của khách hàng trước khi quyết định.</div>
 <div class="training-img-box">
 <img alt="Bảng Audit - Basic Info" src="https://i.ibb.co/mCG7hz66/Screenshot-2.jpg"/>
 <div class="training-img-caption">Hình 2: Tab Member Detail -&gt; Basic / Risk Information.</div>
@@ -5826,46 +5781,43 @@
 <li>Nhìn vào các nhãn Tag: Ví dụ <span class="training-tag training-tag-blue">惊喜礼包会员</span> (Thành viên nhận quà). Nó giúp bạn dự đoán khách có đang bào khuyến mãi hay không.</li>
 <li>Chuyển qua tab <strong>Risk Information</strong>: Nhìn ngay dòng <code>Associated Account Count</code>. Nếu hiện số 1 là an toàn. Nếu &gt; 1, lập tức đề cao cảnh giác.</li>
 </ol>
-
-    </div>
-    <div class="training-step-media">
-      <div class="training-img-note">Audit Order Details / Basic / Risk Information</div>
-      <div class="training-img-box"><img src="https://i.ibb.co/mCG7hz66/Screenshot-2.jpg" alt="RA9 - Audit Basic Info"></div>
-    </div>
-  </div>
+</div>
+<div class="training-step-media">
+<div class="training-img-note">Audit Order Details / Basic / Risk Information</div>
+<div class="training-img-box"><img alt="RA9 - Audit Basic Info" src="https://i.ibb.co/mCG7hz66/Screenshot-2.jpg"/></div>
+</div>
+</div>
 </section>
-
-<section id="ra9-step-3" class="training-section training-section-step" data-training-section="ra9-step-3">
-  <div class="training-step-title">BƯỚC 3</div>
-  <h2>Kiểm tra IP / Thiết bị — Risk Control</h2>
-  <div class="training-step-layout">
-    <div class="training-step-copy">
-      <p>Tập trung vào <strong>Risk Information</strong> và liên kết tài khoản. Nội dung kiểm tra giữ theo tài liệu RA9:</p>
-      <ol>
-        <li>Chuyển qua tab <strong>Risk Information</strong>: Nhìn ngay dòng <code>Associated Account Count</code>. Nếu hiện số 1 là an toàn. Nếu &gt; 1, lập tức đề cao cảnh giác.</li>
-      </ol>
-      <div class="training-alert training-danger">
-        <strong>🚩 Dấu hiệu cần kiểm tra:</strong> khi số lượng tài khoản liên quan vượt 1, cần đối chiếu các tài khoản liên quan trước khi tiếp tục quy trình.
+<section class="training-section training-section-step" data-training-section="ra9-step-3" id="ra9-step-3">
+<div class="training-step-title">BƯỚC 3</div>
+<h2>Kiểm tra IP / Thiết bị — Risk Control</h2>
+<div class="training-step-layout">
+<div class="training-step-copy">
+<p>Tập trung vào <strong>Risk Information</strong> và liên kết tài khoản. Nội dung kiểm tra giữ theo tài liệu RA9:</p>
+<ol>
+<li>Chuyển qua tab <strong>Risk Information</strong>: Nhìn ngay dòng <code>Associated Account Count</code>. Nếu hiện số 1 là an toàn. Nếu &gt; 1, lập tức đề cao cảnh giác.</li>
+</ol>
+<div class="training-alert training-danger">
+<strong>🚩 Dấu hiệu cần kiểm tra:</strong> khi số lượng tài khoản liên quan vượt 1, cần đối chiếu các tài khoản liên quan trước khi tiếp tục quy trình.
       </div>
-      <div class="training-checklist">
-        <label><input type="checkbox"> Kiểm tra <strong>Associated Account Count</strong></label>
-        <label><input type="checkbox"> Đối chiếu IP / thiết bị liên quan</label>
-        <label><input type="checkbox"> Nếu Count &gt; 1, mở <strong>View Associated Accounts</strong></label>
-      </div>
-    </div>
-    <div class="training-step-media">
-      <div class="training-img-note">Risk Information / Associated Account Count</div>
-      <div class="training-img-box"><img src="https://i.ibb.co/mCG7hz66/Screenshot-2.jpg" alt="RA9 - Risk Information"></div>
-    </div>
-  </div>
+<div class="training-checklist">
+<label><input type="checkbox"/> Kiểm tra <strong>Associated Account Count</strong></label>
+<label><input type="checkbox"/> Đối chiếu IP / thiết bị liên quan</label>
+<label><input type="checkbox"/> Nếu Count &gt; 1, mở <strong>View Associated Accounts</strong></label>
+</div>
+</div>
+<div class="training-step-media">
+<div class="training-img-note">Risk Information / Associated Account Count</div>
+<div class="training-img-box"><img alt="RA9 - Risk Information" src="https://i.ibb.co/mCG7hz66/Screenshot-2.jpg"/></div>
+</div>
+</div>
 </section>
-
-<section id="ra9-step-4" class="training-section training-section-step" data-training-section="ra9-step-4">
-  <div class="training-step-title">BƯỚC 4</div>
-  <h2>Truy xuất nguồn tiền — Account Changes / Asset Changes</h2>
-  <div class="training-step-layout">
-    <div class="training-step-copy">
-      <h2>7. Bảng Account Changes (Biến động số dư)</h2>
+<section class="training-section training-section-step" data-training-section="ra9-step-4" id="ra9-step-4">
+<div class="training-step-title">BƯỚC 4</div>
+<h2>Truy xuất nguồn tiền — Account Changes / Asset Changes</h2>
+<div class="training-step-layout">
+<div class="training-step-copy">
+<h2>7. Bảng Account Changes (Biến động số dư)</h2>
 <p>Bảng này được dùng khi tài khoản có dấu hiệu đáng ngờ cần truy vết chi tiết dòng tiền ra vào (Ví dụ: Khách nhận tiền hoa hồng đại lý nhưng không cược mà muốn rút thẳng, biến động số dư từ việc nhập Code...). Có 2 cách để tra cứu biến động:</p>
 <h3>Cách 1: Xem trực tiếp trong Tab Audit Khách hàng</h3>
 <div class="training-img-box">
@@ -5889,8 +5841,8 @@
  PHẦN 3: SOP 
 
       <div class="training-reference-block">
-        <div class="training-reference-title">THAM CHIẾU TURNOVER TỪ TÀI LIỆU GỐC</div>
-        <h2>2. Bản chất tính Vòng cược (Turnover Requirement)</h2>
+<div class="training-reference-title">THAM CHIẾU TURNOVER TỪ TÀI LIỆU GỐC</div>
+<h2>2. Bản chất tính Vòng cược (Turnover Requirement)</h2>
 <p>Khách hàng không thể nạp tiền vào rồi rút ra ngay lập tức (để phòng chống rửa tiền). Khách bắt buộc phải cược đạt một ngưỡng do công ty quy định thì nút Rút tiền mới hợp lệ.</p>
 <div class="training-alert">
 <strong>CÔNG THỨC CHUẨN:</strong><br/>
@@ -5928,23 +5880,21 @@
 </li>
 </ul>
 <p><em>* (Ghi chú: Nếu là rút từ lần 2 trở đi, Tiền Gốc luôn bằng Tiền Nạp).</em></p>
-
-      </div>
-    </div>
-    <div class="training-step-media">
-      <div class="training-img-note">Account Changes / Report Page</div>
-      <div class="training-img-box"><img src="https://i.ibb.co/QjdJDDn5/Screenshot-4.jpg" alt="RA9 - Account Changes"></div>
-      <div class="training-img-box"><img src="https://i.ibb.co/Q7XjYJjd/Screenshot-6.jpg" alt="RA9 - Account Changes Report"></div>
-    </div>
-  </div>
+</div>
+</div>
+<div class="training-step-media">
+<div class="training-img-note">Account Changes / Report Page</div>
+<div class="training-img-box"><img alt="RA9 - Account Changes" src="https://i.ibb.co/QjdJDDn5/Screenshot-4.jpg"/></div>
+<div class="training-img-box"><img alt="RA9 - Account Changes Report" src="https://i.ibb.co/Q7XjYJjd/Screenshot-6.jpg"/></div>
+</div>
+</div>
 </section>
-
-<section id="ra9-step-5" class="training-section training-section-step" data-training-section="ra9-step-5">
-  <div class="training-step-title">BƯỚC 5</div>
-  <h2>Betting Info — Vòng cược &amp; Lãi lỗ</h2>
-  <div class="training-step-layout">
-    <div class="training-step-copy">
-      <h2>6. Bảng Betting Information (Lịch sử Cược)</h2>
+<section class="training-section training-section-step" data-training-section="ra9-step-5" id="ra9-step-5">
+<div class="training-step-title">BƯỚC 5</div>
+<h2>Betting Info — Vòng cược &amp; Lãi lỗ</h2>
+<div class="training-step-layout">
+<div class="training-step-copy">
+<h2>6. Bảng Betting Information (Lịch sử Cược)</h2>
 <p>Đây là tab quan trọng nhất để đối chiếu số tiền khách đã cược so với Yêu cầu vòng cược.</p>
 <div class="training-img-box">
 <img alt="Tab Betting Information" src="https://i.ibb.co/RTvyTGqF/Screenshot-3.jpg"/>
@@ -5957,52 +5907,49 @@
 <li><em>Lưu ý lại:</em> Bỏ qua con số Valid Bet Amount (764.00) bên cạnh. Chúng ta sử dụng Bet Amount (1,244.00) để xét duyệt.</li>
 <li>Bảng danh sách bên dưới là lịch sử từng ván game. Nếu thấy nhiều ván cược liên tiếp cùng một thời gian (cùng số giây), có cùng số tiền, bạn phải bấm vào chữ <code>Details</code> để xem khách có đánh đối ứng (một Tài, một Xỉu) hay không.</li>
 </ul>
-
-      <div class="training-checklist">
-        <label><input type="checkbox"> Đối chiếu <strong>Bet Amount</strong> với yêu cầu vòng cược</label>
-        <label><input type="checkbox"> Bỏ qua <strong>Valid Bet Amount</strong> theo hướng dẫn gốc</label>
-        <label><input type="checkbox"> Kiểm tra lịch sử cược và các ván có cùng thời gian / số tiền</label>
-      </div>
-    </div>
-    <div class="training-step-media">
-      <div class="training-img-note">Betting Information</div>
-      <div class="training-img-box"><img src="https://i.ibb.co/RTvyTGqF/Screenshot-3.jpg" alt="RA9 - Betting Information"></div>
-    </div>
-  </div>
+<div class="training-checklist">
+<label><input type="checkbox"/> Đối chiếu <strong>Bet Amount</strong> với yêu cầu vòng cược</label>
+<label><input type="checkbox"/> Bỏ qua <strong>Valid Bet Amount</strong> theo hướng dẫn gốc</label>
+<label><input type="checkbox"/> Kiểm tra lịch sử cược và các ván có cùng thời gian / số tiền</label>
+</div>
+</div>
+<div class="training-step-media">
+<div class="training-img-note">Betting Information</div>
+<div class="training-img-box"><img alt="RA9 - Betting Information" src="https://i.ibb.co/RTvyTGqF/Screenshot-3.jpg"/></div>
+</div>
+</div>
 </section>
-
-<section id="ra9-step-6" class="training-section training-section-step" data-training-section="ra9-step-6">
-  <div class="training-step-title">BƯỚC 6</div>
-  <h2>Order Data — Kiểm tra chi tiết cược</h2>
-  <div class="training-step-layout">
-    <div class="training-step-copy">
-      <p><strong>Kiểm tra Dấu hiệu Cược (Game Log Check):</strong></p>
-      <ul>
-        <li>Cuộn xuống xem lịch sử cược. Tìm xem có các ván cược Đối ứng, cược Roulette rải bàn (đặt 30/36 số), hoặc cược tỷ lệ odd thấp bất thường không.</li>
-        <li>Nếu phát hiện &rarr; Báo cáo Cấp trên / Từ chối.</li>
-        <li>Nếu game chơi bình thường (Tài xỉu, Nổ hũ...) &rarr; Tiếp tục Bước 4.</li>
-      </ul>
-      <p><strong>Chi tiết cần xem trong bảng Betting Information:</strong> Nếu thấy nhiều ván cược liên tiếp cùng một thời gian (cùng số giây), có cùng số tiền, bấm vào <code>Details</code> để xem khách có đánh đối ứng hay không.</p>
-      <div class="training-checklist">
-        <div class="training-checklist-item">
+<section class="training-section training-section-step" data-training-section="ra9-step-6" id="ra9-step-6">
+<div class="training-step-title">BƯỚC 6</div>
+<h2>Order Data — Kiểm tra chi tiết cược</h2>
+<div class="training-step-layout">
+<div class="training-step-copy">
+<p><strong>Kiểm tra Dấu hiệu Cược (Game Log Check):</strong></p>
+<ul>
+<li>Cuộn xuống xem lịch sử cược. Tìm xem có các ván cược Đối ứng, cược Roulette rải bàn (đặt 30/36 số), hoặc cược tỷ lệ odd thấp bất thường không.</li>
+<li>Nếu phát hiện → Báo cáo Cấp trên / Từ chối.</li>
+<li>Nếu game chơi bình thường (Tài xỉu, Nổ hũ...) → Tiếp tục Bước 4.</li>
+</ul>
+<p><strong>Chi tiết cần xem trong bảng Betting Information:</strong> Nếu thấy nhiều ván cược liên tiếp cùng một thời gian (cùng số giây), có cùng số tiền, bấm vào <code>Details</code> để xem khách có đánh đối ứng hay không.</p>
+<div class="training-checklist">
+<div class="training-checklist-item">
 <div class="training-checklist-icon">3️⃣</div>
 <div><strong>Kiểm tra Dấu hiệu Cược (Game Log Check):</strong> <br/>Cuộn xuống xem lịch sử cược. Tìm xem có các ván cược Đối ứng, cược Roulette rải bàn (đặt 30/36 số), hoặc cược tỷ lệ odd thấp bất thường không. Nếu phát hiện → Báo cáo Cấp trên / Từ chối. Nếu game chơi bình thường (Tài xỉu, Nổ hũ...) → Tiếp tục Bước 4.</div>
 </div>
-      </div>
-    </div>
-    <div class="training-step-media">
-      <div class="training-img-note">Betting Information / Order detail</div>
-      <div class="training-img-box"><img src="https://i.ibb.co/RTvyTGqF/Screenshot-3.jpg" alt="RA9 - Order Data detail"></div>
-    </div>
-  </div>
+</div>
+</div>
+<div class="training-step-media">
+<div class="training-img-note">Betting Information / Order detail</div>
+<div class="training-img-box"><img alt="RA9 - Order Data detail" src="https://i.ibb.co/RTvyTGqF/Screenshot-3.jpg"/></div>
+</div>
+</div>
 </section>
-
-<section id="ra9-step-7" class="training-section training-section-step" data-training-section="ra9-step-7">
-  <div class="training-step-title">BƯỚC 7</div>
-  <h2>Ra Quyết Định — Approve / Reject</h2>
-  <div class="training-step-layout">
-    <div class="training-step-copy">
-      <h2>8. Quy trình Chuẩn (SOP): Checklist Xử lý 1 Đơn Rút</h2>
+<section class="training-section training-section-step" data-training-section="ra9-step-7" id="ra9-step-7">
+<div class="training-step-title">BƯỚC 7</div>
+<h2>Ra Quyết Định — Approve / Reject</h2>
+<div class="training-step-layout">
+<div class="training-step-copy">
+<h2>8. Quy trình Chuẩn (SOP): Checklist Xử lý 1 Đơn Rút</h2>
 <p>Để đảm bảo không duyệt sai sót gây thất thoát, hãy rèn luyện thói quen làm việc theo đúng 4 bước kiểm tra (Checklist) dưới đây mỗi khi mở 1 đơn mới lên:</p>
 <div class="training-doc-checklist">
 <div class="training-checklist-item">
@@ -6022,18 +5969,16 @@
 <div><strong>Phê duyệt &amp; Xuất tiền (Approve &amp; Payout):</strong> <br/>Đơn hoàn toàn sạch. Nhấn nút <span class="training-btn-demo training-btn-green">Approve</span>. Chuyển sang thẻ <strong>Third-party Payout</strong>, tick chọn một cổng thanh toán Sanfang (Ví dụ: PayU, Razorpay...) và bấm Submit để hoàn tất bắn tiền cho khách.</div>
 </div>
 </div>
-
-    </div>
-    <div class="training-step-media">
-      <div class="training-img-note">Minh họa thao tác quyết định / Reject</div>
-      <div class="training-img-box"><img src="https://i.ibb.co/wh1vcyYp/Screenshot-5.jpg" alt="RA9 - Confirm Cancel / Reject"></div>
-    </div>
-  </div>
+</div>
+<div class="training-step-media">
+<div class="training-img-note">Minh họa thao tác quyết định / Reject</div>
+<div class="training-img-box"><img alt="RA9 - Confirm Cancel / Reject" src="https://i.ibb.co/wh1vcyYp/Screenshot-5.jpg"/></div>
+</div>
+</div>
 </section>
-
-<section id="ra9-reject" class="training-section training-section-reject" data-training-section="ra9-reject">
-  <div class="training-section-kicker">PHẦN 3 · KỊCH BẢN TỪ CHỐI</div>
-  <h2>9. Kịch bản Từ chối Đơn (Reject)</h2>
+<section class="training-section training-section-reject" data-training-section="ra9-reject" id="ra9-reject">
+<div class="training-section-kicker">PHẦN 3 · KỊCH BẢN TỪ CHỐI</div>
+<h2>9. Kịch bản Từ chối Đơn (Reject)</h2>
 <p>Khi khách hàng trượt ở Bước 1, Bước 2 hoặc Bước 3 của SOP trên, bạn phải hủy đơn rút và trả tiền về ví game của khách để họ cược tiếp.</p>
 <ol>
 <li>Nhấp vào nút <span class="training-btn-demo training-btn-red">Reject</span> hoặc <span class="training-btn-demo training-btn-default">Confirm Cancel</span> ở góc phải màn hình.</li>
@@ -6064,24 +6009,19 @@
             Nếu bạn đang được cài đặt công cụ <strong>RA9 Omni Bar</strong> trên trình duyệt, các bước tính toán Yêu cầu, so sánh Bet Amount, Làm tròn số tiền thiếu, Copy báo cáo và tự động chọn Quick Phrases đã được Tool tự động hóa 100%. Bạn chỉ việc nhấn nút "🚫 TỪ CHỐI" trên thanh công cụ nổi là xong!
         </div>
 <br/><br/><br/>
-
 </section>
 </section>
-      </div>
-    </section>
-  </main>
-
-  <div id="trainingModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Xem hình đào tạo">
-    <div class="training-modal-frame">
-      <button class="training-modal-close" type="button" aria-label="Đóng">×</button>
-      <img id="trainingModalImg" src="" alt="">
-      <div id="trainingModalCaption" class="training-modal-caption"></div>
-    </div>
-  </div>
-
-  <div id="toast" class="toast"></div>
-
-
+</div>
+</section>
+</main>
+<div aria-hidden="true" aria-label="Xem hình đào tạo" aria-modal="true" id="trainingModal" role="dialog">
+<div class="training-modal-frame">
+<button aria-label="Đóng" class="training-modal-close" type="button">×</button>
+<img alt="" id="trainingModalImg" src=""/>
+<div class="training-modal-caption" id="trainingModalCaption"></div>
+</div>
+</div>
+<div class="toast" id="toast"></div>
 <script>
 const systemSelect = document.getElementById('systemSelect');
 const groupSelect = document.getElementById('groupSelect');
@@ -7617,7 +7557,7 @@ function setTab(tab) {
     render();
     loadRecent();
   } else if (isMine) {
-    renderMine();
+    renderSticky();
   } else if (isRecent) {
     renderRecent();
   } else if (isRules) {
@@ -7748,7 +7688,6 @@ function initializeApplication() {
 
 initializeApplication();
 </script>
-
 <script>
 /* Presentation enhancer: animation and visual copy feedback only. */
 (() => {
@@ -7871,7 +7810,7 @@ initializeApplication();
   scanCards();
 })();
 </script>
-  <script>
+<script>
 // =========================================================
 // TÍCH HỢP ĐỌC IP VÀ TỐC ĐỘ MẠNG — ACTIVE SPEED TEST
 // =========================================================
@@ -7965,10 +7904,6 @@ if (document.readyState === 'loading') {
   bindNetworkStats();
 }
 </script>
-
-
-
-
 <script>
 /* =========================================================
    TRAINING STUDIO CONTROLLER
@@ -8134,48 +8069,62 @@ if (document.readyState === 'loading') {
     closeTrainingModal();
   });
 
-  // Image modal
-  const modal = document.getElementById('trainingModal');
-  const modalImg = document.getElementById('trainingModalImg');
-  const modalCaption = document.getElementById('trainingModalCaption');
-  const modalClose = modal?.querySelector('.training-modal-close');
+  // Kích hoạt tính năng phóng to ảnh (Zoom Modal) cho vùng Đào tạo
+  const tModal = document.getElementById('trainingModal');
+  const tModalImg = document.getElementById('trainingModalImg');
+  const tModalCaption = document.getElementById('trainingModalCaption');
 
-  window.openTrainingModal = function(event, img) {
-    event?.stopPropagation?.();
-    if (!modal || !modalImg || !img) return;
-    modalImg.src = img.currentSrc || img.src;
-    modalImg.alt = img.alt || 'Hình đào tạo';
+  // Bắt sự kiện click cho tất cả ảnh trong khu vực Training
+  document.querySelectorAll('#trainingStudio img').forEach(img => {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      if (tModal && tModalImg) {
+        tModalImg.src = this.currentSrc || this.src;
+        tModalImg.alt = this.alt || 'Hình minh họa';
+        if (tModalCaption) {
+          let caption = this.alt || 'Hình minh họa';
+          const nextCaption = this.parentElement?.nextElementSibling;
+          if (nextCaption?.classList.contains('training-caption') ||
+              nextCaption?.classList.contains('training-img-caption')) {
+            caption = nextCaption.textContent.trim();
+          }
+          tModalCaption.textContent = caption;
+        }
+        tModal.classList.add('open');
+        tModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
 
-    let caption = img.getAttribute('alt') || '';
-    const nextCaption = img.parentElement?.nextElementSibling;
-    if (nextCaption?.classList.contains('training-caption') ||
-        nextCaption?.classList.contains('training-img-caption')) {
-      caption = nextCaption.textContent.trim();
+  // Xử lý đóng Modal
+  function closeTModal() {
+    if (tModal) {
+      tModal.classList.remove('open');
+      tModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if (tModalImg) tModalImg.src = '';
+      if (tModalCaption) tModalCaption.textContent = '';
     }
-    if (modalCaption) modalCaption.textContent = caption;
+  }
 
-    modal.classList.add('open');
-    modal.setAttribute('aria-hidden','false');
-  };
+  // Giữ API đóng modal để các nút điều hướng hiện có vẫn hoạt động
+  window.closeTrainingModal = closeTModal;
 
-  window.closeTrainingModal = function() {
-    if (!modal) return;
-    modal.classList.remove('open');
-    modal.setAttribute('aria-hidden','true');
-    if (modalImg) modalImg.src = '';
-    if (modalCaption) modalCaption.textContent = '';
-  };
-
-  modalClose?.addEventListener('click', event => {
-    event.stopPropagation();
-    closeTrainingModal();
+  document.querySelector('#trainingModal .training-modal-close')?.addEventListener('click', function(e) {
+    e.stopPropagation();
+    closeTModal();
   });
-  modal?.addEventListener('click', event => {
-    if (event.target === modal) closeTrainingModal();
+  tModal?.addEventListener('click', function(e) {
+    if (e.target === this || e.target.classList.contains('training-modal-frame')) {
+      closeTModal();
+    }
   });
-  document.addEventListener('keydown', event => {
-    if (event.key === 'Escape' && modal?.classList.contains('open')) {
-      closeTrainingModal();
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && tModal?.classList.contains('open')) {
+      closeTModal();
     }
   });
 
@@ -8186,6 +8135,5 @@ if (document.readyState === 'loading') {
   window.refreshTrainingSpy = scheduleSpy;
 })();
 </script>
-
 </body>
 </html>
