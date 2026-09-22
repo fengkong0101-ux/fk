@@ -5533,8 +5533,8 @@
 <div class="training-img-caption">Hình 1: Giao diện tổng quan danh sách đơn rút tiền đang chờ xử lý.</div>
 </div>
 <ul>
-<li><strong>Withdrawal Orders:</strong> Nơi hiển thị tất cả các đơn mới. Để bắt đầu kiểm tra, bạn click trực tiếp vào số ID màu xanh ở cột <code>Member ID</code>.</li>
-<li><strong>Withdrawal Lock:</strong> Khi bạn bấm vào ID, đơn đó sẽ bị "khóa" lại và chuyển sang tab này. Mục đích là để báo cho các nhân viên khác biết <em>"Đơn này tôi đang xử lý rồi, đừng ai đụng vào nữa"</em> tránh tình trạng duyệt trùng, xuất tiền 2 lần.</li>
+<li><strong>Withdrawal Orders:</strong> Nơi hiển thị tất cả các đơn cũ, các đơn đã được xử lý xong.</li>
+<li><strong>Withdrawal Lock:</strong>Nơi hiển thị tất cả các đơn mới. Để bắt đầu kiểm tra, bạn click vào mục <b>LOCK</b> được nằm ở bên phải giao diện. Mục đích là để báo cho các nhân viên khác biết <em>"Đơn này đã được tôi khóa đi rồi"</em> </li>
 </ul>
 
     </div>
@@ -5559,8 +5559,9 @@
 <p><strong>Cách đọc bảng này:</strong></p>
 <ol>
 <li>Nhìn thẻ <span class="training-highlight">Order Details</span> ở trên cùng: Xác định xem khách rút bao nhiêu tiền, và đây có phải rút lần đầu không (First Withdrawal: Yes/No).</li>
-<li>Tại tab <strong>Basic Information</strong>: Chú ý dòng <code>Channel Source</code> (Nguồn kênh). Nếu bắt đầu bằng chữ FB hoặc GG (như FBOY-02, GGBOOT) thì đó là khách Quảng cáo.</li>
-<li>Nhìn vào các nhãn Tag: Ví dụ <span class="training-tag training-tag-blue">惊喜礼包会员</span> (Thành viên nhận quà). Nó giúp bạn dự đoán khách có đang bào khuyến mãi hay không.</li>
+<li>Tại tab <strong>Basic Information</strong>: Tại khung Registration and Login Information
+ hãy chú ý đến dòng <code>Channel Source</code> (Nguồn kênh). Nếu bắt đầu bằng chữ FB hoặc GG (như FBOY-02, GGBOOT) thì đó là khách <b>Quảng cáo</b>.</li>
+<li>Nhìn vào Today's Activity Information: mục này rất quan trọng, nó giúp bạn xem nhanh được hôm nay khách có hoạt động nào trên nền tảng như nạp tiền, nhận khuyến mãi hay rút tiên qua không. Và mục bên cạnh là Account Summary Data nó giúp bạn đánh giá tổng quan thông tin từ trước đến giờ của khách hàng.</li>
 <li>Chuyển qua tab <strong>Risk Information</strong>: Nhìn ngay dòng <code>Associated Account Count</code>. Nếu hiện số 1 là an toàn. Nếu &gt; 1, lập tức đề cao cảnh giác.</li>
 </ol>
 
