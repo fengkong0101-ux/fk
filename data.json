@@ -3,35 +3,23 @@
     "system": "CHƠI TRÒ CHƠI BẤT HỢP PHÁP",
     "group": "CƯỢC BẤT THƯỜNG - RUMMY POINT",
     "title": "RUMMY POINT - nạp đầu chơi 80% số tiền hoặc cá cược bất thường (đặt cược tiền nhỏ sau đó tăng tiền hoặc thắng cây thì chuyển trò chơi) - KHÓA TK",
-    "content": "*会员ID : \n*拒绝原因 : 非法投注 Rummy Point \n*会员风险评级 : 有问题\n*结论 : 黑名单\n~ 异常会员 注意 - Chú Ý Bất Thường"
-  },
-  {
-    "system": "ĐẶT CƯỢC CỐ ĐỊNH SỐ TIỀN NHỎ",
-    "group": "TỪ CHỐI",
-    "title": "CHƠI QUAY HỦ ĐẶT CƯỢC CỐ ĐỊNH  SỐ TIỀN NHỎ - TỪ CHỐI NHÂN 3 VÒNG CƯỢC",
-    "content": "*会员ID : \n*拒绝原因:单一金额低额重复投注，以自动投注为主，刷优惠套利.\n*会员风险评级: 中度怀疑\n*结论: 让会员继续投注，流水 +\n~ 倍率低 继续下注 - TLT Tiếp Tục Đặt Cược"
-  },
-  {
-    "system": "ĐẶT CƯỢC CỐ ĐỊNH SỐ TIỀN NHỎ",
-    "group": "KHẤU TRẢ NẠP",
-    "title": "CHƠI QUAY HỦ ĐẶT CƯỢC CỐ ĐỊNH  SỐ TIỀN NHỎ - KHẤU TRẢ NẠP",
-    "content": "*会员ID : \n*拒绝原因:单一金额低额重复投注，以自动投注为主，刷优惠套利.\n*会员风险评级: 有问题\n*结论: 扣除全部余额并退还押金\n~ 倍率低 继续下注 - TLT Tiếp Tục Đặt Cược"
+    "content": "*会员ID : \n*拒绝原因 : 非法投注 Rummy Point \n*会员风险评级 : 有问题\n*结论 : 黑名单"
   },
   {
     "system": "ĐẶT CƯỢC CỐ ĐỊNH SỐ TIỀN NHỎ",
     "group": "KHÓA TÀI KHOẢN",
     "title": "CHƠI QUAY HỦ ĐẶT CƯỢC CỐ ĐỊNH  SỐ TIỀN NHỎ - KHÓA TÀI KHOẢN",
-    "content": "*会员ID : \n*拒绝原因:单一金额低额重复投注，以自动投注为主，刷优惠套利.\n*会员风险评级: 有问题\n*结论: 冻结\n~ 异常会员 注意 - Chú Ý Bất Thường"
+    "content": "*会员ID : \n*拒绝原因:单一金额低额重复投注，以自动投注为主，刷优惠套利.\n*会员风险评级: 有问题\n*结论: 冻结"
   },
   {
     "system": "BIỆN PHÁP XỬ LÝ HỆ THỐNG",
     "group": "KHÓA THIẾT BỊ",
     "title": "KHÓA THIẾT BỊ",
-    "content": "会员ID ： \n设备号： \n原因：会员同多设备账号  套利首充优惠 冻结 拉黑设备号  \n结论：拉黑设备号\n~ 异常会员 注意 - Chú Ý Bất Thường"
+    "content": "会员ID ： \n设备号： \n原因：会员同多设备账号  套利首充优惠 冻结 拉黑设备号  \n结论：拉黑设备号"
   },
   {
     "system": "LẠM DỤNG NẠP ĐẦU",
-    "group": "CẤP DƯỚI,NHIỀU TÀI KHOẢN",
+    "group": "CẤP DƯ DƯỚI,NHIỀU TÀI KHOẢN",
     "title": "CẤP DƯỚI LẠM DỤNG NẠP ĐẦU - KHẤU VÀ KHÓA HOA HỒNG",
     "content": "会员ID :\n*拒绝原因 : 下级正在滥用首存，并帮助上级领取团队奖励\n*会员风险评级 : 有问题\n*结论 : 扣除奖金并限制代理佣金\n~ 异常会员 注意 - Chú Ý Bất Thường"
   },
@@ -39,13 +27,13 @@
     "system": "LẠM DỤNG NẠP ĐẦU",
     "group": "CẤP TRÊN  - DƯỚI,NHIỀU TÀI KHOẢN - KHÓA TK",
     "title": "TẠO NHIỀU TK CẤP TRÊN - DƯỚI ĐỂ LẠM DỤNG",
-    "content": "*会员ID：\n*拒绝原因 : 会员多关联账号 充值相同 套利首充优惠 冻结拉黑\n*会员风险评级 :有问题\n*结论 :  冻结\n~ 异常会员 注意 - Chú Ý Bất Thường"
+    "content": "*会员ID：\n*拒绝原因 : 会员多关联账号 充值相同 套利首充优惠 冻结拉黑\n*会员风险评级 :有问题\n*结论 :  冻结"
   },
   {
     "system": "LẠM DỤNG NẠP ĐẦU",
     "group": "CẤP TRÊN  - DƯỚI , NHIỀU TÀI KHOẢN - KHÓA TK",
     "title": "TẠO NHIỀU TK CẤP TRÊN - DƯỚI ĐỂ LẠM DỤNG (2)",
-    "content": "*会员ID：\n*拒绝原因 :代理线路滥用首存奖励\n*会员风险评级 :有问题\n*结论 : 黑名单\n~ 异常会员 注意 - Chú Ý Bất Thường"
+    "content": "*会员ID：\n*拒绝原因 :代理线路滥用首存奖励\n*会员风险评级 :有问题\n*结论 : 黑名单"
   },
   {
     "system": "NHẬN 1-5-7đ ĐỒNG",
@@ -57,7 +45,7 @@
     "system": "NHẬN 1-5-7đ ĐỒNG",
     "group": "NHẬN THƯỞNG KHÔNG NẠP",
     "title": "NHẬN 1-5-7đ  (thưởng chia sẻ, tin nhắn, video) KHÔNG NẠP RÚT HƠN 110  (TỪ CHỐI BẮT NẠP)",
-    "content": "*会员ID  ：\n*拒绝原因 : 套利奖金\n*会员风险评级：中嫌疑\n*结论 : 要求成员充值\n~ 流水不够 继续下注 - Chưa Đủ Vòng Cược"
+    "content": "*会员ID  ：\n*拒绝原因 : 套利奖金\n*会员风险评级：中嫌疑\n*结论 : 要求成员充值\n~ 要求成员充值 - Yêu cầu nạp thêm tiền"
   },
   {
     "system": "NHẬN 500 VÒNG QUAY",
@@ -69,13 +57,13 @@
     "system": "NHẬN 500 VÒNG QUAY",
     "group": "NHẬN THƯỞNG KHÔNG NẠP",
     "title": "NHẬN 500 VÒNG QUAY KHÔNG NẠP - TỪ CHỐI YÊU CẦU NẠP THÊM TIỀN",
-    "content": "*会员ID :\n*拒绝原因 : 本人未充值，下级代理也未充值。\n*时间: 1\n*会员风险评级 : 中嫌疑\n*结论 :  要求成员充值。\n~ 流水不够 继续下注 - Chưa Đủ Vòng Cược"
+    "content": "*会员ID :\n*拒绝原因 : 本人未充值，下级代理也未充值。\n*时间: 1\n*会员风险评级 : 中嫌疑\n*结论 :  要求成员充值。\n~ 要求成员充值 - Yêu cầu nạp thêm tiền"
   },
   {
     "system": "NHẬN 500 VÒNG QUAY",
     "group": "NHẬN THƯỞNG CÓ NẠP",
     "title": "NHẬN 500 VÒNG QUAY BẢN THÂN HOẶC CẤP DƯỚI CÓ NẠP - TỪ CHỐI YÊU CẦU NẠP THÊM TIỀN",
-    "content": "会员ID : \n*拒绝原因 : 提现转盘奖金时未满足充值要求。\n*时间: 1\n*会员风险评级 : 中嫌疑\n*结论 :  要求成员充值。\n~ 流水不够 继续下注 - Chưa Đủ Vòng Cược"
+    "content": "会员ID : \n*拒绝原因 : 提现转盘奖金时未满足充值要求。\n*时间: 1\n*会员风险评级 : 中嫌疑\n*结论 :  要求成员充值。\n~ 要求成员充值 - Yêu cầu nạp thêm tiền"
   },
   {
     "system": "NHẬN 500 VÒNG QUAY",
@@ -156,12 +144,6 @@
     "content": "*会员ID : \n*拒绝原因 :下注低赔率\n*会员风险评级 : 有问题\n*时间 : 3\n*结论 :  扣除全部余额并退还押金\n~ 倍率低 继续下注 - TLT Tiếp Tục Đặt Cược"
   },
   {
-    "system": "NHẬN 1-5-7đ ĐỒNG",
-    "group": "ĐẶT CƯỢC SỐ TIỀN NHỎ",
-    "title": "NHẬN  1-5-7 ĐỒNG ĐẶT CƯỢC SỐ TIỀN NHỎ - KHẤU",
-    "content": "*会员ID :   \n*拒绝原因 : 领取游戏促销奖金，通过小额投注完成流水后提现。\n*会员风险评级 : 有问题\n*结论 : 扣除奖励\n~ 倍率低 继续下注 - TLT Tiếp Tục Đặt Cược"
-  },
-  {
     "system": "KHÔNG ĐỦ VÒNG CƯỢC",
     "group": "KHÔNG ĐỦ VÒNG CƯỢC - TỪ CHỐI",
     "title": "CHƠI VÒNG CƯỢC QUÁ ÍT - TỪ CHỐI NHÂN 3 VÒNG CƯỢC",
@@ -174,28 +156,10 @@
     "content": "*会员代码：\n*拒绝原因：收到促销奖金但未完成下注\n*会员风险评级：中度怀疑\n*结论：让会员继续投注，流水 +\n~ 流水不够 继续下注 - Chưa Đủ Vòng Cược"
   },
   {
-    "system": "KHÔNG ĐỦ VÒNG CƯỢC",
-    "group": "KHÔNG ĐỦ VÒNG CƯỢC - KHẤU TOÀN BỘ",
-    "title": "KHÔNG ĐỦ VÒNG CƯỢC - KHẤU",
-    "content": "*会员代码：\n*拒绝原因：由于会员流水不符合要求，已多次拒绝处理，但情况仍未改善。\n*会员风险评级：大嫌疑\n*时间 : 3\n*结论：扣除奖励\n~ 流水不够 继续下注 - Chưa Đủ Vòng Cược"
-  },
-  {
-    "system": "KHÔNG ĐỦ VÒNG CƯỢC",
-    "group": "KHÔNG ĐỦ VÒNG CƯỢC - KHẤU TRẢ NẠP",
-    "title": "KHÔNG ĐỦ VÒNG CƯỢC - KHẤU TRẢ NẠP",
-    "content": "*会员代码：\n*拒绝原因：由于会员流水不符合要求，已多次拒绝处理，但情况仍未改善。\n*会员风险评级：大嫌疑\n*时间 : 3\n*结论：扣除全部余额并退还押金\n~ 流水不够 继续下注 - Chưa Đủ Vòng Cược"
-  },
-  {
-    "system": "LẠM DỤNG THƯỞNG",
-    "group": "NHẬN THƯỞNG XONG CƯỢC NHỎ 1 ĐỒNG (5 ĐỒNG)",
-    "title": "NHẬN THƯỞNG XONG CƯỢC NHỎ 1 ĐỒNG (5 ĐỒNG) - KHẤU TRỪ THƯỞNG",
-    "content": "*会员ID : \n*拒绝原因 : 故意下注小额以快速完成流水要求并立即提现，从而套取平台奖励。\n*会员风险评级 : 中嫌疑\n*结论 : 扣除奖励\n~ 倍率低 继续下注 - TLT Tiếp Tục Đặt Cược"
-  },
-  {
     "system": "NHẬN THƯỞNG NHÓM",
     "group": "NHẬN THƯỞNG NHÓM MỨC NẠP KHÔNG ĐỦ",
     "title": "NHẬN THƯỞNG NHÓM NHƯNG NẠP KHÔNG ĐỦ - TỪ CHỐI YÊU CẦU NẠP THÊM TIỀN",
-    "content": "会员ID : \n*拒绝原因 : 领取群组奖金时未满足充值要求。\n*时间 : 1\n*会员风险评级 : 中嫌疑\n*结论 : 要求成员充值。\n~ 流水不够 继续下注 - Chưa Đủ Vòng Cược"
+    "content": "会员ID : \n*拒绝原因 : 领取群组奖金时未满足充值要求。\n*时间 : 1\n*会员风险评级 : 中嫌疑\n*结论 : 要求成员充值。\n~ 要求成员充值 - Yêu cầu nạp thêm tiền"
   },
   {
     "system": "NHẬN THƯỞNG NHÓM",
@@ -219,13 +183,13 @@
     "system": "CƯỢC BẤT THƯỜNG",
     "group": "CƯỢC TẤT TAY",
     "title": "VI PHẠM CƯỢC TẤT TAY - KHÓA TÀI KHOẢN",
-    "content": "*会员ID :\n*拒绝原因 : 梭哈  \n*会员风险评级 : 有问题\n*结论 : 冻结\n~ ALL in"
+    "content": "*会员ID :\n*拒绝原因 : 梭哈  \n*会员风险评级 : 有问题\n*结论 : 冻结"
   },
   {
     "system": "CƯỢC BẤT THƯỜNG",
     "group": "CƯỢC ĐỐI LẬP",
     "title": "CƯỢC ĐỐI LẬP - ĐÓNG BĂNG TÀI KHOẢN",
-    "content": "*会员ID : \n*拒绝原因 : 对打投注，滥用优惠活动\n*会员风险评级 : 有问题\n*结论 : 冻结\n~ ALL in"
+    "content": "*会员ID : \n*拒绝原因 : 对打投注，滥用优惠活动\n*会员风险评级 : 有问题\n*结论 : 冻结"
   },
   {
     "system": "CHƠI TRÒ CHƠI BẤT HỢP PHÁP",
@@ -237,7 +201,7 @@
     "system": "CHƠI TRÒ CHƠI BẤT HỢP PHÁP",
     "group": "CƯỢC BẤT THƯỜNG - Teen Patti",
     "title": "CƯỢC BẤT THƯỜNG TEEN PATTI (ĐANG CƯỢC CÁC ĐƠN NHỎ CÓ 1 VÀI ĐƠN TO TIỀN BẤT THƯỜNG - KHÓA TK",
-    "content": "*会员ID : \n*拒绝原因 : 非法投注 Teen Patti \n*会员风险评级 : 有问题\n*结论 : 黑名单\n~ 异常会员 注意 - Chú Ý Bất Thường"
+    "content": "*会员ID : \n*拒绝原因 : 非法投注 Teen Patti \n*会员风险评级 : 有问题\n*结论 : 黑名单"
   },
   {
     "system": "CHƠI TRÒ CHƠI BẤT HỢP PHÁP",
@@ -262,18 +226,6 @@
     "group": "CƯỢC BẤT THƯỜNG -  ROULETTE",
     "title": "CƯỢC BẤT THƯỜNG ROULETTE- KHẤU TRẢ NẠP",
     "content": "*会员ID : \n*拒绝原因 : 下注自己对刷  + ROULETTE\n*会员风险评级 : 有问题\n*结论 : 扣除全部余额并退还押金\n~ 异常会员 注意 - Chú Ý Bất Thường"
-  },
-  {
-    "system": "KHÔNG RÕ NGUỒN TIỀN",
-    "group": "KHÁCH ĐẶT CƯỢC TỪ NGUỒN TIỀN BẤT THƯỜNG",
-    "title": "KHÔNG RÕ NGUỒN TIỀN  - Không tìm thấy nguồn tiền của khách, nguồn tiền bất thường - TỪ CHỐI YÊU CẦU NẠP THÊM TIỀN",
-    "content": "会员ID:  \n*拒绝原因: 会员资金来源异常，未查到资金来源。\n* 结论：该会员需进行充值。\n~ 异常会员 注意 - Chú Ý Bất Thường"
-  },
-  {
-    "system": "KHÔNG RÕ NGUỒN TIỀN",
-    "group": "KHÁCH ĐẶT CƯỢC TỪ NGUỒN TIỀN BẤT THƯỜNG",
-    "title": "KHÔNG RÕ NGUỒN TIỀN  - Không tìm thấy nguồn tiền của khách, nguồn tiền bất thường - KHẤU TRỪ TOÀN BỘ",
-    "content": "会员ID:  \n*拒绝原因: 会员资金来源异常，未查到资金来源。\n*时间 : 3\n* 结论：扣除奖励。\n~ 异常会员 注意 - Chú Ý Bất Thường"
   },
   {
     "system": "LẠM DỤNG NẠP ĐẦU",
