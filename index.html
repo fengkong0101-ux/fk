@@ -7184,11 +7184,13 @@ function populateGroupOptions() {
 }
 
 function splitContent(text) {
-  const match = text.match(/^(.*?)(?:\n+)?\*\s*WD ABNORMAL\s*(.*)$/is);
+  // Tìm vị trí xuất hiện ký tự '~' và tách nội dung làm 2 phần
+  const match = text.match(/^(.*?)(?:\n+)?(~[\s\S]*)$/);
   if (!match) return { main: text.trim(), note: null };
-  const main = (match[1] || '').trim();
-  const note = ('* WD ABNORMAL ' + (match[2] || '').trim()).trim();
-  return { main, note };
+  return {
+    main: (match[1] || '').trim(),
+    note: (match[2] || '').trim()
+  };
 }
 
 function getFilteredData() {
