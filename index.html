@@ -7184,12 +7184,20 @@ function populateGroupOptions() {
 }
 
 function splitContent(text) {
-  // Tìm vị trí xuất hiện ký tự '~' và tách nội dung làm 2 phần
-  const match = text.match(/^(.*?)(?:\n+)?(~[\s\S]*)$/);
-  if (!match) return { main: text.trim(), note: null };
+  if (!text) return { main: '', note: null };
+
+  // Tìm vị trí xuất hiện của dấu '~' đầu tiên
+  const index = text.indexOf('~');
+
+  // Nếu không tìm thấy dấu '~', toàn bộ nội dung nằm ở phần main
+  if (index === -1) {
+    return { main: text.trim(), note: null };
+  }
+
+  // Tách nội dung trước và từ dấu '~' trở đi
   return {
-    main: (match[1] || '').trim(),
-    note: (match[2] || '').trim()
+    main: text.slice(0, index).trim(),
+    note: text.slice(index).trim()
   };
 }
 
