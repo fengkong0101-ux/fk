@@ -3,234 +3,897 @@
     "system": "CHƠI TRÒ CHƠI BẤT HỢP PHÁP",
     "group": "CƯỢC BẤT THƯỜNG - RUMMY POINT",
     "title": "CƯỢC BẤT THƯỜNG RUMMY POINT - KHÓA TÀI KHOẢN",
-    "content": "*会员ID : \n*拒绝原因 : 非法投注 Rummy Point \n*会员风险评级 : 有问题\n*结论 : 黑名单"
+    "content": "*会员ID : \n*拒绝原因 : 非法投注 Rummy Point \n*会员风险评级 : 有问题\n*结论 : 黑名单",
+    "i18n": {
+      "en": {
+        "system": "ILLEGAL GAME PLAY",
+        "group": "ABNORMAL RUMMY POINT BETTING",
+        "title": "ABNORMAL RUMMY POINT BETTING – ACCOUNT LOCK"
+      },
+      "id": {
+        "system": "PERMAINAN ILEGAL",
+        "group": "TARUHAN RUMMY POINT TIDAK WAJAR",
+        "title": "TARUHAN RUMMY POINT TIDAK WAJAR – BLOKIR AKUN"
+      },
+      "km": {
+        "system": "ការលេងហ្គេមខុសច្បាប់",
+        "group": "ការភ្នាល់ RUMMY POINT មិនប្រក្រតី",
+        "title": "ការភ្នាល់ RUMMY POINT មិនប្រក្រតី – បិទគណនី"
+      }
+    }
   },
   {
     "system": "BIỆN PHÁP XỬ LÝ HỆ THỐNG",
     "group": "KHÓA THIẾT BỊ",
     "title": "TẠO NHIỀU TÀI KHOẢN TRÙNG THIẾT BỊ - KHÓA THIẾT BỊ",
-    "content": "会员ID ： \n设备号： \n原因：会员同多设备账号  套利首充优惠 冻结 拉黑设备号  \n结论：拉黑设备号"
+    "content": "会员ID ： \n设备号： \n原因：会员同多设备账号  套利首充优惠 冻结 拉黑设备号  \n结论：拉黑设备号",
+    "i18n": {
+      "en": {
+        "system": "SYSTEM ENFORCEMENT MEASURES",
+        "group": "DEVICE BLOCK",
+        "title": "MULTIPLE ACCOUNTS ON THE SAME DEVICE – DEVICE BLOCK"
+      },
+      "id": {
+        "system": "TINDAKAN PENANGANAN SISTEM",
+        "group": "PEMBLOKIRAN PERANGKAT",
+        "title": "BANYAK AKUN PADA PERANGKAT YANG SAMA – BLOKIR PERANGKAT"
+      },
+      "km": {
+        "system": "វិធានការដោះស្រាយប្រព័ន្ធ",
+        "group": "ការបិទឧបករណ៍",
+        "title": "គណនីច្រើនលើឧបករណ៍តែមួយ – បិទឧបករណ៍"
+      }
+    }
   },
   {
     "system": "LẠM DỤNG NẠP ĐẦU",
     "group": "CẤP DƯ DƯỚI,NHIỀU TÀI KHOẢN",
     "title": "CẤP DƯỚI LẠM DỤNG NẠP ĐẦU - KHẤU TRỪ THƯỞNG VÀ KHÓA HH",
-    "content": "会员ID :\n*拒绝原因 : 下级正在滥用首存，并帮助上级领取团队奖励\n*会员风险评级 : 有问题\n*结论 : 扣除奖金并限制代理佣金\n~ 异常会员 注意 - Chú Ý Bất Thường"
+    "content": "会员ID :\n*拒绝原因 : 下级正在滥用首存，并帮助上级领取团队奖励\n*会员风险评级 : 有问题\n*结论 : 扣除奖金并限制代理佣金\n~ 异常会员 注意 - Chú Ý Bất Thường",
+    "i18n": {
+      "en": {
+        "system": "FIRST-DEPOSIT ABUSE",
+        "group": "DOWNLINE ABUSE / MULTIPLE ACCOUNTS",
+        "title": "DOWNLINE ABUSES FIRST DEPOSIT – DEDUCT BONUS AND BLOCK COMMISSION"
+      },
+      "id": {
+        "system": "PENYALAHGUNAAN DEPOSIT PERTAMA",
+        "group": "PENYALAHGUNAAN DOWNLINE / BANYAK AKUN",
+        "title": "DOWNLINE MENYALAHGUNAKAN DEPOSIT PERTAMA – POTONG BONUS DAN BLOKIR KOMISI"
+      },
+      "km": {
+        "system": "ការបំពានប្រាក់បញ្ញើដំបូង",
+        "group": "ការបំពានដោយអ្នកក្រោម / គណនីច្រើន",
+        "title": "អ្នកក្រោមបំពានប្រាក់បញ្ញើដំបូង – កាត់ប្រាក់រង្វាន់ និងបិទកម្រៃជើងសារ"
+      }
+    }
   },
   {
     "system": "LẠM DỤNG NẠP ĐẦU",
     "group": "CẤP TRÊN  - DƯỚI,NHIỀU TÀI KHOẢN - KHÓA TK",
     "title": "TẠO NHIỀU TK CẤP TRÊN DƯỚI LẠM DỤNG - KHÓA TÀI KHOẢN",
-    "content": "*会员ID：\n*拒绝原因 : 会员多关联账号 充值相同 套利首充优惠 冻结拉黑\n*会员风险评级 :有问题\n*结论 :  冻结"
+    "content": "*会员ID：\n*拒绝原因 : 会员多关联账号 充值相同 套利首充优惠 冻结拉黑\n*会员风险评级 :有问题\n*结论 :  冻结",
+    "i18n": {
+      "en": {
+        "system": "FIRST-DEPOSIT ABUSE",
+        "group": "UPLINE / DOWNLINE MULTIPLE ACCOUNTS – ACCOUNT LOCK",
+        "title": "MULTIPLE UPLINE / DOWNLINE ACCOUNTS ABUSING PROMOTIONS – ACCOUNT LOCK"
+      },
+      "id": {
+        "system": "PENYALAHGUNAAN DEPOSIT PERTAMA",
+        "group": "BANYAK AKUN UPLINE / DOWNLINE – BLOKIR AKUN",
+        "title": "BANYAK AKUN UPLINE / DOWNLINE MENYALAHGUNAKAN PROMO – BLOKIR AKUN"
+      },
+      "km": {
+        "system": "ការបំពានប្រាក់បញ្ញើដំបូង",
+        "group": "គណនី UPLINE / DOWNLINE ច្រើន – បិទគណនី",
+        "title": "គណនី UPLINE / DOWNLINE ច្រើនបំពានកម្មវិធីផ្សព្វផ្សាយ – បិទគណនី"
+      }
+    }
   },
   {
     "system": "LẠM DỤNG NẠP ĐẦU",
     "group": "CẤP TRÊN  - DƯỚI , NHIỀU TÀI KHOẢN - KHÓA TK",
     "title": "TẠO NHIỀU TK CẤP TRÊN DƯỚI LẠM DỤNG (2) - KHÓA TÀI KHOẢN",
-    "content": "*会员ID：\n*拒绝原因 :代理线路滥用首存奖励\n*会员风险评级 :有问题\n*结论 : 黑名单"
+    "content": "*会员ID：\n*拒绝原因 :代理线路滥用首存奖励\n*会员风险评级 :有问题\n*结论 : 黑名单",
+    "i18n": {
+      "en": {
+        "system": "FIRST-DEPOSIT ABUSE",
+        "group": "UPLINE / DOWNLINE MULTIPLE ACCOUNTS – ACCOUNT LOCK",
+        "title": "MULTIPLE UPLINE / DOWNLINE ACCOUNTS ABUSING PROMOTIONS (2) – ACCOUNT LOCK"
+      },
+      "id": {
+        "system": "PENYALAHGUNAAN DEPOSIT PERTAMA",
+        "group": "BANYAK AKUN UPLINE / DOWNLINE – BLOKIR AKUN",
+        "title": "BANYAK AKUN UPLINE / DOWNLINE MENYALAHGUNAKAN PROMO (2) – BLOKIR AKUN"
+      },
+      "km": {
+        "system": "ការបំពានប្រាក់បញ្ញើដំបូង",
+        "group": "គណនី UPLINE / DOWNLINE ច្រើន – បិទគណនី",
+        "title": "គណនី UPLINE / DOWNLINE ច្រើនបំពានកម្មវិធីផ្សព្វផ្សាយ (2) – បិទគណនី"
+      }
+    }
   },
   {
     "system": "NHẬN 1-5-7đ ĐỒNG",
     "group": "TRÙNG IP",
     "title": "NHẬN 1-5-7đ (thưởng chia sẻ, tin nhắn, video) TRÙNG IP - KHẤU TRỪ THƯỞNG",
-    "content": "*会员ID  \n*拒绝原因：多个IP重复代理、兑换码奖励\n*自邀代理商没有资格领取奖金\n*会员风险评级：有问题\n*结论： 奖金扣除\n~ 异常会员 注意 - Chú Ý Bất Thường"
+    "content": "*会员ID  \n*拒绝原因：多个IP重复代理、兑换码奖励\n*自邀代理商没有资格领取奖金\n*会员风险评级：有问题\n*结论： 奖金扣除\n~ 异常会员 注意 - Chú Ý Bất Thường",
+    "i18n": {
+      "en": {
+        "system": "1-5-7 COIN REWARDS",
+        "group": "DUPLICATE IP",
+        "title": "1-5-7 COIN REWARD (SHARE, MESSAGE, VIDEO) – DUPLICATE IP – DEDUCT BONUS"
+      },
+      "id": {
+        "system": "HADIAH KOIN 1-5-7",
+        "group": "IP SAMA",
+        "title": "HADIAH KOIN 1-5-7 (BERBAGI, PESAN, VIDEO) – IP SAMA – POTONG BONUS"
+      },
+      "km": {
+        "system": "រង្វាន់កាក់ 1-5-7",
+        "group": "IP ស្ទួន",
+        "title": "រង្វាន់កាក់ 1-5-7 (ចែករំលែក សារ វីដេអូ) – IP ស្ទួន – កាត់ប្រាក់រង្វាន់"
+      }
+    }
   },
   {
     "system": "NHẬN 1-5-7đ ĐỒNG",
     "group": "NHẬN THƯỞNG KHÔNG NẠP",
     "title": "NHẬN 1-5-7đ (thưởng chia sẻ, tin nhắn, video) KHÔNG NẠP - TỪ CHỐI YÊU CẦU NẠP THÊM",
-    "content": "*会员ID  ：\n*拒绝原因 : 套利奖金\n*会员风险评级：中嫌疑\n*结论 : 要求成员充值\n~ 要求成员充值 - Yêu cầu nạp thêm tiền"
+    "content": "*会员ID  ：\n*拒绝原因 : 套利奖金\n*会员风险评级：中嫌疑\n*结论 : 让会员要求充值\n~ 要求成员充值 - Yêu cầu nạp thêm tiền",
+    "i18n": {
+      "en": {
+        "system": "1-5-7 COIN REWARDS",
+        "group": "REWARD CLAIM WITHOUT DEPOSIT",
+        "title": "1-5-7 COIN REWARD (SHARE, MESSAGE, VIDEO) – NO DEPOSIT – REQUIRE ADDITIONAL DEPOSIT"
+      },
+      "id": {
+        "system": "HADIAH KOIN 1-5-7",
+        "group": "KLAIM HADIAH TANPA DEPOSIT",
+        "title": "HADIAH KOIN 1-5-7 (BERBAGI, PESAN, VIDEO) – TANPA DEPOSIT – MINTA DEPOSIT TAMBAHAN"
+      },
+      "km": {
+        "system": "រង្វាន់កាក់ 1-5-7",
+        "group": "ការទទួលរង្វាន់ដោយគ្មានប្រាក់បញ្ញើ",
+        "title": "រង្វាន់កាក់ 1-5-7 (ចែករំលែក សារ វីដេអូ) – គ្មានប្រាក់បញ្ញើ – ស្នើឱ្យដាក់ប្រាក់បន្ថែម"
+      }
+    }
   },
   {
     "system": "NHẬN 500 VÒNG QUAY",
     "group": "TRÙNG IP",
     "title": "NHẬN 500 VÒNG QUAY TRÙNG IP - KHẤU TRỪ THƯỞNG",
-    "content": "*会员ID : \n*拒绝原因 : 由于与下属IP地址和设备相同，无法领取邀请奖金\n*会员风险评级 : 有问题\n*结论 : 扣除全部余额并退还押金\n~ 异常会员 注意 - Chú Ý Bất Thường"
+    "content": "*会员ID : \n*拒绝原因 : 由于与下属IP地址和设备相同，无法领取邀请奖金\n*会员风险评级 : 有问题\n*结论 : 扣除奖励\n~ 异常会员 注意 - Chú Ý Bất Thường",
+    "i18n": {
+      "en": {
+        "system": "500 SPIN REWARD",
+        "group": "DUPLICATE IP",
+        "title": "500 SPIN REWARD – DUPLICATE IP – DEDUCT BONUS"
+      },
+      "id": {
+        "system": "HADIAH 500 PUTARAN",
+        "group": "IP SAMA",
+        "title": "HADIAH 500 PUTARAN – IP SAMA – POTONG BONUS"
+      },
+      "km": {
+        "system": "រង្វាន់បង្វិល 500 ដង",
+        "group": "IP ស្ទួន",
+        "title": "រង្វាន់បង្វិល 500 ដង – IP ស្ទួន – កាត់ប្រាក់រង្វាន់"
+      }
+    }
   },
   {
     "system": "NHẬN 500 VÒNG QUAY",
-    "group": "NHẬN THƯỞNG KHÔNG NẠP",
-    "title": "NHẬN 500 VÒNG QUAY KHÔNG NẠP - TỪ CHỐI YÊU CẦU NẠP THÊM",
-    "content": "*会员ID :\n*拒绝原因 : 本人未充值，下级代理也未充值。\n*时间: 1\n*会员风险评级 : 中嫌疑\n*结论 :  要求成员充值。\n~ 要求成员充值 - Yêu cầu nạp thêm tiền"
+    "group": "TRÙNG IP",
+    "title": "NHẬN 500 VÒNG QUAY TRÙNG IP - KHẤU TRẢ NẠP",
+    "content": "*会员ID : \n*拒绝原因 : 由于与下属IP地址和设备相同，无法领取邀请奖金\n*会员风险评级 : 有问题\n*结论 : 扣除全部余额并退还押金\n~ 异常会员 注意 - Chú Ý Bất Thường",
+    "i18n": {
+      "en": {
+        "system": "500 SPIN REWARD",
+        "group": "DUPLICATE IP",
+        "title": "500 SPIN REWARD – DUPLICATE IP – REFUND DEPOSIT"
+      },
+      "id": {
+        "system": "HADIAH 500 PUTARAN",
+        "group": "IP SAMA",
+        "title": "HADIAH 500 PUTARAN – IP SAMA – KEMBALIKAN DEPOSIT"
+      },
+      "km": {
+        "system": "រង្វាន់បង្វិល 500 ដង",
+        "group": "IP ស្ទួន",
+        "title": "រង្វាន់បង្វិល 500 ដង – IP ស្ទួន – សងប្រាក់បញ្ញើ"
+      }
+    }
   },
   {
     "system": "NHẬN 500 VÒNG QUAY",
     "group": "NHẬN THƯỞNG CÓ NẠP",
-    "title": "NHẬN 500 VÒNG QUAY NẠP KHÔNG ĐỦ - TỪ CHỐI YÊU CẦU NẠP THÊM",
-    "content": "会员ID : \n*拒绝原因 : 提现转盘奖金时未满足充值要求。\n*时间: 1\n*会员风险评级 : 中嫌疑\n*结论 :  要求成员充值。\n~ 要求成员充值 - Yêu cầu nạp thêm tiền"
+    "title": "NHẬN 500 VÒNG QUAY THIẾU NẠP/CƯỢC - TỪ CHỐI YÊU CẦU NẠP THÊM/ CỘNG CƯỢC THÊM.",
+    "content": "会员ID : \n*拒绝原因 : 提现转盘奖金时未满足充值要求。\n*时间: 1\n*会员风险评级 : 中嫌疑\n*结论 :  让会员要求充值。\n 让会员继续投注，流水 +\n~ 要求成员充值 - Yêu cầu nạp thêm tiền",
+    "i18n": {
+      "en": {
+        "system": "500 SPIN REWARD",
+        "group": "REWARD CLAIM WITH DEPOSIT",
+        "title": "500 SPIN REWARD – INSUFFICIENT DEPOSIT / BETTING – REQUIRE MORE DEPOSIT / BETTING"
+      },
+      "id": {
+        "system": "HADIAH 500 PUTARAN",
+        "group": "KLAIM HADIAH DENGAN DEPOSIT",
+        "title": "HADIAH 500 PUTARAN – DEPOSIT / TARUHAN TIDAK CUKUP – MINTA TAMBAHAN DEPOSIT / TURNOVER"
+      },
+      "km": {
+        "system": "រង្វាន់បង្វិល 500 ដង",
+        "group": "ការទទួលរង្វាន់ដែលមានប្រាក់បញ្ញើ",
+        "title": "រង្វាន់បង្វិល 500 ដង – ប្រាក់បញ្ញើ / ការភ្នាល់មិនគ្រប់ – ស្នើឱ្យបន្ថែមប្រាក់បញ្ញើ / TURNOVER"
+      }
+    }
   },
   {
     "system": "NHẬN 500 VÒNG QUAY",
     "group": "TỈ LỆ THẤP",
     "title": "NHẬN 500 VÒNG QUAY CƯỢC TỈ LỆ THẤP - KHẤU TRỪ THƯỞNG",
-    "content": "会员ID :\n*拒绝原因 :下注低赔率 搜哈\n*套利奖金 200\n*会员风险评级 : 大嫌疑\n*结论 : 扣除奖励\n~ 倍率低 继续下注 - TLT Tiếp Tục Đặt Cược"
+    "content": "会员ID :\n*拒绝原因 :下注低赔率 搜哈\n*套利奖金 200\n*会员风险评级 : 大嫌疑\n*结论 : 扣除奖励\n~ 倍率低 继续下注 - TLT Tiếp Tục Đặt Cược",
+    "i18n": {
+      "en": {
+        "system": "500 SPIN REWARD",
+        "group": "LOW ODDS",
+        "title": "500 SPIN REWARD – LOW-ODDS BETTING – DEDUCT BONUS"
+      },
+      "id": {
+        "system": "HADIAH 500 PUTARAN",
+        "group": "ODDS RENDAH",
+        "title": "HADIAH 500 PUTARAN – TARUHAN ODDS RENDAH – POTONG BONUS"
+      },
+      "km": {
+        "system": "រង្វាន់បង្វិល 500 ដង",
+        "group": "អត្រាទាប",
+        "title": "រង្វាន់បង្វិល 500 ដង – ភ្នាល់អត្រាទាប – កាត់ប្រាក់រង្វាន់"
+      }
+    }
   },
   {
     "system": "NHẬN 500 VÒNG QUAY",
     "group": "CHƯA HOÀN THÀNH VÒNG CƯỢC",
     "title": "NHẬN 500 VÒNG QUAY CHƯA ĐỦ VÒNG CƯỢC - TỪ CHỐI ĐỦ NHÂN CƯỢC",
-    "content": "*会员代码：\n*拒绝原因：收到促销奖金但未完成下注\n*会员风险评级：中度怀疑\n*结论：让会员继续投注，流水 +\n~ 流水不够 继续下注 - Chưa Đủ Vòng Cược"
+    "content": "*会员代码：\n*拒绝原因：提现转盘奖金但未完成下注\n*会员风险评级：中度怀疑\n*结论：让会员继续投注，流水 +\n~ 流水不够 继续下注 - Chưa Đủ Vòng Cược",
+    "i18n": {
+      "en": {
+        "system": "500 SPIN REWARD",
+        "group": "INCOMPLETE TURNOVER",
+        "title": "500 SPIN REWARD – INCOMPLETE TURNOVER – REQUIRE 3× TURNOVER"
+      },
+      "id": {
+        "system": "HADIAH 500 PUTARAN",
+        "group": "OMZET TARUHAN BELUM SELESAI",
+        "title": "HADIAH 500 PUTARAN – TURNOVER BELUM CUKUP – WAJIB 3× TURNOVER"
+      },
+      "km": {
+        "system": "រង្វាន់បង្វិល 500 ដង",
+        "group": "មិនទាន់បំពេញទឹកប្រាក់ភ្នាល់វិលជុំ",
+        "title": "រង្វាន់បង្វិល 500 ដង – TURNOVER មិនគ្រប់ – តម្រូវឱ្យ 3× TURNOVER"
+      }
+    }
   },
   {
     "system": "NHẬN 500 VÒNG QUAY",
     "group": "TỪ CHỐI NHIỀU LẦN KHÔNG NẠP",
     "title": "NHẬN 500 VÒNG QUAY KHÔNG NẠP TỪ CHỐI NHIỀU LẦN - KHẤU TRỪ THƯỞNG",
-    "content": "*会员ID :\n*拒绝原因 : 本人未充值，代理线也没有任何充值 \n*会员风险评级 : 大嫌疑\n**时间: 3\n*结论 : 扣除奖励\n~ 异常会员 注意 - Chú Ý Bất Thường"
+    "content": "*会员ID :\n*拒绝原因 : 本人未充值，代理线也没有任何充值 \n*会员风险评级 : 大嫌疑\n**时间: 3\n*结论 : 扣除奖励\n~ 异常会员 注意 - Chú Ý Bất Thường",
+    "i18n": {
+      "en": {
+        "system": "500 SPIN REWARD",
+        "group": "REPEATED REJECTIONS WITHOUT DEPOSIT",
+        "title": "500 SPIN REWARD – NO DEPOSIT AFTER REPEATED REJECTIONS – DEDUCT BONUS"
+      },
+      "id": {
+        "system": "HADIAH 500 PUTARAN",
+        "group": "PENOLAKAN BERULANG TANPA DEPOSIT",
+        "title": "HADIAH 500 PUTARAN – TANPA DEPOSIT SETELAH DITOLAK BERULANG – POTONG BONUS"
+      },
+      "km": {
+        "system": "រង្វាន់បង្វិល 500 ដង",
+        "group": "ការបដិសេធច្រើនដងដោយគ្មានប្រាក់បញ្ញើ",
+        "title": "រង្វាន់បង្វិល 500 ដង – គ្មានប្រាក់បញ្ញើបន្ទាប់ពីបដិសេធច្រើនដង – កាត់ប្រាក់រង្វាន់"
+      }
+    }
   },
   {
     "system": "NHẬN 500 VÒNG QUAY",
     "group": "CHƠI SOHA (ALLIN)",
     "title": "NHẬN 500 VÒNG QUAY CƯỢC ALL IN - KHẤU TRỪ THƯỞNG",
-    "content": "*会员ID :\n*拒绝原因 :下注低赔率 搜哈\n*套利奖金 500\n*会员风险评级 : 大嫌疑\n*结论 : 扣除奖励\n~ ALL in"
+    "content": "*会员ID :\n*拒绝原因 :下注低赔率 搜哈\n*套利奖金 500\n*会员风险评级 : 大嫌疑\n*结论 : 扣除奖励\n~ ALL in",
+    "i18n": {
+      "en": {
+        "system": "500 SPIN REWARD",
+        "group": "SOHA (ALL-IN) BETTING",
+        "title": "500 SPIN REWARD – ALL-IN BETTING – DEDUCT BONUS"
+      },
+      "id": {
+        "system": "HADIAH 500 PUTARAN",
+        "group": "TARUHAN SOHA (ALL-IN)",
+        "title": "HADIAH 500 PUTARAN – TARUHAN ALL-IN – POTONG BONUS"
+      },
+      "km": {
+        "system": "រង្វាន់បង្វិល 500 ដង",
+        "group": "ការភ្នាល់ SOHA (ALL-IN)",
+        "title": "រង្វាន់បង្វិល 500 ដង – ភ្នាល់ ALL-IN – កាត់ប្រាក់រង្វាន់"
+      }
+    }
   },
   {
     "system": "NHẬN 1-5-7đ ĐỒNG",
     "group": "NHẬN THƯỞNG KHÔNG NẠP",
     "title": "NHẬN 1-5-7đ (thưởng chia sẻ, tin nhắn, video) ĐÁ NHIỀU LẦN KHÔNG NẠP - KHẤU TRỪ THƯỞNG",
-    "content": "*会员ID  ： \n*拒绝原因：恶意套利兑换码奖励\n*会员风险评级：有问题\n*结论： 奖金扣除\n~ 异常会员 注意 - Chú Ý Bất Thường"
+    "content": "*会员ID  ： \n*拒绝原因：恶意套利兑换码奖励\n*会员风险评级：有问题\n*结论： 奖金扣除\n~ 异常会员 注意 - Chú Ý Bất Thường",
+    "i18n": {
+      "en": {
+        "system": "1-5-7 COIN REWARDS",
+        "group": "REWARD CLAIM WITHOUT DEPOSIT",
+        "title": "1-5-7 COIN REWARD (SHARE, MESSAGE, VIDEO) – REPEATED CLAIMS WITHOUT DEPOSIT – DEDUCT BONUS"
+      },
+      "id": {
+        "system": "HADIAH KOIN 1-5-7",
+        "group": "KLAIM HADIAH TANPA DEPOSIT",
+        "title": "HADIAH KOIN 1-5-7 (BERBAGI, PESAN, VIDEO) – KLAIM BERULANG TANPA DEPOSIT – POTONG BONUS"
+      },
+      "km": {
+        "system": "រង្វាន់កាក់ 1-5-7",
+        "group": "ការទទួលរង្វាន់ដោយគ្មានប្រាក់បញ្ញើ",
+        "title": "រង្វាន់កាក់ 1-5-7 (ចែករំលែក សារ វីដេអូ) – ទទួលម្តងហើយម្តងទៀតដោយគ្មានប្រាក់បញ្ញើ – កាត់ប្រាក់រង្វាន់"
+      }
+    }
   },
   {
     "system": "CẤP DƯỚI NHẬN THƯỞNG",
     "group": "CẤP DƯỚI NHIỀU TÀI KHOẢN",
     "title": "CẤP DƯỚI LẠM DỤNG NẠP ĐẦU GIÚP CẤP TRÊN NHẬN THƯỞNG - KHẤU TRỪ THƯỞNG VÀ KHÓA HH",
-    "content": "代理ID : \n下级ID :\n*拒绝原因 :   滥用首存资金的线路，对游戏没有任何价值。\n*会员风险评级 : 有问题\n*结论 : 扣除奖励 ， 限制下级系统返佣和彩金 ，代理流水返拥\n~ 异常会员 注意 - Chú Ý Bất Thường"
+    "content": "代理ID : \n下级ID :\n*拒绝原因 :   滥用首存资金的线路，对游戏没有任何价值。\n*会员风险评级 : 有问题\n*结论 : 扣除奖励 ， 限制下级系统返佣和彩金 ，代理流水返拥\n~ 异常会员 注意 - Chú Ý Bất Thường",
+    "i18n": {
+      "en": {
+        "system": "DOWNLINE REWARD CLAIM",
+        "group": "MULTIPLE DOWNLINE ACCOUNTS",
+        "title": "DOWNLINE ABUSES FIRST DEPOSIT TO HELP UPLINE CLAIM REWARDS – DEDUCT BONUS AND BLOCK COMMISSION"
+      },
+      "id": {
+        "system": "KLAIM HADIAH DOWNLINE",
+        "group": "BANYAK AKUN DOWNLINE",
+        "title": "DOWNLINE MENYALAHGUNAKAN DEPOSIT PERTAMA UNTUK MEMBANTU UPLINE MENGAMBIL HADIAH – POTONG BONUS DAN BLOKIR KOMISI"
+      },
+      "km": {
+        "system": "ការទទួលរង្វាន់ពីអ្នកក្រោម",
+        "group": "គណនីអ្នកក្រោមច្រើន",
+        "title": "អ្នកក្រោមបំពានប្រាក់បញ្ញើដំបូងដើម្បីជួយអ្នកលើទទួលរង្វាន់ – កាត់ប្រាក់រង្វាន់ និងបិទកម្រៃជើងសារ"
+      }
+    }
   },
   {
     "system": "RUMMY",
     "group": "TRÙNG IP",
     "title": "CƯỢC RUMMY MATCH TRÙNG IP - KHẤU TRỪ THƯỞNG",
-    "content": "会员ID :\n*拒绝原因 : 我本人没有充值，上级有多个IP地址，不符合RUMMY MATCH的提现条件。\n*会员风险评级 : 有问题\n*结论 : 扣除奖励\n~ 异常会员 注意 - Chú Ý Bất Thường"
+    "content": "会员ID :\n*拒绝原因 : 我本人没有充值，上级有多个IP地址，不符合RUMMY MATCH的提现条件。\n*会员风险评级 : 有问题\n*结论 : 扣除奖励\n~ 异常会员 注意 - Chú Ý Bất Thường",
+    "i18n": {
+      "en": {
+        "system": "RUMMY",
+        "group": "DUPLICATE IP",
+        "title": "RUMMY MATCH BETTING – DUPLICATE IP – DEDUCT BONUS"
+      },
+      "id": {
+        "system": "RUMMY",
+        "group": "IP SAMA",
+        "title": "TARUHAN RUMMY MATCH – IP SAMA – POTONG BONUS"
+      },
+      "km": {
+        "system": "RUMMY",
+        "group": "IP ស្ទួន",
+        "title": "ការភ្នាល់ RUMMY MATCH – IP ស្ទួន – កាត់ប្រាក់រង្វាន់"
+      }
+    }
   },
   {
     "system": "RUMMY",
     "group": "ĐẶT CƯỢC BẤT THƯỜNG",
     "title": "CƯỢC BẤT THƯỜNG RUMMY - TỪ CHỐI CẢNH CÁO",
-    "content": "*会员ID :\n*拒绝原因 : 异常投注  Rummy\n*会员风险评级 : 中嫌疑\n*结论 :  警告\n~ 异常会员 注意 - Chú Ý Bất Thường"
+    "content": "*会员ID :\n*拒绝原因 : 异常投注  Rummy\n*会员风险评级 : 中嫌疑\n*结论 :  警告\n~ 异常会员 注意 - Chú Ý Bất Thường",
+    "i18n": {
+      "en": {
+        "system": "RUMMY",
+        "group": "ABNORMAL BETTING",
+        "title": "ABNORMAL RUMMY BETTING – REJECT AND WARN"
+      },
+      "id": {
+        "system": "RUMMY",
+        "group": "TARUHAN TIDAK WAJAR",
+        "title": "TARUHAN RUMMY TIDAK WAJAR – TOLAK DAN PERINGATKAN"
+      },
+      "km": {
+        "system": "RUMMY",
+        "group": "ការភ្នាល់មិនប្រក្រតី",
+        "title": "ការភ្នាល់ RUMMY មិនប្រក្រតី – បដិសេធ និងព្រមាន"
+      }
+    }
   },
   {
     "system": "RUMMY",
     "group": "ĐẶT CƯỢC BẤT THƯỜNG",
     "title": "CƯỢC BẤT THƯỜNG RUMMY - TỪ CHỐI X3 VÒNG CƯỢC",
-    "content": "*会员ID :\n*拒绝原因 : 异常投注  Rummy\n*会员风险评级 : 有问题\n*结论 : 让会员继续下注,流水 +\n~ 异常会员 注意 - Chú Ý Bất Thường"
+    "content": "*会员ID :\n*拒绝原因 : 异常投注  Rummy\n*会员风险评级 : 有问题\n*结论 : 让会员继续下注,流水 +\n~ 异常会员 注意 - Chú Ý Bất Thường",
+    "i18n": {
+      "en": {
+        "system": "RUMMY",
+        "group": "ABNORMAL BETTING",
+        "title": "ABNORMAL RUMMY BETTING – REQUIRE 3× TURNOVER"
+      },
+      "id": {
+        "system": "RUMMY",
+        "group": "TARUHAN TIDAK WAJAR",
+        "title": "TARUHAN RUMMY TIDAK WAJAR – WAJIB 3× TURNOVER"
+      },
+      "km": {
+        "system": "RUMMY",
+        "group": "ការភ្នាល់មិនប្រក្រតី",
+        "title": "ការភ្នាល់ RUMMY មិនប្រក្រតី – តម្រូវឱ្យ 3× TURNOVER"
+      }
+    }
   },
   {
     "system": "NHẬN THƯỞNG NHÓM",
     "group": "TRÙNG IP - KHẤU",
     "title": "NHẬN THƯỞNG NHÓM TRÙNG IP - KHẤU TRỪ THƯỞNG",
-    "content": "会员ID :\n*拒绝原因 : 自我邀请的代理线路具有相同的IP地址和设备。\n*会员风险评级 : 有问题\n*结论 : 扣除奖励\n~ 异常会员 注意 - Chú Ý Bất Thường"
+    "content": "会员ID :\n*拒绝原因 : 自我邀请的代理线路具有相同的IP地址和设备。\n*会员风险评级 : 有问题\n*结论 : 扣除奖励\n~ 异常会员 注意 - Chú Ý Bất Thường",
+    "i18n": {
+      "en": {
+        "system": "GROUP REWARD",
+        "group": "DUPLICATE IP – DEDUCT BONUS",
+        "title": "GROUP REWARD – DUPLICATE IP – DEDUCT BONUS"
+      },
+      "id": {
+        "system": "HADIAH GRUP",
+        "group": "IP SAMA – POTONG BONUS",
+        "title": "HADIAH GRUP – IP SAMA – POTONG BONUS"
+      },
+      "km": {
+        "system": "រង្វាន់ក្រុម",
+        "group": "IP ស្ទួន – កាត់ប្រាក់រង្វាន់",
+        "title": "រង្វាន់ក្រុម – IP ស្ទួន – កាត់ប្រាក់រង្វាន់"
+      }
+    }
   },
   {
     "system": "NHẬN THƯỞNG NHÓM",
     "group": "TRÙNG IP - KHẤU 2",
     "title": "NHẬN THƯỞNG NHÓM TRÙNG IP CẤP DƯỚI - KHẤU TRỪ THƯỞNG",
-    "content": "会员ID :\n*拒绝原因 : 成员的 IP 地址和设备与更低级别账号存在关联，彼此相互关联。\n*会员风险评级 : 有问题\n*结论 : 扣除奖励\n~ 异常会员 注意 - Chú Ý Bất Thường"
+    "content": "会员ID :\n*拒绝原因 : 成员的 IP 地址和设备与更低级别账号存在关联，彼此相互关联。\n*会员风险评级 : 有问题\n*结论 : 扣除奖励\n~ 异常会员 注意 - Chú Ý Bất Thường",
+    "i18n": {
+      "en": {
+        "system": "GROUP REWARD",
+        "group": "DUPLICATE DOWNLINE IP – DEDUCT BONUS",
+        "title": "GROUP REWARD – DUPLICATE DOWNLINE IP – DEDUCT BONUS"
+      },
+      "id": {
+        "system": "HADIAH GRUP",
+        "group": "IP DOWNLINE SAMA – POTONG BONUS",
+        "title": "HADIAH GRUP – IP DOWNLINE SAMA – POTONG BONUS"
+      },
+      "km": {
+        "system": "រង្វាន់ក្រុម",
+        "group": "IP អ្នកក្រោមស្ទួន – កាត់ប្រាក់រង្វាន់",
+        "title": "រង្វាន់ក្រុម – IP អ្នកក្រោមស្ទួន – កាត់ប្រាក់រង្វាន់"
+      }
+    }
   },
   {
     "system": "CƯỢC BẤT THƯỜNG",
     "group": "CƯỢC TỈ LỆ THẤP",
     "title": "CƯỢC TỈ LỆ THẤP - TỪ CHỐI X3 VÒNG CƯỢC",
-    "content": "*会员ID : \n*拒绝原因 :下注低赔率\n*会员风险评级 : 中度怀疑\n*结论 :  让会员继续投注，流水 +\n~ 倍率低 继续下注 - TLT Tiếp Tục Đặt Cược"
+    "content": "*会员ID : \n*拒绝原因 :下注低赔率\n*会员风险评级 : 中度怀疑\n*结论 :  让会员继续投注，流水 +\n~ 倍率低 继续下注 - TLT Tiếp Tục Đặt Cược",
+    "i18n": {
+      "en": {
+        "system": "ABNORMAL BETTING",
+        "group": "LOW-ODDS BETTING",
+        "title": "LOW-ODDS BETTING – REQUIRE 3× TURNOVER"
+      },
+      "id": {
+        "system": "TARUHAN TIDAK WAJAR",
+        "group": "TARUHAN ODDS RENDAH",
+        "title": "TARUHAN ODDS RENDAH – WAJIB 3× TURNOVER"
+      },
+      "km": {
+        "system": "ការភ្នាល់មិនប្រក្រតី",
+        "group": "ការភ្នាល់អត្រាទាប",
+        "title": "ការភ្នាល់អត្រាទាប – តម្រូវឱ្យ 3× TURNOVER"
+      }
+    }
   },
   {
     "system": "CƯỢC BẤT THƯỜNG",
     "group": "CƯỢC TỈ LỆ THẤP",
     "title": "CƯỢC TỈ LỆ THẤP (NẶNG) - KHẤU TRẢ NẠP",
-    "content": "*会员ID : \n*拒绝原因 :下注低赔率\n*会员风险评级 : 有问题\n*时间 : 3\n*结论 :  扣除全部余额并退还押金\n~ 倍率低 继续下注 - TLT Tiếp Tục Đặt Cược"
+    "content": "*会员ID : \n*拒绝原因 :下注低赔率\n*会员风险评级 : 有问题\n*时间 : 3\n*结论 :  扣除全部余额并退还押金\n~ 倍率低 继续下注 - TLT Tiếp Tục Đặt Cược",
+    "i18n": {
+      "en": {
+        "system": "ABNORMAL BETTING",
+        "group": "LOW-ODDS BETTING",
+        "title": "SEVERE LOW-ODDS BETTING – DEDUCT AND REFUND DEPOSIT"
+      },
+      "id": {
+        "system": "TARUHAN TIDAK WAJAR",
+        "group": "TARUHAN ODDS RENDAH",
+        "title": "TARUHAN ODDS RENDAH (BERAT) – POTONG DAN KEMBALIKAN DEPOSIT"
+      },
+      "km": {
+        "system": "ការភ្នាល់មិនប្រក្រតី",
+        "group": "ការភ្នាល់អត្រាទាប",
+        "title": "ការភ្នាល់អត្រាទាបធ្ងន់ធ្ងរ – កាត់ប្រាក់ និងសងប្រាក់បញ្ញើ"
+      }
+    }
   },
   {
     "system": "KHÔNG ĐỦ VÒNG CƯỢC",
     "group": "KHÔNG ĐỦ VÒNG CƯỢC - TỪ CHỐI",
     "title": "CHƠI CHƯA ĐỦ VÒNG CƯỢC - TỪ CHỐI ĐỦ NHÂN CƯỢC",
-    "content": "*会员代码：\n*拒绝原因：会员流水未达到要求。\n*会员风险评级：中度怀疑\n*结论：让会员继续投注，流水 +\n~ 流水不够 继续下注 - Chưa Đủ Vòng Cược"
+    "content": "*会员代码：\n*拒绝原因：会员流水未达到要求。\n*会员风险评级：中度怀疑\n*结论：让会员继续投注，流水 +\n~ 流水不够 继续下注 - Chưa Đủ Vòng Cược",
+    "i18n": {
+      "en": {
+        "system": "INCOMPLETE TURNOVER",
+        "group": "INCOMPLETE TURNOVER – REJECT",
+        "title": "INCOMPLETE TURNOVER – REQUIRE 3× TURNOVER"
+      },
+      "id": {
+        "system": "OMZET TARUHAN BELUM CUKUP",
+        "group": "OMZET TARUHAN BELUM CUKUP – TOLAK",
+        "title": "TURNOVER BELUM CUKUP – WAJIB 3× TURNOVER"
+      },
+      "km": {
+        "system": "ទឹកប្រាក់ភ្នាល់វិលជុំមិនគ្រប់",
+        "group": "ទឹកប្រាក់ភ្នាល់វិលជុំមិនគ្រប់ – បដិសេធ",
+        "title": "TURNOVER មិនគ្រប់ – តម្រូវឱ្យ 3× TURNOVER"
+      }
+    }
   },
   {
     "system": "KHÔNG ĐỦ VÒNG CƯỢC",
     "group": "NHẬN KHUYẾN MÃI CHƠI KHÔNG ĐỦ VÒNG CƯỢC - TỪ CHỐI NHÂN 3 VÒNG CƯỢC",
     "title": "NHẬN KHUYẾN MÃI CHƯA ĐỦ VÒNG CƯỢC - TỪ CHỐI X3 VÒNG CƯỢC",
-    "content": "*会员代码：\n*拒绝原因：收到促销奖金但未完成下注\n*会员风险评级：中度怀疑\n*结论：让会员继续投注，流水 +\n~ 流水不够 继续下注 - Chưa Đủ Vòng Cược"
+    "content": "*会员代码：\n*拒绝原因：收到促销奖金但未完成下注\n*会员风险评级：中度怀疑\n*结论：让会员继续投注，流水 +\n~ 流水不够 继续下注 - Chưa Đủ Vòng Cược",
+    "i18n": {
+      "en": {
+        "system": "INCOMPLETE TURNOVER",
+        "group": "PROMOTION CLAIM – INCOMPLETE TURNOVER – REQUIRE 3× TURNOVER",
+        "title": "PROMOTION CLAIM WITH INCOMPLETE TURNOVER – REQUIRE 3× TURNOVER"
+      },
+      "id": {
+        "system": "OMZET TARUHAN BELUM CUKUP",
+        "group": "KLAIM PROMO – OMZET BELUM CUKUP – WAJIB 3× TURNOVER",
+        "title": "KLAIM PROMO DENGAN TURNOVER BELUM CUKUP – WAJIB 3× TURNOVER"
+      },
+      "km": {
+        "system": "ទឹកប្រាក់ភ្នាល់វិលជុំមិនគ្រប់",
+        "group": "ទទួលប្រាក់ផ្សព្វផ្សាយ – TURNOVER មិនគ្រប់ – តម្រូវឱ្យ 3× TURNOVER",
+        "title": "ទទួលប្រាក់ផ្សព្វផ្សាយដោយ TURNOVER មិនគ្រប់ – តម្រូវឱ្យ 3× TURNOVER"
+      }
+    }
   },
   {
     "system": "NHẬN THƯỞNG NHÓM",
     "group": "NHẬN THƯỞNG NHÓM MỨC NẠP KHÔNG ĐỦ",
     "title": "NHẬN THƯỞNG NHÓM NẠP KHÔNG ĐỦ - TỪ CHỐI YÊU CẦU NẠP THÊM",
-    "content": "会员ID : \n*拒绝原因 : 领取群组奖金时未满足充值要求。\n*时间 : 1\n*会员风险评级 : 中嫌疑\n*结论 : 要求成员充值。\n~ 要求成员充值 - Yêu cầu nạp thêm tiền"
+    "content": "会员ID : \n*拒绝原因 : 领取群组奖金时未满足充值要求。\n*时间 : 1\n*会员风险评级 : 中嫌疑\n*结论 : 要求成员充值。\n~ 要求成员充值 - Yêu cầu nạp thêm tiền",
+    "i18n": {
+      "en": {
+        "system": "GROUP REWARD",
+        "group": "GROUP REWARD – INSUFFICIENT DEPOSIT",
+        "title": "GROUP REWARD – INSUFFICIENT DEPOSIT – REQUIRE ADDITIONAL DEPOSIT"
+      },
+      "id": {
+        "system": "HADIAH GRUP",
+        "group": "HADIAH GRUP – DEPOSIT TIDAK MENCUKUPI",
+        "title": "HADIAH GRUP – DEPOSIT TIDAK CUKUP – MINTA DEPOSIT TAMBAHAN"
+      },
+      "km": {
+        "system": "រង្វាន់ក្រុម",
+        "group": "រង្វាន់ក្រុម – ប្រាក់បញ្ញើមិនគ្រប់",
+        "title": "រង្វាន់ក្រុម – ប្រាក់បញ្ញើមិនគ្រប់ – ស្នើឱ្យដាក់ប្រាក់បន្ថែម"
+      }
+    }
   },
   {
     "system": "NHẬN THƯỞNG NHÓM",
     "group": "NHẬN THƯỞNG NHÓM MỨC NẠP KHÔNG ĐỦ",
     "title": "NHẬN THƯỞNG NHÓM KHÔNG NẠP TỪ CHỐI NHIỀU LẦN - KHẤU TRỪ THƯỞNG",
-    "content": "*会员ID : \n*拒绝原因 : 本人未充值，代理线也没有任何充值\n*会员风险评级 : 大嫌疑\n*时间: 3\n*结论 : 扣除奖励\n~ 异常会员 注意 - Chú Ý Bất Thường"
+    "content": "*会员ID : \n*拒绝原因 : 本人未充值，代理线也没有任何充值\n*会员风险评级 : 大嫌疑\n*时间: 3\n*结论 : 扣除奖励\n~ 异常会员 注意 - Chú Ý Bất Thường",
+    "i18n": {
+      "en": {
+        "system": "GROUP REWARD",
+        "group": "GROUP REWARD – INSUFFICIENT DEPOSIT",
+        "title": "GROUP REWARD – NO DEPOSIT AFTER REPEATED REJECTIONS – DEDUCT BONUS"
+      },
+      "id": {
+        "system": "HADIAH GRUP",
+        "group": "HADIAH GRUP – DEPOSIT TIDAK MENCUKUPI",
+        "title": "HADIAH GRUP – TANPA DEPOSIT SETELAH DITOLAK BERULANG – POTONG BONUS"
+      },
+      "km": {
+        "system": "រង្វាន់ក្រុម",
+        "group": "រង្វាន់ក្រុម – ប្រាក់បញ្ញើមិនគ្រប់",
+        "title": "រង្វាន់ក្រុម – គ្មានប្រាក់បញ្ញើបន្ទាប់ពីបដិសេធច្រើនដង – កាត់ប្រាក់រង្វាន់"
+      }
+    }
   },
   {
     "system": "CƯỢC BẤT THƯỜNG",
     "group": "CƯỢC TẤT TAY",
     "title": "CƯỢC ALL IN - TỪ CHỐI X3 VÒNG CƯỢC",
-    "content": "*会员ID : \n*拒绝原因 : 梭哈\n*会员风险评级 : 中度怀疑\n*结论：让会员继续投注，流水 +\n~ ALL in"
+    "content": "*会员ID : \n*拒绝原因 : 梭哈\n*会员风险评级 : 中度怀疑\n*结论：让会员继续投注，流水 +\n~ ALL in",
+    "i18n": {
+      "en": {
+        "system": "ABNORMAL BETTING",
+        "group": "ALL-IN BETTING",
+        "title": "ALL-IN BETTING – REQUIRE 3× TURNOVER"
+      },
+      "id": {
+        "system": "TARUHAN TIDAK WAJAR",
+        "group": "TARUHAN ALL-IN",
+        "title": "TARUHAN ALL-IN – WAJIB 3× TURNOVER"
+      },
+      "km": {
+        "system": "ការភ្នាល់មិនប្រក្រតី",
+        "group": "ការភ្នាល់ ALL-IN",
+        "title": "ការភ្នាល់ ALL-IN – តម្រូវឱ្យ 3× TURNOVER"
+      }
+    }
   },
   {
     "system": "CƯỢC BẤT THƯỜNG",
     "group": "CƯỢC TẤT TAY",
     "title": "CƯỢC ALL IN - KHẤU TRẢ NẠP",
-    "content": "*会员ID : \n*拒绝原因 : 梭哈\n*会员风险评级 : 有问题\n*结论 : 扣除全部余额并退还押金\n~ ALL in"
+    "content": "*会员ID : \n*拒绝原因 : 梭哈\n*会员风险评级 : 有问题\n*结论 : 扣除全部余额并退还押金\n~ ALL in",
+    "i18n": {
+      "en": {
+        "system": "ABNORMAL BETTING",
+        "group": "ALL-IN BETTING",
+        "title": "ALL-IN BETTING – DEDUCT AND REFUND DEPOSIT"
+      },
+      "id": {
+        "system": "TARUHAN TIDAK WAJAR",
+        "group": "TARUHAN ALL-IN",
+        "title": "TARUHAN ALL-IN – POTONG DAN KEMBALIKAN DEPOSIT"
+      },
+      "km": {
+        "system": "ការភ្នាល់មិនប្រក្រតី",
+        "group": "ការភ្នាល់ ALL-IN",
+        "title": "ការភ្នាល់ ALL-IN – កាត់ប្រាក់ និងសងប្រាក់បញ្ញើ"
+      }
+    }
   },
   {
     "system": "CƯỢC BẤT THƯỜNG",
     "group": "CƯỢC TẤT TAY",
     "title": "CƯỢC ALL IN - KHÓA TÀI KHOẢN",
-    "content": "*会员ID :\n*拒绝原因 : 梭哈  \n*会员风险评级 : 有问题\n*结论 : 冻结"
+    "content": "*会员ID :\n*拒绝原因 : 梭哈  \n*会员风险评级 : 有问题\n*结论 : 冻结",
+    "i18n": {
+      "en": {
+        "system": "ABNORMAL BETTING",
+        "group": "ALL-IN BETTING",
+        "title": "ALL-IN BETTING – ACCOUNT LOCK"
+      },
+      "id": {
+        "system": "TARUHAN TIDAK WAJAR",
+        "group": "TARUHAN ALL-IN",
+        "title": "TARUHAN ALL-IN – BLOKIR AKUN"
+      },
+      "km": {
+        "system": "ការភ្នាល់មិនប្រក្រតី",
+        "group": "ការភ្នាល់ ALL-IN",
+        "title": "ការភ្នាល់ ALL-IN – បិទគណនី"
+      }
+    }
   },
   {
     "system": "CƯỢC BẤT THƯỜNG",
     "group": "CƯỢC ĐỐI LẬP",
     "title": "CƯỢC ĐỐI LẬP - KHÓA TÀI KHOẢN",
-    "content": "*会员ID : \n*拒绝原因 : 对打投注，滥用优惠活动\n*会员风险评级 : 有问题\n*结论 : 冻结"
+    "content": "*会员ID : \n*拒绝原因 : 对打投注，滥用优惠活动\n*会员风险评级 : 有问题\n*结论 : 冻结",
+    "i18n": {
+      "en": {
+        "system": "ABNORMAL BETTING",
+        "group": "OPPOSING / HEAD-TO-HEAD BETTING",
+        "title": "OPPOSING BETTING – ACCOUNT LOCK"
+      },
+      "id": {
+        "system": "TARUHAN TIDAK WAJAR",
+        "group": "TARUHAN BERLAWANAN / HEAD-TO-HEAD",
+        "title": "TARUHAN BERLAWANAN – BLOKIR AKUN"
+      },
+      "km": {
+        "system": "ការភ្នាល់មិនប្រក្រតី",
+        "group": "ការភ្នាល់ផ្ទុយគ្នា / HEAD-TO-HEAD",
+        "title": "ការភ្នាល់ផ្ទុយគ្នា – បិទគណនី"
+      }
+    }
   },
   {
     "system": "CHƠI TRÒ CHƠI BẤT HỢP PHÁP",
     "group": "CƯỢC BẤT THƯỜNG - Teen Patti",
     "title": "CƯỢC BẤT THƯỜNG TEEN PATTI - TỪ CHỐI X3 VÒNG CƯỢC",
-    "content": "*会员ID : \n*拒绝原因 : 非法投注 Teen Patti \n*会员风险评级 : 中度怀疑\n*结论 : 让会员继续投注，流水 +\n~ 异常会员 注意 - Chú Ý Bất Thường"
+    "content": "*会员ID : \n*拒绝原因 : 非法投注 Teen Patti \n*会员风险评级 : 中度怀疑\n*结论 : 让会员继续投注，流水 +\n~ 异常会员 注意 - Chú Ý Bất Thường",
+    "i18n": {
+      "en": {
+        "system": "ILLEGAL GAME PLAY",
+        "group": "ABNORMAL TEEN PATTI BETTING",
+        "title": "ABNORMAL TEEN PATTI BETTING – REQUIRE 3× TURNOVER"
+      },
+      "id": {
+        "system": "PERMAINAN ILEGAL",
+        "group": "TARUHAN TEEN PATTI TIDAK WAJAR",
+        "title": "TARUHAN TEEN PATTI TIDAK WAJAR – WAJIB 3× TURNOVER"
+      },
+      "km": {
+        "system": "ការលេងហ្គេមខុសច្បាប់",
+        "group": "ការភ្នាល់ TEEN PATTI មិនប្រក្រតី",
+        "title": "ការភ្នាល់ TEEN PATTI មិនប្រក្រតី – តម្រូវឱ្យ 3× TURNOVER"
+      }
+    }
   },
   {
     "system": "CHƠI TRÒ CHƠI BẤT HỢP PHÁP",
     "group": "CƯỢC BẤT THƯỜNG - Teen Patti",
     "title": "CƯỢC BẤT THƯỜNG TEEN PATTI - KHÓA TÀI KHOẢN",
-    "content": "*会员ID : \n*拒绝原因 : 非法投注 Teen Patti \n*会员风险评级 : 有问题\n*结论 : 黑名单"
+    "content": "*会员ID : \n*拒绝原因 : 非法投注 Teen Patti \n*会员风险评级 : 有问题\n*结论 : 黑名单",
+    "i18n": {
+      "en": {
+        "system": "ILLEGAL GAME PLAY",
+        "group": "ABNORMAL TEEN PATTI BETTING",
+        "title": "ABNORMAL TEEN PATTI BETTING – ACCOUNT LOCK"
+      },
+      "id": {
+        "system": "PERMAINAN ILEGAL",
+        "group": "TARUHAN TEEN PATTI TIDAK WAJAR",
+        "title": "TARUHAN TEEN PATTI TIDAK WAJAR – BLOKIR AKUN"
+      },
+      "km": {
+        "system": "ការលេងហ្គេមខុសច្បាប់",
+        "group": "ការភ្នាល់ TEEN PATTI មិនប្រក្រតី",
+        "title": "ការភ្នាល់ TEEN PATTI មិនប្រក្រតី – បិទគណនី"
+      }
+    }
   },
   {
     "system": "CHƠI TRÒ CHƠI BẤT HỢP PHÁP",
     "group": "CƯỢC BẤT THƯỜNG - 7 UP 7 DOWN",
     "title": "CƯỢC BẤT THƯỜNG 7 UP 7 DOWN - TỪ CHỐI X3 VÒNG CƯỢC",
-    "content": "**会员ID : \n*拒绝原因 : 下注自己对刷  + 7 UP 7 DOWN\n*会员风险评级 : 中度怀疑\n*结论 : 让会员继续投注，流水 +\n~ 异常会员 注意 - Chú Ý Bất Thường"
+    "content": "**会员ID : \n*拒绝原因 : 下注自己对刷  + 7 UP 7 DOWN\n*会员风险评级 : 中度怀疑\n*结论 : 让会员继续投注，流水 +\n~ 异常会员 注意 - Chú Ý Bất Thường",
+    "i18n": {
+      "en": {
+        "system": "ILLEGAL GAME PLAY",
+        "group": "ABNORMAL 7 UP 7 DOWN BETTING",
+        "title": "ABNORMAL 7 UP 7 DOWN BETTING – REQUIRE 3× TURNOVER"
+      },
+      "id": {
+        "system": "PERMAINAN ILEGAL",
+        "group": "TARUHAN 7 UP 7 DOWN TIDAK WAJAR",
+        "title": "TARUHAN 7 UP 7 DOWN TIDAK WAJAR – WAJIB 3× TURNOVER"
+      },
+      "km": {
+        "system": "ការលេងហ្គេមខុសច្បាប់",
+        "group": "ការភ្នាល់ 7 UP 7 DOWN មិនប្រក្រតី",
+        "title": "ការភ្នាល់ 7 UP 7 DOWN មិនប្រក្រតី – តម្រូវឱ្យ 3× TURNOVER"
+      }
+    }
   },
   {
     "system": "CHƠI TRÒ CHƠI BẤT HỢP PHÁP",
     "group": "CƯỢC BẤT THƯỜNG - 7 UP 7 DOWN",
     "title": "CƯỢC BẤT THƯỜNG 7 UP 7 DOWN - KHẤU TRẢ NẠP",
-    "content": "*会员ID : \n*拒绝原因 : 下注自己对刷  + 7 UP 7 DOWN\n*会员风险评级 : 有问题\n*结论 : 扣除全部余额并退还押金\n~ 异常会员 注意 - Chú Ý Bất Thường"
+    "content": "*会员ID : \n*拒绝原因 : 下注自己对刷  + 7 UP 7 DOWN\n*会员风险评级 : 有问题\n*结论 : 扣除全部余额并退还押金\n~ 异常会员 注意 - Chú Ý Bất Thường",
+    "i18n": {
+      "en": {
+        "system": "ILLEGAL GAME PLAY",
+        "group": "ABNORMAL 7 UP 7 DOWN BETTING",
+        "title": "ABNORMAL 7 UP 7 DOWN BETTING – DEDUCT AND REFUND DEPOSIT"
+      },
+      "id": {
+        "system": "PERMAINAN ILEGAL",
+        "group": "TARUHAN 7 UP 7 DOWN TIDAK WAJAR",
+        "title": "TARUHAN 7 UP 7 DOWN TIDAK WAJAR – POTONG DAN KEMBALIKAN DEPOSIT"
+      },
+      "km": {
+        "system": "ការលេងហ្គេមខុសច្បាប់",
+        "group": "ការភ្នាល់ 7 UP 7 DOWN មិនប្រក្រតី",
+        "title": "ការភ្នាល់ 7 UP 7 DOWN មិនប្រក្រតី – កាត់ប្រាក់ និងសងប្រាក់បញ្ញើ"
+      }
+    }
   },
   {
     "system": "CHƠI TRÒ CHƠI BẤT HỢP PHÁP",
     "group": "CƯỢC BẤT THƯỜNG -  ROULETTE",
     "title": "CƯỢC BẤT THƯỜNG ROULETTE - TỪ CHỐI X3 VÒNG CƯỢC",
-    "content": "*会员ID : \n*拒绝原因 : 下注自己对刷  + ROULETTE\n*会员风险评级 : 中度怀疑\n*结论 : 让会员继续投注，流水 +\n~ 异常会员 注意 - Chú Ý Bất Thường"
+    "content": "*会员ID : \n*拒绝原因 : 下注自己对刷  + ROULETTE\n*会员风险评级 : 中度怀疑\n*结论 : 让会员继续投注，流水 +\n~ 异常会员 注意 - Chú Ý Bất Thường",
+    "i18n": {
+      "en": {
+        "system": "ILLEGAL GAME PLAY",
+        "group": "ABNORMAL ROULETTE BETTING",
+        "title": "ABNORMAL ROULETTE BETTING – REQUIRE 3× TURNOVER"
+      },
+      "id": {
+        "system": "PERMAINAN ILEGAL",
+        "group": "TARUHAN ROULETTE TIDAK WAJAR",
+        "title": "TARUHAN ROULETTE TIDAK WAJAR – WAJIB 3× TURNOVER"
+      },
+      "km": {
+        "system": "ការលេងហ្គេមខុសច្បាប់",
+        "group": "ការភ្នាល់ ROULETTE មិនប្រក្រតី",
+        "title": "ការភ្នាល់ ROULETTE មិនប្រក្រតី – តម្រូវឱ្យ 3× TURNOVER"
+      }
+    }
   },
   {
     "system": "CHƠI TRÒ CHƠI BẤT HỢP PHÁP",
     "group": "CƯỢC BẤT THƯỜNG -  ROULETTE",
     "title": "CƯỢC BẤT THƯỜNG ROULETTE - KHẤU TRẢ NẠP",
-    "content": "*会员ID : \n*拒绝原因 : 下注自己对刷  + ROULETTE\n*会员风险评级 : 有问题\n*结论 : 扣除全部余额并退还押金\n~ 异常会员 注意 - Chú Ý Bất Thường"
+    "content": "*会员ID : \n*拒绝原因 : 下注自己对刷  + ROULETTE\n*会员风险评级 : 有问题\n*结论 : 扣除全部余额并退还押金\n~ 异常会员 注意 - Chú Ý Bất Thường",
+    "i18n": {
+      "en": {
+        "system": "ILLEGAL GAME PLAY",
+        "group": "ABNORMAL ROULETTE BETTING",
+        "title": "ABNORMAL ROULETTE BETTING – DEDUCT AND REFUND DEPOSIT"
+      },
+      "id": {
+        "system": "PERMAINAN ILEGAL",
+        "group": "TARUHAN ROULETTE TIDAK WAJAR",
+        "title": "TARUHAN ROULETTE TIDAK WAJAR – POTONG DAN KEMBALIKAN DEPOSIT"
+      },
+      "km": {
+        "system": "ការលេងហ្គេមខុសច្បាប់",
+        "group": "ការភ្នាល់ ROULETTE មិនប្រក្រតី",
+        "title": "ការភ្នាល់ ROULETTE មិនប្រក្រតី – កាត់ប្រាក់ និងសងប្រាក់បញ្ញើ"
+      }
+    }
   },
   {
     "system": "LẠM DỤNG NẠP ĐẦU",
     "group": "CẤP TRÊN - DƯỚI, TRÙNG IP - KHẤU TRẢ NẠP",
     "title": "TỰ MỜI CẤP DƯỚI TRÙNG IP LẠM DỤNG NẠP ĐẦU - KHẤU TRẢ NẠP",
-    "content": "*会员ID : \n*拒绝原因 : 拥有相同IP地址和设备的自邀代理线路滥用首存红利，帮助上级代理领取团队奖励。\n*会员风险评级 : 有问题\n*结论 : 扣除奖金并限制代理佣金\n~ 异常会员 注意 - Chú Ý Bất Thường"
+    "content": "*会员ID : \n*拒绝原因 : 拥有相同IP地址和设备的自邀代理线路滥用首存红利，帮助上级代理领取团队奖励。\n*会员风险评级 : 有问题\n*结论 : 扣除奖金并限制代理佣金\n~ 异常会员 注意 - Chú Ý Bất Thường",
+    "i18n": {
+      "en": {
+        "system": "FIRST-DEPOSIT ABUSE",
+        "group": "UPLINE / DOWNLINE – DUPLICATE IP – DEDUCT AND REFUND DEPOSIT",
+        "title": "SELF-INVITED DOWNLINE WITH DUPLICATE IP ABUSES FIRST DEPOSIT – DEDUCT AND REFUND DEPOSIT"
+      },
+      "id": {
+        "system": "PENYALAHGUNAAN DEPOSIT PERTAMA",
+        "group": "UPLINE / DOWNLINE – IP SAMA – POTONG DAN KEMBALIKAN DEPOSIT",
+        "title": "DOWNLINE UNDANGAN SENDIRI DENGAN IP SAMA MENYALAHGUNAKAN DEPOSIT PERTAMA – POTONG DAN KEMBALIKAN DEPOSIT"
+      },
+      "km": {
+        "system": "ការបំពានប្រាក់បញ្ញើដំបូង",
+        "group": "UPLINE / DOWNLINE – IP ស្ទួន – កាត់ប្រាក់ និងសងប្រាក់បញ្ញើ",
+        "title": "អ្នកក្រោមដែលអញ្ជើញខ្លួនឯងមាន IP ស្ទួន បំពានប្រាក់បញ្ញើដំបូង – កាត់ប្រាក់ និងសងប្រាក់បញ្ញើ"
+      }
+    }
   },
   {
     "system": "LẠM DỤNG NẠP ĐẦU",
     "group": "LẠM DỤNG NẠP ĐẦU",
     "title": "TẠO NHIỀU TÀI KHOẢN TRÊN 1 THIẾT BỊ - KHẤU TRẢ NẠP",
-    "content": "会员ID :\n*拒绝原因 : 会员通过同一设备注册多个账号，恶意滥用首存优惠和首存奖励。\n*会员风险评级 : 有问题\n*结论 : 扣除全部余额并退还押金\n~ 异常会员 注意 - Chú Ý Bất Thường"
+    "content": "会员ID :\n*拒绝原因 : 会员通过同一设备注册多个账号，恶意滥用首存优惠和首存奖励。\n*会员风险评级 : 有问题\n*结论 : 扣除全部余额并退还押金\n~ 异常会员 注意 - Chú Ý Bất Thường",
+    "i18n": {
+      "en": {
+        "system": "FIRST-DEPOSIT ABUSE",
+        "group": "FIRST-DEPOSIT ABUSE",
+        "title": "MULTIPLE ACCOUNTS ON ONE DEVICE – DEDUCT AND REFUND DEPOSIT"
+      },
+      "id": {
+        "system": "PENYALAHGUNAAN DEPOSIT PERTAMA",
+        "group": "PENYALAHGUNAAN DEPOSIT PERTAMA",
+        "title": "BANYAK AKUN PADA SATU PERANGKAT – POTONG DAN KEMBALIKAN DEPOSIT"
+      },
+      "km": {
+        "system": "ការបំពានប្រាក់បញ្ញើដំបូង",
+        "group": "ការបំពានប្រាក់បញ្ញើដំបូង",
+        "title": "គណនីច្រើនលើឧបករណ៍តែមួយ – កាត់ប្រាក់ និងសងប្រាក់បញ្ញើ"
+      }
+    }
   }
 ]
